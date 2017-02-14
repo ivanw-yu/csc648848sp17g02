@@ -73,7 +73,7 @@ $this->layout = false;
         <h1 class="about-me-header">
           <center>About Thao</center>
         </h1>
-        <p>Hi, I'm Thao and I'm a student at San Francisco State University. After finishing school, I want to start my career as a Front-End developer.</p>
+        <p>Hi, I'm Thao and I'm a student at San Francisco State University. After finishing school, I want to start my career as a Front-End developer. In my leisure time, I like to go on hikes and take cool photos like the one used as the background of this page.</p>
       </div>
     </div>
   </div>
