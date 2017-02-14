@@ -27,27 +27,55 @@ $this->layout = false;
   <title>Thao's Page</title>
   <meta charset="utf-8">
   <meta htp-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
+
   <style type="text/css">
+    html {
+      background: url(webroot/img/thaospagebg.jpg) center no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    #content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 20px; /* Header Height */
+      bottom: 20px; /* Footer Height */
+      width: 99.4%;
+    }
     .about-me-container {
       height: 225px;
       width: 400px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0.5;
+      opacity: 0.75;
+      background-color: #333333;
     }
     .about-me-text {
-      padding: 10px;
+      font-family: 'Comfortaa', cursive;
+      font-weight: 500;
+      text-align: justify;
+      color: #6E94FF;
+      padding: 25px;
     }
     
   </style>
 
 </head>
 <body>
-  <div class="about-me-container">
-    <div class="about-me-text"> Hi, I'm Thao and I'm a student at San Francisco State University. After finishing school, I want to start my career as a Front-End developer.</div>
+  <div id="content">
+    <div class="about-me-container">
+      <div class="about-me-text">
+        <h1 class="about-me-header">
+          <center>About Thao</center>
+        </h1>
+        <p>Hi, I'm Thao and I'm a student at San Francisco State University. After finishing school, I want to start my career as a Front-End developer.</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
