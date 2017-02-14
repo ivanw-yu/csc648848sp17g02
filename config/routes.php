@@ -49,6 +49,10 @@ Router::scope('/', function (RouteBuilder $routes) {
     if(dirname($_SERVER['PHP_SELF']) == '/~ivnyu'){
       // this displays ivan_page.ctp on the browser.
       $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ivan_page']);
+      }
+    else if(dirname($_SERVER['PHP_SELF']) == '/~drodri11'){
+      $routes->connect('/', ['controller' => 'Pages', 'action' => 'display',
+	 'david_page']);
     }else{
       $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     }
