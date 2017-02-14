@@ -80,4 +80,3 @@ $this->layout = false;
       </div>
   </body>
 </html>
-
