@@ -6114,3 +6114,23 @@ Stack Trace:
 #13 {main}
 
 
+2017-02-14 10:45:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Sfsuse.com could not be found.
+Request URL: /sfsuse.com/~achalke
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/Ajinkya/Desktop/csc848/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
