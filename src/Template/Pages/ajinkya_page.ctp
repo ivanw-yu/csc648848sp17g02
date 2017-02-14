@@ -52,11 +52,11 @@ $this->layout = false;
       color: #303030;
       font-weight: 400;
       margin-bottom: 30px;
-  }  
+  }
   .jumbotron {
       /*background-color: #f4511e;*/
-    background-image: url('/Users/Ajinkya/Desktop/csc848/csc648848sp17g02/webroot/img/aj.jpg');
-    
+    background-image: url(webroot/img/ajinkyawp.jpeg);
+
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat;
@@ -111,7 +111,7 @@ $this->layout = false;
       font-style: normal;
   }
   .panel {
-      border: 1px solid #f4511e; 
+      border: 1px solid #f4511e;
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
@@ -187,7 +187,7 @@ $this->layout = false;
     0% {
       opacity: 0;
       transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       transform: translateY(0%);
@@ -197,7 +197,7 @@ $this->layout = false;
     0% {
       opacity: 0;
       -webkit-transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       -webkit-transform: translateY(0%);
@@ -206,7 +206,7 @@ $this->layout = false;
   .profile-pic{
     	border-radius: 50%;
     	margin-left: 60px;
-    	
+
     }
     .right-side{
     	float : right;
@@ -238,7 +238,7 @@ $this->layout = false;
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
     </div>
 
@@ -254,8 +254,8 @@ $this->layout = false;
 </div>
 </nav>
 <div class="jumbotron text-center">
-  <h1>Ajinkya Chalke</h1> 
-  <p>Developer</p> 
+  <h1>Ajinkya Chalke</h1>
+  <p>Developer</p>
 </div>
 
 <div id="about" class="container-fluid">
@@ -272,7 +272,7 @@ $this->layout = false;
   <div class="row">
     <div class="col-sm-4">
       <span class="glyphicon logo slideanim">
-		<img class="profile-pic" src="/Users/Ajinkya/Desktop/csc848/csc648848sp17g02/webroot/img/dp.jpg" width="200" height="200">
+		<img class="profile-pic" src="webroot/img/ajinkyadp.jpeg" width="200" height="200">
       </span>
     </div>
     <div class="col-sm-8">
@@ -282,7 +282,7 @@ $this->layout = false;
       	•	Teaching Assistant for two courses at the university.<br>
 		•	CSC 600 Programming Languages Design, this course deals with design concepts for high-level programming languages.<br>
 		•	CSC 415 Operating Systems Principles, this course deals with the study of Operating System concepts.<br></h4>
-      <p><strong>Courses:</strong><br> 
+      <p><strong>Courses:</strong><br>
       	•	Data Mining<br>
       	•	Advanced Operating System<br>
       	•	Software Engineering<br>
@@ -338,7 +338,7 @@ $this->layout = false;
 		<span class="left-side">•	Used Solid Works for simulation and modelling.</span><br>
 		<span class="left-side">•	Achieved 1st place in a Google and Siemens conducted national level product innovation competition.</span><br>
   </div><br>
-  
+
   <h2>Some Achievements</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
@@ -443,4 +443,3 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
-
