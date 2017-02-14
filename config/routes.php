@@ -53,6 +53,10 @@ Router::scope('/', function (RouteBuilder $routes) {
     if(dirname($_SERVER['PHP_SELF']) == '/~tluu4'){
       // this displays thaos_page.ctp on the browser
       $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'thaos_page']);
+    } 
+    else if(dirname($_SERVER['PHP_SELF']) == '/~bkng'){
+      // this displays thaos_page.ctp on the browser
+      $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'brad_page']);
     }else{
       $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     }
