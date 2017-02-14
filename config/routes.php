@@ -57,6 +57,18 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
+
+
+    if(dirname($_SERVER['PHP_SELF']) == '/~jerrya'){
+      // this displays ivan_page.ctp on the browser.
+      $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']);
+    }else{
+      $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    }
+    /**
+     * ...and connect the rest of 'Pages' controller's URLs.
+     */
+    $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
     /**
      * Connect catchall routes for all controllers.
      *
