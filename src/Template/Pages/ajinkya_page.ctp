@@ -400,7 +400,7 @@ $this->layout = false;
     	<br>
     	<br>
     	<br>
-    	<span class="right-side"><a href="htpp://www.github.com/ajinkyachalke" title="GitHub">GitHub</a>
+    	<span class="right-side"><a href="http://www.github.com/ajinkyachalke" title="GitHub">GitHub</a>
     	&nbsp
     	&nbsp
     	&nbsp
