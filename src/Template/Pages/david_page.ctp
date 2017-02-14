@@ -33,6 +33,9 @@ $this->layout = false;
 
 David Rodriguez
 <br>
-Student at SFSU.
+<ul>
+    <li> Student at SFSU.  </li>
+    <li> Interested in numerical analysis and machine learning.</li>
+</ul>
 </body>
 </html>
