@@ -31,9 +31,15 @@ $this->layout = false;
   <meta name="viewport" content="width=device-width, initial-scale=1">  
   <style type="text/css">
     .about-me-container {
+      height: 225px;
+      width: 400px;
       display: flex;
-      margin-right: -50px;
+      align-items: center;
+      justify-content: center;
       opacity: 0.5;
+    }
+    .about-me-text {
+      padding: 10px;
     }
     
   </style>
