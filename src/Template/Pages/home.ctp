@@ -45,38 +45,38 @@ $this->layout = false;
       	</style>
   </head>
   <body>
-      <div class = "topLabel">
-        <h1> Software Engineering class SFSU </h1>
-        <h2> Spring 2017 </h2>
-        <h2> Section 1 </h2>
-        <h2> Team 2 </h2>
+    <div class = "topLabel">
+      <h1> Software Engineering class SFSU </h1>
+      <h2> Spring 2017 </h2>
+      <h2> Section 1 </h2>
+      <h2> Team 2 </h2>
+    </div>
+    <nav class = "navbar navbar-inverse">
+      <div class = "container-fluid">
+        <ul class = "nav navbar-nav">
+          <li><?= $this->Html->link( 'Ivan Yu', 'http://sfsuse.com/~ivnyu/' );?></li>
+          <li><?= $this->Html->link( 'Ajinkya Chalke', 'http://sfsuse.com/~achalke/' );?></li>
+          <li><?= $this->Html->link( 'Bradley Ng', 'http://sfsuse.com/~bkng/' );?></li>
+          <li><?= $this->Html->link( 'Thao Luu', 'http://sfsuse.com/~tluu4/' );?></li>
+          <li><?= $this->Html->link( 'Jerry Auyeung', 'http://sfsuse.com/~jerrya/' );?></li>
+          <li><?= $this->Html->link( 'David Rodriguez', 'http://sfsuse.com/~drodri11/' );?></li>
+        </ul>
       </div>
-      <nav class = "navbar navbar-inverse">
-        <div class = "container-fluid">
-          <ul class = "nav navbar-nav">
-            <li><a href="sfsuse.com/~ivnyu">Ivan Yu</a></li>
-            <li><a href="sfsuse.com/~achalke">Ajinkya Chalke</a></li>
-            <li><a href="sfsuse.com/~bkng">Bradley Ng</a></li>
-            <li><a href="sfsuse.com/~tluu4">Thao Luu</a></li>
-	    <li><a href="sfsuse.com/~jerrya">Jerry Auyeung</a></li>
-            <li><a href="sfsuse.com/~drodri11">David Rodriguez</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class = "jumbotron">
-        <h1> CSC 648/848 Group </h1>
-        <p> Click on the navbar to access a member's about-me page. </p>
-        <div>
+    </nav>
+    <div class = "jumbotron">
+      <h1> CSC 648/848 Group </h1>
+      <p> Click on the navbar to access a member's about-me page. </p>
+      <div>
         <h2> Members: </h2>
         <ul>
-          <li>Ivan Yu</li>
-          <li>Ajinka Chalke</li>
-          <li>Bradley Ng</li>
-          <li>Thao Luu</li>
-          <li>Jerry Auyeung</li>
-	  <li>David Rodriguez</li>
+          <li><?= $this->Html->link( 'Ivan Yu', 'http://sfsuse.com/~ivnyu/' );?></li>
+          <li><?= $this->Html->link( 'Ajinkya Chalke', 'http://sfsuse.com/~achalke/' );?></li>
+          <li><?= $this->Html->link( 'Bradley Ng', 'http://sfsuse.com/~bkng/' );?></li>
+          <li><?= $this->Html->link( 'Thao Luu', 'http://sfsuse.com/~tluu4/' );?></li>
+          <li><?= $this->Html->link( 'Jerry Auyeung', 'http://sfsuse.com/~jerrya/' );?></li>
+          <li><?= $this->Html->link( 'David Rodriguez', 'http://sfsuse.com/~drodri11/' );?></li>
         <ul>
-        </div>
       </div>
+    </div>
   </body>
 </html>
