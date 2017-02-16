@@ -32,7 +32,7 @@ $this->layout = false;
 
   <style type="text/css">
     html {
-      background: url(../img/thaospagebg.jpg) center no-repeat;
+      background: url(<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/thaospagebg.jpg) center no-repeat;
       background-attachment: fixed;
       background-size: cover;
     }

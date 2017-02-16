@@ -62,7 +62,7 @@ $this->layout = false;
                   text-align: center;
                 }
      		 body {
-         	 background-image: url(../img/jerrybg.jpeg);
+         	 background-image: url(<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/jerrybg.jpeg);
                   background-attachment: fixed;
                   background-repeat: no-repeat;
                   background-position: center;
