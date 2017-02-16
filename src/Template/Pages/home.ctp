@@ -50,6 +50,7 @@ $this->layout = false;
       <h2> Spring 2017 </h2>
       <h2> Section 1 </h2>
       <h2> Team 2 </h2>
+      <?= dirname($_SERVER['PHP_SELF']); ?>
       <br><br><br>
     </div>
     <nav class = "navbar navbar-inverse">

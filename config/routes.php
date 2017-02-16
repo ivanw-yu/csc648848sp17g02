@@ -48,7 +48,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     // The page to render depends on the site visited. (Ex: sfsuse.com/~ivnyu will render ivan_page)
     if(dirname($_SERVER['PHP_SELF']) == '/~achalke'){
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ajinkya_page']);
-    } else if(dirname($_SERVER['PHP_SELF']) == '/~ivnyu') {
+    } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~ivnyu') !== false) {
         // this displays ivan_page.ctp on the browser.
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ivan_page']);
     } else if(dirname($_SERVER['PHP_SELF']) == '/~bkng'){

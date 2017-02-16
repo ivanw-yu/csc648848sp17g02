@@ -64,7 +64,7 @@ $this->layout = false;
                   text-align: center;
                 }
                 body {
-                  background-image: url(../img/ivanpagebackground.jpeg);
+                  background-image: url(<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/ivanpagebackground.jpeg);
                   background-attachment: fixed;
                   background-repeat: no-repeat;
                   background-position: center;
