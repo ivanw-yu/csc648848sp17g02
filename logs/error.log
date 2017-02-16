@@ -6114,3 +6114,278 @@ Stack Trace:
 #13 {main}
 
 
+2017-02-16 07:30:42 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 07:30:50 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 07:32:31 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 07:32:33 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 07:32:35 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 07:57:22 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 07:58:07 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 08:01:57 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 08:02:01 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 08:02:02 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 08:04:19 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /
+Stack Trace:
+#0 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/users/jerrya/d...', Array)
+#1 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/users/jerrya/d...')
+#2 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
