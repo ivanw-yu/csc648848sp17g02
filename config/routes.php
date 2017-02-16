@@ -60,6 +60,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     }
       else if (dirname($_SERVER['PHP_SELF']) == '/~drodri11') {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'david_page']);
+       else if (dirname($_SERVER['PHP_SELF']) == '/~jerrya') {
+        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']); 
     } else{
       $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     }
