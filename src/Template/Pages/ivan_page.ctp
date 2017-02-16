@@ -83,6 +83,14 @@ $this->layout = false;
         </nav>
 	<br><br><br><br><br>
 	<div class = "jumbotron aboutbox">
+      <nav class = "navbar navbar-inverse">
+        <div class = "container-fluid">
+          <ul class = "nav navbar-nav">
+            <li><?= $this->Html->link('Home Page','http://sfsuse.com/~sp17g02/' ); ?></li>
+          </ul>
+        </div>
+      </nav>
+        <div class = "jumbotron">
                       <h1 class="header"> Ivan Yu </h1>
                       <div>
                       <h2 class="inner-header"> About Me </h2>

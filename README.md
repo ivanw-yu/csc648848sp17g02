@@ -18,9 +18,12 @@ This is how the links work:
 #  $this->Html->link('link name', ['controller' => 'Pages', 'action' => 'display', 'ctp\_file\_name'] )
 - when clicked, the ctp file specified by the 'ctp\_file\_name' is rendered on the page.
 - a .htaccess file is added on the root directory of this project to allow the links to work properly.
+
+# Project Overview
+This project uses the CakePHP Framework to create the group's home page, which contains links to
+the group member's about-me pages.
 The contents displayed in each of the member's about-me page, and the group's home page, are created
 by the .ctp files contained in the /src/Template/Pages directory.
 Each of the member's ssh accounts, the group ssh account and the github repository all contain the same
 project. The routes.php file contained in the config directory determines which .ctp file is rendered on
-a given site once visited.
 The images used in this project are contained in the webroot/img directory. 
