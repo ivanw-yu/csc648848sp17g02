@@ -25,23 +25,23 @@ $this->layout = false;
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
- <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+<!--<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+ <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">-->
   <title> About Jerry</title>
     <meta charset = "utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <style>
+      <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+      <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+	<style>
             h1, h2, h3, h4, h5, h6 {
-            font-family: 'Corben', Georgia, Times, serif;
+            font-family: 'Corben', Georgia,  serif;
           }
           p, div {
-              font-family: 'Nobile', Helvetica, Arial, sans-serif;
+              font-family: 'Nobile', Helvetica,  sans-serif;
           }
 
             .jumbotron {
@@ -67,72 +67,34 @@ $this->layout = false;
                   position: relative;
                   padding: .3em;
                   margin: auto;
-                  width: center;
+		  width: center;
                   height: center;
                   color: black;
                   text-align: center;
                 }
-
-
-
-      body
-      {
-
-         background-image: url(webroot/img/jerrybg.jpeg);
+     		 body {
+	          background-image: url(../img/jerrybg.jpg);
                   background-attachment: fixed;
                   background-repeat: no-repeat;
                   background-position: center;
                   background-size: 100% 100%;
                   font-family: Calibre, Georgia, sans-serif;
-
-
-
-      }
+      		}
       </style>
-
 </head>
 <body>
-  <div>
       <h1 class= "header"> About Jerry Auyeung </h1>
       <div class = "container">
             <div class= "row">
-                  <div class ="col-sm-6">
+                  <div>
                   Student at San Francisco State
                   </div>
-                  <div class = "col-sm-6">
+                  <div>
                   Random facts:
                   I am still learning.
                   I like screaming.
                   </div>
-
-
-
+     	    </div>
       </div>
-
-
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
 </body>      
-
-
-
-
-
-
-</html>
+</html>`
