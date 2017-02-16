@@ -15,7 +15,7 @@ the group member's about-me pages. When the user clicks the link, the correspond
 and the URL will look something like: sfsuse.com/~sp17g02/pages/brad\_page for example.
 This is how the links work:
  - In the src/Template/Pages/home.ctp file, the links are made with the following format: 
-# $this->Html->link('link name', ['controller' => 'Pages', 'action' => 'display', 'ctp\_file\_name'] )
+#  $this->Html->link('link name', ['controller' => 'Pages', 'action' => 'display', 'ctp\_file\_name'] )
 - when clicked, the ctp file specified by the 'ctp\_file\_name' is rendered on the page.
 - a .htaccess file is added on the root directory of this project to allow the links to work properly.
 The contents displayed in each of the member's about-me page, and the group's home page, are created
