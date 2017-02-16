@@ -1,6 +1,6 @@
 <?php 
 
-**
+/**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -27,22 +27,25 @@ $this->layout = false;
 
 
 
+
+
+
+
 <!DOCTYPE html>
-<html>
-<head>
-<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
- <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
-  <title> About Jerry</title>
+<html>  
+    
+<head>  
     <meta charset = "utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <style>
+       <style>
+          
             h1, h2, h3, h4, h5, h6 {
             font-family: 'Corben', Georgia, Times, serif;
-          }
-          p, div {
+            }
+            p, div {
               font-family: 'Nobile', Helvetica, Arial, sans-serif;
-          }
+            }
 
             .jumbotron {
                         position: relative;
@@ -78,7 +81,7 @@ $this->layout = false;
       body
       {
 
-         background-image: url(webroot/img/jerrybg.jpeg);
+         background-image: url(../img/jerrybg.jpeg);
                   background-attachment: fixed;
                   background-repeat: no-repeat;
                   background-position: center;
@@ -89,13 +92,35 @@ $this->layout = false;
 
       }
       </style>
+<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+ <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+ </head>
 
-</head>
+      
 <body>
+    <title> About Jerry</title>
+    <nav class = "navbar navbar-inverse">
+          <div class = "container-fluid">
+              <div class = "navbar-header">
+              </div>
+          </div>
+        </nav>
+    
+    
+    
+    
   <div>
+  <br/>
+  <br/>
       <h1 class= "header"> About Jerry Auyeung </h1>
       <div class = "container">
             <div class= "row">
+  <br/>
+  <br/> 
+  <br/>
+  <br/>
+  <br/>
+  <br/>
                   <div class ="col-sm-6">
                   Student at San Francisco State
                   </div>
@@ -104,15 +129,10 @@ $this->layout = false;
                   I am still learning.
                   I like screaming.
                   </div>
-
+            </div>
 
 
       </div>
-
-
-
-
-
 
 
 
@@ -120,16 +140,7 @@ $this->layout = false;
 
 
 
-
-
-
-
-
-
-
-
 </body>      
-
 
 
 

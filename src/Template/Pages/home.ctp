@@ -59,7 +59,7 @@ $this->layout = false;
           <li><?= $this->Html->link( 'Ajinkya Chalke', ['controller' => 'Pages', 'action' => 'display', 'ajinkya_page' ] );?></li>
           <li><?= $this->Html->link( 'Bradley Ng', ['controller' => 'Pages', 'action' => 'display', 'brad_page' ] );?></li>
           <li><?= $this->Html->link( 'Thao Luu', ['controller' => 'Pages', 'action' => 'display', 'thaos_page' ] );?></li>
-          <li><?= $this->Html->link( 'Jerry Auyeung', ['controller' => 'Pages', 'action' => 'display', 'ivan_page' ] );?></li>
+          <li><?= $this->Html->link( 'Jerry Auyeung', ['controller' => 'Pages', 'action' => 'display', 'jerry_page' ] );?></li>
           <li><?= $this->Html->link( 'David Rodriguez', ['controller' => 'Pages', 'action' => 'display', 'david_page' ] );?></li>
         </ul>
       </div>

@@ -6431,3 +6431,325 @@ Stack Trace:
 #13 {main}
 
 
+2017-02-16 10:55:11 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /pages/jerry_page
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/Users/jerrya/d...', Array)
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/Users/jerrya/d...')
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /Users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 10:56:05 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /pages/jerry_page
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/Users/jerrya/d...', Array)
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/Users/jerrya/d...')
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /Users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 10:56:28 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /pages/jerry_page
+Stack Trace:
+#0 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/Users/jerrya/d...', Array)
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/Users/jerrya/d...')
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /Users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 10:56:29 Error: [ParseError] syntax error, unexpected '**' (T_POW), expecting end of file
+Request URL: /pages/jerry_page
+Stack Trace:
+#0 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/Users/jerrya/d...', Array)
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/Users/jerrya/d...')
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('jerry_page', NULL)
+#3 /Users/jerrya/desktop/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('jerry_page')
+#4 [internal function]: App\Controller\PagesController->display('jerry_page')
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-02-16 10:57:01 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg.jpeg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg.jpeg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 10:58:14 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg.jpeg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg.jpeg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 10:58:15 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg.jpeg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg.jpeg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 10:58:44 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg.jpeg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg.jpeg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 10:59:48 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 10:59:49 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 10:59:51 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 11:00:04 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg.jpeg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg.jpeg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 11:00:05 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg.jpeg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg.jpeg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-02-16 11:00:10 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/webroot/img/jerrybg.jpeg
+Referer URL: http://localhost:8765/pages/jerry_page
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('webroot', 'img', 'jerrybg.jpeg')
+#1 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
