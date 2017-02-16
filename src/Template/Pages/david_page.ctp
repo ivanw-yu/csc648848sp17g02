@@ -44,7 +44,7 @@ $this->layout = false;
    .jumbotron{   padding-top: 80px;
    }
     html {
-      background: url(../img/david_bg.jpg);
+      background: url(<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/david_bg.jpg);
     }
     </style>
 <div class="jumbotron">

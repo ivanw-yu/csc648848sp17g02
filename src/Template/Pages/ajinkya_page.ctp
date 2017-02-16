@@ -55,7 +55,7 @@ $this->layout = false;
   }
   .jumbotron {
       /*background-color: #f4511e;*/
-    background-image: url(../img/ajinkyawp.jpeg);
+    background-image: url(<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/ajinkyawp.jpeg);
 
     background-attachment: fixed;
     background-position: top;
@@ -272,7 +272,7 @@ $this->layout = false;
   <div class="row">
     <div class="col-sm-4">
       <span class="glyphicon logo slideanim">
-		<img class="profile-pic" src="../img/ajinkyadp.jpeg" width="200" height="200">
+		<img class="profile-pic" src="<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/ajinkyadp.jpeg" width="200" height="200">
       </span>
     </div>
     <div class="col-sm-8">

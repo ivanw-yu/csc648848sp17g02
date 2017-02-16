@@ -46,22 +46,22 @@ Router::defaultRouteClass(DashedRoute::class);
 Router::scope('/', function (RouteBuilder $routes) {
 
     // The page to render depends on the site visited. (Ex: sfsuse.com/~ivnyu will render ivan_page)
-    if(dirname($_SERVER['PHP_SELF']) == '/~achalke'){
+    if(strpos(dirname($_SERVER['PHP_SELF']), '/~achalke') !== false){
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ajinkya_page']);
-    } else if(dirname($_SERVER['PHP_SELF']) == '/~ivnyu') {
+    } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~ivnyu') !== false) {
         // this displays ivan_page.ctp on the browser.
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ivan_page']);
-    } else if(dirname($_SERVER['PHP_SELF']) == '/~bkng'){
+    } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~bkng') !== false){
         // this displays brad_page.ctp on the browser.
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'brad_page']);
-    } else if(dirname($_SERVER['PHP_SELF']) == '/~tluu4'){
+    } else if(strpos(dirname($_SERVER['PHP_SELF']),'/~tluu4') !== false){
         // this displays thaos_page.ctp on the browser
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'thaos_page']);
-    }  else if (dirname($_SERVER['PHP_SELF']) == '/~drodri11') {
+    }  else if (strpos(dirname($_SERVER['PHP_SELF']), '/~drodri11') !== false) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'david_page']);
-    } else if (dirname($_SERVER['PHP_SELF']) == '/~jerrya') {
+    } else if (strpos(dirname($_SERVER['PHP_SELF']), '/~jerrya') !== false) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']); 
-    } else{
+    } else {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     }
     /**
