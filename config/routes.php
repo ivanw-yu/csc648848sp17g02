@@ -77,6 +77,9 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/conversations',
                      ['controller' => 'Conversations',
                       'action' => 'display']);
+    $routes->connect('/private_messages',
+                     ['controller' => 'PrivateMessages',
+                      'action' => 'display']);
 });
 
 Router::scope('/', function (RouteBuilder $routes) {
