@@ -71,6 +71,9 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/selling_lists',
                      ['controller' => 'SellingLists',
                       'action' => 'display']);
+    $routes->connect('/purchased_lists',
+                     ['controller' => 'PurchasedLists',
+                      'action' => 'display']);
 });
 
 Router::scope('/', function (RouteBuilder $routes) {
