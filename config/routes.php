@@ -50,6 +50,9 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/courses',
                      ['controller' => 'Courses',
                       'action' => 'display']);
+    $routes->connect('/registered_users',
+                     ['controller' => 'RegisteredUsers',
+                      'action' => 'display']);
 });
 
 Router::scope('/', function (RouteBuilder $routes) {
