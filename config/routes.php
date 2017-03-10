@@ -62,6 +62,9 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/wish_lists',
                      ['controller' => 'WishLists',
                       'action' => 'display']);
+    $routes->connect('/watching_lists',
+                     ['controller' => 'WatchingLists',
+                      'action' => 'display']);
 });
 
 Router::scope('/', function (RouteBuilder $routes) {
