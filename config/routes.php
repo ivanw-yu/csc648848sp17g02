@@ -53,6 +53,9 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/registered_users',
                      ['controller' => 'RegisteredUsers',
                       'action' => 'display']);
+    $routes->connect('/listings',
+                     ['controller' => 'Listings',
+                      'action' => 'display']);
 });
 
 Router::scope('/', function (RouteBuilder $routes) {
