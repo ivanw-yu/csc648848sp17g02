@@ -1,0 +1,50 @@
+1) Create the tables using a DBMS according to CakePHP naming conventions.
+2) Change the config/app.php database permissions sections.
+2) Execute bin/cake bake all table_name.
+4) Edit confif/routes.php to create a new route associated with a table_name
+   controller method.
+5) Create the method in the controller, using the model's find('methodName')
+   method.
+6) Create the findMethodName method in the model, using $this->find() to build
+   a query.
+7) Create a .ctp file to display something when the route is visited.
+
+
+Example:
+Assume that 'categories' is a table in the database.
+
+./bin/cake bake all categories
+
+In config/routes.php:
+// Make db_test/categories visitable.
+Router::scope('/db_test', function(RouteBuilder $routes) {
+    $routes->connect('/categories',
+                     ['controller' => 'Categories',
+                      'action' => 'display']);
+});
+
+In src/Controller/CategoriesController.php, add the 'display' method:
+public function display() {
+    $b = $this->Categories->find('categories');
+    $this->set(['id' => $b]);
+}
+
+In src/Model/Table/CategoriesTable.php, add the 'findCategories' method:
+public function findCategories($query, $options) {
+    $q = $this->find()->select(['category_name']);
+    return $q;
+}
+
+In src/Template/Categories/display.ctp:
+<?php
+/**
+  * @var \App\View\AppView $this
+  */
+?>
+<ul>
+<?php foreach ($id as $row): ?>
+   <li> <?= $row->category_name ?> </li>
+<?php endforeach; ?>
+</ul>
+
+Visit sfsuse.com/~my_username/db_test/categories
