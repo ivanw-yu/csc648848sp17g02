@@ -56,6 +56,9 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/listings',
                      ['controller' => 'Listings',
                       'action' => 'display']);
+    $routes->connect('/tags',
+                     ['controller' => 'Tags',
+                      'action' => 'display']);
 });
 
 Router::scope('/', function (RouteBuilder $routes) {
