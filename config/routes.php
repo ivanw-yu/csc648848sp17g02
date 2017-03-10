@@ -43,6 +43,12 @@ use Cake\Routing\Route\DashedRoute;
  */
 Router::defaultRouteClass(DashedRoute::class);
 
+Router::scope('/db_test', function(RouteBuilder $routes) {
+    $routes->connect('/categories',
+                     ['controller' => 'Categories',
+                      'action' => 'display']);
+});
+
 Router::scope('/', function (RouteBuilder $routes) {
 
     // The page to render depends on the site visited. (Ex: sfsuse.com/~ivnyu will render ivan_page)
