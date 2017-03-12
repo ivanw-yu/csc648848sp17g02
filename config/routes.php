@@ -89,7 +89,7 @@ Router::scope('/', function (RouteBuilder $routes) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ajinkya_page']);
     } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~ivnyu') !== false) {
         // this displays ivan_page.ctp on the browser.
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ivan_page']);
+        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'homepage']);
     } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~bkng') !== false){
         // this displays brad_page.ctp on the browser.
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'brad_page']);
