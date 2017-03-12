@@ -49,40 +49,115 @@ $this->layout = false;
 
 
       input[type=text] {
-    	width: 130px;
+    	width: 300px;
     	box-sizing: border-box;
     	border: 2px solid #ccc;
     	border-radius: 4px;
+      display: inline-block;
     	font-size: 16px;
     	background-color: white;
-    	background-image: url('searchicon.png');
     	background-position: 10px 10px; 
     	background-repeat: no-repeat;
     	padding: 12px 20px 12px 40px;
         -webkit-transition: width 0.4s ease-in-out;
     	transition: width 0.4s ease-in-out;
       text-align: center;
-		}
-		input[type=text]:focus {
+		  }
+		  input[type=text]:focus {
     	width: 100%;
-		}
+		  }
+
+
+      .cancelbtn,.signupbtn {float:left;width:50%}
+
+
+      .container1 {
+       padding: 16px;
+        }
+
+
+
+        .modal 
+        {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+        } 
+
+        .modal-content 
+        {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+        }
+
+        .close:hover,
+        .close:focus {
+          color: red;
+          cursor: pointer;
+        }
+        .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+        }
+
+
+        @media screen and (max-width: 300px) {
+          .cancelbtn, .signupbtn {
+            width: 100%;
+          }
+        }
+
 
       </style>
-     <head>
+      <head>
 
-    <body>
+     <body>
 
-    <title>TheGatorBay</title>
-    <nav class = "navbar navbar-inverse ">
+     <title>TheGatorBay</title>
+     <nav class = "navbar navbar-inverse ">
           <div class = "container-fluid">
               <div class = "navbar-header">
               </div>
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href ="#">Login/Register</a></li>
+                  <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display ='block'" style = "width:auto;">Login/Register</button>
               </ul>
           </div>
         </nav>
 
+        <div id = "id01" class= "modal">
+            <span onclick = "document.getElementById('id01').style.display = 'none'" class = "close" title = "Close">x</span>
+            <form class ="modal-content animate"
+            action = "/action_page.php">
+              <div class = "container1">
+              <label>Registration</label><br>
+              <label><b>Email</b></label><br>
+              <input type = "text" placeholder = "your email" required><br>
+              <label><b>Username</b></label><br>
+              <input type = "text" placeholder = "your username" required><br>
+              <label><b>Password</b></label><br>
+              <input type = "text" placeholder = "password" required>
+              <p> By creating an account you agree to  our <a href = "#"> Terms & Privacy </a>. </p><br/>
+              <p> Have an account? Login <a href = "#">here </a> </p>
+              <div class = "clearfix">
+                <button type = "button" class=" cancelbtn btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'none'">Cancel</button>
+                <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Sign Up </button>
+                </div>
+                </div>
+                </form>
+        </div>
+
+        
 
      <div class = "container">
      		<div class = "row  ">
@@ -117,14 +192,22 @@ $this->layout = false;
      			</div>
      		</div>
                 <div class = "row ">
-     			<div class = "col-sm col-centered text-center">
+     			        <div class = "col-sm col-centered text-center">
                             <button type="button" class="btn btn-primary btn-sm">Search</button>
-     			</div> 	
-     		</div>
+     			        </div> 	
+     		       </div>
 
 
      </div>   
-
+<script>
+        var modal = document.getElementById('id01');
+        window.onclick = function(event){
+          if (event.target == modal){
+             modal.style.display = "none";
+          }
+        }
+</script>
 
     </body>
+</html>
 
