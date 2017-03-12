@@ -43,6 +43,45 @@ use Cake\Routing\Route\DashedRoute;
  */
 Router::defaultRouteClass(DashedRoute::class);
 
+Router::scope('/db_test', function(RouteBuilder $routes) {
+    $routes->connect('/categories',
+                     ['controller' => 'Categories',
+                      'action' => 'display']);
+    $routes->connect('/courses',
+                     ['controller' => 'Courses',
+                      'action' => 'display']);
+    $routes->connect('/registered_users',
+                     ['controller' => 'RegisteredUsers',
+                      'action' => 'display']);
+    $routes->connect('/listings',
+                     ['controller' => 'Listings',
+                      'action' => 'display']);
+    $routes->connect('/tags',
+                     ['controller' => 'Tags',
+                      'action' => 'display']);
+    $routes->connect('/wish_lists',
+                     ['controller' => 'WishLists',
+                      'action' => 'display']);
+    $routes->connect('/watching_lists',
+                     ['controller' => 'WatchingLists',
+                      'action' => 'display']);
+    $routes->connect('/sold_lists',
+                     ['controller' => 'SoldLists',
+                      'action' => 'display']);
+    $routes->connect('/selling_lists',
+                     ['controller' => 'SellingLists',
+                      'action' => 'display']);
+    $routes->connect('/purchased_lists',
+                     ['controller' => 'PurchasedLists',
+                      'action' => 'display']);
+    $routes->connect('/conversations',
+                     ['controller' => 'Conversations',
+                      'action' => 'display']);
+    $routes->connect('/private_messages',
+                     ['controller' => 'PrivateMessages',
+                      'action' => 'display']);
+});
+
 Router::scope('/', function (RouteBuilder $routes) {
 
     // The page to render depends on the site visited. (Ex: sfsuse.com/~ivnyu will render ivan_page)
@@ -62,7 +101,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     } else if (strpos(dirname($_SERVER['PHP_SELF']), '/~jerrya') !== false) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']); 
     } else {
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'homepage']);
     }
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

@@ -1,0 +1,97 @@
+Log into your MySQL account and execute the following statements.  These
+will create the tables and populate the with a few entries:
+    source ~/public_html/db_schema.sql
+    source ~/public_html/db_inserts.sql
+
+Next, open config/app.php and under the 'Datasources' entry, change the
+'username', 'password', and 'database' fields to the username and password
+that you use to log into MySQL, and the name of your database, which should
+be 'student_<username>' where <username> is your MySQL account username.
+For example:
+    'Datasources' => [
+        'default' => [
+            'className' => 'Cake\Database\Connection',
+            'driver' => 'Cake\Database\Driver\Mysql',
+            'persistent' => false,
+            'host' => 'localhost',
+            'username' => 'drodri11'
+            'password' => 'lol'
+            'database' => 'student_drodri11',
+            ...
+
+Now change permissions of the logs and tmp folders.  The permissions that
+are set during installation of CakePHP are not kept when cloning the
+repository, so they need to be reset, otherwise there will be errors when
+trying to use the model classes.  Change permissions by executing these
+in the terminal in the root directory of public_html:
+    chmod 777 logs/ -R
+    chmod 777 tmp/ -R
+
+One last thing that I think will be useful for you is enabling debug mode,
+which displays proper error messages instead of a single line saying 'error'.
+Do this in config/app.php by changing 'debug' => false to 'debug' => true.
+
+All done!  Visit sfsuse.com/~my_username/db_test/categories to make sure
+that everything is okay.  The page should load without errors.  From here
+on out, data is accessed through the controller classes.  The following
+section shows the hierarchy of the app--the basic process of how the data 
+goes from model to controller to view.
+
+
+1) Create the tables using a DBMS according to CakePHP naming conventions.
+2) Change the config/app.php database permissions sections.
+3) Execute bin/cake bake all table_name.
+4) Create the findMethodName method in the model, using $this->find() to build
+   a query.
+5) Create the method in the controller, using the model's find('methodName')
+   method.
+6) Create a .ctp file to display something when the route is visited.
+7) Edit confif/routes.php to create a new route associated with a table_name
+   controller method.
+
+
+Example:
+Assume that 'categories' is a table in the database and that it follows
+CakePHP naming conventions.
+
+In the root directory of public_html:
+./bin/cake bake all categories
+
+In src/Model/Table/CategoriesTable.php, add the 'findCategories' method:
+// The model gets the data directly from the database and returns it.
+public function findCategories($query, $options) {
+    $q = $this->find()->select(['category_name']);
+    return $q;
+}
+
+In src/Controller/CategoriesController.php, add the 'display' method:
+// The controller asks the model to query categories.  The data is then
+// passed to the corresponding display.ctp file via set(...).
+public function display() {
+    $b = $this->Categories->find('categories');
+    $this->set(['id' => $b]);
+}
+
+In src/Template/Categories/display.ctp:
+<!-- The view displays data passed by the controller. -->
+
+<?php
+/**
+  * @var \App\View\AppView $this
+  */
+?>
+<ul>
+<?php foreach ($id as $row): ?>
+   <li> <?= $row->category_name ?> </li>
+<?php endforeach; ?>
+</ul>
+
+In config/routes.php:
+// Make db_test/categories visitable.
+Router::scope('/db_test', function(RouteBuilder $routes) {
+    $routes->connect('/categories',
+                     ['controller' => 'Categories',
+                      'action' => 'display']);
+});
+
+Visit sfsuse.com/~my_username/db_test/categories

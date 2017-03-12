@@ -77,6 +77,7 @@ $this->layout = false;
           <li><?= $this->Html->link( 'Thao Luu', ['controller' => 'Pages', 'action' => 'display', 'thaos_page' ] );?></li>
           <li><?= $this->Html->link( 'Jerry Auyeung', ['controller' => 'Pages', 'action' => 'display', 'jerry_page' ] );?></li>
           <li><?= $this->Html->link( 'David Rodriguez', ['controller' => 'Pages', 'action' => 'display', 'david_page' ] );?></li>
+          <li><?= $this->Post->query("SELECT * FROM categories"); ?><li>
         <ul>
       </div>
     </div>
