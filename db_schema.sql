@@ -2,6 +2,8 @@ CREATE TABLE registered_users (
     username VARCHAR(64),
     password VARCHAR(64) NOT NULL,
     is_admin BOOLEAN DEFAULT 0,
+    is_active BOOLEAN DEFAULT 1,
+    date_created DATETIME,
     PRIMARY KEY (username)
 );
 
@@ -46,25 +48,30 @@ CREATE TABLE conversations (
     conversation_num INTEGER NOT NULL,
     date_created DATETIME NOT NULL,
     message VARCHAR(256) NOT NULL,
-    registered_user_id VARCHAR(64) NOT NULL,
+    sender_id VARCHAR(64) NOT NULL,
     recipient_id VARCHAR(64) NOT NULL,
-    PRIMARY KEY (conversation_num, date_created, registered_user_id),
-    FOREIGN KEY registered_user_key (registered_user_id)
-        REFERENCES registered_users (username),
+    PRIMARY KEY (conversation_num, date_created, sender_id, recipient_id),
+    FOREIGN KEY registered_user_key (sender_id)
+       REFERENCES registered_users (username),
+    FOREIGN KEY registered_user_key (recipient_id)
+       REFERENCES registered_users (username),
     FOREIGN KEY recipient_key (recipient_id)
         REFERENCES registered_users (username)
 );
 
 CREATE TABLE private_messages (
     subject VARCHAR(64) NOT NULL,
-    registered_user_id VARCHAR(64) NOT NULL,
+    sender_id VARCHAR(64) NOT NULL,
+    recipient_id VARCHAR(64) NOT NULL,
     conversation_id INTEGER NOT NULL,
     is_read BOOLEAN NOT NULL,
-    PRIMARY KEY (registered_user_id, conversation_id),
+    PRIMARY KEY (recipient_id, sender_id, conversation_id),
     FOREIGN KEY conversation_key (conversation_id)
         REFERENCES conversations (conversation_num),
-    FOREIGN KEY registered_user_key (registered_user_id)
-        REFERENCES registered_users (username)
+    FOREIGN KEY registered_user_key (sender_id)
+        REFERENCES registered_users (username),
+    FOREIGN KEY registered_user_key (recipient_id)
+            REFERENCES registered_users (username)
 );
 
 CREATE TABLE watching_lists (

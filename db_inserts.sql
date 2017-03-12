@@ -94,7 +94,7 @@ INSERT INTO conversations (
     conversation_num,
     date_created,
     message,
-    registered_user_id,
+    sender_id,
     recipient_id
 )
 VALUES (
@@ -109,7 +109,7 @@ INSERT INTO conversations (
     conversation_num,
     date_created,
     message,
-    registered_user_id,
+    sender_id,
     recipient_id
 )
 VALUES (
@@ -122,25 +122,29 @@ VALUES (
 
 INSERT INTO private_messages (
     subject,
-    registered_user_id,
+    sender_id,
+    recipient_id,
     conversation_id,
     is_read
 )
 VALUES (
     'A subject',
     'user_1',
+    'user_2',
     1,
-    1,
+    1
 );
 INSERT INTO private_messages (
     subject,
-    registered_user_id,
+    sender_id,
+    recipient_id,
     conversation_id,
     is_read
 )
 VALUES (
     'A subject',
     'user_2',
+    'user_3',
     1,
     0
 );
