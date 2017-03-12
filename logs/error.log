@@ -6753,6 +6753,7 @@ Stack Trace:
 #15 {main}
 
 
+<<<<<<< HEAD
 2017-03-12 00:35:45 Error: [Cake\View\Exception\MissingHelperException] Helper class PostHelper could not be found.
 Request URL: /pages/home
 Stack Trace:
@@ -6841,5 +6842,519 @@ Stack Trace:
 #22 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
 #23 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
 #24 {main}
+=======
+2017-03-11 22:57:16 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('home_page')
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-03-11 22:57:21 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('home_page')
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-03-11 22:58:07 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('home_page')
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-03-11 22:58:42 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('home_page')
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-03-11 22:59:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:05:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:11:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:11:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:11:48 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:13:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:13:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:13:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:16:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:18:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:19:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:19:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:22:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:22:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-11 23:22:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Users/jerrya/desktop/currentcsc648/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+>>>>>>> ca74d53fb3f95be3baa8d6a4f047cdb0ba33aaea
+
+
+2017-03-12 00:42:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Homepage could not be found.
+Request URL: /homepage
+Stack Trace:
+#0 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-12 00:42:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Home could not be found.
+Request URL: /home
+Stack Trace:
+#0 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-12 00:42:35 Error: [Cake\View\Exception\MissingHelperException] Helper class PostHelper could not be found.
+Request URL: /pages/home
+Stack Trace:
+#0 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Post', NULL)
+#1 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/View/HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('Post')
+#2 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(905): Cake\View\HelperRegistry->__isset('Post')
+#3 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/src/Template/Pages/home.ctp(79): Cake\View\View->__get('Post')
+#4 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(1014): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(973): Cake\View\View->_evaluate('/Applications/M...', Array)
+#6 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/View/View.php(597): Cake\View\View->_render('/Applications/M...')
+#7 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(617): Cake\View\View->render('home', NULL)
+#8 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/src/Controller/PagesController.php(62): Cake\Controller\Controller->render('home')
+#9 [internal function]: App\Controller\PagesController->display('home')
+#10 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#11 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#12 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#13 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#14 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#15 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#16 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#17 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#23 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#24 {main}
+
+
+2017-03-12 00:42:38 Error: [Cake\Network\Exception\NotFoundException] Not Found
+Request URL: /pages/searchicon.png
+Referer URL: http://localhost:8765/pages/homepage
+Stack Trace:
+#0 [internal function]: App\Controller\PagesController->display('searchicon.png')
+#1 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#4 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-03-12 00:42:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-12 00:42:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Searchicon.png could not be found.
+Request URL: /searchicon.png
+Referer URL: http://localhost:8765/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /Applications/MAMP/htdocs/648march11/csc648848sp17g02/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
 
 

@@ -101,7 +101,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     } else if (strpos(dirname($_SERVER['PHP_SELF']), '/~jerrya') !== false) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']); 
     } else {
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'homepage']);
     }
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
