@@ -30,6 +30,8 @@ $this->layout = false;
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <style>
+
+
       .center-block
       {
         display:block;
@@ -68,7 +70,7 @@ $this->layout = false;
 		  }
 
 
-      .cancelbtn,.signupbtn {float:left;width:50%}
+      .cancelbtn,.signupbtn,.loginbtn {float:left;width:50%}
 
 
       .container1 {
@@ -113,7 +115,7 @@ $this->layout = false;
 
 
         @media screen and (max-width: 300px) {
-          .cancelbtn, .signupbtn {
+          .cancelbtn, .signupbtn .loginbtn{
             width: 100%;
           }
         }
@@ -137,24 +139,45 @@ $this->layout = false;
 
         <div id = "id01" class= "modal">
             <span onclick = "document.getElementById('id01').style.display = 'none'" class = "close" title = "Close">x</span>
-            <form class ="modal-content animate"
-            action = "/action_page.php">
+            <!--<form  method="post" class ="modal-content animate"
+            action = "../RegisteredUsers/add">-->
+            <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'add']], ['class'=>'modal-content animate']); ?>
               <div class = "container1">
               <label>Registration</label><br>
               <label><b>Email</b></label><br>
-              <input type = "text" placeholder = "your email" required><br>
+              <input type = "text" name = "email" placeholder = "your email" required><br>
               <label><b>Username</b></label><br>
-              <input type = "text" placeholder = "your username" required><br>
+              <input type = "text" name = "username" placeholder = "your username" required><br>
               <label><b>Password</b></label><br>
-              <input type = "text" placeholder = "password" required>
-              <p> By creating an account you agree to  our <a href = "#"> Terms & Privacy </a>. </p><br/>
-              <p> Have an account? Login <a href = "#">here </a> </p>
+              <input type = "text" name = "password" placeholder = "password" required>
+              <p> By creating an account you agree to  our <a href = "#" > Terms & Privacy </a>. </p><br/>
+              <p> Have an account? Login <a rel = "ck_modal" onclick= "document.getElementById('id02').style.display = 'block';document.getElementById('id01').style.display = 'none'">here </a> </p>
               <div class = "clearfix">
                 <button type = "button" class=" cancelbtn btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'none'">Cancel</button>
                 <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Sign Up </button>
                 </div>
                 </div>
-                </form>
+              <?= $this->Form->end();?>
+        </div>
+
+
+        <div id = "id02" class = "modal">
+          <span onclick = "document.getElementById('id02').style.display = 'none'" class = "close" title = "Close">x</span>
+          <form method = "post" class ="modal-content animate"
+            action = "/RegisteredUser/add">
+            <div class = "container1">
+            <label> <b> Sign in! </b></label><br>
+            <label> <b> UserName </b></label><br>
+            <input type = "text" placeholder = "your username" required><br>
+            <label><b>Password</b></label><br>
+              <input type = "text" placeholder = "password" required><br><br>
+
+              <button type = "button" class=" cancelbtn btn btn-primary btn-md" onclick = "document.getElementById('id02').style.display = 'none'">Cancel</button> 
+
+              <button type = "button" class ="btn btn-primary btn-md loginbtn"> Login </button><br><br>
+              </div>
+          </form>
+
         </div>
 
         
@@ -179,7 +202,9 @@ $this->layout = false;
      		</div>
               	<div class = "row">
      			<div class = "col-sm col-centered text-center">
-                            <button type="button" class="btn btn-primary btn-md">Browse</button> 
+                            <!-- This creates a button which links to Template/Pages/browse.ctp. The last associative array argument is for
+                                 the attributes of the button, like the type, class and/or style if specified.-->
+                            <?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ], ['type'=>'button', 'class' => 'btn btn-primary btn-md']);?>
                             <button type="button" class="btn btn-primary btn-md">Recent</button>
      			</div> 	
      		</div>
@@ -206,8 +231,14 @@ $this->layout = false;
              modal.style.display = "none";
           }
         }
+        var modal = document.getElementById('id02');
+        window.onclick = function(event){
+          if (event.target == modal){
+             modal.style.display = "none";
+          }
+        }
+        
 </script>
-
     </body>
 </html>
 

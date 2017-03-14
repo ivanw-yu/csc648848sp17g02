@@ -43,6 +43,9 @@ use Cake\Routing\Route\DashedRoute;
  */
 Router::defaultRouteClass(DashedRoute::class);
 
+Router::connect('/pages/browse/books',
+    ['controller'=> 'Catgories', 'action' => 'view', 'books' ]);
+
 Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/categories',
                      ['controller' => 'Categories',
@@ -100,6 +103,8 @@ Router::scope('/', function (RouteBuilder $routes) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'david_page']);
     } else if (strpos(dirname($_SERVER['PHP_SELF']), '/~jerrya') !== false) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']); 
+    }  else if (strpos(dirname($_SERVER['PHP_SELF']), '/~tluu4/browse') !== false) {
+        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'browse']); 
     } else {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'homepage']);
     }
