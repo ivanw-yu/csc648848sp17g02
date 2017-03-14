@@ -141,7 +141,7 @@ $this->layout = false;
             <span onclick = "document.getElementById('id01').style.display = 'none'" class = "close" title = "Close">x</span>
             <!--<form  method="post" class ="modal-content animate"
             action = "../RegisteredUsers/add">-->
-            <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'add']], ['class'=>'modal-content animate']); ?>
+            <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'add'], 'class'=>'modal-content animate']); ?>
               <div class = "container1">
               <label>Registration</label><br>
               <label><b>Email</b></label><br>
