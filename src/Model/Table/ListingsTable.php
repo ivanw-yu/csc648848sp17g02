@@ -134,4 +134,23 @@ class ListingsTable extends Table
 
         return $rules;
     }
+
+    /**
+     * Update the image of a listing.
+     *
+     * Here is an example of using this method in the ListingControllers class.
+     *   $this->Listings->setImage('cake.icon.png', 1);
+     *
+     * @param $file the name of the file, including extension.  The file
+     *        relative to the tmp/ directory.
+     * @param $listing_num the integer identifier of the listing
+     */
+    public function setImage($file, $listing_num) {
+        // TODO: this needs to be changed.
+        $file = '/home/drodri11/public_html/tmp/'.$file;
+        $img = fopen($file, 'rb');
+        $listing = $this->get($listing_num);
+        $listing->image = $img;
+        $this->save($listing);
+    }
 }
