@@ -4,7 +4,8 @@
   */
 ?>
 <ul>
-<?php foreach ($id as $row): ?>
+<?php foreach ($listings as $row): ?>
    <li> <?= $row->item_desc ?> </li>
+   <img src="data:image;base64, <?= $row->image ?>" />
 <?php endforeach; ?>
 </ul>

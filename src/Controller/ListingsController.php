@@ -117,7 +117,16 @@ class ListingsController extends AppController
     }
 
     public function display() {
-        $b = $this->Listings->find('all');
-        $this->set(['id' => $b]);
+        $res = $this->getAllListings();
+        $this->set(['listings' => $res]);
+    }
+
+    public function getAllListings() {
+        $res = $this->Listings->find('all');
+        foreach($res as $row) {
+	    $img = base64_encode(stream_get_contents($row->image));
+            $row->image = $img;
+        }
+        return $res;
     }
 }
