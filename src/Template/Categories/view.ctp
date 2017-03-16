@@ -14,6 +14,7 @@
         <li><?= $this->Html->link(__('New Listing'), ['controller' => 'Listings', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
+
 <div class="categories view large-9 medium-8 columns content">
     <h3><?= h($category->category_name) ?></h3>
     <table class="vertical-table">
@@ -52,7 +53,11 @@
                 <td><?= h($listings->category_id) ?></td>
                 <td><?= h($listings->registered_user_id) ?></td>
                 <td><?= h($listings->course_id) ?></td>
-                <td><?= h($listings->image) ?></td>
+                <td><!-- This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered-->
+                    <?php if($listings->image !== null): ?>
+                               <?= '<img src = "data:image;base64, ' . base64_encode(stream_get_contents($listings->image)) . '" style = "width: 40px; height: 40px" />' ?>
+                               
+                     <?php endif; ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Listings', 'action' => 'view', $listings->listing_num]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $listings->listing_num]) ?>

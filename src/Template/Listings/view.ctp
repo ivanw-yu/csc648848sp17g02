@@ -32,6 +32,9 @@
 </nav>
 <div class="listings view large-9 medium-8 columns content">
     <h3><?= h($listing->title) ?></h3>
+    
+                               <?= '<img src = "data:image;base64, ' . base64_encode(stream_get_contents($listing->image)) . '" style = "width: 200px; height: 200px" />' ?>
+
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Price') ?></th>

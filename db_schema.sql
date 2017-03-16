@@ -28,7 +28,7 @@ CREATE TABLE listings (
     category_id VARCHAR(64) NOT NULL,
     registered_user_id VARCHAR(64) NOT NULL,
     course_id CHAR(6),
-    image BLOB,
+    image LONGBLOB,
     PRIMARY KEY (listing_num),
     FOREIGN KEY category_key (category_id)
         REFERENCES categories (category_name),

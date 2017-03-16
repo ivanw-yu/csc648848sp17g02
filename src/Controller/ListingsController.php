@@ -117,14 +117,19 @@ class ListingsController extends AppController
     }
 
     public function display() {
+        
         $res = $this->getAllListings();
+        
         $this->set(['listings' => $res]);
+        for($i = 1; $i <5; $i++){
+            $this->Listings->setImage('ivanpagebackground.jpeg', $i);
+        }
     }
 
     public function getAllListings() {
         $res = $this->Listings->find('all');
         foreach($res as $row) {
-	    $img = base64_encode(stream_get_contents($row->image));
+	        $img = base64_encode(stream_get_contents($row->image));
             $row->image = $img;
         }
         return $res;
