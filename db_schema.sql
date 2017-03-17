@@ -3,6 +3,7 @@ CREATE TABLE registered_users (
     password VARCHAR(64) NOT NULL,
     is_admin BOOLEAN DEFAULT 0,
     is_active BOOLEAN DEFAULT 1,
+    email VARCHAR(64),
     date_created DATETIME,
     PRIMARY KEY (username)
 );

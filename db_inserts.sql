@@ -39,22 +39,26 @@ VALUES (
 INSERT INTO registered_users (
     username,
     password,
-    is_admin
+    is_admin,
+    email
 )
 VALUES (
     'user_4',
     '123',
-    0
+    0,
+    'test1@mail.com'
 );
 INSERT INTO registered_users (
     username,
     password,
-    is_admin
+    is_admin,
+    email
 )
 VALUES (
     'user_5',
     '123',
-    0
+    0,
+    'test2@mail.com'
 );
 
 INSERT INTO listings (

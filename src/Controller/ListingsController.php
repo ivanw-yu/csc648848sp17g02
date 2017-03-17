@@ -121,9 +121,9 @@ class ListingsController extends AppController
         $res = $this->getAllListings();
         
         $this->set(['listings' => $res]);
-        for($i = 1; $i <5; $i++){
-            $this->Listings->setImage('ivanpagebackground.jpeg', $i);
-        }
+        /*$this->Listings->setImage('ivanpagebackground.jpeg', 1);
+        $this->Listings->setImage('ivanpagebackground.jpeg', 1);
+        $this->Listings->setImage('ivanpagebackground.jpeg', 3);*/
     }
 
     public function getAllListings() {

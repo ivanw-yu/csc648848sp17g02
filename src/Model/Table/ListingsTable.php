@@ -147,7 +147,7 @@ class ListingsTable extends Table
      */
     public function setImage($file, $listing_num) {
         // TODO: this needs to be changed.
-        $file = '/home/ivnyu/public_html/webroot/img/'.$file;
+        $file = '/home/sp17g02/public_html/webroot/img/'.$file;
         $img = fopen($file, 'rb');
         $listing = $this->get($listing_num);
         $listing->image = $img;
