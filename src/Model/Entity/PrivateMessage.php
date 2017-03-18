@@ -8,7 +8,9 @@ use Cake\ORM\Entity;
  *
  * @property string $subject
  * @property string $registered_user_id
+ * @property string $recipient_id
  * @property int $conversation_id
+ * @property bool $is_read
  *
  * @property \App\Model\Entity\RegisteredUser $registered_user
  * @property \App\Model\Entity\Conversation $conversation

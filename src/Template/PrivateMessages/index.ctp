@@ -20,7 +20,9 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('subject') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('recipient_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('conversation_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('is_read') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,7 +31,9 @@
             <tr>
                 <td><?= h($privateMessage->subject) ?></td>
                 <td><?= $privateMessage->has('registered_user') ? $this->Html->link($privateMessage->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $privateMessage->registered_user->username]) : '' ?></td>
+                <td><?= h($privateMessage->recipient_id) ?></td>
                 <td><?= $privateMessage->has('conversation') ? $this->Html->link($privateMessage->conversation->conversation_num, ['controller' => 'Conversations', 'action' => 'view', $privateMessage->conversation->conversation_num]) : '' ?></td>
+                <td><?= h($privateMessage->is_read) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $privateMessage->registered_user_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $privateMessage->registered_user_id]) ?>

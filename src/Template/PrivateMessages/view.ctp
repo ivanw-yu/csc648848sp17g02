@@ -28,8 +28,16 @@
             <td><?= $privateMessage->has('registered_user') ? $this->Html->link($privateMessage->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $privateMessage->registered_user->username]) : '' ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Recipient Id') ?></th>
+            <td><?= h($privateMessage->recipient_id) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Conversation') ?></th>
             <td><?= $privateMessage->has('conversation') ? $this->Html->link($privateMessage->conversation->conversation_num, ['controller' => 'Conversations', 'action' => 'view', $privateMessage->conversation->conversation_num]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Is Read') ?></th>
+            <td><?= $privateMessage->is_read ? __('Yes') : __('No'); ?></td>
         </tr>
     </table>
 </div>
