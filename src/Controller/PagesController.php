@@ -29,6 +29,7 @@ use Cake\View\Exception\MissingTemplateException;
 class PagesController extends AppController
 {
 
+    public $categoryEntries;
     /**
      * Displays a view
      *
@@ -39,6 +40,9 @@ class PagesController extends AppController
      */
     public function display()
     {
+        $this->loadModel('Categories');
+        $categoryEntries = $this->Categories->find('all');
+        $this->set(['id' => $categoryEntries]);
         $path = func_get_args();
 
         $count = count($path);
@@ -66,5 +70,9 @@ class PagesController extends AppController
             }
             throw new NotFoundException();
         }
+    }
+
+    public function browse(){
+
     }
 }

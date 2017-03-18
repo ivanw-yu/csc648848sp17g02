@@ -120,13 +120,25 @@ $this->layout = false;
       </div>
 
       <div class="category-wrapper">
-
         <div class="category-row">
+        <?php foreach ($id as $row): ?>
           <div class="row">
             <div class="col s12 m6">
               <div class="card grey lighten-5">
                 <div class="card-action">
-                  <?= $this->Html->link( 'Books', ['controller' => 'Categories', 'action' => 'view', 'books'] );?>
+                  <?= $this->Html->link( $row->category_name, ['controller' => 'Categories', 'action' => 'view', $row->category_name] );?>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+        </div>
+        <!--<div class="category-row">
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card grey lighten-5">
+                <div class="card-action">
+                  <//?= //$this->Html->link( 'Books', ['controller' => 'Categories', 'action' => 'view', 'books'] );?>
                 </div>
               </div>
             </div>
@@ -136,7 +148,7 @@ $this->layout = false;
             <div class="col s12 m6">
               <div class="card grey lighten-5">
                 <div class="card-action">
-                  <?= $this->Html->link( 'Clothings', ['controller' => 'Categories', 'action' => 'view', 'clothes'] );?>
+                  <//?= //$this->Html->link( 'Clothings', ['controller' => 'Categories', 'action' => 'view', 'clothes'] );?>
                 </div>
               </div>
             </div>
@@ -181,9 +193,9 @@ $this->layout = false;
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
 
-        <div class="category-row">
+        <!--<div class="category-row">-->
           <div class="row">
             <div class="col s12 m6">
               <div class="card  grey lighten-5">
@@ -194,7 +206,12 @@ $this->layout = false;
             </div>
           </div>
         </div>
-
+        
+        <!--<//?= //'works' ?> 
+        <?php //foreach ($id as $row): ?>
+          <li> <//?= $row//->category_name ?> </li>
+          <li> <//?= //'works' ?> </li>
+      <?php //endforeach; ?>-->
       </div>
     </div>
   </body>
