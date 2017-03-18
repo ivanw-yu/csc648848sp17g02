@@ -1,25 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* 
+ * Instructions:
+ * 
+ * In MySQL, execute the following:
+ *   source /path/to/db_schema_patch1.sql
+ * 
  * List of changes:
  * 
  * -New table 'conditions' to store valid conditions for a listing.
