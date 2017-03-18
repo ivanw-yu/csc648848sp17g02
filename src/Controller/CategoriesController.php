@@ -37,6 +37,12 @@ class CategoriesController extends AppController
             'contain' => ['Listings']
         ]);
 
+        /*$this->loadModel('Listings');
+        if(empty($category)) {
+            $category = $this->Listings->find('all', [
+            'conditions' => ['Listings.category_id NOT IN ' => $this->Categories->find('all')]
+        ]);
+        }*/
         $this->set('category', $category);
         $this->set('_serialize', ['category']);
     }

@@ -42,6 +42,8 @@
                 <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('course_id') ?></th>
+                <!-- this was added to allow image to be displayed -->
+                <th scope="col"><?= $this->Paginator->sort('image') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -58,6 +60,12 @@
                 <td><?= $listing->has('category') ? $this->Html->link($listing->category->category_name, ['controller' => 'Categories', 'action' => 'view', $listing->category->category_name]) : '' ?></td>
                 <td><?= $listing->has('registered_user') ? $this->Html->link($listing->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $listing->registered_user->username]) : '' ?></td>
                 <td><?= $listing->has('course') ? $this->Html->link($listing->course->course_name, ['controller' => 'Courses', 'action' => 'view', $listing->course->course_name]) : '' ?></td>
+                <td><!-- This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered-->
+                    <?php if($listing->image !== null): ?>
+                               <?= '<img src = "data:image;base64, ' . base64_encode(stream_get_contents($listing->image)) . '" style = "width: 40px; height: 40px" />' ?>
+                               
+                     <?php endif; ?>         
+                </td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $listing->listing_num]) ?>
