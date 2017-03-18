@@ -54,4 +54,26 @@ class ConditionsTable extends Table
 
         return $validator;
     }
+
+    /**
+     * Add a condition to the database.  A new listing can then choose the
+     * condition of the item.
+     *
+     * Usage example:
+     *
+     *   // In the ConditionsController class.
+     *   $this->Conditions->setCondition('New');
+     *   $this->Conditions->setCondition('Used');
+     *   $results = $this->Condition->find('all');
+     *   foreach($results as $row) {
+     *       echo $row->condition_name;
+     *   }
+     *
+     * @param $condition_name the name of the condition to add
+     */
+    public function setCondition($condition_name) {
+        $entity = $this->newEntity();
+        $entity->condition_name = $condition_name;
+        $this->save($entity);
+    }
 }
