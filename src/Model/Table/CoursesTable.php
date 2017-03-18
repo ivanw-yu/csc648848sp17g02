@@ -54,4 +54,26 @@ class CoursesTable extends Table
 
         return $validator;
     }
+
+    /**
+     * Add a course to the database.  A new listing can then choose the
+     * course that the item is associated with.
+     *
+     * Usage example:
+     *
+     *   // In the CoursesController class.
+     *   $this->Courses->setCourse('CSC648');
+     *   $this->Courses->setCourse('CSC600');
+     *   $results = $this->Course->find('all');
+     *   foreach($results as $row) {
+     *       echo $row->course_name;
+     *   }
+     *
+     * @param $course_name the name of the course to add
+     */
+    public function setCourse($course_name) {
+        $entity = $this->newEntity();
+        $entity->course_name = $course_name;
+        $this->save($entity);
+    }
 }
