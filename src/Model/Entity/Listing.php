@@ -17,6 +17,7 @@ use Cake\ORM\Entity;
  * @property string $registered_user_id
  * @property string $course_id
  * @property string|resource $image
+ * @property string $condition_id
  *
  * @property \App\Model\Entity\Category $category
  * @property \App\Model\Entity\RegisteredUser $registered_user

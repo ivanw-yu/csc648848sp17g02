@@ -20,13 +20,16 @@ class ListingsControllerTest extends IntegrationTestCase
         'app.categories',
         'app.registered_users',
         'app.conversations',
+        'app.senders',
         'app.private_messages',
         'app.purchased_lists',
         'app.selling_lists',
         'app.sold_lists',
         'app.watching_lists',
         'app.wish_lists',
+        'app.recievers',
         'app.courses',
+        'app.conditions',
         'app.tags'
     ];
 

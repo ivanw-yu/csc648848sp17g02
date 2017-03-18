@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  * @property \Cake\ORM\Association\BelongsTo $Categories
  * @property \Cake\ORM\Association\BelongsTo $RegisteredUsers
  * @property \Cake\ORM\Association\BelongsTo $Courses
+ * @property \Cake\ORM\Association\BelongsTo $Conditions
  * @property \Cake\ORM\Association\HasMany $PurchasedLists
  * @property \Cake\ORM\Association\HasMany $SellingLists
  * @property \Cake\ORM\Association\HasMany $SoldLists
@@ -54,6 +55,9 @@ class ListingsTable extends Table
         ]);
         $this->belongsTo('Courses', [
             'foreignKey' => 'course_id'
+        ]);
+        $this->belongsTo('Conditions', [
+            'foreignKey' => 'condition_id'
         ]);
         $this->hasMany('PurchasedLists', [
             'foreignKey' => 'listing_id'
@@ -131,6 +135,7 @@ class ListingsTable extends Table
         $rules->add($rules->existsIn(['category_id'], 'Categories'));
         $rules->add($rules->existsIn(['registered_user_id'], 'RegisteredUsers'));
         $rules->add($rules->existsIn(['course_id'], 'Courses'));
+        $rules->add($rules->existsIn(['condition_id'], 'Conditions'));
 
         return $rules;
     }

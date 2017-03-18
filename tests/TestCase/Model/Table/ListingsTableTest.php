@@ -28,12 +28,14 @@ class ListingsTableTest extends TestCase
         'app.categories',
         'app.registered_users',
         'app.conversations',
+        'app.senders',
         'app.private_messages',
         'app.purchased_lists',
         'app.selling_lists',
         'app.sold_lists',
         'app.watching_lists',
         'app.wish_lists',
+        'app.recievers',
         'app.courses',
         'app.tags'
     ];
@@ -88,6 +90,16 @@ class ListingsTableTest extends TestCase
      * @return void
      */
     public function testBuildRules()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test setImage method
+     *
+     * @return void
+     */
+    public function testSetImage()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

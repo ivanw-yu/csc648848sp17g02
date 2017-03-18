@@ -19,7 +19,7 @@ class ListingsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Categories', 'RegisteredUsers', 'Courses']
+            'contain' => ['Categories', 'RegisteredUsers', 'Courses', 'Conditions']
         ];
         $listings = $this->paginate($this->Listings);
 
@@ -37,7 +37,7 @@ class ListingsController extends AppController
     public function view($id = null)
     {
         $listing = $this->Listings->get($id, [
-            'contain' => ['Categories', 'RegisteredUsers', 'Courses', 'PurchasedLists', 'SellingLists', 'SoldLists', 'Tags', 'WatchingLists', 'WishLists']
+            'contain' => ['Categories', 'RegisteredUsers', 'Courses', 'Conditions', 'PurchasedLists', 'SellingLists', 'SoldLists', 'Tags', 'WatchingLists', 'WishLists']
         ]);
 
         $this->set('listing', $listing);
@@ -64,7 +64,8 @@ class ListingsController extends AppController
         $categories = $this->Listings->Categories->find('list', ['limit' => 200]);
         $registeredUsers = $this->Listings->RegisteredUsers->find('list', ['limit' => 200]);
         $courses = $this->Listings->Courses->find('list', ['limit' => 200]);
-        $this->set(compact('listing', 'categories', 'registeredUsers', 'courses'));
+        $conditions = $this->Listings->Conditions->find('list', ['limit' => 200]);
+        $this->set(compact('listing', 'categories', 'registeredUsers', 'courses', 'conditions'));
         $this->set('_serialize', ['listing']);
     }
 
@@ -92,7 +93,8 @@ class ListingsController extends AppController
         $categories = $this->Listings->Categories->find('list', ['limit' => 200]);
         $registeredUsers = $this->Listings->RegisteredUsers->find('list', ['limit' => 200]);
         $courses = $this->Listings->Courses->find('list', ['limit' => 200]);
-        $this->set(compact('listing', 'categories', 'registeredUsers', 'courses'));
+        $conditions = $this->Listings->Conditions->find('list', ['limit' => 200]);
+        $this->set(compact('listing', 'categories', 'registeredUsers', 'courses', 'conditions'));
         $this->set('_serialize', ['listing']);
     }
 
