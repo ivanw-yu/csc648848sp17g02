@@ -87,6 +87,7 @@
                                             thumbnailView.style.width = "100%";
                                             thumbnailView.style.height = "100%";
                                             thumbnailView.style.textAlign = "center";
+                                            thumbnailView.style.cursor = "zoom-out";
                                             thumbnailView.innerHTML = '<img src = "data:image;base64, ' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
                                             displayed = true;
                                     }
