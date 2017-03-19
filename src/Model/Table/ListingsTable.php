@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\TableRegistry;
 
 /**
  * Listings Model
@@ -30,6 +31,8 @@ use Cake\Validation\Validator;
  */
 class ListingsTable extends Table
 {
+    // TODO: change file path.
+    private $img_path = '/home/drodri11/public_html/tmp/';
 
     /**
      * Initialize method
@@ -118,7 +121,7 @@ class ListingsTable extends Table
             ->notEmpty('title');
 
         $validator
-            ->allowEmpty('image');
+            ->allowEmpty('thumbnail');
 
         return $validator;
     }
@@ -141,21 +144,67 @@ class ListingsTable extends Table
     }
 
     /**
-     * Update the image of a listing.
+     * Create a new listing.
      *
-     * Here is an example of using this method in the ListingControllers class.
-     *   $this->Listings->setImage('cake.icon.png', 1);
+     * Example usage:
+     *   // In the ListingsController class.
+     *   $this->Listings->create('1.00',
+     *                           'candy',
+     *                           'Calc Book',
+     *                           'books',
+     *                           ['cake.icon.png'],
+     *                           'cake.icon.png',
+     *                           'user_1');
      *
-     * @param $file the name of the file, including extension.  The file
-     *        relative to the tmp/ directory.
-     * @param $listing_num the integer identifier of the listing
+     * @param $price (str) the listing's price
+     * @param $desc (str) a description of the listing
+     * @param $title (str) the title of the listing
+     * @param $category (str) the category of the listing.  This should be a
+     *        category listed in the 'categories' database table.
+     * @param $img_files (str array) the names of the images to use, including
+     *        extension.  The files are relative to the tmp/ directory.
+     * @param $thumbnail_file (str) the name of the image to use as a thumbnail,
+     *        including extension.  The files are relative to the tmp/
+     *        directory.
+     * @param $username (str) the username of the user who created the listing
+     * @param $location (str, default 'SFSU') the location of where to pick up
+     *        the listed item
+     * @param $course (str, default NULL) the course for which the item is
+     *        associated with.  This should be a course in the 'courses'
+     *        database table.
+     * @param $condition (str, default 'Used') the condition of the listed
+     *        item.  This shdoul be a condition in the 'conditions' database
+     *        table.
+     * @return true if the listing was created successfuly.  false if the
+     *         listing could not be created.  This could be due to an invalid
+     *         column value.
      */
-    public function setImage($file, $listing_num) {
-        // TODO: this needs to be changed.
-        $file = '/home/drodri11/public_html/tmp/'.$file;
-        $img = fopen($file, 'rb');
-        $listing = $this->get($listing_num);
-        $listing->image = $img;
-        $this->save($listing);
+    public function create($price, $desc, $title, $category, $img_files,
+                           $thumbnail_file, $username, $location='SFSU',
+                           $course=NULL, $condition='Used') {
+        $file = $this->img_path . $thumbnail_file;
+        $thumbnail = fopen($file, 'rb');
+        $entity = $this->newEntity();
+        $entity->thumbnail = $thumbnail;
+        $entity->date_created = new \DateTime();
+        $entity->price = $price;
+        $entity->title = $title;
+        $entity->item_desc = $desc;
+        $entity->location = $location;
+        $entity->is_sold = 0;
+        $entity->category_id = $category;
+        $entity->registered_user_id = $username;
+        $entity->course_id = $course;
+        $entity->condition_id = $condition;
+        if ($this->save($entity) == false) {
+            return false;
+        }
+        fclose($thumbnail);
+        $images = TableRegistry::get('Images');
+        foreach($img_files as $file) {
+            $images->addImage($file, $entity->listing_num);
+        }
+        return true;
     }
+
 }
