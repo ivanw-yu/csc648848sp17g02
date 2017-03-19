@@ -225,7 +225,7 @@ class ListingsTable extends Table
      * @param $options an array of options.  Valid options are:
      *        'category': the category of the listings to get
      *        'sort_by': the attribute to sort by.  This can be one of
-     *                   'price', 'date_created', and 'price'.
+     *                   'price' and 'date_created'.
      *        'asc_desc': the order to sort by.  This can be one of 'asc'
      *                    and 'desc'.
      * @return the Query object that contains all matching rows.
@@ -233,6 +233,32 @@ class ListingsTable extends Table
     public function findCategory($query, $options) {
         return $this->find()
                     ->where(['category_id' => $options['category']])
+                    ->order([$options['sort_by'] => $options['asc_desc']]);
+    }
+
+    /**
+     * Get all listings in sorted order.
+     *
+     * Example usage:
+     *   // In the ListingsController class.
+     *   $res = $this->Listings->find('sorted',
+     *                                ['sort_by' => 'price',
+     *                                 'asc_desc' => 'asc']);
+     *   foreach($res as $row) {
+     *       echo $row->category_id;
+     *   }
+     *
+     * @param $query a Query object.  This is not needed if the method is
+     *        called according to the example.
+     * @param $options an array of options.  Valid options are:
+     *        'sort_by': the attribute to sort by.  This can be one of
+     *                   'price' and 'date_created'.
+     *        'asc_desc': the order to sort by.  This can be one of 'asc'
+     *                    and 'desc'.
+     * @return the Query object that contains all matching rows.
+     */
+    public function findSorted($query, $options) {
+        return $this->find('all')
                     ->order([$options['sort_by'] => $options['asc_desc']]);
     }
 }
