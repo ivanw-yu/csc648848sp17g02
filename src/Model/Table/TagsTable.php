@@ -69,4 +69,27 @@ class TagsTable extends Table
 
         return $rules;
     }
+
+    /**
+     * Get all the tags of a listing.
+     *
+     * Example usage:
+     *
+     *   $tags = TableRegistry::get('Tags');
+     *   $res = $tags->find('tags', ['listing_id' => 155]);
+     *   foreach($res as $row) {
+     *       echo $row->tag_name;
+     *   }
+     *
+     * @param $query a Query object.  This is not needed if the method is
+     *        called according to the example.
+     * @param $options an array of options.  Valid options are:
+     *        'listing_id': the integer id of the listing to get tags for
+     * @return the Query object that contains all matching rows.
+     */
+    public function findTags($query, $options) {
+        return $this->find('all')
+                    ->where(['listing_id' => $options['listing_id']])
+                    ->order(['listing_id' => 'ASC']);
+    }
 }
