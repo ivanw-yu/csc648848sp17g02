@@ -127,6 +127,10 @@ class ListingsController extends AppController
     /**
      * Get all fields of all listings.
      *
+     * @param $sort_by the attribute to sort by.  This can be one of
+     *                   'price' and 'date_created'.
+     *        'asc_desc': the order to sort by.  This can be one of 'asc'
+     *                    and 'desc'.
      * @return a Query object that contains all rows in the 'listings' database
      *         table.  The properties are:
      *         listing_num: the unique identifier of the listing
@@ -167,6 +171,14 @@ class ListingsController extends AppController
      * Get all listings from a specific category.  The listings can optionally
      * be sorted by an attribute in a specified order.
      *
+     * @param $category the category of the listings to get
+     * @param $sort_by (default = NULL) the attribute to sort by.  This can be
+     *                   one of 'price' and 'date_created'.  If unspecified,
+     *                   then the listings are not sorted.
+     * @param $asc_desc (default = NULL) the order to sort by.  This can be one
+     *                  of 'asc' and 'desc'.  This has no effect if $sort_by is
+     *                  not given.  If this is unspecified, ascending order is
+     *                  used.
      * @return a Query object that contains all rows in the 'listings' database
      *         table.  The properties are:
      *         listing_num: the unique identifier of the listing
