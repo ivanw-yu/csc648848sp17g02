@@ -160,10 +160,7 @@ class ListingsController extends AppController
                                          ['sort_by' => $sort_by,
                                           'asc_desc' => $asc_desc]);
         }
-        foreach($res as $row) {
-            $img = base64_encode(stream_get_contents($row->thumbnail));
-            $row->thumbnail = $img;
-        }
+        $this->convertImages($res);
         return $res;
     }
 
@@ -203,10 +200,23 @@ class ListingsController extends AppController
                                      ['category' => $category,
                                       'sort_by' => $sort_by,
                                       'asc_desc' => $asc_desc]);
+        $this->convertImages($res);
+        return $res;
+    }
+
+    /**
+     *  Convert images to a base 64 encoded string.  This is a convenience
+     *  used to simplify code in other methods.
+     *
+     *  @param $res a Query object that contains rows in the 'listings'
+     *         database table.  This is passed by reference, so on method
+     *         termination, the 'thumbnail' property of each row has the
+     *         converted image.
+     */
+    private function convertImages(&$res) {
         foreach($res as $row) {
             $img = base64_encode(stream_get_contents($row->thumbnail));
             $row->thumbnail = $img;
         }
-        return $res;
     }
 }
