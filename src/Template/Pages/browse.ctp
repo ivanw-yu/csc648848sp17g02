@@ -75,7 +75,7 @@ $this->layout = false;
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">TheGatorBay</a>
+            <?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?>
           </div>
 
           <div class="col-md-6">
