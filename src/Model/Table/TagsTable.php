@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\TableRegistry;
 
 /**
  * Tags Model
@@ -91,5 +92,40 @@ class TagsTable extends Table
         return $this->find('all')
                     ->where(['listing_id' => $options['listing_id']])
                     ->order(['listing_id' => 'ASC']);
+    }
+
+    /**
+     * Get all listings that match a list of tags.
+     *
+     * Example usage:
+     *
+     *   $tags = TableRegistry::get('Tags');
+     *   $res = $tags->find('listings',
+     *                      ['tags' => ['math', 'book'],
+     *                       'sort_by' => 'price',
+     *                       'asc_desc' => 'desc']);
+     *   foreach($res as $row) {
+     *       echo $row->title;
+     *   }
+     *
+     * @param $query a Query object.  This is not needed if the method is
+     *        called according to the example.
+     * @param $options an array of options.  Valid options are:
+     *        'tags': an array of strings that denote the tags to search for
+     *        'sort_by': one of 'price' and 'date_created'
+     *        'asc_desc': one of 'asc' and 'desc'
+     * @return the Query object that contains all matching rows.  The
+     *         attributes are all of those in the 'listings' database table.
+     */
+    public function findListings($query, $options) {
+        $listings = TableRegistry::get('Listings');
+        // Get listing id's of listings that contain at least one tag.
+        $res_ids = $this->find()
+                    ->select(['listing_id'])
+                    ->where(['tag_name IN' => $options['tags']]);
+        // Get the entire listing data for all listings in the above query.
+        return $listings->find('all')
+                        ->where(['listing_num IN' => $res_ids])
+                        ->order([$options['sort_by'] => $options['asc_desc']]);
     }
 }
