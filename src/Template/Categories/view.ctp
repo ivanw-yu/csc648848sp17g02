@@ -3,19 +3,19 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!--<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Category'), ['action' => 'edit', $category->category_name]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Category'), ['action' => 'delete', $category->category_name], ['confirm' => __('Are you sure you want to delete # {0}?', $category->category_name)]) ?> </li>
-        <li><?= $this->Html->link(__('List Categories'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Category'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Listings'), ['controller' => 'Listings', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Listing'), ['controller' => 'Listings', 'action' => 'add']) ?> </li>
+        <li class="heading"><//?=// __('Actions') ?></li>
+        <li><//?= //$this->Html->link(__('Edit Category'), ['action' => 'edit', $category->category_name]) ?> </li>
+        <li><//?= //$this->Form->postLink(__('Delete Category'), ['action' => 'delete', $category->category_name], ['confirm' => __('Are you sure you want to delete # {0}?', $category->category_name)]) ?> </li>
+        <li><//?= //$this->Html->link(__('List Categories'), ['action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Category'), ['action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Listings'), ['controller' => 'Listings', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Listing'), ['controller' => 'Listings', 'action' => 'add']) ?> </li>
     </ul>
-</nav>
+</nav>-->
 
-<div class="categories view large-9 medium-8 columns content">
+<div class="categories view large-9 medium-8 columns content" style = "width: 100%">
     <h3><?= h($category->category_name) ?></h3>
     <table class="vertical-table">
         <tr>
@@ -23,10 +23,10 @@
             <td><?= h($category->category_name) ?></td>
         </tr>
     </table>
-    <div class="related">
+    <div class="related" style = "width: 100%">
         <h4><?= __('Related Listings') ?></h4>
         <?php if (!empty($category->listings)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table cellpadding="0" cellspacing="0" style = "width: 100%">
             <tr>
                 <th scope="col"><?= __('Listing Num') ?></th>
                 <th scope="col"><?= __('Date Created') ?></th>
@@ -63,8 +63,8 @@
                      <?php endif; ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Listings', 'action' => 'view', $listings->listing_num]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $listings->listing_num]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Listings', 'action' => 'delete', $listings->listing_num], ['confirm' => __('Are you sure you want to delete # {0}?', $listings->listing_num)]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $listings->listing_num]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'Listings', 'action' => 'delete', $listings->listing_num], ['confirm' => __('Are you sure you want to delete # {0}?', $listings->listing_num)]) ?>-->
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -86,6 +86,7 @@
                                             thumbnailView.zIndex = "100";
                                             thumbnailView.style.width = "100%";
                                             thumbnailView.style.height = "100%";
+                                            thumbnailView.style.cursor = "zoom-out"; 
                                             thumbnailView.style.textAlign = "center";
                                             thumbnailView.style.cursor = "zoom-out";
                                             thumbnailView.innerHTML = '<img src = "data:image;base64, ' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
@@ -103,3 +104,4 @@
     
     </div>
 </div>
+

@@ -24,6 +24,7 @@
         <?= $this->fetch('title') ?>
     </title>
 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
@@ -41,8 +42,8 @@
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-                <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
+                <li><?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display']);?></li>
+                <li><?= $this->Html->link( "Browse Categories", ['controller' => 'Pages', 'action' => 'display', 'browse']);?></li>
             </ul>
         </div>
     </nav>
