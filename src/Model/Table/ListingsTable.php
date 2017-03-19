@@ -237,6 +237,35 @@ class ListingsTable extends Table
     }
 
     /**
+     * Get listings of a specifiedjcondition.
+     *
+     * Example usage:
+     *   // In the ListingsController class.
+     *   $res = $this->Listings->find('condition',
+     *                                ['condition' => 'books',
+     *                                 'sort_by' => 'date_created',
+     *                                 'asc_desc' => 'desc']);
+     *   foreach($res as $row) {
+     *       echo $row->condition_id;
+     *   }
+     *
+     * @param $query a Query object.  This is not needed if the method is
+     *        called according to the example.
+     * @param $options an array of options.  Valid options are:
+     *        'condition': the condition of the listings to get
+     *        'sort_by': the attribute to sort by.  This can be one of
+     *                   'price' and 'date_created'.
+     *        'asc_desc': the order to sort by.  This can be one of 'asc'
+     *                    and 'desc'.
+     * @return the Query object that contains all matching rows.
+     */
+    public function findCondition($query, $options) {
+        return $this->find()
+                    ->where(['condition_id' => $options['condition']])
+                    ->order([$options['sort_by'] => $options['asc_desc']]);
+    }
+
+    /**
      * Get all listings in sorted order.
      *
      * Example usage:
