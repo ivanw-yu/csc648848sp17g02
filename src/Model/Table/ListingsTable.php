@@ -207,4 +207,32 @@ class ListingsTable extends Table
         return true;
     }
 
+    /**
+     * Get listings from a category.
+     *
+     * Example usage:
+     *   // In the ListingsController class.
+     *   $res = $this->Listings->find('category',
+     *                                ['category' => 'books',
+     *                                 'sort_by' => 'date_created',
+     *                                 'asc_desc' => 'desc']);
+     *   foreach($res as $row) {
+     *       echo $row->category_id;
+     *   }
+     *
+     * @param $query a Query object.  This is not needed if the method is
+     *        called according to the example.
+     * @param $options an array of options.  Valid options are:
+     *        'category': the category of the listings to get
+     *        'sort_by': the attribute to sort by.  This can be one of
+     *                   'price', 'date_created', and 'price'.
+     *        'asc_desc': the order to sort by.  This can be one of 'asc'
+     *                    and 'desc'.
+     * @return the Query object that contains all matching rows.
+     */
+    public function findCategory($query, $options) {
+        return $this->find()
+                    ->where(['category_id' => $options['category']])
+                    ->order([$options['sort_by'] => $options['asc_desc']]);
+    }
 }
