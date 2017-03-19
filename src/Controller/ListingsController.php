@@ -119,15 +119,45 @@ class ListingsController extends AppController
     }
 
     public function display() {
-        $res = $this->getAllListings();
+        $res = $this->getAllListings('price', 'desc');
         $this->set(['listings' => $res]);
     }
 
-    public function getAllListings() {
-        $res = $this->Listings->find('all');
+    /**
+     * Get all fields of all listings.
+     *
+     * @return a Query object that contains all rows in the 'listings' database
+     *         table.  The properties are:
+     *         listing_num: the unique identifier of the listing
+     *         date_created: a timestamp of when the listing was created.  This
+     *                       has form 'yyyy-mm-dd hh:mm:ss'.
+     *         is_sold: true if the listing has been sold.  false otherwise.
+     *         price: a comma-separated list of prices.  The first field is the
+     *                current price.
+     *         location: the location to pickup the item at.
+     *         item_desc: a description of the item.
+     *         title: the title of the listing.
+     *         category_id: the category of the listing.
+     *         registered_user_id: the username of the user who created the
+     *                             listing.
+     *         course_id: the course that the item is for.  This is NULL if
+     *                    the category is not 'Books'.
+     *         condition_id: the condition of the item.
+     *         thumbnail: a base 64 encoded string to be used in HTML img tags
+     */
+    private function getAllListings($sort_by=NULL, $asc_desc=NULL) {
+        $res = NULL;
+        if ($sort_by == NULL) {
+            $res = $this->Listings->find('all');
+        }
+        else {
+            $res = $this->Listings->find('sorted',
+                                         ['sort_by' => $sort_by,
+                                          'asc_desc' => $asc_desc]);
+        }
         foreach($res as $row) {
-	    $img = base64_encode(stream_get_contents($row->image));
-            $row->image = $img;
+            $img = base64_encode(stream_get_contents($row->thumbnail));
+            $row->thumbnail = $img;
         }
         return $res;
     }
