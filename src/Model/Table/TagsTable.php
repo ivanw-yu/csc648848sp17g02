@@ -6,6 +6,7 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Cake\ORM\TableRegistry;
+use Cake\Datasource\Exception\RecordNotFoundException;
 
 /**
  * Tags Model
@@ -128,4 +129,30 @@ class TagsTable extends Table
                         ->where(['listing_num IN' => $res_ids])
                         ->order([$options['sort_by'] => $options['asc_desc']]);
     }
+
+    /**
+     * Add tags for a listing.  This method can be used to create tags for
+     * a new or existing listing.
+     *
+     * Example usage:
+     *
+     *   $tags = TableRegistry::get('Tags');
+     *   $tags->createTags(30, ['olympic', 'weight lift', 'gym']);
+     *
+     * @param $listing_id the integer id of the listing to add tags to
+     * @param $tags an array of strings that stores the tags to add
+     */
+    public function createTags($listing_id, $tags) {
+        $this->connection()->transactional(
+            function() use ($listing_id, $tags) {
+                foreach($tags as $tag) {
+                    $entity = $this->newEntity();
+                    $entity->tag_name = $tag;
+                    $entity->listing_id = $listing_id;
+                    $this->save($entity, ['atomic' => false]);
+                }
+            }
+        );
+    }
+
 }
