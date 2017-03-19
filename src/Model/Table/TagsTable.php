@@ -155,4 +155,31 @@ class TagsTable extends Table
         );
     }
 
+    /**
+     * Remove tags of a listing.
+     *
+     * Example usage:
+     *
+     *   $tags = TableRegistry::get('Tags');
+     *   $tags->removTags(30, ['olympic', 'weight lift', 'gym']);
+     *
+     * @param $listing_id the integer id of the listing to remove tags from
+     * @param $tags an array of strings that stores the tags to remove
+     */
+    public function removeTags($listing_id, $tags) {
+        try {
+            $this->connection()->transactional(
+                function() use ($listing_id, $tags) {
+                    foreach($tags as $tag) {
+                        $entity = $this->get([$listing_id, $tag]);
+                        $entity->tag_name = $tag;
+                        $entity->listing_id = $listing_id;
+                        $this->delete($entity, ['atomic' => false]);
+                    }
+                }
+            );
+        }
+        catch (RecordNotFoundException $err) {
+        }
+    }
 }
