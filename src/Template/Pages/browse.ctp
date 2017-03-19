@@ -38,37 +38,28 @@ $this->layout = false;
       background-size: cover; 
       background-attachment: fixed;
     }
-
     body {
       font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     }
-
     a {
       color: #00B7FF;
     }
-
     .ddl-select.input-group-btn{
       width: 100px;
     }
-
-
     .category-warpper {
       top: 300px;
     }
-
     .category-row {
       display: flex;
     }
-
     .row {
       width: 150px;
     }
-
     .card {
       width: 150px;
       height: 150px;
     }
-
     .card-image {
       padding-bottom: 30px;
     }
@@ -92,13 +83,10 @@ $this->layout = false;
               <div class="input-group">
                 <div class="ddl-select input-group-btn">
                   <select id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
-                    <option value="all">all</option>
-                    <option value="books"><?= $this->Html->link( 'books', ['controller' => 'Listings', 'action' => 'display', 'display' ] );?></option>
-                    <option value="clothing">clothing</option>
-                    <option value="electronics">electronics</option>
-                    <option value="homeandkitchen">home and kitchen</option>
-                    <option value="sports">sports and outdoors</option>
-                    <option value="others">other</option>
+                    <option value="all"><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
+                      <?php foreach ($id as $row): ?>
+                        <option value="<?= $row->category_name?>"><?= $this->Html->link( $row->category_name, ['controller' => 'Categories', 'action' => 'view', $row->category_name] );?></option>
+                      <?php endforeach; ?>
                   </select>
                 </div>
                 <input id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
@@ -143,7 +131,6 @@ $this->layout = false;
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col s12 m6">
               <div class="card grey lighten-5">
@@ -163,7 +150,6 @@ $this->layout = false;
             </div>
           </div>
         </div>
-
         <div class="category-row">
           <div class="row">
             <div class="col s12 m6">
@@ -174,7 +160,6 @@ $this->layout = false;
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col s12 m6">
               <div class="card grey lighten-5">

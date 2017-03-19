@@ -37,6 +37,9 @@ class CategoriesController extends AppController
             'contain' => ['Listings']
         ]);
 
+        $b = $this->Categories->find('all');
+        $this->set(['id' => $b]);
+
         /*$this->loadModel('Listings');
         if(empty($category)) {
             $category = $this->Listings->find('all', [
