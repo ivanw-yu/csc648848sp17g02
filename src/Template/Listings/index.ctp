@@ -62,7 +62,10 @@
                 <td><?= $listing->has('course') ? $this->Html->link($listing->course->course_name, ['controller' => 'Courses', 'action' => 'view', $listing->course->course_name]) : '' ?></td>
                 <td><!-- This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered-->
                     <?php if($listing->image !== null): ?>
-                               <?= '<img src = "data:image;base64, ' . base64_encode(stream_get_contents($listing->image)) . '" style = "width: 40px; height: 40px" />' ?>
+                               <?php $blobimg = base64_encode(stream_get_contents($listing->image)); ?>
+                               <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                               <?= '<img src = "data:image;base64, ' . $blobimg . '" style = "width: 40px; height: 40px" />' ?>
+                               </a>
                                
                      <?php endif; ?>         
                 </td>
@@ -85,4 +88,33 @@
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
+    <a id = 'thumbnailImg' onclick = 'hide();'>
+        
+        </a>
+        <script>
+                                    var displayed = false;
+                                    // the parameter is the base64_encoded binary representation of the blob image.
+                                    function displaythumbnail(theimg) {
+                                        var thumbnailView = document.getElementById('thumbnailImg');
+                                            thumbnailView.style.display = ""; 
+                                            thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
+                                            thumbnailView.style.position = "fixed";
+                                            thumbnailView.style.top = "0%";
+                                            thumbnailView.style.left = "0%";
+                                            thumbnailView.zIndex = "100";
+                                            thumbnailView.style.width = "100%";
+                                            thumbnailView.style.height = "100%";
+                                            thumbnailView.style.textAlign = "center";
+                                            thumbnailView.innerHTML = '<img src = "data:image;base64, ' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+                                            displayed = true;
+                                    }
+
+                                    function hide(){
+                                        // removes the image after it's clicked again in the enlarged view.
+                                        if(displayed){
+                                            document.getElementById('thumbnailImg').style.display = "none";
+                                            displayed = false;
+                                        }
+                                    }
+        </script>
 </div>
