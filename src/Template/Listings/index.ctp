@@ -27,7 +27,7 @@
         <li><//?= $this->Html->link(__('New Wish List'), ['controller' => 'WishLists', 'action' => 'add']) ?></li>
     </ul>
 </nav>-->
-<div class="listings index large-9 medium-8 columns content">
+<div class="listings index large-9 medium-8 columns content" style = "width: 100%">
     <h3><?= __('Listings') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>

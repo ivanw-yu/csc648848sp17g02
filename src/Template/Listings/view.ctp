@@ -3,37 +3,44 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!--<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Listing'), ['action' => 'edit', $listing->listing_num]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Listing'), ['action' => 'delete', $listing->listing_num], ['confirm' => __('Are you sure you want to delete # {0}?', $listing->listing_num)]) ?> </li>
-        <li><?= $this->Html->link(__('List Listings'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Listing'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Course'), ['controller' => 'Courses', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Purchased Lists'), ['controller' => 'PurchasedLists', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Purchased List'), ['controller' => 'PurchasedLists', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Selling Lists'), ['controller' => 'SellingLists', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Selling List'), ['controller' => 'SellingLists', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Sold Lists'), ['controller' => 'SoldLists', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Sold List'), ['controller' => 'SoldLists', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Watching Lists'), ['controller' => 'WatchingLists', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Watching List'), ['controller' => 'WatchingLists', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Wish Lists'), ['controller' => 'WishLists', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wish List'), ['controller' => 'WishLists', 'action' => 'add']) ?> </li>
+        <li class="heading"><//=// __('Actions') ?></li>
+        <li><//?= //$this->Html->link(__('Edit Listing'), ['action' => 'edit', $listing->listing_num]) ?> </li>
+        <li><//?= //$this->Form->postLink(__('Delete Listing'), ['action' => 'delete', $listing->listing_num], ['confirm' => __('Are you sure you want to delete # {0}?', $listing->listing_num)]) ?> </li>
+        <li><//?= //$this->Html->link(__('List Listings'), ['action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Listing'), ['action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Course'), ['controller' => 'Courses', 'action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Purchased Lists'), ['controller' => 'PurchasedLists', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Purchased List'), ['controller' => 'PurchasedLists', 'action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Selling Lists'), ['controller' => 'SellingLists', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Selling List'), ['controller' => 'SellingLists', 'action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Sold Lists'), ['controller' => 'SoldLists', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Sold List'), ['controller' => 'SoldLists', 'action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Watching Lists'), ['controller' => 'WatchingLists', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Watching List'), ['controller' => 'WatchingLists', 'action' => 'add']) ?> </li>
+        <li><//?= //$this->Html->link(__('List Wish Lists'), ['controller' => 'WishLists', 'action' => 'index']) ?> </li>
+        <li><//?= //$this->Html->link(__('New Wish List'), ['controller' => 'WishLists', 'action' => 'add']) ?> </li>
     </ul>
-</nav>
+</nav>-->
 <div class="listings view large-9 medium-8 columns content">
     <h3><?= h($listing->title) ?></h3>
     
-                               <?= '<img src = "data:image;base64, ' . base64_encode(stream_get_contents($listing->image)) . '" style = "width: 200px; height: 200px" />' ?>
+                               
+                               <?php if($listing->image !== null): ?>
+                               <?php $blobimg = base64_encode(stream_get_contents($listing->image)); ?>
+                               <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                               <?= '<img src = "data:image;base64, ' . $blobimg . '" style = "width: 200px; height: 200px" />' ?>
+                               </a>
+                               
+                     <?php endif; ?>  
 
     <table class="vertical-table">
         <tr>
@@ -58,7 +65,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Registered User') ?></th>
-            <td><?= $listing->has('registered_user') ? $this->Html->link($listing->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $listing->registered_user->username]) : '' ?></td>
+            <td><?= $listing->registered_user->username ?><!--<//?= //$listing->has('registered_user') ? $this->Html->link($listing->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $listing->registered_user->username]) : '' ?>--></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Course') ?></th>
@@ -92,8 +99,8 @@
                 <td><?= h($purchasedLists->listing_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'PurchasedLists', 'action' => 'view', $purchasedLists->registered_user_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'PurchasedLists', 'action' => 'edit', $purchasedLists->registered_user_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'PurchasedLists', 'action' => 'delete', $purchasedLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $purchasedLists->registered_user_id)]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'PurchasedLists', 'action' => 'edit', $purchasedLists->registered_user_id]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'PurchasedLists', 'action' => 'delete', $purchasedLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $purchasedLists->registered_user_id)]) ?> -->
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -115,8 +122,8 @@
                 <td><?= h($sellingLists->listing_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'SellingLists', 'action' => 'view', $sellingLists->registered_user_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'SellingLists', 'action' => 'edit', $sellingLists->registered_user_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'SellingLists', 'action' => 'delete', $sellingLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingLists->registered_user_id)]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'SellingLists', 'action' => 'edit', $sellingLists->registered_user_id]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'SellingLists', 'action' => 'delete', $sellingLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingLists->registered_user_id)]) ?>-->
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -161,8 +168,8 @@
                 <td><?= h($tags->tag_name) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Tags', 'action' => 'view', $tags->listing_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Tags', 'action' => 'edit', $tags->listing_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Tags', 'action' => 'delete', $tags->listing_id], ['confirm' => __('Are you sure you want to delete # {0}?', $tags->listing_id)]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'Tags', 'action' => 'edit', $tags->listing_id]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'Tags', 'action' => 'delete', $tags->listing_id], ['confirm' => __('Are you sure you want to delete # {0}?', $tags->listing_id)]) ?>-->
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -184,8 +191,8 @@
                 <td><?= h($watchingLists->listing_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'WatchingLists', 'action' => 'view', $watchingLists->registered_user_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'WatchingLists', 'action' => 'edit', $watchingLists->registered_user_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'WatchingLists', 'action' => 'delete', $watchingLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $watchingLists->registered_user_id)]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'WatchingLists', 'action' => 'edit', $watchingLists->registered_user_id]) ?>
+                    <//?=// $this->Form->postLink(__('Delete'), ['controller' => 'WatchingLists', 'action' => 'delete', $watchingLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $watchingLists->registered_user_id)]) ?>-->
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -207,12 +214,41 @@
                 <td><?= h($wishLists->listing_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'WishLists', 'action' => 'view', $wishLists->registered_user_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'WishLists', 'action' => 'edit', $wishLists->registered_user_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'WishLists', 'action' => 'delete', $wishLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $wishLists->registered_user_id)]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'WishLists', 'action' => 'edit', $wishLists->registered_user_id]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'WishLists', 'action' => 'delete', $wishLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $wishLists->registered_user_id)]) ?>-->
                 </td>
             </tr>
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
+        <a id = 'thumbnailImg' onclick = 'hide();'>
+        
+        </a>
+        <script>
+                                    var displayed = false;
+                                    // the parameter is the base64_encoded binary representation of the blob image.
+                                    function displaythumbnail(theimg) {
+                                        var thumbnailView = document.getElementById('thumbnailImg');
+                                            thumbnailView.style.display = ""; 
+                                            thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
+                                            thumbnailView.style.position = "fixed";
+                                            thumbnailView.style.top = "0%";
+                                            thumbnailView.style.left = "0%";
+                                            thumbnailView.zIndex = "100";
+                                            thumbnailView.style.width = "100%";
+                                            thumbnailView.style.height = "100%";
+                                            thumbnailView.style.textAlign = "center";
+                                            thumbnailView.style.cursor = "zoom-out"; 
+                                            thumbnailView.innerHTML = '<img src = "data:image;base64, ' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+                                            displayed = true;
+                                    }
+                                    function hide(){
+                                        // removes the image after it's clicked again in the enlarged view.
+                                        if(displayed){
+                                            document.getElementById('thumbnailImg').style.display = "none";
+                                            displayed = false;
+                                        }
+                                    }
+        </script>
     </div>
 </div>

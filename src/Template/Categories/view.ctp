@@ -15,7 +15,7 @@
     </ul>
 </nav>-->
 
-<div class="categories view large-9 medium-8 columns content">
+<div class="categories view large-9 medium-8 columns content" style = "width: 100%">
     <h3><?= h($category->category_name) ?></h3>
     <table class="vertical-table">
         <tr>
@@ -23,10 +23,10 @@
             <td><?= h($category->category_name) ?></td>
         </tr>
     </table>
-    <div class="related">
+    <div class="related" style = "width: 100%">
         <h4><?= __('Related Listings') ?></h4>
         <?php if (!empty($category->listings)): ?>
-        <table cellpadding="0" cellspacing="0" style = "table-layout: auto; width: 100%">
+        <table cellpadding="0" cellspacing="0" style = "width: 100%">
             <tr>
                 <th scope="col"><?= __('Listing Num') ?></th>
                 <th scope="col"><?= __('Date Created') ?></th>
