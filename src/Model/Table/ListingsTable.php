@@ -196,10 +196,11 @@ class ListingsTable extends Table
         $entity->registered_user_id = $username;
         $entity->course_id = $course;
         $entity->condition_id = $condition;
-        if ($this->save($entity) == false) {
+        $save_successful = $this->save($entity);
+        fclose($thumbnail);
+        if (!$save_successful) {
             return false;
         }
-        fclose($thumbnail);
         $images = TableRegistry::get('Images');
         foreach($img_files as $file) {
             $images->addImage($file, $entity->listing_num);
