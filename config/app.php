@@ -9,7 +9,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => true,
+    'debug' => false,
 
     /**
      * Configure basic information about the application.
@@ -229,9 +229,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'drodri11',
-            'password' => ' n    msss',
-            'database' => 'student_drodri11',
+            'username' => 'sp17g02',
+            'password' => 'csc648sp17g02',
+            'database' => 'sp17g02',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
