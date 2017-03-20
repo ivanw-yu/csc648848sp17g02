@@ -57,7 +57,8 @@ class CategoriesTable extends Table
 
     /**
      * Add a category to the database.  A new listings can then choose the
-     * new category its category.
+     * new category its category.  If an empty category is given
+     * (empty($category_name) == true), then nothing is done.
      *
      * Usage example:
      *
@@ -72,6 +73,9 @@ class CategoriesTable extends Table
      * @param $category_name the name of the category to add
      */
     public function setCategory($category_name) {
+        if (empty($category_name)) {
+            return;
+        }
         $category = $this->newEntity();
         $category->category_name = $category_name;
         $this->save($category);
