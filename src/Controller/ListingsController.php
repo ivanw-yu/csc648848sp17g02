@@ -121,7 +121,7 @@ class ListingsController extends AppController
     public function display() {
         //$res = $this->getAllListings('price', 'desc');
         //$res = $this->getListingsByCategory('Books', 'date_created', 'desc');
-        $res = $this->getListingsByCondition('Used', 'date_created', 'desc');
+        $res = $this->getListingsByCondition('New', 'date_created', 'desc');
         //$res = [$this->Listings->get(18)];
         //$this->convertImages($res);
         $this->set(['listings' => $res]);
@@ -258,8 +258,8 @@ class ListingsController extends AppController
      */
     private function convertImages(&$res) {
         foreach($res as $row) {
-            $img = base64_encode(stream_get_contents($row->thumbnail));
-            $row->thumbnail = $img;
+            $img = base64_encode(stream_get_contents($row->image));
+            $row->image = $img;
         }
     }
 }
