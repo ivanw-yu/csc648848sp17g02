@@ -78,6 +78,27 @@ class ImagesTable extends Table
     }
 
     /**
+     * Get the images of a listing.
+     *
+     * Example usage:
+     *
+     *   // In the ImagesController class.
+     *   $images = $this->Images->getImages(341)
+     *   foreach($images as $row) {
+     *       $img = base64_encode(stream_get_contents($row->image));
+     *       $row->image = $img;
+     *   }
+     *   $this->set(['images' => $images]);
+     *
+     * @param $listing_num the integer identifier of the listing
+     * @return a Query object that contains all entities ofthe given listing.
+     *         Each entity has the properties image_num, image, and listing_num.
+     */
+    public function getImages($listing_num) {
+        return $this->find()->where(['listing_id' => $listing_num]);
+    }
+
+    /**
      * Add a new image for a listing.
      *
      * @param $file the name of the file, including extension.  The file
@@ -92,5 +113,4 @@ class ImagesTable extends Table
         $entity->listing_id = $listing_num;
         $this->save($entity);
     }
-
 }
