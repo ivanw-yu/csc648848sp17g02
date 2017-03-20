@@ -297,9 +297,13 @@ class ListingsTable extends Table
      *                   'price' and 'date_created'.
      *        'asc_desc': the order to sort by.  This can be one of 'asc'
      *                    and 'desc'.
-     * @return the Query object that contains all matching rows.
+     * @return the Query object that contains all matching rows.  If
+     *         'sort_by' is not given in $options, NULL is returned.
      */
     public function findSorted($query, $options) {
+        if (!isset($options['sort_by'])) {
+            return NULL;
+        }
         return $this->find('all')
                     ->order([$options['sort_by'] => $options['asc_desc']]);
     }
