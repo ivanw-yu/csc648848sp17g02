@@ -80,6 +80,9 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/private_messages',
                      ['controller' => 'PrivateMessages',
                       'action' => 'display']);
+    $routes->connect('/conditions',
+                     ['controller' => 'Conditions',
+                      'action' => 'display']);
 });
 
 Router::scope('/', function (RouteBuilder $routes) {
