@@ -4,18 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * PrivateMessage Entity
+ * Image Entity
  *
- * @property string $subject
- * @property string $registered_user_id
- * @property string $recipient_id
- * @property int $conversation_id
- * @property bool $is_read
+ * @property int $image_num
+ * @property int $listing_id
+ * @property string|resource $image
  *
- * @property \App\Model\Entity\RegisteredUser $registered_user
- * @property \App\Model\Entity\Conversation $conversation
+ * @property \App\Model\Entity\Listing $listing
  */
-class PrivateMessage extends Entity
+class Image extends Entity
 {
 
     /**
@@ -29,7 +26,6 @@ class PrivateMessage extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'registered_user_id' => false,
-        'conversation_id' => false
+        'image_num' => false
     ];
 }

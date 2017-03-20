@@ -19,6 +19,8 @@
         <legend><?= __('Add Private Message') ?></legend>
         <?php
             echo $this->Form->input('subject');
+            echo $this->Form->input('recipient_id');
+            echo $this->Form->input('is_read');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

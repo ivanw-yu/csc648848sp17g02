@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\ListingsTable;
+use App\Model\Table\ConditionsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\ListingsTable Test Case
+ * App\Model\Table\ConditionsTable Test Case
  */
-class ListingsTableTest extends TestCase
+class ConditionsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\ListingsTable
+     * @var \App\Model\Table\ConditionsTable
      */
-    public $Listings;
+    public $Conditions;
 
     /**
      * Fixtures
@@ -24,6 +24,7 @@ class ListingsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
+        'app.conditions',
         'app.listings',
         'app.categories',
         'app.registered_users',
@@ -48,8 +49,8 @@ class ListingsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Listings') ? [] : ['className' => 'App\Model\Table\ListingsTable'];
-        $this->Listings = TableRegistry::get('Listings', $config);
+        $config = TableRegistry::exists('Conditions') ? [] : ['className' => 'App\Model\Table\ConditionsTable'];
+        $this->Conditions = TableRegistry::get('Conditions', $config);
     }
 
     /**
@@ -59,7 +60,7 @@ class ListingsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Listings);
+        unset($this->Conditions);
 
         parent::tearDown();
     }
@@ -80,26 +81,6 @@ class ListingsTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test setImage method
-     *
-     * @return void
-     */
-    public function testSetImage()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

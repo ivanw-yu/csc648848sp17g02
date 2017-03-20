@@ -18,6 +18,11 @@ CREATE TABLE courses (
     PRIMARY KEY (course_name)
 );
 
+CREATE TABLE conditions (
+    conditions_name VARCHAR(16),
+    PRIMARY KEY (conditions_name)
+);
+
 CREATE TABLE listings (
     listing_num INTEGER AUTO_INCREMENT,
     date_created DATETIME NOT NULL,
@@ -29,13 +34,15 @@ CREATE TABLE listings (
     category_id VARCHAR(64) NOT NULL,
     registered_user_id VARCHAR(64) NOT NULL,
     course_id CHAR(6),
+    condition_id VARCHAR(16),
     image LONGBLOB,
     PRIMARY KEY (listing_num),
     FOREIGN KEY category_key (category_id)
         REFERENCES categories (category_name),
     FOREIGN KEY course_key (course_id) REFERENCES courses (course_name),
     FOREIGN KEY registered_user_key (registered_user_id)
-        REFERENCES registered_users (username)
+        REFERENCES registered_users (username),
+    FOREIGN KEY condition_key (condition_id) REFERENCES conditions (condition)
 );
 
 CREATE TABLE tags (
@@ -62,17 +69,17 @@ CREATE TABLE conversations (
 
 CREATE TABLE private_messages (
     subject VARCHAR(64) NOT NULL,
-    sender_id VARCHAR(64) NOT NULL,
+    registered_user_id VARCHAR(64) NOT NULL,
     recipient_id VARCHAR(64) NOT NULL,
     conversation_id INTEGER NOT NULL,
     is_read BOOLEAN NOT NULL,
     PRIMARY KEY (recipient_id, sender_id, conversation_id),
     FOREIGN KEY conversation_key (conversation_id)
         REFERENCES conversations (conversation_num),
-    FOREIGN KEY registered_user_key (sender_id)
+    FOREIGN KEY registered_user_key (registered_user_id)
         REFERENCES registered_users (username),
-    FOREIGN KEY registered_user_key (recipient_id)
-            REFERENCES registered_users (username)
+    FOREIGN KEY recipient_key (recipient_id)
+        REFERENCES registered_users (username)
 );
 
 CREATE TABLE watching_lists (

@@ -4,18 +4,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * PrivateMessage Entity
+ * Condition Entity
  *
- * @property string $subject
- * @property string $registered_user_id
- * @property string $recipient_id
- * @property int $conversation_id
- * @property bool $is_read
+ * @property string $condition_name
  *
- * @property \App\Model\Entity\RegisteredUser $registered_user
- * @property \App\Model\Entity\Conversation $conversation
+ * @property \App\Model\Entity\Listing[] $listings
  */
-class PrivateMessage extends Entity
+class Condition extends Entity
 {
 
     /**
@@ -29,7 +24,6 @@ class PrivateMessage extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'registered_user_id' => false,
-        'conversation_id' => false
+        'condition_name' => false
     ];
 }
