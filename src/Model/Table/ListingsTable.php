@@ -229,12 +229,18 @@ class ListingsTable extends Table
      *                   'price' and 'date_created'.
      *        'asc_desc': the order to sort by.  This can be one of 'asc'
      *                    and 'desc'.
-     * @return the Query object that contains all matching rows.
+     * @return the Query object that contains all matching rows.  If no
+     *         category is given in $options, NULL is returned.
      */
     public function findCategory($query, $options) {
-        return $this->find()
-                    ->where(['category_id' => $options['category']])
-                    ->order([$options['sort_by'] => $options['asc_desc']]);
+        if (!isset($options['category'])) {
+            return NULL;
+        }
+        $q = $this->find()->where(['category_id' => $options['category']]);
+        if (isset($options['sort_by'])) {
+            $q = $q->order([$options['sort_by'] => $options['asc_desc']]);
+        }
+        return $q;
     }
 
     /**
