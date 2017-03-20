@@ -87,9 +87,13 @@ class TagsTable extends Table
      *        called according to the example.
      * @param $options an array of options.  Valid options are:
      *        'listing_id': the integer id of the listing to get tags for
-     * @return the Query object that contains all matching rows.
+     * @return the Query object that contains all matching rows.  If
+     *         'listing_id' is not given, then NULL is returned.
      */
     public function findTags($query, $options) {
+        if (!isset($options['listing_id'])) {
+            return NULL;
+        }
         return $this->find('all')
                     ->where(['listing_id' => $options['listing_id']])
                     ->order(['listing_id' => 'ASC']);
