@@ -113,4 +113,21 @@ class ImagesTable extends Table
         $entity->listing_id = $listing_num;
         $this->save($entity);
     }
+
+    /**
+     * Remove an image of a listing.
+     *
+     * Example usage:
+     *
+     *   // In the ImagesController class.
+     *   $images = $this->Images->getImages(341)
+     *   $this->Images->removeImage($images->first()->image_num);
+     *
+     * @param $image_num the integer identifier of the image to remove.  This
+     *        corresponds to the image_num field of a row.
+     */
+    public function removeImage($image_num) {
+        $entity = $this->get($image_num);
+        $this->delete($entity);
+    }
 }
