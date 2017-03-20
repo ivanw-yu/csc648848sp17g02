@@ -56,15 +56,16 @@ class CoursesTable extends Table
     }
 
     /**
-     * Add a course to the database.  A new listing can then choose the
-     * course that the item is associated with.
+     * Add a course to the database.  A new listing can then choose the course
+     * that the item is associated with.  If an empty course is given
+     * (empty($course_name) == true), then nothing is done.
      *
      * Usage example:
      *
      *   // In the CoursesController class.
      *   $this->Courses->setCourse('CSC648');
      *   $this->Courses->setCourse('CSC600');
-     *   $results = $this->Course->find('all');
+     *   $results = $this->Courses->find('all');
      *   foreach($results as $row) {
      *       echo $row->course_name;
      *   }
@@ -72,6 +73,9 @@ class CoursesTable extends Table
      * @param $course_name the name of the course to add
      */
     public function setCourse($course_name) {
+        if (empty($course_name)) {
+            return;
+        }
         $entity = $this->newEntity();
         $entity->course_name = $course_name;
         $this->save($entity);
