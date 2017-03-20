@@ -121,7 +121,7 @@ class ListingsTable extends Table
             ->notEmpty('title');
 
         $validator
-            ->allowEmpty('thumbnail');
+            ->allowEmpty('image');
 
         return $validator;
     }
@@ -185,7 +185,7 @@ class ListingsTable extends Table
         $file = $this->img_path . $thumbnail_file;
         $thumbnail = fopen($file, 'rb');
         $entity = $this->newEntity();
-        $entity->thumbnail = $thumbnail;
+        $entity->image = $thumbnail;
         $entity->date_created = new \DateTime();
         $entity->price = $price;
         $entity->title = $title;
@@ -339,7 +339,7 @@ class ListingsTable extends Table
         if (!empty($fields['thumbnail'])) {
             $file = $this->img_path . $fields['thumbnail'];
             $thumbnail = fopen($file, 'rb');
-            $entity->thumbnail = $thumbnail;
+            $entity->image = $thumbnail;
         }
         $this->save($entity);
         if (empty($thumbnail)) {
