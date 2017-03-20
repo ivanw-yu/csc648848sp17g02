@@ -22,8 +22,8 @@
             <td><?= h($conversation->message) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Registered User Id') ?></th>
-            <td><?= h($conversation->registered_user_id) ?></td>
+            <th scope="row"><?= __('Sender') ?></th>
+            <td><?= $conversation->has('sender') ? $this->Html->link($conversation->sender->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $conversation->sender->username]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Registered User') ?></th>
@@ -36,10 +36,6 @@
         <tr>
             <th scope="row"><?= __('Date Created') ?></th>
             <td><?= h($conversation->date_created) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Is Read') ?></th>
-            <td><?= $conversation->is_read ? __('Yes') : __('No'); ?></td>
         </tr>
     </table>
 </div>

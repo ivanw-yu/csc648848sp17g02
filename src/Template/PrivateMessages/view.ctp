@@ -24,12 +24,12 @@
             <td><?= h($privateMessage->subject) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Registered User') ?></th>
-            <td><?= $privateMessage->has('registered_user') ? $this->Html->link($privateMessage->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $privateMessage->registered_user->username]) : '' ?></td>
+            <th scope="row"><?= __('Registered User Id') ?></th>
+            <td><?= h($privateMessage->registered_user_id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Recipient Id') ?></th>
-            <td><?= h($privateMessage->recipient_id) ?></td>
+            <th scope="row"><?= __('Registered User') ?></th>
+            <td><?= $privateMessage->has('registered_user') ? $this->Html->link($privateMessage->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $privateMessage->registered_user->username]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Conversation') ?></th>

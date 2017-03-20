@@ -19,7 +19,7 @@ class ConversationsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['RegisteredUsers']
+            'contain' => ['RegisteredUsers', 'Senders', 'Recievers']
         ];
         $conversations = $this->paginate($this->Conversations);
 
@@ -37,7 +37,7 @@ class ConversationsController extends AppController
     public function view($id = null)
     {
         $conversation = $this->Conversations->get($id, [
-            'contain' => ['RegisteredUsers']
+            'contain' => ['RegisteredUsers', 'Senders', 'Recievers']
         ]);
 
         $this->set('conversation', $conversation);
@@ -62,7 +62,9 @@ class ConversationsController extends AppController
             $this->Flash->error(__('The conversation could not be saved. Please, try again.'));
         }
         $registeredUsers = $this->Conversations->RegisteredUsers->find('list', ['limit' => 200]);
-        $this->set(compact('conversation', 'registeredUsers'));
+        $senders = $this->Conversations->Senders->find('list', ['limit' => 200]);
+        $recievers = $this->Conversations->Recievers->find('list', ['limit' => 200]);
+        $this->set(compact('conversation', 'registeredUsers', 'senders', 'recievers'));
         $this->set('_serialize', ['conversation']);
     }
 
@@ -88,7 +90,9 @@ class ConversationsController extends AppController
             $this->Flash->error(__('The conversation could not be saved. Please, try again.'));
         }
         $registeredUsers = $this->Conversations->RegisteredUsers->find('list', ['limit' => 200]);
-        $this->set(compact('conversation', 'registeredUsers'));
+        $senders = $this->Conversations->Senders->find('list', ['limit' => 200]);
+        $recievers = $this->Conversations->Recievers->find('list', ['limit' => 200]);
+        $this->set(compact('conversation', 'registeredUsers', 'senders', 'recievers'));
         $this->set('_serialize', ['conversation']);
     }
 
@@ -110,10 +114,5 @@ class ConversationsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }
-
-    public function display() {
-        $b = $this->Conversations->find('all');
-        $this->set(['id' => $b]);
     }
 }

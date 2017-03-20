@@ -19,7 +19,6 @@
                 <th scope="col"><?= $this->Paginator->sort('conversation_num') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date_created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('message') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('is_read') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('recipient_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -31,8 +30,7 @@
                 <td><?= $this->Number->format($conversation->conversation_num) ?></td>
                 <td><?= h($conversation->date_created) ?></td>
                 <td><?= h($conversation->message) ?></td>
-                <td><?= h($conversation->is_read) ?></td>
-                <td><?= h($conversation->registered_user_id) ?></td>
+                <td><?= $conversation->has('sender') ? $this->Html->link($conversation->sender->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $conversation->sender->username]) : '' ?></td>
                 <td><?= $conversation->has('registered_user') ? $this->Html->link($conversation->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $conversation->registered_user->username]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $conversation->conversation_num]) ?>

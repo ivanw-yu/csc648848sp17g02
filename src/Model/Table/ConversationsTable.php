@@ -45,16 +45,6 @@ class ConversationsTable extends Table
             'foreignKey' => 'recipient_id',
             'joinType' => 'INNER'
         ]);
-
-        // This might be needed for some queries in the future.
-        $this->belongsTo('Senders', [
-            'foreignKey' => 'registered_user_id',
-            'className' => 'RegisteredUsers'
-        ]);
-        $this->belongsTo('Recievers', [
-            'foreignKey' => 'recipient_id',
-            'className' => 'RegisteredUsers'
-        ]);
     }
 
     /**
@@ -76,11 +66,6 @@ class ConversationsTable extends Table
         $validator
             ->requirePresence('message', 'create')
             ->notEmpty('message');
-
-        $validator
-            ->boolean('is_read')
-            ->requirePresence('is_read', 'create')
-            ->notEmpty('is_read');
 
         return $validator;
     }

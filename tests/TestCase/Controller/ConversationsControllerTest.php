@@ -21,13 +21,16 @@ class ConversationsControllerTest extends IntegrationTestCase
         'app.listings',
         'app.categories',
         'app.courses',
+        'app.conditions',
         'app.purchased_lists',
         'app.selling_lists',
         'app.sold_lists',
         'app.tags',
         'app.watching_lists',
         'app.wish_lists',
-        'app.private_messages'
+        'app.private_messages',
+        'app.senders',
+        'app.recievers'
     ];
 
     /**

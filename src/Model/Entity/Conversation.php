@@ -9,11 +9,12 @@ use Cake\ORM\Entity;
  * @property int $conversation_num
  * @property \Cake\I18n\Time $date_created
  * @property string $message
- * @property bool $is_read
  * @property string $registered_user_id
  * @property string $recipient_id
  *
  * @property \App\Model\Entity\RegisteredUser $registered_user
+ * @property \App\Model\Entity\RegisteredUser $sender
+ * @property \App\Model\Entity\RegisteredUser $reciever
  */
 class Conversation extends Entity
 {

@@ -17,8 +17,7 @@
         <legend><?= __('Add Conversation') ?></legend>
         <?php
             echo $this->Form->input('message');
-            echo $this->Form->input('is_read');
-            echo $this->Form->input('recipient_id', ['options' => $registeredUsers]);
+            echo $this->Form->input('recipient_id', ['options' => $recievers]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

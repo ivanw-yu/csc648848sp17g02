@@ -113,9 +113,4 @@ class PrivateMessagesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-
-    public function display() {
-        $b = $this->PrivateMessages->find('all');
-        $this->set(['id' => $b]);
-    }
 }

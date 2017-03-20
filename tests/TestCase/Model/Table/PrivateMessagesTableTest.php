@@ -27,17 +27,16 @@ class PrivateMessagesTableTest extends TestCase
         'app.private_messages',
         'app.registered_users',
         'app.conversations',
-        'app.senders',
         'app.listings',
         'app.categories',
         'app.courses',
+        'app.conditions',
         'app.purchased_lists',
         'app.selling_lists',
         'app.sold_lists',
         'app.tags',
         'app.watching_lists',
-        'app.wish_lists',
-        'app.recievers'
+        'app.wish_lists'
     ];
 
     /**
