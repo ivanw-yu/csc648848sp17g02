@@ -290,4 +290,43 @@ class ListingsTable extends Table
         return $this->find('all')
                     ->order([$options['sort_by'] => $options['asc_desc']]);
     }
+
+    /**
+     * Update data for a listing.  To update a listing's images (not thumbnail),
+     * use ImagesController's createImage and removeImage methods.
+     *
+     * Example usage:
+     *   $this->Listings->updateListing(1, ['price' => '0.45',
+     *                                      'category_id' => 'Electronics',
+     *                                      'thumbnail' => 'pic.jpg',
+     *                                      'title' => 'resistor']);
+     *
+     * @param $listing_id the integer id of the listing to update
+     * @param $fields an associative array containing the names of the fields
+     *        to update as keys and their new contents as values.  Valid keys
+     *        and the types of their values (key => value type) are:
+     *        'price' => string representation of a floating point number
+     *        'title' => string
+     *        'item_desc' => string
+     *        'is_sold' => boolean
+     *        'location' => string
+     *        'category_id' => string
+     *        'condition_id' => string
+     *        'thumbnail' => string.  A filename of the thumbnail, with
+     *                       extension, relative to tmp/.
+     */
+    public function updateListing($listing_id, $fields) {
+        $thumbnail = NULL;
+        $entity = $this->get($listing_id);
+        $entity->set($fields);
+        if (!empty($fields['thumbnail'])) {
+            $file = $this->img_path . $fields['thumbnail'];
+            $thumbnail = fopen($file, 'rb');
+            $entity->thumbnail = $thumbnail;
+        }
+        $this->save($entity);
+        if (isset($thumbnail)) {
+            fclose($thumbnail);
+        }
+    }
 }
