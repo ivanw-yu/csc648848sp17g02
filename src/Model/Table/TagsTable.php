@@ -96,7 +96,9 @@ class TagsTable extends Table
     }
 
     /**
-     * Get all listings that match a list of tags.
+     * Get all listings that match a list of tags.  The 'tags' option must
+     * be given.  This method will not search for empty tags and will not
+     * do anything if no tags are given.
      *
      * Example usage:
      *
@@ -112,18 +114,46 @@ class TagsTable extends Table
      * @param $query a Query object.  This is not needed if the method is
      *        called according to the example.
      * @param $options an array of options.  Valid options are:
-     *        'tags': an array of strings that denote the tags to search for
+     *        'tags': an array of strings that denote the tags to search for.
+     *                Empty tags ('') will be ignored.
      *        'sort_by': one of 'price' and 'date_created'
      *        'asc_desc': one of 'asc' and 'desc'
      * @return the Query object that contains all matching rows.  The
      *         attributes are all of those in the 'listings' database table.
+     *         If there is no 'tags' option in $options, or if the array
+     *         associated with 'tags' is empty, or if all tags in the array
+     *         are empty, then NULL is returned.
      */
     public function findListings($query, $options) {
+        if (!isset($options['tags'])) {
+            return NULL;
+        }
+        $tags = $options['tags'];
+        $j = 0;
+        $n = count($tags);
+        // Skip empty tags at the beginning of the array.
+        while (($j < $n) && empty($tags[$j])) {
+            $j = $j + 1;
+        }
+        if ($j == $n) {
+            return NULL;
+        }
         $listings = TableRegistry::get('Listings');
         // Get listing id's of listings that contain at least one tag.
         $res_ids = $this->find()
                     ->select(['listing_id'])
-                    ->where(['tag_name IN' => $options['tags']]);
+                    ->distinct(['listing_id'])
+                    ->where(['tag_name LIKE' => '%' . $tags[$j] . '%']);
+        // While loop instead of foreach because the array needs to start
+        // at index 1, not zero, due to already using index 0 above.
+        $j = $j + 1;
+        while ($j < $n) {
+            if (!empty($tags[$j])) {
+                $res_ids = $res_ids->orWhere(['tag_name LIKE'
+                                              => '%' . $tags[$j] . '%']);
+            }
+            $j = $j + 1;
+        }
         // Get the entire listing data for all listings in the above query.
         return $listings->find('all')
                         ->where(['listing_num IN' => $res_ids])
