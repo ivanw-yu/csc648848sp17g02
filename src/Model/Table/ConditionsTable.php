@@ -57,14 +57,15 @@ class ConditionsTable extends Table
 
     /**
      * Add a condition to the database.  A new listing can then choose the
-     * condition of the item.
+     * condition of the item.  If an empty condition is given
+     * (empty($condition_name) == true), then nothing is done.
      *
      * Usage example:
      *
      *   // In the ConditionsController class.
      *   $this->Conditions->setCondition('New');
      *   $this->Conditions->setCondition('Used');
-     *   $results = $this->Condition->find('all');
+     *   $results = $this->Conditions->find('all');
      *   foreach($results as $row) {
      *       echo $row->condition_name;
      *   }
@@ -72,6 +73,9 @@ class ConditionsTable extends Table
      * @param $condition_name the name of the condition to add
      */
     public function setCondition($condition_name) {
+        if (empty($condition_name)) {
+            return;
+        }
         $entity = $this->newEntity();
         $entity->condition_name = $condition_name;
         $this->save($entity);
