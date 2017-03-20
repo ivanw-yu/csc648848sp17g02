@@ -166,7 +166,8 @@ class TagsTable extends Table
 
     /**
      * Add tags for a listing.  This method can be used to create tags for
-     * a new or existing listing.
+     * a new or existing listing.  Empty tags are not allowed.  These are
+     * tags that are deemed empty by PHP's built-in empty() function.
      *
      * Example usage:
      *
@@ -180,6 +181,9 @@ class TagsTable extends Table
         $this->connection()->transactional(
             function() use ($listing_id, $tags) {
                 foreach($tags as $tag) {
+                    if (empty($tag)) {
+                        continue;
+                    }
                     $entity = $this->newEntity();
                     $entity->tag_name = $tag;
                     $entity->listing_id = $listing_id;
