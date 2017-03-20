@@ -342,7 +342,7 @@ class ListingsTable extends Table
             $entity->thumbnail = $thumbnail;
         }
         $this->save($entity);
-        if (isset($thumbnail)) {
+        if (empty($thumbnail)) {
             fclose($thumbnail);
         }
     }
