@@ -163,20 +163,19 @@ $this->layout = false;
 
         <div id = "id02" class = "modal">
           <span onclick = "document.getElementById('id02').style.display = 'none'" class = "close" title = "Close">x</span>
-          <form method = "post" class ="modal-content animate"
-            action = "/RegisteredUser/add">
-            <div class = "container1">
-            <label> <b> Sign in! </b></label><br>
-            <label> <b> UserName </b></label><br>
-            <input type = "text" placeholder = "your username" required><br>
-            <label><b>Password</b></label><br>
-              <input type = "text" placeholder = "password" required><br><br>
-
-              <button type = "button" class=" cancelbtn btn btn-primary btn-md" onclick = "document.getElementById('id02').style.display = 'none'">Cancel</button> 
-
-              <button type = "button" class ="btn btn-primary btn-md loginbtn"> Login </button><br><br>
-              </div>
-          </form>
+            <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'login'], 'class'=>'modal-content animate']); ?>
+              <div class = "container1">
+              <label>Sign in</label><br>
+              <label><b>Username</b></label><br>
+              <input type = "text" name = "username" placeholder = "your username" required><br>
+              <label><b>Password</b></label><br>
+              <input type = "text" name = "password" placeholder = "password" required>
+              <div class = "clearfix">
+                <button type = "button" class=" cancelbtn btn btn-primary btn-md" onclick = "document.getElementById('id02').style.display = 'none'">Cancel</button>
+                <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Login </button>
+                </div>
+                </div>
+              <?= $this->Form->end();?>
 
         </div>
 

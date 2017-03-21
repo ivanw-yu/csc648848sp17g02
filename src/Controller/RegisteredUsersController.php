@@ -51,7 +51,12 @@ class RegisteredUsersController extends AppController
         $registeredUser = $this->RegisteredUsers->newEntity();
         if ($this->request->is('post')) {
             $registeredUser = $this->RegisteredUsers->patchEntity($registeredUser, $this->request->data);
-            $registeredUser->username = $this->request->data['Username'];
+            if (isset($this->request->data['username'])) {
+                $registeredUser->username = $this->request->data['username'];
+            }
+            else {
+                $registeredUser->username = $this->request->data['Username'];
+            }
             if ($this->RegisteredUsers->save($registeredUser)) {
                 $this->Flash->success(__('The registered user has been saved.'));
 
@@ -106,5 +111,19 @@ class RegisteredUsersController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function login() {
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                $this->Flash->success(__('Logged in'));
+            }
+            else {
+                $this->Flash->error(__('Username or password was incorrect'));
+            }
+        }
+        return $this->redirect($this->Auth->redirectUrl());
     }
 }
