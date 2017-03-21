@@ -10,6 +10,10 @@ use App\Controller\AppController;
  */
 class ListingsController extends AppController
 {
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['display']);
+    }
 
     /**
      * Index method
@@ -118,16 +122,55 @@ class ListingsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    /**
+     * Display all listings or those of a given category.  If listings of a
+     * certain category are to be displayed, then the 'cat' parameter must
+     * be passed in the query string (see example).  To specify a field and
+     * order to sort by, these must also be specified in the query string.
+     *
+     * Usage example:
+     *
+     *     This is in a ctp file.  $id is a result set made available by
+     *     the associated controller and has the names of all categories.
+     *     This will generate links of the form
+     *
+     *                  listings?cat=<val>&sort=price
+     *
+     *     where <val> is the value of $row->category_name.  When clicked,
+     *     the user will be directed to a page that displays all listings
+     *     of the category, sorted by price.
+     *
+     *     <?php foreach ($id as $row): ?>
+     *         <?= $this->Html->link($row->category_name,
+     *                               ['controller' => 'Listings',
+     *                                'action' => 'display',
+     *                                'cat' => $row->category_name,
+     *                                'sort' => 'price']);?>
+     *     <?php endforeach; ?>
+     *
+     *
+     * @param this method accepts the following paramters given as a
+     *        query string  (see example):
+     *        'cat': the category of the listings to show.  If all
+     *               categories are to be shown, then this should not
+     *               be given.
+     *        'sort': the field to sort by.  This can be one of 'price'
+     *                and 'date_created'
+     *        'ascDesc': the order to sort by.  This can be one of 'asc'
+     *                   for ascending, and 'desc' for descending.
+     */
     public function display() {
-        //$res = $this->getAllListings('price', 'desc');
-        //$res = $this->getListingsByCategory('Books', 'date_created', 'desc');
-        $res = $this->getListingsByCondition('New', 'date_created', 'desc');
-        //$res = [$this->Listings->get(18)];
-        //$this->convertImages($res);
+        $res = NULL;
+        $params = $this->request->query;
+        if (empty($params) || empty($params['cat'])) {
+            $res = $this->getAllListings();
+        }
+        else {
+            $res = $this->getListingsByCategory($params['cat'],
+                                                $params['sort'],
+                                                $params['ascDesc']);
+        }
         $this->set(['listings' => $res]);
-        /*$this->Listings->setImage('ivanpagebackground.jpeg', 1);
-        $this->Listings->setImage('ivanpagebackground.jpeg', 1);
-        $this->Listings->setImage('ivanpagebackground.jpeg', 3);*/
     }
 
     /**

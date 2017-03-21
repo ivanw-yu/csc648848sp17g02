@@ -56,9 +56,6 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
     $routes->connect('/registered_users',
                      ['controller' => 'RegisteredUsers',
                       'action' => 'display']);
-    $routes->connect('/listings',
-                     ['controller' => 'Listings',
-                      'action' => 'display']);
     $routes->connect('/tags',
                      ['controller' => 'Tags',
                       'action' => 'display']);
@@ -102,8 +99,6 @@ Router::scope('/', function (RouteBuilder $routes) {
     } else if(strpos(dirname($_SERVER['PHP_SELF']),'/~tluu4') !== false){
         // this displays thaos_page.ctp on the browser
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'thaos_page']);
-    }  else if (strpos(dirname($_SERVER['PHP_SELF']), '/~drodri11') !== false) {
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'david_page']);
     } else if (strpos(dirname($_SERVER['PHP_SELF']), '/~jerrya') !== false) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']); 
     }  else if (strpos(dirname($_SERVER['PHP_SELF']), '/~tluu4/browse') !== false) {
@@ -115,6 +110,9 @@ Router::scope('/', function (RouteBuilder $routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+    $routes->connect('/listings/',
+                     ['controller' => 'Listings',
+                      'action' => 'display']);
 
     /**
      * Connect catchall routes for all controllers.
