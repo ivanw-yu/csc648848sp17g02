@@ -30,9 +30,8 @@
     <fieldset>
         <legend><?= __('Add Registered User') ?></legend>
         <?php
+            echo $this->Form->input('Username'); // lowercase u doesn't work.
             echo $this->Form->input('password');
-            echo $this->Form->input('is_admin');
-            echo $this->Form->input('is_active');
             echo $this->Form->input('email');
         ?>
     </fieldset>

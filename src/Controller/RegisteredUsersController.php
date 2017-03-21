@@ -51,10 +51,11 @@ class RegisteredUsersController extends AppController
         $registeredUser = $this->RegisteredUsers->newEntity();
         if ($this->request->is('post')) {
             $registeredUser = $this->RegisteredUsers->patchEntity($registeredUser, $this->request->data);
+            $registeredUser->username = $this->request->data['Username'];
             if ($this->RegisteredUsers->save($registeredUser)) {
                 $this->Flash->success(__('The registered user has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('The registered user could not be saved. Please, try again.'));
         }
@@ -105,10 +106,5 @@ class RegisteredUsersController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }
-
-    public function display() {
-        $b = $this->RegisteredUsers->find('all');
-        $this->set(['id' => $b]);
     }
 }
