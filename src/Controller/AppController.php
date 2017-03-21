@@ -63,9 +63,9 @@ class AppController extends Controller
                 'actions' => 'login'
             ],
             // If unauthorized, return them to the page they were just on
-            'unauthorizedRedirect' => $this->referer()
+            'unauthorizedRedirect' => $this->referer(),
+            'authorize' => 'Controller'
         ]);
-        //$this->Auth->allow(['add']);
 
         /*
          * Enable the following components for recommended CakePHP security settings.
@@ -88,5 +88,9 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+    }
+
+    public function isAuthorized($user) {
+        return false;
     }
 }
