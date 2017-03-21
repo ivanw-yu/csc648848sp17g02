@@ -32,6 +32,8 @@
         <?php
             echo $this->Form->input('password');
             echo $this->Form->input('is_admin');
+            echo $this->Form->input('is_active');
+            echo $this->Form->input('email');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

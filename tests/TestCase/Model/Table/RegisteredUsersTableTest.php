@@ -27,12 +27,16 @@ class RegisteredUsersTableTest extends TestCase
         'app.registered_users',
         'app.conversations',
         'app.listings',
-        'app.private_messages',
+        'app.categories',
+        'app.courses',
+        'app.conditions',
         'app.purchased_lists',
         'app.selling_lists',
         'app.sold_lists',
+        'app.tags',
         'app.watching_lists',
-        'app.wish_lists'
+        'app.wish_lists',
+        'app.private_messages'
     ];
 
     /**
@@ -85,6 +89,16 @@ class RegisteredUsersTableTest extends TestCase
      * @return void
      */
     public function testBuildRules()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test createUser method
+     *
+     * @return void
+     */
+    public function testCreateUser()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

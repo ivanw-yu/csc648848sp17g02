@@ -20,6 +20,8 @@ class RegisteredUsersFixture extends TestFixture
         'username' => ['type' => 'string', 'length' => 64, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'password' => ['type' => 'string', 'length' => 64, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'is_admin' => ['type' => 'boolean', 'length' => null, 'null' => true, 'default' => '0', 'comment' => '', 'precision' => null],
+        'is_active' => ['type' => 'boolean', 'length' => null, 'null' => true, 'default' => '1', 'comment' => '', 'precision' => null],
+        'email' => ['type' => 'string', 'length' => 64, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['username'], 'length' => []],
         ],
@@ -37,9 +39,11 @@ class RegisteredUsersFixture extends TestFixture
      */
     public $records = [
         [
-            'username' => '0ed7feb4-aca4-4fcc-8a09-6c486dd543ec',
+            'username' => '145d66c7-43ee-440e-97b4-eb9689446f32',
             'password' => 'Lorem ipsum dolor sit amet',
-            'is_admin' => 1
+            'is_admin' => 1,
+            'is_active' => 1,
+            'email' => 'Lorem ipsum dolor sit amet'
         ],
     ];
 }

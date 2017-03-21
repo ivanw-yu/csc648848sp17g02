@@ -88,6 +88,14 @@ class RegisteredUsersTable extends Table
             ->boolean('is_admin')
             ->allowEmpty('is_admin');
 
+        $validator
+            ->boolean('is_active')
+            ->allowEmpty('is_active');
+
+        $validator
+            ->email('email')
+            ->allowEmpty('email');
+
         return $validator;
     }
 
@@ -101,6 +109,7 @@ class RegisteredUsersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['username']));
+        $rules->add($rules->isUnique(['email']));
 
         return $rules;
     }

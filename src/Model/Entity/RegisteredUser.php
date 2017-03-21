@@ -9,6 +9,8 @@ use Cake\ORM\Entity;
  * @property string $username
  * @property string $password
  * @property bool $is_admin
+ * @property bool $is_active
+ * @property string $email
  *
  * @property \App\Model\Entity\Conversation[] $conversations
  * @property \App\Model\Entity\Listing[] $listings

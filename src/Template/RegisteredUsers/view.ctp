@@ -40,8 +40,16 @@
             <td><?= h($registeredUser->password) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Email') ?></th>
+            <td><?= h($registeredUser->email) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Is Admin') ?></th>
             <td><?= $registeredUser->is_admin ? __('Yes') : __('No'); ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Is Active') ?></th>
+            <td><?= $registeredUser->is_active ? __('Yes') : __('No'); ?></td>
         </tr>
     </table>
     <div class="related">
@@ -52,7 +60,6 @@
                 <th scope="col"><?= __('Conversation Num') ?></th>
                 <th scope="col"><?= __('Date Created') ?></th>
                 <th scope="col"><?= __('Message') ?></th>
-                <th scope="col"><?= __('Is Read') ?></th>
                 <th scope="col"><?= __('Registered User Id') ?></th>
                 <th scope="col"><?= __('Recipient Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -62,7 +69,6 @@
                 <td><?= h($conversations->conversation_num) ?></td>
                 <td><?= h($conversations->date_created) ?></td>
                 <td><?= h($conversations->message) ?></td>
-                <td><?= h($conversations->is_read) ?></td>
                 <td><?= h($conversations->registered_user_id) ?></td>
                 <td><?= h($conversations->recipient_id) ?></td>
                 <td class="actions">
@@ -90,6 +96,7 @@
                 <th scope="col"><?= __('Category Id') ?></th>
                 <th scope="col"><?= __('Registered User Id') ?></th>
                 <th scope="col"><?= __('Course Id') ?></th>
+                <th scope="col"><?= __('Condition Id') ?></th>
                 <th scope="col"><?= __('Image') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -105,6 +112,7 @@
                 <td><?= h($listings->category_id) ?></td>
                 <td><?= h($listings->registered_user_id) ?></td>
                 <td><?= h($listings->course_id) ?></td>
+                <td><?= h($listings->condition_id) ?></td>
                 <td><?= h($listings->image) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Listings', 'action' => 'view', $listings->listing_num]) ?>
@@ -123,14 +131,18 @@
             <tr>
                 <th scope="col"><?= __('Subject') ?></th>
                 <th scope="col"><?= __('Registered User Id') ?></th>
+                <th scope="col"><?= __('Recipient Id') ?></th>
                 <th scope="col"><?= __('Conversation Id') ?></th>
+                <th scope="col"><?= __('Is Read') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($registeredUser->private_messages as $privateMessages): ?>
             <tr>
                 <td><?= h($privateMessages->subject) ?></td>
                 <td><?= h($privateMessages->registered_user_id) ?></td>
+                <td><?= h($privateMessages->recipient_id) ?></td>
                 <td><?= h($privateMessages->conversation_id) ?></td>
+                <td><?= h($privateMessages->is_read) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'PrivateMessages', 'action' => 'view', $privateMessages->registered_user_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'PrivateMessages', 'action' => 'edit', $privateMessages->registered_user_id]) ?>
