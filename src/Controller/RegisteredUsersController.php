@@ -10,6 +10,10 @@ use App\Controller\AppController;
  */
 class RegisteredUsersController extends AppController
 {
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['login', 'add']);
+    }
 
     /**
      * Index method
@@ -57,12 +61,10 @@ class RegisteredUsersController extends AppController
             else {
                 $registeredUser->username = $this->request->data['Username'];
             }
-            if ($this->RegisteredUsers->save($registeredUser)) {
-                $this->Flash->success(__('The registered user has been saved.'));
-
+            if (!$this->RegisteredUsers->exists(
+                    ['username' => $registeredUser->username])) {
                 return $this->redirect($this->referer());
             }
-            $this->Flash->error(__('The registered user could not be saved. Please, try again.'));
         }
         $this->set(compact('registeredUser'));
         $this->set('_serialize', ['registeredUser']);
@@ -118,12 +120,9 @@ class RegisteredUsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                $this->Flash->success(__('Logged in'));
-            }
-            else {
-                $this->Flash->error(__('Username or password was incorrect'));
+                return $this->redirect($this->Auth->redirectUrl());
             }
         }
-        return $this->redirect($this->Auth->redirectUrl());
     }
+
 }
