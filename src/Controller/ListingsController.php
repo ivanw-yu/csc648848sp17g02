@@ -173,6 +173,14 @@ class ListingsController extends AppController
         $this->set(['listings' => $res]);
     }
 
+    public function sell() {
+        // This is true on form submit.
+        if ($this->request->is('post')) {
+            //$this->request->data;
+            //$this->Listings->create();
+        }
+    }
+
     /**
      * Get all fields of all listings.
      *
@@ -307,5 +315,16 @@ class ListingsController extends AppController
             $img = base64_encode(stream_get_contents($row->image));
             $row->image = $img;
         }
+    }
+
+    public function isAuthorized($user) {
+        $action = $this->request->param('action');
+        // Allow registered users to sell.
+        if (in_array($action, ['sell'])) {
+            if (!empty($this->Auth->user())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
