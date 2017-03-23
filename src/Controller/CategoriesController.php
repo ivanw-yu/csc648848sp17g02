@@ -11,6 +11,11 @@ use App\Controller\AppController;
 class CategoriesController extends AppController
 {
 
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['view']);
+    }
+
     /**
      * Index method
      *

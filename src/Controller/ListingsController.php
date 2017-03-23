@@ -12,7 +12,7 @@ class ListingsController extends AppController
 {
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['display']);
+        $this->Auth->allow(['view']);
     }
 
     /**
