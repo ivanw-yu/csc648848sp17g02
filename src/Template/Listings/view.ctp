@@ -83,6 +83,10 @@
             <th scope="row"><?= __('Is Sold') ?></th>
             <td><?= $listing->is_sold ? __('Yes') : __('No'); ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Condition') ?></th>
+            <td><?= h($listing->condition_id) ?></td>
+        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Purchased Lists') ?></h4>
