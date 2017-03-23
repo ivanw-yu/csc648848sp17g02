@@ -85,7 +85,7 @@ $this->layout = false;
                   <select id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
                     <option value="all"><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                       <?php foreach ($id as $row): ?>
-                        <option value="<?= $row->category_name?>"><?= $this->Html->link( $row->category_name, ['controller' => 'Listings', 'action' => 'displayCategories', $row->category_name] );?></option>
+<option value="<?= $row->category_name?>"><?= $this->Html->link( $row->category_name, ['controller' => 'Categories', 'action' => 'view', $row->category_name] );?></option>
                       <?php endforeach; ?>
                   </select>
                 </div>
@@ -114,10 +114,8 @@ $this->layout = false;
             <div class="col s12 m6">
               <div class="card grey lighten-5">
                 <div class="card-action">
-                  <?= $this->Html->link($row->category_name,
-                                        ['controller' => 'Listings',
-                                        'action' => 'display',
-                                        'cat' => $row->category_name]);?>
+                  <?= $this->Html->link( $row->category_name, ['controller' => 'Categories', 'action' => 'view', $row->category_name] );?>
+
                 </div>
               </div>
             </div>
@@ -188,9 +186,7 @@ $this->layout = false;
             <div class="col s12 m6">
               <div class="card  grey lighten-5">
                 <div class="card-action">
-                  <?= $this->Html->link( 'All', ['controller' => 'Listings',
-                                                 'action' => 'display',
-                                                 'sort' => 'date_created'] );?>
+  <?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?>
                 </div>
               </div>
             </div>
