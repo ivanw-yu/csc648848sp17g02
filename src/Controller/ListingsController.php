@@ -81,8 +81,10 @@ class ListingsController extends AppController
                                                $this->request->data['tags']));
 
             if ($save_successful) {
-                $this->Flash->success(__('The listing has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                // Load page to save images.
+                return $this->redirect(['controller' => 'Images',
+                                        'action' => 'add',
+                                                    $listing->listing_num]);
             }
             $this->Flash->error(__('The listing could not be saved. Please, try again.'));
         }

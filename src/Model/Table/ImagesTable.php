@@ -22,8 +22,6 @@ use Cake\Validation\Validator;
 class ImagesTable extends Table
 {
 
-    // TODO: change file path.
-    private $img_path = '/home/drodri11/public_html/tmp/';
 
 
     /**
@@ -101,17 +99,17 @@ class ImagesTable extends Table
     /**
      * Add a new image for a listing.
      *
-     * @param $file the name of the file, including extension.  The file
-     *        relative to the tmp/ directory.
+     * @param $file the path and name of the file, including extension.
      * @param $listing_num the integer identifier of the listing
      */
     public function addImage($file, $listing_num) {
         $entity = $this->newEntity();
-        $file = $this->img_path . $file;
         $img = fopen($file, 'rb');
         $entity->image = $img;
         $entity->listing_id = $listing_num;
-        $this->save($entity);
+        $save_successful = $this->save($entity);
+        fclose($img);
+        return $save_successful;
     }
 
     /**

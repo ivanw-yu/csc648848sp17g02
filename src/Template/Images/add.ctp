@@ -16,7 +16,10 @@
     <fieldset>
         <legend><?= __('Add Image') ?></legend>
         <?php
-            echo $this->Form->input('listing_id', ['options' => $listings, 'empty' => true]);
+            //echo $this->Form->input('listing_id', ['options' => $listings, 'empty' => true]);
+            echo $this->Form->input('image 1');
+            echo $this->Form->input('image 2');
+            echo $this->Form->input('image 3');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

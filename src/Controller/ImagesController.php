@@ -11,6 +11,8 @@ use App\Controller\AppController;
 class ImagesController extends AppController
 {
 
+
+
     /**
      * Index method
      *
@@ -45,19 +47,26 @@ class ImagesController extends AppController
     }
 
     /**
-     * Add method
+     * Add images to a listing.  The POST data must contain paths to images
+     * to save.
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id)
     {
         $image = $this->Images->newEntity();
         if ($this->request->is('post')) {
-            $image = $this->Images->patchEntity($image, $this->request->data);
-            if ($this->Images->save($image)) {
+            $save_successful = empty($id) ? false : true;
+            foreach($this->request->data as $path) {
+                if (!$this->Images->addImage($path, $id)) {
+                    $save_successful = false;
+                    break;
+                }
+            }
+            if ($save_successful) {
                 $this->Flash->success(__('The image has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'Listings',
+                                        'action' => 'view', $id]);
             }
             $this->Flash->error(__('The image could not be saved. Please, try again.'));
         }
@@ -111,4 +120,15 @@ class ImagesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function isAuthorized($user) {
+        $action = $this->request->param('action');
+        if (in_array($action, ['add', 'edit'])) {
+            if (!empty($this->Auth->user())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

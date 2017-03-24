@@ -46,6 +46,6 @@
             echo $this->Form->input('tags');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Add images')) ?>
     <?= $this->Form->end() ?>
 </div>
