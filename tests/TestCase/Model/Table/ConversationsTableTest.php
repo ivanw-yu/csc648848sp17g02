@@ -36,9 +36,7 @@ class ConversationsTableTest extends TestCase
         'app.tags',
         'app.watching_lists',
         'app.wish_lists',
-        'app.private_messages',
-        'app.senders',
-        'app.recievers'
+        'app.private_messages'
     ];
 
     /**

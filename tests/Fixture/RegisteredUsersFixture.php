@@ -39,7 +39,7 @@ class RegisteredUsersFixture extends TestFixture
      */
     public $records = [
         [
-            'username' => '145d66c7-43ee-440e-97b4-eb9689446f32',
+            'username' => '7df0856a-cdb7-4d86-8ff6-fd5296ec4d05',
             'password' => 'Lorem ipsum dolor sit amet',
             'is_admin' => 1,
             'is_active' => 1,

@@ -46,10 +46,10 @@ class ConversationsFixture extends TestFixture
     public $records = [
         [
             'conversation_num' => 1,
-            'date_created' => '2017-03-20 22:03:26',
+            'date_created' => '2017-03-23 16:30:58',
             'message' => 'Lorem ipsum dolor sit amet',
-            'registered_user_id' => 'f9754f8e-d32c-46c8-bcdb-25c751072342',
-            'recipient_id' => '2b6a15ca-a228-48f4-87f2-0e174c3cf19f'
+            'registered_user_id' => 'c9ae0d4f-21d3-44ab-9746-6eae46c9ccc9',
+            'recipient_id' => 'c996f806-47db-4965-b04d-365bf1bf9397'
         ],
     ];
 }

@@ -92,14 +92,4 @@ class RegisteredUsersTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
-
-    /**
-     * Test createUser method
-     *
-     * @return void
-     */
-    public function testCreateUser()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
 }
