@@ -9,8 +9,11 @@
         <li><?= $this->Html->link(__('New Private Message'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Conversations'), ['controller' => 'Conversations', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Conversation'), ['controller' => 'Conversations', 'action' => 'add']) ?></li>
+        <!-- Conversations can only be seen by clicking on one in the table.
+             They can only be added by creating a new private message or by
+             clicking on a conversation and replying. -->
+        <!--<li><?= $this->Html->link(__('List Conversations'), ['controller' => 'Conversations', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Conversation'), ['controller' => 'Conversations', 'action' => 'add']) ?></li>-->
     </ul>
 </nav>
 <div class="privateMessages index large-9 medium-8 columns content">
@@ -31,11 +34,17 @@
             <tr>
                 <td><?= h($privateMessage->subject) ?></td>
                 <td><?= h($privateMessage->registered_user_id) ?></td>
+                <td><?= h($privateMessage->recipient_id) ?></td>
                 <td><?= $privateMessage->has('registered_user') ? $this->Html->link($privateMessage->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $privateMessage->registered_user->username]) : '' ?></td>
                 <td><?= $privateMessage->has('conversation') ? $this->Html->link($privateMessage->conversation->conversation_num, ['controller' => 'Conversations', 'action' => 'view', $privateMessage->conversation->conversation_num]) : '' ?></td>
                 <td><?= h($privateMessage->is_read) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $privateMessage->registered_user_id]) ?>
+                    <?= $this->Html->link(__('View'),
+                            [
+                             'controller' => 'Conversations',
+                             'action' => 'index', $privateMessage
+                                                      ->conversation_id
+                            ]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $privateMessage->registered_user_id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $privateMessage->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $privateMessage->registered_user_id)]) ?>
                 </td>

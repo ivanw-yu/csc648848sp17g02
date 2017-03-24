@@ -20,7 +20,7 @@
         <?php
             echo $this->Form->input('subject');
             echo $this->Form->input('recipient_id', ['options' => $registeredUsers]);
-            echo $this->Form->input('is_read');
+            echo $this->Form->input('message');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

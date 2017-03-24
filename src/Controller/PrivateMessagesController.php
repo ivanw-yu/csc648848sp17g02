@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * PrivateMessages Controller
@@ -12,14 +13,30 @@ class PrivateMessagesController extends AppController
 {
 
     /**
-     * Index method
+     * Show the private messages of the currently logged in user.  The
+     * private messages are ordered from newest to oldest.
      *
      * @return \Cake\Network\Response|null
      */
     public function index()
     {
+        // This block does not work.
+        //$this->paginate = [
+            //'contain' => ['RegisteredUsers', 'Conversations']
+        //];
+        $user = $this->Auth->user()['username'];
         $this->paginate = [
-            'contain' => ['RegisteredUsers', 'Conversations']
+            'fields' => [
+                         'subject',
+                         'registered_user_id',
+                         'recipient_id',
+                         'conversation_id',
+                         'is_read'
+                        ],
+            'order' => ['conversation_id' => 'desc'], // newest first.
+            // Get only conversations that involve the current user.
+            'conditions' => ['OR' => ['registered_user_id' => $user,
+                                      'recipient_id' => $user]]
         ];
         $privateMessages = $this->paginate($this->PrivateMessages);
 
@@ -45,15 +62,33 @@ class PrivateMessagesController extends AppController
     }
 
     /**
-     * Add method
+     * Add a new private message.  The POST data must contain the fields
+     * message, subject, and recipient_id.
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add()
     {
-        $privateMessage = $this->PrivateMessages->newEntity();
         if ($this->request->is('post')) {
-            $privateMessage = $this->PrivateMessages->patchEntity($privateMessage, $this->request->data);
+            $data = $this->request->data;
+            $sender = $this->Auth->user()['username'];
+            $conversations = TableRegistry::get('Conversations');
+            // Adding a new private message really means starting a new
+            // conversation.  convo_entity is the new conversation, which
+            // is then used by the privateMessage entity to create a new
+            // private message.
+            $convo_entity = $conversations
+                                ->createNewConvo(
+                                    $data['message'],
+                                    $sender,
+                                    $data['recipient_id']
+                                  );
+            $privateMessage = $this->PrivateMessages->newEntity();
+            $privateMessage = $this->PrivateMessages->patchEntity(
+                $privateMessage, $data);
+            $privateMessage->conversation_id = $convo_entity->conversation_num;
+            $privateMessage->registered_user_id = $sender;
+            $privateMessage->is_read = 0;
             if ($this->PrivateMessages->save($privateMessage)) {
                 $this->Flash->success(__('The private message has been saved.'));
 
@@ -112,5 +147,15 @@ class PrivateMessagesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function isAuthorized($user) {
+        $action = $this->request->param('action');
+        if (in_array($action, ['index', 'add'])) {
+            if (!empty($this->Auth->user())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
