@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\TableRegistry;
 
 /**
  * Conversations Model
@@ -83,5 +84,30 @@ class ConversationsTable extends Table
         $rules->add($rules->existsIn(['recipient_id'], 'RegisteredUsers'));
 
         return $rules;
+    }
+
+    /**
+     * Create a new conversation.
+     *
+     * @param $msg the message sent by the sender
+     * @param $sender the username of the sender
+     * @param $reciever the username of the reciever
+     * @return the new entity, or false if the conversation could not be
+     *         created.
+     */
+    public function createNewConvo($msg, $sender, $reciever) {
+        $private_messages = TableRegistry::get('PrivateMessages');
+        $qry = $private_messages->find();
+        // The id of the new conversation is one plus the current maximum
+        // conversation id.
+        $res = $qry->select(['max_convo' => $qry->func()
+                                                ->max('conversation_id')]);
+        $entity = $this->newEntity();
+        $entity->message = $msg;
+        $entity->conversation_num = $res->first()->max_convo + 1;
+        $entity->date_created = new \DateTime();
+        $entity->registered_user_id = $sender;
+        $entity->recipient_id = $reciever;
+        return $this->save($entity);
     }
 }
