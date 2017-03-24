@@ -22,8 +22,8 @@
             <td><?= h($conversation->message) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Sender') ?></th>
-            <td><?= $conversation->has('sender') ? $this->Html->link($conversation->sender->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $conversation->sender->username]) : '' ?></td>
+            <th scope="row"><?= __('Registered User Id') ?></th>
+            <td><?= h($conversation->registered_user_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Registered User') ?></th>

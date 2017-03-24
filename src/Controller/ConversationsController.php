@@ -11,20 +11,47 @@ use App\Controller\AppController;
 class ConversationsController extends AppController
 {
 
+
+
     /**
-     * Index method
+     * Show messages for a given conversation.  The conversation must be
+     * one that the currently logged in user partakes in.  If it is not,
+     * then the PrivateMessages' index page is loaded.
      *
+     * @param $id the conversation number
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function index($id)
     {
         $this->paginate = [
-            'contain' => ['RegisteredUsers', 'Senders', 'Recievers']
+            'contain' => ['RegisteredUsers'],
         ];
+        if (!empty($id)) {
+            $this->paginate['conditions'] = ['conversation_num' => $id];
+        }
+        else {
+            $this->Flash->error(__('Conversation not found.'));
+            return $this->redirect(['controller' => 'PrivateMessages',
+                                    'action' => 'index']);
+        }
         $conversations = $this->paginate($this->Conversations);
+        // registered_user_id is the user who started the conversation.
+        // This may or may not have been the current user.  If not, then
+        // the recipient of any new message that will be sent by the current
+        // user will be registered_user_id.
+        $sender = $this->Auth->user()['username'];
+        if ($conversations->first()->registered_user_id == $sender) {
+            $recipient = $conversations->first()->recipient_id;
+        }
+        else {
+            $recipient = $conversations->first()->registered_user_id;
+        }
 
         $this->set(compact('conversations'));
         $this->set('_serialize', ['conversations']);
+        $this->set('sender', $sender);
+        $this->set('recipient', $recipient);
+        $this->set('conversation_id', $id);
     }
 
     /**
@@ -37,7 +64,7 @@ class ConversationsController extends AppController
     public function view($id = null)
     {
         $conversation = $this->Conversations->get($id, [
-            'contain' => ['RegisteredUsers', 'Senders', 'Recievers']
+            'contain' => ['RegisteredUsers']
         ]);
 
         $this->set('conversation', $conversation);
@@ -45,26 +72,36 @@ class ConversationsController extends AppController
     }
 
     /**
-     * Add method
+     * Add a new message to a conversation.  The POST data must contain a field
+     * for message.  Together with the parameters, the data is used to create
+     * a new message.
      *
+     * @param $sender the username of the sender of the message
+     * @param $recipient the username of the reciever of the message
+     * @param $id the conversation number
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($sender, $recipient, $id)
     {
         $conversation = $this->Conversations->newEntity();
         if ($this->request->is('post')) {
-            $conversation = $this->Conversations->patchEntity($conversation, $this->request->data);
+            // The data has the message.
+            $conversation = $this->Conversations->patchEntity(
+                $conversation, $this->request->data);
+            $conversation->registered_user_id = $sender;
+            $conversation->recipient_id = $recipient;
+            $conversation->conversation_num = $id;
+            $conversation->date_created = new \DateTime();
             if ($this->Conversations->save($conversation)) {
                 $this->Flash->success(__('The conversation has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'PrivateMessages',
+                                        'action' => 'index']);
             }
             $this->Flash->error(__('The conversation could not be saved. Please, try again.'));
         }
         $registeredUsers = $this->Conversations->RegisteredUsers->find('list', ['limit' => 200]);
-        $senders = $this->Conversations->Senders->find('list', ['limit' => 200]);
-        $recievers = $this->Conversations->Recievers->find('list', ['limit' => 200]);
-        $this->set(compact('conversation', 'registeredUsers', 'senders', 'recievers'));
+        $this->set(compact('conversation', 'registeredUsers'));
         $this->set('_serialize', ['conversation']);
     }
 
@@ -90,9 +127,7 @@ class ConversationsController extends AppController
             $this->Flash->error(__('The conversation could not be saved. Please, try again.'));
         }
         $registeredUsers = $this->Conversations->RegisteredUsers->find('list', ['limit' => 200]);
-        $senders = $this->Conversations->Senders->find('list', ['limit' => 200]);
-        $recievers = $this->Conversations->Recievers->find('list', ['limit' => 200]);
-        $this->set(compact('conversation', 'registeredUsers', 'senders', 'recievers'));
+        $this->set(compact('conversation', 'registeredUsers'));
         $this->set('_serialize', ['conversation']);
     }
 
@@ -115,4 +150,16 @@ class ConversationsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+    public function isAuthorized($user) {
+        $action = $this->request->param('action');
+        if (in_array($action, ['index', 'add'])) {
+            if (!empty($this->Auth->user())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

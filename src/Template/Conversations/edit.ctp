@@ -23,7 +23,7 @@
         <legend><?= __('Edit Conversation') ?></legend>
         <?php
             echo $this->Form->input('message');
-            echo $this->Form->input('recipient_id', ['options' => $recievers]);
+            echo $this->Form->input('recipient_id', ['options' => $registeredUsers]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

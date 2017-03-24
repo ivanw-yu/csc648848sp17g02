@@ -13,8 +13,6 @@ use Cake\ORM\Entity;
  * @property string $recipient_id
  *
  * @property \App\Model\Entity\RegisteredUser $registered_user
- * @property \App\Model\Entity\RegisteredUser $sender
- * @property \App\Model\Entity\RegisteredUser $reciever
  */
 class Conversation extends Entity
 {
