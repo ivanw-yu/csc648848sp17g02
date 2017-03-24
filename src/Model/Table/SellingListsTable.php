@@ -61,4 +61,19 @@ class SellingListsTable extends Table
 
         return $rules;
     }
+
+    /**
+     * Add a listing to a user's selling list.
+     *
+     * @param $listing_id the id of the listing sold by the user
+     * @param $username the username of the user associated with the listing
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function add($listing_id, $username) {
+        $entity = $this->newEntity();
+        $entity->listing_id = $listing_id;
+        $entity->registered_user_id = $username;
+        return $this->save($entity);
+    }
+
 }

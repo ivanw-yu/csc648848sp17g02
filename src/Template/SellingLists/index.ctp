@@ -29,9 +29,13 @@
                 <td><?= $sellingList->has('registered_user') ? $this->Html->link($sellingList->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $sellingList->registered_user->username]) : '' ?></td>
                 <td><?= $sellingList->has('listing') ? $this->Html->link($sellingList->listing->title, ['controller' => 'Listings', 'action' => 'view', $sellingList->listing->listing_num]) : '' ?></td>
                 <td class="actions">
+<!-- There is already a link to view a listing.
                     <?= $this->Html->link(__('View'), ['action' => 'view', $sellingList->registered_user_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $sellingList->registered_user_id]) ?>
+-->
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $sellingList->listing->listing_num]) ?>
+<!-- No deleting allowed at the moment.
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $sellingList->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingList->registered_user_id)]) ?>
+-->
                 </td>
             </tr>
             <?php endforeach; ?>

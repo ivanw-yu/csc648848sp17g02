@@ -12,14 +12,17 @@ class SellingListsController extends AppController
 {
 
     /**
-     * Index method
+     * Show all listings that the currently logged in user is selling.
+     * This method can only be accessed by registered users.
      *
      * @return \Cake\Network\Response|null
      */
     public function index()
     {
         $this->paginate = [
-            'contain' => ['RegisteredUsers', 'Listings']
+            'contain' => ['RegisteredUsers', 'Listings'],
+            'conditions' => ['RegisteredUsers.username'
+                                 => $this->Auth->user()['username']]
         ];
         $sellingLists = $this->paginate($this->SellingLists);
 
@@ -117,5 +120,15 @@ class SellingListsController extends AppController
     public function display() {
         $b = $this->SellingLists->find('all');
         $this->set(['id' => $b]);
+    }
+
+    public function isAuthorized($user) {
+        $action = $this->request->param('action');
+        if (in_array($action, ['index'])) {
+            if (!empty($this->Auth->user())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

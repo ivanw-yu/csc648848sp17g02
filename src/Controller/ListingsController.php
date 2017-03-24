@@ -79,6 +79,10 @@ class ListingsController extends AppController
             $tags_table->createTags($listing->listing_num,
                                     preg_split('/[\s,]+/',
                                                $this->request->data['tags']));
+            // And save to Selling List.
+            $selling_list_table = TableRegistry::get('SellingLists');
+            $selling_list_table->add($listing->listing_num,
+                                     $listing->registered_user_id);
 
             if ($save_successful) {
                 // Load page to save images.
