@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Listings Controller
@@ -49,7 +50,13 @@ class ListingsController extends AppController
     }
 
     /**
-     * Add method
+     * Add a new listing.  If POST data is given, then all fields of the
+     * listings database table must be given, except for date_created,
+     * registered_user_id, and is_sold.  A tags field should also be given.
+     * If there is no POST data, then the site shows a form to add a listing.
+     *
+     * Only authorized users may access this method.
+     *
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
@@ -57,10 +64,24 @@ class ListingsController extends AppController
     {
         $listing = $this->Listings->newEntity();
         if ($this->request->is('post')) {
+            // Save the listing first.
             $listing = $this->Listings->patchEntity($listing, $this->request->data);
-            if ($this->Listings->save($listing)) {
-                $this->Flash->success(__('The listing has been saved.'));
+            $listing->is_sold = 0;
+            $listing->date_created = new \DateTime();
+            $listing->registered_user_id = $this->Auth->user()['username'];
+            $thumbnail = fopen($this->request->data['images'], 'rb');
+            $listing->image = $thumbnail;
+            $save_successful = $this->Listings->save($listing);
+            fclose($thumbnail);
 
+            // Then save tags.
+            $tags_table = TableRegistry::get('Tags');
+            $tags_table->createTags($listing->listing_num,
+                                    preg_split('/[\s,]+/',
+                                               $this->request->data['tags']));
+
+            if ($save_successful) {
+                $this->Flash->success(__('The listing has been saved.'));
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The listing could not be saved. Please, try again.'));
@@ -320,7 +341,7 @@ class ListingsController extends AppController
     public function isAuthorized($user) {
         $action = $this->request->param('action');
         // Allow registered users to sell.
-        if (in_array($action, ['sell'])) {
+        if (in_array($action, ['add', 'edit'])) {
             if (!empty($this->Auth->user())) {
                 return true;
             }
