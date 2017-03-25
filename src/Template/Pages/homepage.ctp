@@ -238,6 +238,11 @@ $this->layout = false;
         }
         
 </script>
+                            <?= $this->Html->link( 'convo', ['controller' => 'Conversations', 'action' => 'add']);?>
+                            <?= $this->Html->link( 'pm', ['controller' => 'PrivateMessages', 'action' => 'index']);?>
+                            <?= $this->Html->link( 'sell', ['controller' => 'Listings', 'action' => 'add']);?>
+<?= $this->Html->link( 'selling_list', ['controller' => 'SellingLists',
+                                        'action' => 'index']); ?>
     </body>
 </html>
 

@@ -114,7 +114,13 @@ $this->layout = false;
             <div class="col s12 m6">
               <div class="card grey lighten-5">
                 <div class="card-action">
-                  <?= $this->Html->link( $row->category_name, ['controller' => 'Categories', 'action' => 'view', $row->category_name] );?>
+                  <?= $this->Html->link($row->category_name,
+                                        ['controller' => 'Listings',
+                                         'action' => 'index',
+                                         'category' => $row->category_name,
+                                         //'course' => 'csc648',
+                                         //'condition' => 'used'
+                                        ] );?>
 
                 </div>
               </div>

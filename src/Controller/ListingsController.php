@@ -13,19 +13,46 @@ class ListingsController extends AppController
 {
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['view']);
+        $this->Auth->allow(['view', 'index']);
     }
 
     /**
-     * Index method
+     * Show all listings, filtered by given fields.  If a field is not
+     * given, then it is not filtered and all possible values of it are
+     * included.  Any filters that are given are combined using a
+     * conjunction.  The filters are given through a GET request.
+     *
+     * The valid fields to send are 'category', 'course', and 'condition'.
+     *
+     * As an example,
+     *     <?= $this->Html->link('Used Books',
+     *                           ['controller' => 'Listings',
+     *                            'action' => 'index',
+     *                            'category' => 'books',
+     *                            'condition' => 'used']);?>
+     *
+     * creates a link that will show listings from the books category AND
+     * that are used.  No value for courses was given, so the listings will
+     * not be filtered by course, meaning that all courses will be included.
      *
      * @return \Cake\Network\Response|null
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Categories', 'RegisteredUsers', 'Courses', 'Conditions']
-        ];
+        $contain = ['RegisteredUsers', 'Courses', 'Conditions', 'Categories'];
+        $conditions = [];
+        $get_request = $this->request->query;
+        if (!empty($get_request['category'])) {
+            $conditions['Categories.category_name'] = $get_request['category'];
+        }
+        if (!empty($get_request['course'])) {
+            $conditions['Courses.course_name'] = $get_request['course'];
+        }
+        if (!empty($get_request['condition'])) {
+            $conditions['Conditions.condition_name'] = $get_request['condition'];
+        }
+        $this->paginate = ['contain' => $contain,
+                           'conditions' => $conditions];
         $listings = $this->paginate($this->Listings);
 
         $this->set(compact('listings'));
