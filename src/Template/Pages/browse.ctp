@@ -104,6 +104,15 @@ $this->layout = false;
                   </select>
                 </div>
 
+                <div class="ddl-select input-group-btn">
+                  <select name='condition' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+                    <option value="all">All conditions</option>
+                      <?php foreach ($conditions as $row): ?>
+<option value="<?= $row->condition_name?>"><?= $row->condition_name; ?></option>
+                      <?php endforeach; ?>
+                  </select>
+                </div>
+
                 <input name='tags' id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
                 <span class="input-group-btn">
                   <button type='submit' id="btn-search" class="btn btn-info glyphicon glyphicon-search" type="button"><i class="fa fa-search fa-fw"></i></button>

@@ -51,6 +51,8 @@ class PagesController extends AppController
         $this->set(['id' => $categoryEntries]);
         $coursesTable =  TableRegistry::get('Courses');
         $this->set(['courses' => $coursesTable->find('all')]);
+        $conditionsTable =  TableRegistry::get('Conditions');
+        $this->set(['conditions' => $conditionsTable->find('all')]);
 
         $path = func_get_args();
 
