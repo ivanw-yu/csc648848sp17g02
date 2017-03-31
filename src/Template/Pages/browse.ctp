@@ -80,20 +80,26 @@ $this->layout = false;
 
           <div class="col-md-6">
             <div class="form-horizontal">
+
+    <?= $this->Form->create(NULL, ['url' => [
+                                   'controller' => 'Listings',
+                                   'action' => 'index'],
+                                   'type' => 'get']) ?>
               <div class="input-group">
                 <div class="ddl-select input-group-btn">
-                  <select id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+                  <select name='category' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
                     <option value="all"><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                       <?php foreach ($id as $row): ?>
-<option value="<?= $row->category_name?>"><?= $this->Html->link( $row->category_name, ['controller' => 'Categories', 'action' => 'view', $row->category_name] );?></option>
+<option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
                       <?php endforeach; ?>
                   </select>
                 </div>
-                <input id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
+                <input name='tags' id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
                 <span class="input-group-btn">
-                  <button id="btn-search" class="btn btn-info glyphicon glyphicon-search" type="button"><i class="fa fa-search fa-fw"></i></button>
+                  <button type='submit' id="btn-search" class="btn btn-info glyphicon glyphicon-search" type="button"><i class="fa fa-search fa-fw"></i></button>
                 </span>
               </div>
+    <?= $this->Form->end() ?>
             </div>
           </div>
 
@@ -117,10 +123,10 @@ $this->layout = false;
                   <?= $this->Html->link($row->category_name,
                                         ['controller' => 'Listings',
                                          'action' => 'index',
-                                         'category' => $row->category_name,
-                                         //'course' => 'csc648',
-                                         //'condition' => 'used'
-                                        ] );?>
+                                         'category' => $row->category_name]
+                                         //'course' => $filters['course'],
+                                         //'condition' => $filters['condition']
+                                         );?>
 
                 </div>
               </div>
@@ -206,14 +212,5 @@ $this->layout = false;
       <?php //endforeach; ?>-->
       </div>
     </div>
-    <?= $this->Form->create(NULL, ['url' => [
-                                   'controller' => 'Listings',
-                                   'action' => 'index'],
-                                   'type' => 'get']) ?>
-        <?php
-            echo $this->Form->input('tags');
-        ?>
-    <?= $this->Form->button(__('Search')) ?>
-    <?= $this->Form->end() ?>
   </body>
 </html>
