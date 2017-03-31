@@ -88,7 +88,11 @@ $this->layout = false;
               <div class="input-group">
                 <div class="ddl-select input-group-btn">
                   <select name='category' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
-                    <option value="all"><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
+                    <!-- value="" so that when 'All' is selected, nothing is
+                         given to the controller, in which case it will search
+                         for everything.
+                    -->
+                    <option value=""><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                       <?php foreach ($id as $row): ?>
 <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
                       <?php endforeach; ?>
@@ -97,7 +101,8 @@ $this->layout = false;
 
                 <div class="ddl-select input-group-btn">
                   <select name='course' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
-                    <option value="all">All courses</option>
+                    <!-- value="" makes the controller search for everything.  -->
+                    <option value="">All courses</option>
                       <?php foreach ($courses as $row): ?>
 <option value="<?= $row->course_name?>"><?= $row->course_name; ?></option>
                       <?php endforeach; ?>
@@ -106,7 +111,8 @@ $this->layout = false;
 
                 <div class="ddl-select input-group-btn">
                   <select name='condition' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
-                    <option value="all">All conditions</option>
+                    <!-- value="" makes the controller search for everything.  -->
+                    <option value="">All conditions</option>
                       <?php foreach ($conditions as $row): ?>
 <option value="<?= $row->condition_name?>"><?= $row->condition_name; ?></option>
                       <?php endforeach; ?>
