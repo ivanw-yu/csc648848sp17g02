@@ -102,7 +102,8 @@ class TagsTable extends Table
     /**
      * Get all listings that match a list of tags.  The 'tags' option must
      * be given.  This method will not search for empty tags and will not
-     * do anything if no tags are given.
+     * do anything if no tags are given.  When tags are given but a field
+     * to sort by is not, then no sorting is performed.
      *
      * Example usage:
      *
@@ -159,6 +160,10 @@ class TagsTable extends Table
             $j = $j + 1;
         }
         // Get the entire listing data for all listings in the above query.
+        if (empty($options['sort_by'])) {
+            return $listings->find('all')
+                            ->where(['listing_num IN' => $res_ids]);
+        }
         return $listings->find('all')
                         ->where(['listing_num IN' => $res_ids])
                         ->order([$options['sort_by'] => $options['asc_desc']]);

@@ -207,8 +207,8 @@ $this->layout = false;
       </div>
     </div>
     <?= $this->Form->create(NULL, ['url' => [
-                                   'controller' => 'Category',
-                                   'action' => 'view', 'books'],
+                                   'controller' => 'Listings',
+                                   'action' => 'index'],
                                    'type' => 'get']) ?>
         <?php
             echo $this->Form->input('tags');

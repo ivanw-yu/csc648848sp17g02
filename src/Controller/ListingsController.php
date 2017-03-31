@@ -39,6 +39,13 @@ class ListingsController extends AppController
      */
     public function index()
     {
+        $filtered_listings = NULL;
+        if (!empty($this->request->query)) {
+            $tags = preg_split('/[\s,]+/', $this->request->query['tags']);
+            $table =  TableRegistry::get('Tags');
+            $opts = ['tags' => $tags];
+            $filtered_listings = $table->find('listings', $opts);
+        }
         $contain = ['RegisteredUsers', 'Courses', 'Conditions', 'Categories'];
         $conditions = [];
         $get_request = $this->request->query;
@@ -53,7 +60,12 @@ class ListingsController extends AppController
         }
         $this->paginate = ['contain' => $contain,
                            'conditions' => $conditions];
-        $listings = $this->paginate($this->Listings);
+        if (empty($filtered_listings)) {
+            $listings = $this->paginate($this->Listings);
+        }
+        else {
+            $listings = $this->paginate($filtered_listings);
+        }
 
         $this->set(compact('listings'));
         $this->set('_serialize', ['listings']);
