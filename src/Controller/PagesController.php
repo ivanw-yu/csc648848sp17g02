@@ -18,6 +18,7 @@ use Cake\Core\Configure;
 use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\ORM\TableRegistry;
 
 /**
  * Static content controller
@@ -48,6 +49,8 @@ class PagesController extends AppController
         $this->loadModel('Categories');
         $categoryEntries = $this->Categories->find('all');
         $this->set(['id' => $categoryEntries]);
+        $coursesTable =  TableRegistry::get('Courses');
+        $this->set(['courses' => $coursesTable->find('all')]);
 
         $path = func_get_args();
 

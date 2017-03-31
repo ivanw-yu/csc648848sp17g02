@@ -94,6 +94,16 @@ $this->layout = false;
                       <?php endforeach; ?>
                   </select>
                 </div>
+
+                <div class="ddl-select input-group-btn">
+                  <select name='course' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+                    <option value="all">All courses</option>
+                      <?php foreach ($courses as $row): ?>
+<option value="<?= $row->course_name?>"><?= $row->course_name; ?></option>
+                      <?php endforeach; ?>
+                  </select>
+                </div>
+
                 <input name='tags' id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
                 <span class="input-group-btn">
                   <button type='submit' id="btn-search" class="btn btn-info glyphicon glyphicon-search" type="button"><i class="fa fa-search fa-fw"></i></button>
