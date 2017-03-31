@@ -206,5 +206,14 @@ $this->layout = false;
       <?php //endforeach; ?>-->
       </div>
     </div>
+    <?= $this->Form->create(NULL, ['url' => [
+                                   'controller' => 'Category',
+                                   'action' => 'view', 'books'],
+                                   'type' => 'get']) ?>
+        <?php
+            echo $this->Form->input('tags');
+        ?>
+    <?= $this->Form->button(__('Search')) ?>
+    <?= $this->Form->end() ?>
   </body>
 </html>
