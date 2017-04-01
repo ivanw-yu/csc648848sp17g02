@@ -84,7 +84,7 @@ function f() {
                 <?php if($listing->image !== null): ?>
                           <?php $blobimg = stream_get_contents($listing->image); ?>
                           <a class = "aclass" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                          <?= '<img src = " ' . $blobimg . '" style = "width: 9%; height: 9%" />' ?>
+                          <?= '<img src = " ' . $blobimg . '" style = "width: 40px; height: 40px" />' ?>
                           </a>
                 <?php endif; ?>
                 <?= h($listing->price) ?>
