@@ -27,56 +27,74 @@
         <li><//?= $this->Html->link(__('New Wish List'), ['controller' => 'WishLists', 'action' => 'add']) ?></li>
     </ul>
 </nav>-->
+<script type="text/javascript">
+function f() {
+    var selectBox = document.getElementById("select_sort");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    document.getElementById('sort_' + selectedValue).firstChild.click();
+}
+</script>
+<div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'asc']) ?></div>
+<div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'desc']) ?></div>
+<div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => 'asc']) ?></div>
+<div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => 'desc']) ?></div>
+
+<div>
+    <select id="select_sort" class="selectpicker form-control" data-style="btn-primary" onchange="f();">
+        <option value="price_desc">price: high to low</option>
+        <option value="price_asc">price: low to high</option>
+        <option value="date_desc">date: new to old</option>
+        <option value="date_asc">date: old to new</option>
+    </select>
+</div>
+
 <div class="listings index large-9 medium-8 columns content" style = "width: 100%">
     <h3><?= __('Listings') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
+           <!-- //<//?php foreach ($listings as $listing): ?>
+<<<<<<< HEAD
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('listing_num') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('date_created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('is_sold') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('price') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('location') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('item_desc') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('title') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('course_id') ?></th>
-                <!-- this was added to allow image to be displayed -->
-                <th scope="col"><?= $this->Paginator->sort('image') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($listings as $listing): ?>
-            <tr>
-                <td><?= $this->Number->format($listing->listing_num) ?></td>
-                <td><?= h($listing->date_created) ?></td>
-                <td><?= h($listing->is_sold) ?></td>
-                <td><?= h($listing->price) ?></td>
-                <td><?= h($listing->location) ?></td>
-                <td><?= h($listing->item_desc) ?></td>
-                <td><?= h($listing->title) ?></td>
-                <td><?= $listing->has('category') ? $this->Html->link($listing->category->category_name, ['controller' => 'Categories', 'action' => 'view', $listing->category->category_name]) : '' ?></td>
-                <td><?= $listing->has('registered_user') ? $this->Html->link($listing->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $listing->registered_user->username]) : '' ?></td>
-                <td><?= $listing->has('course') ? $this->Html->link($listing->course->course_name, ['controller' => 'Courses', 'action' => 'view', $listing->course->course_name]) : '' ?></td>
-                <td><!-- This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered-->
-                    <?php if($listing->image !== null): ?>
-                               <?php $blobimg = stream_get_contents($listing->image); ?>
-                               <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                               <?= '<img src = "' . $blobimg . '" style = "width: 60%; height: 10%" />' ?>
+                <td><//?= //$this->Number->format($listing->listing_num) ?></td>
+                <td><//?= //h($listing->date_created) ?></td>
+                <td><//?= //h($listing->is_sold) ?></td>
+                <td><//?= //h($listing->price) ?></td>
+                <td><//?= //h($listing->location) ?></td>
+                <td><//?= //h($listing->item_desc) ?></td>
+                <td><//?= //h($listing->title) ?></td>
+                <td><//?=// $listing->has('category') ? $this->Html->link($listing->category->category_name, ['controller' => 'Categories', 'action' => 'view', $listing->category->category_name]) : '' ?></td>
+                <td><//?=// $listing->has('registered_user') ? $this->Html->link($listing->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $listing->registered_user->username]) : '' ?></td>
+                <td><//?=// $listing->has('course') ? $this->Html->link($listing->course->course_name, ['controller' => 'Courses', 'action' => 'view', $listing->course->course_name]) : '' ?></td>
+                <td>This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered
+                    //<//?php if($listing->image !== null): ?>
+                               <//?php //$blobimg = stream_get_contents($listing->image); ?>
+                               <a class = "aclass" onclick = "displaythumbnail('<//?php echo $blobimg; ?>');" >
+                               //<//?= '<img src = "' . $blobimg . '" style = "width: 60%; height: 10%" />' ?>
                                </a>
-                     <?php endif; ?>         
+                     //<//?php endif; ?>         
                 </td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
-                    <!--<//?= $this->Html->link(__('Edit'), ['action' => 'edit', $listing->listing_num]) ?>-->
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $listing->listing_num], ['confirm' => __('Are you sure you want to delete # {0}?', $listing->listing_num)]) ?>
+                    <//?=// $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
+                    <//?= $this->Html->link(__('Edit'), ['action' => 'edit', $listing->listing_num]) ?>-->
+                    <!--<//?= //$this->Form->postLink(__('Delete'), ['action' => 'delete', $listing->listing_num], [//'confirm' => __('Are you sure you want to delete # {0}?', $listing->listing_num)]) ?>
                 </td>
             </tr>
+======= -->
+            <?php foreach ($listings as $listing): ?>
+                <div class='listing_cell'>
+                <!-- This is how blobs are displayed on the webpage. $listings->image will return the data url stored in the listings able for that image -->
+                <?php if($listing->image !== null): ?>
+                          <?php $blobimg = stream_get_contents($listing->image); ?>
+                          <a class = "aclass" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                          <?= '<img src = " ' . $blobimg . '" style = "width: 9%; height: 9%" />' ?>
+                          </a>
+                <?php endif; ?>
+                <?= h($listing->price) ?>
+                <?= h($listing->title) ?>
+                <?= h($listing->date_created) ?>
+                <?= h($listing->condition_id) ?>
+                <?= h($listing->category_id) ?>
+                </div>
+<!-- <a> >>>>>>> d61402d4a6bbab4e52eef9976b8a878176f93468 </a>-->
             <?php endforeach; ?>
-        </tbody>
-    </table>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
