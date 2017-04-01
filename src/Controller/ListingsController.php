@@ -11,6 +11,9 @@ use Cake\ORM\TableRegistry;
  */
 class ListingsController extends AppController
 {
+
+    public $blobImageToUpload;
+
     public function initialize() {
         parent::initialize();
         $this->Auth->allow(['view', 'index']);
@@ -96,10 +99,17 @@ class ListingsController extends AppController
             $listing->is_sold = 0;
             $listing->date_created = new \DateTime();
             $listing->registered_user_id = $this->Auth->user()['username'];
-            $thumbnail = fopen($this->request->data['images'], 'rb');
-            $listing->image = $thumbnail;
+            //$thumbnail = fopen($this->request->data['image'], 'rb');
+            /*$thumbnail = file_get_contents($this->request->data['image']);
+            if(!$thumbnail){
+                $listing->image = 'error, thumbnail did not upload';
+            } else {
+                $listing->image = $thumbnail;
+            }
+            fclose($thumbnail);*/
+            $listing->image = $this->request->data['image'];
             $save_successful = $this->Listings->save($listing);
-            fclose($thumbnail);
+            
 
             // Then save tags.
             $tags_table = TableRegistry::get('Tags');

@@ -63,6 +63,7 @@ class RegisteredUsersController extends AppController
             }
             if (!$this->RegisteredUsers->exists(
                     ['username' => $registeredUser->username])) {
+                $this->RegisteredUsers->save($registeredUser);
                 return $this->redirect($this->referer());
             }
         }

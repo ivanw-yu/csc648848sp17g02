@@ -62,17 +62,16 @@
                 <td><?= $listing->has('course') ? $this->Html->link($listing->course->course_name, ['controller' => 'Courses', 'action' => 'view', $listing->course->course_name]) : '' ?></td>
                 <td><!-- This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered-->
                     <?php if($listing->image !== null): ?>
-                               <?php $blobimg = base64_encode(stream_get_contents($listing->image)); ?>
+                               <?php $blobimg = stream_get_contents($listing->image); ?>
                                <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                               <?= '<img src = "data:image;base64, ' . $blobimg . '" style = "width: 40px; height: 40px" />' ?>
+                               <?= '<img src = "' . $blobimg . '" style = "width: 60%; height: 10%" />' ?>
                                </a>
-                               
                      <?php endif; ?>         
                 </td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
-                    <!--<//?= $this->Html->link(__('Edit'), ['action' => 'edit', $listing->listing_num]) ?>
-                    <//?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $listing->listing_num], ['confirm' => __('Are you sure you want to delete # {0}?', $listing->listing_num)]) ?>-->
+                    <!--<//?= $this->Html->link(__('Edit'), ['action' => 'edit', $listing->listing_num]) ?>-->
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $listing->listing_num], ['confirm' => __('Are you sure you want to delete # {0}?', $listing->listing_num)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -106,7 +105,7 @@
                                             thumbnailView.style.height = "100%";
                                             thumbnailView.style.textAlign = "center";
                                             thumbnailView.style.cursor = "zoom-out"; 
-                                            thumbnailView.innerHTML = '<img src = "data:image;base64, ' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+                                            thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
                                             displayed = true;
                                     }
                                     function hide(){

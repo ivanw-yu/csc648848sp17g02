@@ -50,7 +50,7 @@ $this->layout = false;
       }
 
 
-      input[type=text] {
+      input[type=text], input[type=password] {
     	width: 300px;
     	box-sizing: border-box;
     	border: 2px solid #ccc;
@@ -149,7 +149,7 @@ $this->layout = false;
               <label><b>Username</b></label><br>
               <input type = "text" name = "username" placeholder = "your username" required><br>
               <label><b>Password</b></label><br>
-              <input type = "text" name = "password" placeholder = "password" required>
+              <input type = "password" name = "password" placeholder = "password" required>
               <p> By creating an account you agree to  our <a href = "#" > Terms & Privacy </a>. </p><br/>
               <p> Have an account? Login <a rel = "ck_modal" onclick= "document.getElementById('id02').style.display = 'block';document.getElementById('id01').style.display = 'none'">here </a> </p>
               <div class = "clearfix">
@@ -169,7 +169,7 @@ $this->layout = false;
               <label><b>Username</b></label><br>
               <input type = "text" name = "username" placeholder = "your username" required><br>
               <label><b>Password</b></label><br>
-              <input type = "text" name = "password" placeholder = "password" required>
+              <input type = "password" name = "password" placeholder = "password" required>
               <div class = "clearfix">
                 <button type = "button" class=" cancelbtn btn btn-primary btn-md" onclick = "document.getElementById('id02').style.display = 'none'">Cancel</button>
                 <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Login </button>
