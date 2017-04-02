@@ -18,10 +18,10 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
-$this->layout = false;
+//$this->layout = true;
 ?>
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
   <head>
       <meta charset = "utf-8">
@@ -135,7 +135,7 @@ $this->layout = false;
                   <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display ='block'" style = "width:auto;">Login/Register</button>
               </ul>
           </div>
-        </nav>
+        </nav>-->
 
         <div id = "id01" class= "modal">
             <span onclick = "document.getElementById('id01').style.display = 'none'" class = "close" title = "Close">x</span>

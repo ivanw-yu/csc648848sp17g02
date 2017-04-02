@@ -83,6 +83,10 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
+        // the next 3 lines of codes was added to allow default.ctp to have access to the categories table.
+        $this->loadModel('Categories');
+        $categoryEntries = $this->Categories->find('all');
+        $this->set(['validCategories' => $categoryEntries]);
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {
