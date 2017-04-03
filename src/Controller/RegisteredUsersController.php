@@ -13,6 +13,7 @@ class RegisteredUsersController extends AppController
     public function initialize() {
         parent::initialize();
         $this->Auth->allow(['login', 'add']);
+        $this->Auth->allow(['add', 'logout']); // 4/2/17 added to allow logout
     }
 
     /**
@@ -121,9 +122,20 @@ class RegisteredUsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                return $this->redirect($this->Auth->redirectUrl());
+                // this currently allows user to go to the same page after logging in.
+                // change this back to $this->Auth->redirectUrl() if we want to redirect user to homepage after logging in.
+                return $this->redirect($this->referer());//Auth->redirectUrl());
             }
         }
+        // added so logout will also redirect to same page?
+        return $this->redirect($this->referer());//Auth->redirectUrl());
+    }
+
+    public function logout()
+    {
+        // this allows the user to logout, and the user is redirected to the same page.
+        $this->Auth->logout();
+        return $this->redirect($this->referer());
     }
 
 }

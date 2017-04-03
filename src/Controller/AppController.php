@@ -28,6 +28,8 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
+
+    public $current_logged_in_user;// = $this->Auth->user('id');
     /**
      * Initialization hook method.
      *
@@ -62,6 +64,11 @@ class AppController extends Controller
                 'controller' => 'RegisteredUsers',
                 'actions' => 'login'
             ],
+            /*'logoutRedirect' => [
+                'controller' => 'Pages',
+                'action' => 'display',
+                'homepage'
+            ],*/   
             // If unauthorized, return them to the page they were just on
             'unauthorizedRedirect' => $this->referer(),
             'authorize' => 'Controller'
@@ -87,6 +94,12 @@ class AppController extends Controller
         $this->loadModel('Categories');
         $categoryEntries = $this->Categories->find('all');
         $this->set(['validCategories' => $categoryEntries]);
+
+        // $this->Auth->user(_id_) isn't null after login() successful.
+        if($this->Auth->user('username') !== null){
+            // allows the name of the user to be accessed in default.ctp and all other pages.
+            $this->set(['currentUser' => $this->Auth->user('username')]);
+        }
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {

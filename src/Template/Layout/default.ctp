@@ -205,6 +205,13 @@
           <div class="navbar-header">
             <?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?>
           </div>
+          <span style = "color: white">
+            <?php if($currentUser !== null): ?>
+              <?= "Welcome ". $currentUser . "!" ?>
+            <?php else: ?>
+              <?= "" ?>
+            <?php endif; ?>
+          </span>
 
           <div class="col-md-6">
             <div class="form-horizontal">
@@ -237,7 +244,13 @@
             </ul>
         </div>-->
           <ul class="nav navbar-nav right">
-             <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display ='block'" style = "width:auto;">Login/Register</button>          
+            <?php if($currentUser === null): ?>
+              <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display ='block'" style = "width:auto;">Login/Register</button>  
+            <?php else: ?>
+              <button type="button" class="btn btn-primary btn-md" style = "width:auto;"><?= $this->Html->link('Logout', 
+                                                                                                              ['controller' => 'RegisteredUsers',
+                                                                                                              'action' => 'logout']) ?></button> 
+            <?php endif; ?>
           </ul>
         </div>
       </nav>
@@ -283,8 +296,6 @@
               <?= $this->Form->end();?>
 
         </div>
-
-
 
 
     <?= $this->Flash->render() ?>
