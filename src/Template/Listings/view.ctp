@@ -32,7 +32,7 @@
 </nav>-->
 <div class="listings view large-9 medium-8 columns content">
     <h3><?= h($listing->title) ?></h3>
-    
+
                                <!-- Previously, this is how the images were displayed-->
                                <!--//<//?php if($listing->image !== null): ?>
                                <//?php $blobimg = //base64_encode(stream_get_contents($listing->image)); ?>
@@ -46,7 +46,32 @@
                                <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
                                <?= '<img src = "' . $blobimg . '" style = "width: 10em; height: 10em" />' ?>
                                </a>
-                     <?php endif; ?>  
+                     <?php endif; ?>
+
+            <?php if($currentUser !== null): ?>
+              <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('contact_box').style.display ='block'" style = "width:auto;">Contace seller</button>
+            <?php else: ?>
+              <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'block'" style = "width:auto;">Sign in to contact seller</button>
+            <?php endif; ?>
+      <div id = "contact_box" class= "modal">
+            <span onclick = "document.getElementById('contact_box').style.display = 'none'" class = "close" title = "Close">x</span>
+            <!--<form  method="post" class ="modal-content animate"
+            action = "../RegisteredUsers/add">-->
+            <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'class'=>'modal-content animate']); ?>
+              <div class = "container1">
+              <label>Contact <?= $listing->registered_user->username ?></label><br>
+              <label><b>Subject</b></label><br>
+              <input type = "text" name = "subject" placeholder = "subject" required><br>
+              <label><b>Message</b></label><br>
+              <input type = "text" name = "message" placeholder = "message" required><br>
+              <input type ="hidden" name="recipient_id" value="<?= $listing->registered_user->username ?>">
+              <div class = "clearfix">
+                <button type = "button" class=" cancelbtn btn btn-primary btn-md" onclick = "document.getElementById('contact_box').style.display = 'none'">Cancel</button>
+                <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Send </button>
+                </div>
+                </div>
+              <?= $this->Form->end();?>
+        </div>
 
     <table class="vertical-table">
         <tr>
@@ -232,14 +257,14 @@
         </table>
         <?php endif; ?>
         <a id = 'thumbnailImg' onclick = 'hide();'>
-        
+
         </a>
         <script>
                                     var displayed = false;
                                     // the parameter is the data url of the blob image.
                                     function displaythumbnail(theimg) {
                                         var thumbnailView = document.getElementById('thumbnailImg');
-                                            thumbnailView.style.display = ""; 
+                                            thumbnailView.style.display = "";
                                             thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
                                             thumbnailView.style.position = "fixed";
                                             thumbnailView.style.top = "0%";
@@ -248,7 +273,7 @@
                                             thumbnailView.style.width = "100%";
                                             thumbnailView.style.height = "100%";
                                             thumbnailView.style.textAlign = "center";
-                                            thumbnailView.style.cursor = "zoom-out"; 
+                                            thumbnailView.style.cursor = "zoom-out";
                                              thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
                                             displayed = true;
                                     }
