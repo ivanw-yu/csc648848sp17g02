@@ -23,6 +23,7 @@ class ConversationsController extends AppController
      */
     public function index($id)
     {
+        $this->setDefaultData();
         $this->paginate = [
             'contain' => ['RegisteredUsers'],
         ];
@@ -83,6 +84,7 @@ class ConversationsController extends AppController
      */
     public function add($sender, $recipient, $id)
     {
+        $this->setDefaultData();
         $conversation = $this->Conversations->newEntity();
         if ($this->request->is('post')) {
             // The data has the message.

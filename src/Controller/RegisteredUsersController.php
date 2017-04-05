@@ -53,6 +53,7 @@ class RegisteredUsersController extends AppController
      */
     public function add()
     {
+        $this->setDefaultData();
         $registeredUser = $this->RegisteredUsers->newEntity();
         if ($this->request->is('post')) {
             $registeredUser = $this->RegisteredUsers->patchEntity($registeredUser, $this->request->data);
@@ -118,6 +119,7 @@ class RegisteredUsersController extends AppController
     }
 
     public function login() {
+        $this->setDefaultData();
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
@@ -133,6 +135,7 @@ class RegisteredUsersController extends AppController
 
     public function logout()
     {
+        $this->setDefaultData();
         // this allows the user to logout, and the user is redirected to the same page.
         $this->Auth->logout();
         return $this->redirect($this->referer());

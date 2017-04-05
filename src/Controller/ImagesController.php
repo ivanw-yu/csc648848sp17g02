@@ -54,6 +54,7 @@ class ImagesController extends AppController
      */
     public function add($id)
     {
+        $this->setDefaultData();
         $image = $this->Images->newEntity();
         if ($this->request->is('post')) {
             $save_successful = empty($id) ? false : true;
@@ -84,6 +85,7 @@ class ImagesController extends AppController
      */
     public function edit($id = null)
     {
+        $this->setDefaultData();
         $image = $this->Images->get($id, [
             'contain' => []
         ]);

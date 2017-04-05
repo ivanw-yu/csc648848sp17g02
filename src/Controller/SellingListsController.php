@@ -19,6 +19,7 @@ class SellingListsController extends AppController
      */
     public function index()
     {
+        $this->setDefaultData();
         $this->paginate = [
             'contain' => ['RegisteredUsers', 'Listings'],
             'conditions' => ['RegisteredUsers.username'

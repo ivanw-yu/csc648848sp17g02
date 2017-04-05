@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Application Controller
@@ -109,5 +110,16 @@ class AppController extends Controller
 
     public function isAuthorized($user) {
         return false;
+    }
+
+    public function setDefaultData() {
+        $categoriesTable =  TableRegistry::get('Categories');
+        $this->set(['id' => $categoriesTable->find('all')]);
+
+        $coursesTable =  TableRegistry::get('Courses');
+        $this->set(['select_courses' => $coursesTable->find('all')]);
+
+        $conditionsTable =  TableRegistry::get('Conditions');
+        $this->set(['select_conditions' => $conditionsTable->find('all')]);
     }
 }

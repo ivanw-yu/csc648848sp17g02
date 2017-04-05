@@ -45,15 +45,7 @@ class PagesController extends AppController
      */
     public function display()
     {
-        // used for browse.ctp, so the valid categories contained in the Categories table can be used as links in that page.
-        $this->loadModel('Categories');
-        $categoryEntries = $this->Categories->find('all');
-        $this->set(['id' => $categoryEntries]);
-        $coursesTable =  TableRegistry::get('Courses');
-        $this->set(['courses' => $coursesTable->find('all')]);
-        $conditionsTable =  TableRegistry::get('Conditions');
-        $this->set(['conditions' => $conditionsTable->find('all')]);
-
+        $this->setDefaultData();
         $path = func_get_args();
 
         $count = count($path);

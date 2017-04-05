@@ -42,6 +42,7 @@ class ListingsController extends AppController
      */
     public function index()
     {
+        $this->setDefaultData();
         $filtered_listings = NULL;
         if (!empty($this->request->query)) {
             $tags = preg_split('/[\s,]+/', $this->request->query['tags']);
@@ -104,6 +105,7 @@ class ListingsController extends AppController
      */
     public function view($id = null)
     {
+        $this->setDefaultData();
         $listing = $this->Listings->get($id, [
             'contain' => ['Categories', 'RegisteredUsers', 'Courses', 'Conditions', 'PurchasedLists', 'SellingLists', 'SoldLists', 'Tags', 'WatchingLists', 'WishLists']
         ]);
@@ -125,6 +127,7 @@ class ListingsController extends AppController
      */
     public function add()
     {
+        $this->setDefaultData();
         $listing = $this->Listings->newEntity();
         if ($this->request->is('post')) {
             // Save the listing first.
@@ -179,6 +182,7 @@ class ListingsController extends AppController
      */
     public function edit($id = null)
     {
+        $this->setDefaultData();
         $listing = $this->Listings->get($id, [
             'contain' => []
         ]);
@@ -208,6 +212,7 @@ class ListingsController extends AppController
      */
     public function delete($id = null)
     {
+        $this->setDefaultData();
         $this->request->allowMethod(['post', 'delete']);
         $listing = $this->Listings->get($id);
         if ($this->Listings->delete($listing)) {

@@ -238,7 +238,7 @@
                   <select name='course' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
                     <!-- value="" makes the controller search for everything.  -->
                     <option value="">All courses</option>
-                      <?php foreach ($courses as $row): ?>
+                      <?php foreach ($select_courses as $row): ?>
 <option value="<?= $row->course_name?>"><?= $row->course_name; ?></option>
                       <?php endforeach; ?>
                   </select>
@@ -248,7 +248,7 @@
                   <select name='condition' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
                     <!-- value="" makes the controller search for everything.  -->
                     <option value="">All conditions</option>
-                      <?php foreach ($conditions as $row): ?>
+                      <?php foreach ($select_conditions as $row): ?>
 <option value="<?= $row->condition_name?>"><?= $row->condition_name; ?></option>
                       <?php endforeach; ?>
                   </select>
