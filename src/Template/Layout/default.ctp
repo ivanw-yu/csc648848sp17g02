@@ -228,7 +228,7 @@
                          for everything.
                     -->
                     <option value=""><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
-                      <?php foreach ($id as $row): ?>
+                      <?php foreach ($validCategories as $row): ?>
                         <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
                       <?php endforeach; ?>
                   </select>
@@ -276,6 +276,18 @@
               <button type="button" class="btn btn-primary btn-md" style = "width:auto;"><?= $this->Html->link('Logout', 
                                                                                                               ['controller' => 'RegisteredUsers',
                                                                                                               'action' => 'logout']) ?></button> 
+                  <?= $this->Html->link('Private messages',
+                                        ['controller' => 'PrivateMessages',
+                                         'action' => 'index','class'=>'btn btn-primary btn-md']);?>
+                  <?= $this->Html->link('Sell',
+                                        ['controller' => 'Listings',
+                                         'action' => 'add']);?>
+                  <?= $this->Html->link('Selling',
+                                        ['controller' => 'SellingLists',
+                                         'action' => 'index']); ?>
+                  <?= $this->Html->link('Watching',
+                                        ['controller' => 'WatchingLists',
+                                         'action' => 'index']); ?>
             <?php endif; ?>
           </ul>
         </div>
