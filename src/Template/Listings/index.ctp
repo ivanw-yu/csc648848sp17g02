@@ -93,6 +93,8 @@ function f() {
                 <?= h($listing->date_created) ?>
                 <?= h($listing->condition_id) ?>
                 <?= h($listing->category_id) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
+
                 </div>
 <!-- <a> >>>>>>> d61402d4a6bbab4e52eef9976b8a878176f93468 </a>-->
             <?php endforeach; ?>
