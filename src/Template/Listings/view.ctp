@@ -75,6 +75,20 @@
               <?= $this->Form->end();?>
         </div>
 
+<!-- Button for adding the listing to watching list. -->
+<?php if($currentUser !== null): ?>
+    <?= $this->Form->create(null, ['url' => ['controller' => 'WatchingLists',
+                                             'action' => 'add']]); ?>
+    <input type ="hidden" name="listing_id" value="<?= $listing->listing_num ?>">
+    <input type ="hidden" name="registered_user_id" value="<?= $currentUser ?>">
+    <div class = "clearfix">
+        <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Add to watching list </button>
+    </div>
+    <?= $this->Form->end();?>
+<?php else: ?>
+    <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'block'" style = "width:auto;">Add to watching list</button>
+<?php endif; ?>
+
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Price') ?></th>
