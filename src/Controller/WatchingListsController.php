@@ -65,7 +65,8 @@ class WatchingListsController extends AppController
             if ($this->WatchingLists->save($entity)) {
                 $this->Flash->success(__('The watching list has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                //return $this->redirect(['action' => 'index']);
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('The watching list could not be saved. Please, try again.'));
         }
