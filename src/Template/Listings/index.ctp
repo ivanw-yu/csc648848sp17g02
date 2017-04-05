@@ -41,10 +41,11 @@ function f() {
 
 <div>
     <select id="select_sort" class="selectpicker form-control" data-style="btn-primary" onchange="f();">
-        <option value="price_desc">price: high to low</option>
-        <option value="price_asc">price: low to high</option>
-        <option value="date_desc">date: new to old</option>
-        <option value="date_asc">date: old to new</option>
+        <option value="title" disabled='true'>Sort</option>
+        <option value="price_desc">Price: high to low</option>
+        <option value="price_asc">Price: low to high</option>
+        <option value="date_desc">Date: new to old</option>
+        <option value="date_asc">Date: old to new</option>
     </select>
 </div>
 
