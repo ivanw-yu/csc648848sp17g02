@@ -28,24 +28,80 @@
     </ul>
 </nav>
 <div class="listings form large-9 medium-8 columns content">
-    <?= $this->Form->create($listing) ?>
+
+    <?php $blob = 0; ?>
+    <!-- the image doesn't get submitted -->
+    
+    <?= $this->Form->create($listing, ['enctype' =>'multipart/form-data']) ?>
     <fieldset>
         <legend><?= __('Add Listing') ?></legend>
         <?php
             //echo $this->Form->input('date_created');
-            echo $this->Form->input('images');
             //echo $this->Form->input('is_sold');
+            echo $this->Form->input('file', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'preview(); imageUpload();']);
             echo $this->Form->input('price');
             echo $this->Form->input('location');
             echo $this->Form->input('item_desc');
             echo $this->Form->input('title');
             echo $this->Form->input('category_id', ['options' => $categories]);
+            echo $this->Form->input('image', [ 'id' => 'blobfield' , 'type' => 'hidden']);
             //echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
             echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
-            echo $this->Form->input('condition_id', ['options' => $conditions, 'empty' => true]);
+            echo $this->Form->input('condition_id'/*, ['options' => $conditions, 'empty' => true]*/);
             echo $this->Form->input('tags');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Add images')) ?>
+    <?= $this->Form->button(__('Add image')) ?>
     <?= $this->Form->end() ?>
 </div>
+
+<img src = "" height = "500" width = "500" alt = "image prev..">
+<div id="test" style = "width:500px, height: 500px">weqnjenw</div>
+<script>
+
+    // This stores the image as a data url. in html, just do <img src = stream_get_contents($listing->image) ...> to display, base64 encoding is not needed.
+    function imageUpload(){
+        var file = document.querySelector('input[type=file]').files[0];
+        var blob = document.getElementById('blobfield');
+        var reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            blob.value = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+    // used for testing purposes only.
+    function preview(){
+        var preview = document.querySelector('img');
+        var file    = document.querySelector('input[type=file]').files[0];
+        var reader  = new FileReader();
+
+        reader.addEventListener("load", function () {
+        preview.src = reader.result;
+        document.getElementById("test").innerHTML = window.atob(reader.result);
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+    /*function convertToBlob(dataURL) {
+        var binary = atob(dataURL.split(",")[1]);
+        var binaryArray = [];
+        //var binaryString = "";
+        var i = 0;
+        for(var i = 0; i < binary.length; i++) {
+            binaryArray.push(binary.charCodeAt(i));
+            //binaryString += binary.charCodeAt(i);
+        }
+        //return binaryString;
+        return new Blob([new Uint8Array(binaryArray)], {
+        type: "image/jpeg"
+      });
+    }*/   
+</script>
+
+

@@ -51,13 +51,41 @@ function f() {
 
 <div class="listings index large-9 medium-8 columns content" style = "width: 100%">
     <h3><?= __('Listings') ?></h3>
+           <!-- //<//?php foreach ($listings as $listing): ?>
+<<<<<<< HEAD
+            <tr>
+                <td><//?= //$this->Number->format($listing->listing_num) ?></td>
+                <td><//?= //h($listing->date_created) ?></td>
+                <td><//?= //h($listing->is_sold) ?></td>
+                <td><//?= //h($listing->price) ?></td>
+                <td><//?= //h($listing->location) ?></td>
+                <td><//?= //h($listing->item_desc) ?></td>
+                <td><//?= //h($listing->title) ?></td>
+                <td><//?=// $listing->has('category') ? $this->Html->link($listing->category->category_name, ['controller' => 'Categories', 'action' => 'view', $listing->category->category_name]) : '' ?></td>
+                <td><//?=// $listing->has('registered_user') ? $this->Html->link($listing->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $listing->registered_user->username]) : '' ?></td>
+                <td><//?=// $listing->has('course') ? $this->Html->link($listing->course->course_name, ['controller' => 'Courses', 'action' => 'view', $listing->course->course_name]) : '' ?></td>
+                <td>This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered
+                    //<//?php if($listing->image !== null): ?>
+                               <//?php //$blobimg = stream_get_contents($listing->image); ?>
+                               <a class = "aclass" onclick = "displaythumbnail('<//?php echo $blobimg; ?>');" >
+                               //<//?= '<img src = "' . $blobimg . '" style = "width: 60%; height: 10%" />' ?>
+                               </a>
+                     //<//?php endif; ?>         
+                </td>
+                <td class="actions">
+                    <//?=// $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
+                    <//?= $this->Html->link(__('Edit'), ['action' => 'edit', $listing->listing_num]) ?>-->
+                    <!--<//?= //$this->Form->postLink(__('Delete'), ['action' => 'delete', $listing->listing_num], [//'confirm' => __('Are you sure you want to delete # {0}?', $listing->listing_num)]) ?>
+                </td>
+            </tr>
+======= -->
             <?php foreach ($listings as $listing): ?>
                 <div class='listing_cell'>
-                <!-- This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered-->
+                <!-- This is how blobs are displayed on the webpage. $listings->image will return the data url stored in the listings able for that image -->
                 <?php if($listing->image !== null): ?>
-                          <?php $blobimg = base64_encode(stream_get_contents($listing->image)); ?>
-                          <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                          <?= '<img src = "data:image;base64, ' . $blobimg . '" style = "width: 40px; height: 40px" />' ?>
+                          <?php $blobimg = stream_get_contents($listing->image); ?>
+                          <a class = "aclass" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                          <?= '<img src = " ' . $blobimg . '" style = "width: 40px; height: 40px" />' ?>
                           </a>
                 <?php endif; ?>
                 <?= h($listing->price) ?>
@@ -66,6 +94,7 @@ function f() {
                 <?= h($listing->condition_id) ?>
                 <?= h($listing->category_id) ?>
                 </div>
+<!-- <a> >>>>>>> d61402d4a6bbab4e52eef9976b8a878176f93468 </a>-->
             <?php endforeach; ?>
     <div class="paginator">
         <ul class="pagination">
@@ -95,7 +124,7 @@ function f() {
                                             thumbnailView.style.height = "100%";
                                             thumbnailView.style.textAlign = "center";
                                             thumbnailView.style.cursor = "zoom-out"; 
-                                            thumbnailView.innerHTML = '<img src = "data:image;base64, ' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+                                            thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
                                             displayed = true;
                                     }
                                     function hide(){

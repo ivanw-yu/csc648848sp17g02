@@ -94,7 +94,7 @@ $this->layout = false;
                     -->
                     <option value=""><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                       <?php foreach ($id as $row): ?>
-<option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
+                        <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
                       <?php endforeach; ?>
                   </select>
                 </div>

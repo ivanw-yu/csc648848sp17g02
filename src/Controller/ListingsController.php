@@ -11,6 +11,9 @@ use Cake\ORM\TableRegistry;
  */
 class ListingsController extends AppController
 {
+
+    public $blobImageToUpload;
+
     public function initialize() {
         parent::initialize();
         $this->Auth->allow(['view', 'index']);
@@ -45,6 +48,28 @@ class ListingsController extends AppController
             $table =  TableRegistry::get('Tags');
             $opts = ['tags' => $tags];
             $filtered_listings = $table->find('listings', $opts);
+
+            $unioned_query = $filtered_listings;
+            // this if-stateument is true if the user has typed something into the search field.
+            // this if-block will render the index page containing only items pertaining to the keywords.
+            if(!empty($tags) && strlen($tags[0])>=1){
+
+               // $tags has all the keywords entered from the search text field. 
+               foreach($tags as &$value) {
+                    // gets rows having the item_desc, title or category_id similar to the search key word.
+                      $other_query = $this->Listings->find()->where(['OR' => [['item_desc LIKE' => "%{$value}%"], 
+                                                                            ['title LIKE' => "%{$value}%"],
+                                                                            ['category_id LIKE' => "%{$value}%"]]]);
+
+                    // this unions the new query result with the old ones.                                              
+                    $unioned_query->union($other_query);
+                }
+                $this->set('listings', $unioned_query);
+                $this->set(compact('listings'));
+                $this->set('_serialize', ['listings']);
+               
+                return;   
+            }
         }
         $contain = ['RegisteredUsers', 'Courses', 'Conditions', 'Categories'];
         $conditions = [];
@@ -66,7 +91,6 @@ class ListingsController extends AppController
         else {
             $listings = $this->paginate($filtered_listings);
         }
-
         $this->set(compact('listings'));
         $this->set('_serialize', ['listings']);
     }
@@ -108,10 +132,17 @@ class ListingsController extends AppController
             $listing->is_sold = 0;
             $listing->date_created = new \DateTime();
             $listing->registered_user_id = $this->Auth->user()['username'];
-            $thumbnail = fopen($this->request->data['images'], 'rb');
-            $listing->image = $thumbnail;
+            //$thumbnail = fopen($this->request->data['image'], 'rb');
+            /*$thumbnail = file_get_contents($this->request->data['image']);
+            if(!$thumbnail){
+                $listing->image = 'error, thumbnail did not upload';
+            } else {
+                $listing->image = $thumbnail;
+            }
+            fclose($thumbnail);*/
+            $listing->image = $this->request->data['image'];
             $save_successful = $this->Listings->save($listing);
-            fclose($thumbnail);
+            
 
             // Then save tags.
             $tags_table = TableRegistry::get('Tags');

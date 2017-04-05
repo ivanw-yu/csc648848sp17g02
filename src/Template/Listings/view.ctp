@@ -33,13 +33,19 @@
 <div class="listings view large-9 medium-8 columns content">
     <h3><?= h($listing->title) ?></h3>
     
-                               
+                               <!-- Previously, this is how the images were displayed-->
+                               <!--//<//?php if($listing->image !== null): ?>
+                               <//?php $blobimg = //base64_encode(stream_get_contents($listing->image)); ?>
+                               <a class = "aclass" onclick = "displaythumbnail('<//?php echo $blobimg; ?>');" >
+                               <//?= //'<img src = "data:image;base64, ' . $blobimg . '" style = "width: 200px; height: 200px" />' ?>
+                               </a>-->
+
+                               <!-- Since images are stored as blob data url's, this is how it's accessed now-->
                                <?php if($listing->image !== null): ?>
-                               <?php $blobimg = base64_encode(stream_get_contents($listing->image)); ?>
+                               <?php $blobimg = stream_get_contents($listing->image); ?>
                                <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                               <?= '<img src = "data:image;base64, ' . $blobimg . '" style = "width: 200px; height: 200px" />' ?>
+                               <?= '<img src = "' . $blobimg . '" style = "width: 10em; height: 10em" />' ?>
                                </a>
-                               
                      <?php endif; ?>  
 
     <table class="vertical-table">
@@ -230,7 +236,7 @@
         </a>
         <script>
                                     var displayed = false;
-                                    // the parameter is the base64_encoded binary representation of the blob image.
+                                    // the parameter is the data url of the blob image.
                                     function displaythumbnail(theimg) {
                                         var thumbnailView = document.getElementById('thumbnailImg');
                                             thumbnailView.style.display = ""; 
@@ -243,7 +249,7 @@
                                             thumbnailView.style.height = "100%";
                                             thumbnailView.style.textAlign = "center";
                                             thumbnailView.style.cursor = "zoom-out"; 
-                                            thumbnailView.innerHTML = '<img src = "data:image;base64, ' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+                                             thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
                                             displayed = true;
                                     }
                                     function hide(){

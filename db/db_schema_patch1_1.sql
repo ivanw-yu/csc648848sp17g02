@@ -17,5 +17,5 @@ CREATE TABLE images (
     listing_id INTEGER,
     image LONGBLOB,
     PRIMARY KEY (image_num),
-    FOREIGN KEY (listing_id) REFERENCES listings (listing_num)
+    FOREIGN KEY (listing_id) REFERENCES listings (listing_num) ON DELETE CASCADE
 );
