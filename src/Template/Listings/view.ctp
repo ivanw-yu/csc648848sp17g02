@@ -48,10 +48,12 @@
                                </a>
                      <?php endif; ?>
 
+            <!-- Show contact seller button.  Popup a message box if the user
+                 is signed in.  Otherwise, popup a registration form. -->
             <?php if($currentUser !== null): ?>
               <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('contact_box').style.display ='block'" style = "width:auto;">Contace seller</button>
             <?php else: ?>
-              <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'block'" style = "width:auto;">Sign in to contact seller</button>
+              <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'block'" style = "width:auto;">Contact Seller</button>
             <?php endif; ?>
       <div id = "contact_box" class= "modal">
             <span onclick = "document.getElementById('contact_box').style.display = 'none'" class = "close" title = "Close">x</span>
