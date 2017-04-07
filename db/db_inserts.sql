@@ -77,7 +77,7 @@ VALUES (
     '2017-03-01 12:21:33',
     0,
     '12.00',
-    'SFSU',
+    '1600 Holloway Ave, San Francisco, CA 94132',
     'Something for sale',
     'A Title',
     'books',

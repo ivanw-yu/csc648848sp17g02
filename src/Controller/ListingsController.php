@@ -13,6 +13,7 @@ class ListingsController extends AppController
 {
 
     public $blobImageToUpload;
+    public $helpers = array('GoogleMap');
 
     public function initialize() {
         parent::initialize();
