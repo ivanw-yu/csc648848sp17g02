@@ -50,6 +50,20 @@
             echo $this->Form->input('condition_id'/*, ['options' => $conditions, 'empty' => true]*/);
             echo $this->Form->input('tags');
         ?>
+        <script>
+            function initAutocomplete() {
+                debugger;
+             autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('location')),
+            {types: ['geocode']});
+            autocomplete.addListener('place_changed', fillInAddress);
+            }
+            function fillInAddress() {
+                debugger;
+                var place = autocomplete.getPlace();
+            }   
+        </script>
+        <?=$this->Html->script('http://maps.google.com/maps/api/js?key=AIzaSyAaex_V9gcWMaRqb-e6yJcfbaj9z2COtVU&libraries=places&callback=initAutocomplete');?>
     </fieldset>
     <?= $this->Form->button(__('Add image')) ?>
     <?= $this->Form->end() ?>
