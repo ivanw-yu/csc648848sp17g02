@@ -28,6 +28,7 @@ use Cake\ORM\TableRegistry;
  */
 class AppController extends Controller
 {
+	var x = document.getElementById(“myForm”).elements.namedItem(“tag”).value
 
     public $current_logged_in_user;// = $this->Auth->user('id');
     /**
@@ -42,7 +43,7 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-	
+
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth',
@@ -94,7 +95,6 @@ class AppController extends Controller
         $this->loadModel('Categories');
         $categoryEntries = $this->Categories->find('all');
         $this->set(['validCategories' => $categoryEntries]);
-
 
         // Some pages access categories with the id variable.
         $this->set(['id' => $categoryEntries]);
