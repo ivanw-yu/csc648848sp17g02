@@ -306,7 +306,6 @@
         <h4><?= ('Map') ?></h4>
         <?= $this->Html->script('http://maps.google.com/maps/api/js?key=AIzaSyAaex_V9gcWMaRqb-e6yJcfbaj9z2COtVU', ['plugin' => false]); ?>
         <?= $this->GoogleMap->map(); ?>
-        <?= $this->GoogleMap->addMarker("map_canvas", 1, "1600 Holloway Ave, San Francisco, CA 94132"); ?>
         <?= $this->GoogleMap->addMarker("map_canvas", 1, h($listing->location)); ?>
     </div>
     
