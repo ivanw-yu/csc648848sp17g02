@@ -45,6 +45,20 @@ class PagesController extends AppController
      */
     public function display()
     {
+        // queries all listings and sort in order of most recent to least
+        
+        $most_recent_items = TableRegistry::get('Listings')->find();
+        $most_recent_items->order(['date_created' => 'DESC']);
+        $this->set(['recent_items' => $most_recent_items]);
+
+
+        // gets most expensive items
+        $most_expensive_items = TableRegistry::get('Listings')->find();
+        $most_expensive_items->order(['price' => 'DESC']);
+        $this->set(['expensive_items' => $most_expensive_items]);
+
+
+
         $this->setDefaultData();
         $path = func_get_args();
 

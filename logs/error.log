@@ -8611,3 +8611,699 @@ Stack Trace:
 #17 {main}
 
 
+2017-04-04 00:00:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:00:26 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:02:05 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:02:10 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:02:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:02:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:02:57 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:03:19 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:03:19 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:04:45 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:04:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:06:01 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:06:01 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:06:16 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:06:16 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:06:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:06:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:07:04 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 00:07:04 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:99
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/tl in [/home/tluu4/public_html/src/Controller/AppController.php, line 99]
+Request URL: /~tluu4/pages/index
+Client IP: 130.212.95.65
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-04 00:14:49 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 01:39:51 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-04 01:39:58 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:15:26 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:15:26 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:15:26 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:18:01 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:18:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:18:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:18:02 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:23:44 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:23:45 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:23:45 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/css/materialize.min.css
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:23:45 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:23:45 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:25:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:25:24 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:25:24 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/css/materialize.min.css
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:25:24 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:25:24 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:25:24 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:25:24 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/js/materialize.min.js
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:25:24 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:25:24 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:32:28 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:32:28 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:32:28 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/css/materialize.min.css
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:33:16 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:33:16 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:33:16 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/css/materialize.min.css
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:34:59 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:35:27 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:35:50 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:35:53 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:35:53 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/recent/
+Referer URL: http://sfsuse.com/~tluu4/pages/index?action=Go
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 06:36:01 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:36:09 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:36:24 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:39:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:39:38 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:40:21 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 06:40:30 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:06:48 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:08:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:13:58 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:14:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:14:24 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:15:01 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:15:12 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:15:25 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:15:43 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:16:01 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:32:07 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:33:20 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:35:20 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:35:51 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:36:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:36:32 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/recent/
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 07:36:39 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:36:43 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:38:10 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:39:37 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:39:49 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:40:21 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:40:22 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:40:39 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:40:51 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:44:20 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:45:34 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:45:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:46:12 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:47:17 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:48:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:48:48 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:49:16 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:49:33 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:50:18 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:50:29 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:50:39 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:51:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:51:47 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:52:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:52:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:53:10 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:53:27 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:54:34 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:56:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:56:33 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:56:50 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:57:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:57:22 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:57:30 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:57:43 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:57:54 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:58:38 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:58:50 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:59:03 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:59:06 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 07:59:06 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error')
+#6 /home/t in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/recent/
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:00:00 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 08:01:50 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 08:01:52 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 08:01:52 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 08:25:27 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-06 08:27:55 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:28:21 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:28:21 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:28:38 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:28:38 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:30:03 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:30:03 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:30:35 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:30:36 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:37:53 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/webroot/img/thaospagebg.jpg
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 08:37:53 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/images/grand_teton.JPG
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 10:42:53 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/signin/
+Referer URL: http://sfsuse.com/~tluu4/pages/index?tags=book&action=Go
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 10:43:46 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/signin/
+Referer URL: http://sfsuse.com/~tluu4/pages/index?tags=book&action=Go
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-06 10:52:20 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/signin/
+Referer URL: http://sfsuse.com/~tluu4/pages/index?tags=book&action=Go
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 02:37:45 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/indez
+Client IP: 76.21.34.142
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 14:48:20 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/browse/recent/
+Referer URL: http://sfsuse.com/~tluu4/pages/browse/
+Client IP: 76.21.34.142
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 14:48:23 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/browse/sell/
+Referer URL: http://sfsuse.com/~tluu4/pages/browse/
+Client IP: 76.21.34.142
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
