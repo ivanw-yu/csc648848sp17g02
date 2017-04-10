@@ -27,8 +27,8 @@ use Cake\Network\Exception\NotFoundException;
       <a class="btn waves-effect white grey-text darken-text-2">button</a>
     </div>
     <div class="carousel-item red white-text" href="#one!">
-      <h2>First Panel</h2>
-      <p class="white-text">This is your first panel</p>
+      <h2>Welcome to GatorBay</h2>
+      <p class="white-text">a place where Gators buy and sell!</p>
     </div>
     <div class="carousel-item amber white-text" href="#two!">
       <h2>Second Panel</h2>
@@ -49,7 +49,7 @@ use Cake\Network\Exception\NotFoundException;
       <span><center>Recent Items</center></span>
       <div class="row" style="display: flex; justify-content: center;">
         <div class="col s12 m6 l3">
-          <div class="card small">
+          <div class="card medium">
             <div class="card-image">
               <img src="http://www.publicdomainpictures.net/pictures/170000/nahled/math.jpg">
             </div>
@@ -63,7 +63,7 @@ use Cake\Network\Exception\NotFoundException;
         </div>
 
         <div class="col s12 m6 l3">
-          <div class="card small">
+          <div class="card medium">
             <div class="card-image">
               <img src="http://www.publicdomainpictures.net/pictures/170000/nahled/math.jpg">
             </div>
@@ -77,7 +77,7 @@ use Cake\Network\Exception\NotFoundException;
         </div>
 
         <div class="col s12 m6 l3">
-          <div class="card small">
+          <div class="card medium">
             <div class="card-image">
               <img src="http://www.publicdomainpictures.net/pictures/170000/nahled/math.jpg">
             </div>
@@ -123,11 +123,3 @@ use Cake\Network\Exception\NotFoundException;
         }
         
 </script>
-                            <?= $this->Html->link( 'convo', ['controller' => 'Conversations', 'action' => 'add']);?>
-                            <?= $this->Html->link( 'pm', ['controller' => 'PrivateMessages', 'action' => 'index']);?>
-                            <?= $this->Html->link( 'sell', ['controller' => 'Listings', 'action' => 'add']);?>
-<?= $this->Html->link( 'selling_list', ['controller' => 'SellingLists',
-                                        'action' => 'index']); ?>
-    </body>
-</html>
-

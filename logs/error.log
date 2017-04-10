@@ -9307,3 +9307,431 @@ Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHa
 
 
 
+2017-04-08 23:27:45 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index
+Client IP: 130.212.95.65
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 23:27:51 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index
+Client IP: 130.212.95.65
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 23:28:40 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/sell/
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 130.212.92.87
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 23:29:29 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index
+Client IP: 130.212.95.65
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 23:29:31 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index
+Client IP: 130.212.95.65
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 23:30:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-08 23:30:23 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('parseError')
+#6 /h in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index
+Client IP: 130.212.95.65
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 23:30:50 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-08 23:30:50 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('parseError')
+#6 /h in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index
+Client IP: 130.212.95.65
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 23:30:52 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-08 23:30:52 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('parseError')
+#6 /h in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index
+Client IP: 130.212.95.65
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-08 23:31:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-04-09 21:32:58 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/sell/
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-09 21:33:02 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/sell/
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-09 21:34:26 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/sell/
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-09 21:34:41 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/sell/
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-09 21:36:49 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/sell/
+Referer URL: http://sfsuse.com/~tluu4/pages/index
+Client IP: 73.15.30.14
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 07:13:04 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/homepage
+Client IP: 67.180.210.91
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 09:35:46 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index.html
+Client IP: 67.180.210.91
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 09:35:53 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/pages/index.ctp
+Client IP: 67.180.210.91
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 09:56:46 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/listings/view/sell/
+Referer URL: http://sfsuse.com/~tluu4/listings/view/1
+Client IP: 67.180.210.91
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 10:12:17 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/browse/
+Referer URL: http://sfsuse.com/~tluu4/listings
+Client IP: 67.180.210.91
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 10:12:23 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/browse/
+Referer URL: http://sfsuse.com/~tluu4/listings
+Client IP: 67.180.210.91
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 10:12:29 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/recent/
+Referer URL: http://sfsuse.com/~tluu4/listings
+Client IP: 67.180.210.91
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 17:44:53 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/ind
+Client IP: 130.212.95.67
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 17:44:56 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/index
+Client IP: 130.212.95.67
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
+2017-04-10 17:45:02 Error: Fatal Error (1): Uncaught Error: Call to a member function user() on boolean in /home/tluu4/public_html/src/Controller/AppController.php:103
+Stack trace:
+#0 /home/tluu4/public_html/src/Controller/ErrorController.php(54): App\Controller\AppController->beforeRender(Object(Cake\Event\Event))
+#1 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(422): App\Controller\ErrorController->beforeRender(Object(Cake\Event\Event))
+#2 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(602): Cake\Controller\Controller->dispatchEvent('Controller.befo...')
+#5 /home/tluu4/public_html/vendor/cakephp/cakephp/src/Error/ExceptionRenderer.php(319): Cake\Controller\Controller->render('error500')
+#6 /hom in [/home/tluu4/public_html/src/Controller/AppController.php, line 103]
+Request URL: /~tluu4/index/browse
+Client IP: 130.212.95.67
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 97
+[main] - [internal], line ??
+
+
+
