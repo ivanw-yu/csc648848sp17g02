@@ -17,6 +17,7 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 
   <?= $this->Html->charset() ?>
@@ -44,60 +45,111 @@
 
     <style>
 
-      form {
-        display: flex;
-        justify-content: center;
-        min-width: 70%;
-      }
+        body { 
+          background-color: #dddddd;
+        }
+        form {
+          display: flex;
+          justify-content: center;
+          min-width: 60%;
+        }
 
-      .search-select { 
-        height: inherit; 
-        border: grey; 
-        text-overflow: ellipsis;
-      }
+        ul {
+          line-height: 400%;
+        }
 
-      .searchbar {
-        display: flex;
-        justify-content: center;
-      }
+        .search-select { 
+          height: inherit; 
+          border: grey; 
+          text-overflow: ellipsis;
+        }
 
-      .search-cat {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        text-overflow: ellipsis;
-      }
+        .searchbar {
+          display: flex;
+          justify-content: center;
+          height: 50px;
+        }
 
-      .recent-container{
-        display: flex;
-        justify-content: center;
-        padding: 25px;
-      }
+        .search-cat {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20%;
+          text-overflow: ellipsis;
+        }
 
-      .recent-content {
-        max-height: 450px;
-        max-width: 1200px;
-        background-color: #eeeeee;
-      }
+        .bread-content {
+          padding-left: 4%;
+        }
 
-      .col {
-        margin: 0 auto;
-      }
+        .breadcrumb {
+          font-size: 14px;
+          color: #7c3ee0;
+          overflow: hidden;
 
-      .row {
-        display: flex;
-        justify-content: center;
-      }
+        }
 
-      .footer {
-        display: flex;
-        justify-content: flex-end;
-        max-height: 100%;
-        max-width: 100%;
-        z-index: 1;
-        clear: top;        
-      }
+        .breadcrumb:before {
+          color: grey;
+          margin: 0;
+        }
+
+        .breadcrumb:last-child {
+          color: grey;
+
+        }
+
+        .content {
+          overflow: auto;
+        }
+
+        .recent-container{
+          display: flex;
+          justify-content: center;
+          padding: 25px;
+
+        }
+
+        .recent-content {
+          max-height: 450px;
+          max-width: 1200px;
+          background-color: #fcfcfc;
+          box-shadow: 5px 5px 10px #cecece;
+
+        }
+
+        .search-details {
+          width: 80%; 
+          padding-top: 2rem; 
+          padding-bottom: 1rem;
+        }
+
+        .search-content {
+          background-color: #f4f4f4;
+          height: 800px;
+          width: 100%;
+        }
+
+        .col {
+          margin: 0 auto;
+        }
+
+        .row {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2px;
+        }
+
+        .footer {
+          display: flex;
+          justify-content: flex-end;
+          max-height: 100%;
+          max-width: 100%;
+        }
+
+        .footer-links {
+          line-height: 200%;
+        }
 
     </style>
 </head>
@@ -294,12 +346,15 @@
 <!--=======-->
       <!--</form>-->
     
-      <center><p>Don't have an account? Register <a href="#modal2" class="modal-close">here</a>!</p></center>
-    </div>
-  </div>
+      <!--<center><p>Don't have an account? Register <a href="#modal2" class="modal-close">here</a>!</p></center>-->
+<!--======= -->
 
-    <!-- Registration Modal Structure -->
-  <div id="modal2" class="modal">
+
+  
+    </div>
+
+      <!-- Registration Modal Structure -->
+    <div id="modal2" class="modal">
 
     <div class="modal-content">
       <h5><center>REGISTRATION</center></h5>
@@ -311,16 +366,13 @@
                 <input name = "email" id="email" type="email" class="validate" required>
                 <label for="email" data-error="This email has already been registered">Email</label>
               </div>
-            </div>
 
             <div class="row">
               <div class="input-field col s12">
                 <input id="name" name = "username" type="text" class="validate" required>
                 <label for="name" data-error="Username has already been taken">Username</label>
-
               </div>
             </div>
-
             <div class="row">
               <div class="input-field col s12">
                 <input id="password" name = "password" type="password" class="validate" required>
@@ -335,48 +387,14 @@
       <?= $this->Form->end() ?>
       <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>
 
+      </div>
     </div>
-  </div>
-
-   <script type="text/javascript">
-    $(document).ready(function(){
-      $(".button-collapse").sideNav();
-      $('select').material_select();
-      $('.modal').modal();
-
-    });
+    </div>
+    </div>
 
 
-  </script>
-
-  <script>
-
-  $('.carousel.carousel-slider').carousel({fullWidth: true});
-  $('.carousel').carousel();
-  setInterval(function() {
-    $('.carousel').carousel('next');
-  }, 6000); //6000 = 6 secs
-
-
-
-        var modal = document.getElementById('id01');
-        window.onclick = function(event){
-          if (event.target == modal){
-             modal.style.display = "none";
-          }
-        }
-        var modal = document.getElementById('id02');
-        window.onclick = function(event){
-          if (event.target == modal){
-             modal.style.display = "none";
-          }
-        }
-        
-
-  </script>
 
     <?= $this->Flash->render() ?>
-    <div class = "container-fluid">
         <?= $this->fetch('content') ?>
 
   <footer class="page-footer grey">
@@ -395,17 +413,26 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      © 2017 TheGatorBay
+      <div class="footer-copyright">
+        <div class="container">
+        © 2017 GatorBay
+        </div>
       </div>
     </div>
   </footer>
 
-</div>
 
 
-</body>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+        $('.modal').modal();
+
+      });
+
+    </script>
+
+  </body>
 </html>
 

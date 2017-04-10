@@ -28,7 +28,7 @@ use Cake\Network\Exception\NotFoundException;
     </div>
     <div class="carousel-item red white-text" href="#one!">
       <h2>Welcome to GatorBay</h2>
-      <p class="white-text">Place where you can buy and sell items as SFSU students</p>
+      <p class="white-text">a place where Gators buy and sell!</p>
     </div>
     <!--<//?php $href_items = array("0" => "#two!", "1" => "#three!", "2" => "#four!");
           $href_vals = array_values($href_items);
@@ -38,7 +38,7 @@ use Cake\Network\Exception\NotFoundException;
     <//?php foreach ($expensive_items as $it): ?>
     <div class="carousel-item amber white-text" href = "<//?php echo  $href_vals[$count]; ?>" >
       <h2> <//?= $it->title ?> </h2>
-      <p class="white-text"> Only $ <?= $it->price ?> </p>
+      <p class="white-text"> Only $ <//?= $it->price ?> </p>
       <?php $blob// = stream_get_contents($it->image); ?>
       <//?= '<img src = " ' . $blob . '" style = "width: 30%px; height: 100px" />' ?>
 
@@ -73,7 +73,7 @@ use Cake\Network\Exception\NotFoundException;
       <?php $counter = 0; ?>
       <?php foreach ($recent_items as $item): ?> 
         <div class="col s12 m6 l3">
-          <div class="card small">
+          <div class="card medium">
             <div class="card-image">
               <?php $blobimg = stream_get_contents($item->image); ?>
               <?= '<img src = " ' . $blobimg . '" style = "width: 200px; height: 140px" />' ?>
@@ -102,7 +102,7 @@ use Cake\Network\Exception\NotFoundException;
         </div>
 
         <div class="col s12 m6 l3">
-          <div class="card small">
+          <div class="card medium">
             <div class="card-image">
               <img src="http://www.publicdomainpictures.net/pictures/170000/nahled/math.jpg">
             </div>
@@ -116,7 +116,7 @@ use Cake\Network\Exception\NotFoundException;
         </div>
 
         <div class="col s12 m6 l3">
-          <div class="card small">
+          <div class="card medium">
             <div class="card-image">
               <img src="http://www.publicdomainpictures.net/pictures/170000/nahled/math.jpg">
             </div>
@@ -170,4 +170,3 @@ use Cake\Network\Exception\NotFoundException;
                                         'action' => 'index']); ?>
     </body>
 </html>
-
