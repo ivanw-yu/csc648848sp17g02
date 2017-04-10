@@ -216,25 +216,51 @@
           <div class="col-md-6">
             <div class="form-horizontal">
 
-                <?= $this->Form->create(NULL, ['url' => [
+    <?= $this->Form->create(NULL, ['url' => [
                                    'controller' => 'Listings',
                                    'action' => 'index'],
                                    'type' => 'get']) ?>
-                    <div class="input-group">
-                        <div class="ddl-select input-group-btn">
-                            <select name='category' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
-                                <option value="all"><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
-                                <?php foreach ($validCategories as $row): ?>
-                                    <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <input name='tags' id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
-                    <span class="input-group-btn">
+              <div class="input-group">
+                <div class="ddl-select input-group-btn">
+                  <select name='category' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+                    <!-- value="" so that when 'All' is selected, nothing is
+                         given to the controller, in which case it will search
+                         for everything.
+                    -->
+                    <option value=""><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
+                      <?php foreach ($validCategories as $row): ?>
+                        <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
+                      <?php endforeach; ?>
+                  </select>
+                </div>
+
+                <div class="ddl-select input-group-btn">
+                  <select name='course' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+                    <!-- value="" makes the controller search for everything.  -->
+                    <option value="">All courses</option>
+                      <?php foreach ($select_courses as $row): ?>
+<option value="<?= $row->course_name?>"><?= $row->course_name; ?></option>
+                      <?php endforeach; ?>
+                  </select>
+                </div>
+
+                <div class="ddl-select input-group-btn">
+                  <select name='condition' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+                    <!-- value="" makes the controller search for everything.  -->
+                    <option value="">All conditions</option>
+                      <?php foreach ($select_conditions as $row): ?>
+<option value="<?= $row->condition_name?>"><?= $row->condition_name; ?></option>
+                      <?php endforeach; ?>
+                  </select>
+                </div>
+
+                <input name='tags' id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
+                <span class="input-group-btn">
                   <button type='submit' id="btn-search" class="btn btn-info glyphicon glyphicon-search" type="button"><i class="fa fa-search fa-fw"></i></button>
                 </span>
               </div>
-                <?= $this->Form->end() ?>
+    <?= $this->Form->end() ?>
+
             </div>
           </div>
          <!-- <div class="top-bar-section">
@@ -250,6 +276,18 @@
               <button type="button" class="btn btn-primary btn-md" style = "width:auto;"><?= $this->Html->link('Logout', 
                                                                                                               ['controller' => 'RegisteredUsers',
                                                                                                               'action' => 'logout']) ?></button> 
+                  <?= $this->Html->link('Private messages',
+                                        ['controller' => 'PrivateMessages',
+                                         'action' => 'index','class'=>'btn btn-primary btn-md']);?>
+                  <?= $this->Html->link('Sell',
+                                        ['controller' => 'Listings',
+                                         'action' => 'add']);?>
+                  <?= $this->Html->link('Selling',
+                                        ['controller' => 'SellingLists',
+                                         'action' => 'index']); ?>
+                  <?= $this->Html->link('Watching',
+                                        ['controller' => 'WatchingLists',
+                                         'action' => 'index']); ?>
             <?php endif; ?>
           </ul>
         </div>

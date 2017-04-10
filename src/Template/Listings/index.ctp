@@ -41,10 +41,11 @@ function f() {
 
 <div>
     <select id="select_sort" class="selectpicker form-control" data-style="btn-primary" onchange="f();">
-        <option value="price_desc">price: high to low</option>
-        <option value="price_asc">price: low to high</option>
-        <option value="date_desc">date: new to old</option>
-        <option value="date_asc">date: old to new</option>
+        <option value="title" disabled='true'>Sort</option>
+        <option value="price_desc">Price: high to low</option>
+        <option value="price_asc">Price: low to high</option>
+        <option value="date_desc">Date: new to old</option>
+        <option value="date_asc">Date: old to new</option>
     </select>
 </div>
 
@@ -92,6 +93,8 @@ function f() {
                 <?= h($listing->date_created) ?>
                 <?= h($listing->condition_id) ?>
                 <?= h($listing->category_id) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
+
                 </div>
 <!-- <a> >>>>>>> d61402d4a6bbab4e52eef9976b8a878176f93468 </a>-->
             <?php endforeach; ?>

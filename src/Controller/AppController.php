@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Application Controller
@@ -95,6 +96,9 @@ class AppController extends Controller
         $categoryEntries = $this->Categories->find('all');
         $this->set(['validCategories' => $categoryEntries]);
 
+        // Some pages access categories with the id variable.
+        $this->set(['id' => $categoryEntries]);
+
         // $this->Auth->user(_id_) isn't null after login() successful.
         if($this->Auth->user('username') !== null){
             // allows the name of the user to be accessed in default.ctp and all other pages.
@@ -105,9 +109,18 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+
+        // Give default.ctp courses and conditions to populate dropdown menus.
+        $coursesTable =  TableRegistry::get('Courses');
+        $this->set(['select_courses' => $coursesTable->find('all')]);
+        $conditionsTable =  TableRegistry::get('Conditions');
+        $this->set(['select_conditions' => $conditionsTable->find('all')]);
     }
 
     public function isAuthorized($user) {
         return false;
+    }
+
+    public function setDefaultData() {
     }
 }

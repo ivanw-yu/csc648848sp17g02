@@ -18,19 +18,8 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
-$this->layout = false;
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-      <title></title>
-      <meta charset = "utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html {
@@ -65,49 +54,10 @@ $this->layout = false;
     }
     
   </style>
-  </head>
-  <body>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     
     <div class="page-content"><!-- Your content goes here -->
-    <!-- Nav-bar -->
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?>
-          </div>
-
-          <div class="col-md-6">
-            <div class="form-horizontal">
-
-    <?= $this->Form->create(NULL, ['url' => [
-                                   'controller' => 'Listings',
-                                   'action' => 'index'],
-                                   'type' => 'get']) ?>
-              <div class="input-group">
-                <div class="ddl-select input-group-btn">
-                  <select name='category' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
-                    <option value="all"><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
-                      <?php foreach ($id as $row): ?>
-                        <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
-                      <?php endforeach; ?>
-                  </select>
-                </div>
-                <input name='tags' id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
-                <span class="input-group-btn">
-                  <button type='submit' id="btn-search" class="btn btn-info glyphicon glyphicon-search" type="button"><i class="fa fa-search fa-fw"></i></button>
-                </span>
-              </div>
-    <?= $this->Form->end() ?>
-            </div>
-          </div>
-
-          <ul class="nav navbar-nav">
-            <li><a href="#">signin/register</a></li>            
-          </ul>
-        </div>
-      </nav>
 
       <div class="routing">
         <a href="#">Home</a> > Browse</p>
@@ -212,5 +162,3 @@ $this->layout = false;
       <?php //endforeach; ?>-->
       </div>
     </div>
-  </body>
-</html>

@@ -20,6 +20,7 @@ class PrivateMessagesController extends AppController
      */
     public function index()
     {
+        $this->setDefaultData();
         // This block does not work.
         //$this->paginate = [
             //'contain' => ['RegisteredUsers', 'Conversations']
@@ -69,6 +70,7 @@ class PrivateMessagesController extends AppController
      */
     public function add()
     {
+        $this->setDefaultData();
         if ($this->request->is('post')) {
             $data = $this->request->data;
             $sender = $this->Auth->user()['username'];

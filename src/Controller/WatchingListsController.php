@@ -12,14 +12,18 @@ class WatchingListsController extends AppController
 {
 
     /**
-     * Index method
+     * Show all listings that the currently logged in user is watcing.
+     * This method can only be accessed by registered users.
      *
      * @return \Cake\Network\Response|null
      */
     public function index()
     {
+        $this->setDefaultData();
         $this->paginate = [
-            'contain' => ['RegisteredUsers', 'Listings']
+            'contain' => ['RegisteredUsers', 'Listings'],
+            'conditions' => ['RegisteredUsers.username'
+                                 => $this->Auth->user()['username']]
         ];
         $watchingLists = $this->paginate($this->WatchingLists);
 
@@ -53,11 +57,16 @@ class WatchingListsController extends AppController
     {
         $watchingList = $this->WatchingLists->newEntity();
         if ($this->request->is('post')) {
-            $watchingList = $this->WatchingLists->patchEntity($watchingList, $this->request->data);
-            if ($this->WatchingLists->save($watchingList)) {
+            // This line doesn't work.
+            //$watchingList = $this->WatchingLists->patchEntity($watchingList, $this->request->data);
+            $entity = $this->WatchingLists->newEntity();
+            $entity->listing_id = $this->request->data['listing_id'];
+            $entity->registered_user_id = $this->request->data['registered_user_id'];
+            if ($this->WatchingLists->save($entity)) {
                 $this->Flash->success(__('The watching list has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                //return $this->redirect(['action' => 'index']);
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('The watching list could not be saved. Please, try again.'));
         }
@@ -117,5 +126,16 @@ class WatchingListsController extends AppController
     public function display() {
         $b = $this->WatchingLists->find('all');
         $this->set(['id' => $b]);
+    }
+
+    public function isAuthorized($user) {
+        $action = $this->request->param('action');
+        // Allow registered users to sell.
+        if (in_array($action, ['add', 'index'])) {
+            if (!empty($this->Auth->user())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
