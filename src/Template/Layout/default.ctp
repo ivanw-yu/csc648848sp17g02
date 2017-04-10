@@ -18,6 +18,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
@@ -219,7 +221,10 @@
     <?= $this->Form->create(NULL, ['url' => [
                                    'controller' => 'Listings',
                                    'action' => 'index'],
-                                   'type' => 'get']) ?>
+		                   'type' => 'get']) ?>  
+
+
+
               <div class="input-group">
                 <div class="ddl-select input-group-btn">
                   <select name='category' id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
@@ -254,12 +259,24 @@
                   </select>
                 </div>
 
-                <input name='tags' id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
-                <span class="input-group-btn">
+	<input name='tags' id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
+
+<span class="input-group-btn">
                   <button type='submit' id="btn-search" class="btn btn-info glyphicon glyphicon-search" type="button"><i class="fa fa-search fa-fw"></i></button>
                 </span>
               </div>
     <?= $this->Form->end() ?>
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
           </div>
