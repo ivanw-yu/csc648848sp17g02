@@ -3,39 +3,51 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!--<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Selling List'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Listings'), ['controller' => 'Listings', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Listing'), ['controller' => 'Listings', 'action' => 'add']) ?></li>
+        <li class="heading"><//?= __('Actions') ?></li>
+        <li><//?= $this->Html->link(__('New Selling List'), ['action' => 'add']) ?></li>
+        <li><//?= $this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?></li>
+        <li><//?= $this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?></li>
+        <li><//?= $this->Html->link(__('List Listings'), ['controller' => 'Listings', 'action' => 'index']) ?></li>
+        <li><//?= $this->Html->link(__('New Listing'), ['controller' => 'Listings', 'action' => 'add']) ?></li>
     </ul>
-</nav>
+</nav> -->
 <div class="sellingLists index large-9 medium-8 columns content">
-    <h3><?= __('Selling Lists') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <h3><?= 'Welcome ' . $currentUser . ', here are items you\'re selling: ' ?></h3>
+    <h4> <?= __('Selling Lists') ?></h4>
+    <table cellpadding="0" cellspacing="0" >
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
+                <!--<th scope="col"><//?= $this->Paginator->sort('registered_user_id') ?></th>-->
                 <th scope="col"><?= $this->Paginator->sort('listing_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('image') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('price') ?></th>
+                <th scope="col">Item Description</th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($sellingLists as $sellingList): ?>
             <tr>
-                <td><?= $sellingList->has('registered_user') ? $this->Html->link($sellingList->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $sellingList->registered_user->username]) : '' ?></td>
+                <!--<td><//?= $sellingList->has('registered_user') ? $this->Html->link($sellingList->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $sellingList->registered_user->username]) : '' ?></td>-->
                 <td><?= $sellingList->has('listing') ? $this->Html->link($sellingList->listing->title, ['controller' => 'Listings', 'action' => 'view', $sellingList->listing->listing_num]) : '' ?></td>
+                <td>
+                    <?= $sellingList->has('listing') && $sellingList->listing->has('image') ? '<img src = "' . stream_get_contents($sellingList->listing->image) . '" style = "width: 100px; height: 100px; margin-right: 100px;" />' : '' ?>
+                </td>
+                <td>
+                    <?= $sellingList->has('listing') ? '$' . $sellingList->listing->price : '' ?>
+                </td>
+                <td>
+                    <?= $sellingList->has('listing') ? $sellingList->listing->item_desc : '' ?>
+                </td>
                 <td class="actions">
 <!-- There is already a link to view a listing.
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $sellingList->registered_user_id]) ?>
+                    <//?= $this->Html->link(__('View'), ['action' => 'view', $sellingList->registered_user_id]) ?>
 -->
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $sellingList->listing->listing_num]) ?>
-<!-- No deleting allowed at the moment.
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $sellingList->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingList->registered_user_id)]) ?>
--->
+<!-- No deleting allowed at the moment. Update 4/8: Let users remove their own items. -->
+                    <?= $this->Form->postLink(__('Remove'), ['action' => 'delete', $sellingList->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingList->registered_user_id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

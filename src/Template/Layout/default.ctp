@@ -163,7 +163,6 @@
 
         <ul id="nav-mobile" class="left hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
           <li><?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
-          <li><a onclick="window.location.href = 'sell/'">Sell</a></li>
           <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
           <li><a onclick="window.location.href = 'recent/'">Recent</a></li>
           <?php if($currentUser !== null): ?>
