@@ -24,9 +24,8 @@ use Cake\Network\Exception\NotFoundException;
 <div class="content" style="padding: 0;">
   <div class="carousel carousel-slider center" data-indicators="true">
     <div class="carousel-fixed-item center">
-      <a class="btn waves-effect white grey-text darken-text-2">button</a>
     </div>
-    <div class="carousel-item red white-text" href="#one!">
+    <div class="carousel-item deep-purple darken-1 white-text" href="#one!">
       <h2>Welcome to GatorBay</h2>
       <p class="white-text">a place where Gators buy and sell!</p>
     </div>
@@ -51,10 +50,11 @@ use Cake\Network\Exception\NotFoundException;
     
     <//?php endforeach; ?>
     -->
-    <div class="carousel-item amber white-text" href="#two!">
-      <h2>Second Panel</h2>
-      <p class="white-text">This is your second panel</p>
-    </div>
+
+    <a href = "listings/index/books" style = "text-decoration: none; width: 100%; height: 100%;">
+      <div class="carousel-item amber white-text" style="width: 100%; height: 100%; background-image:  url('https://c1.staticflickr.com/2/1062/1375685165_0026af5223_b.jpg'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
+      </div>
+    </a>
     <div class="carousel-item green white-text" href="#three!">
       <h2>Third Panel</h2>
       <p class="white-text">This is your third panel</p>
@@ -145,21 +145,6 @@ use Cake\Network\Exception\NotFoundException;
   setInterval(function() {
     $('.carousel').carousel('next');
   }, 6000); //6000 = 6 secs
-
-
-
-        var modal = document.getElementById('id01');
-        window.onclick = function(event){
-          if (event.target == modal){
-             modal.style.display = "none";
-          }
-        }
-        var modal = document.getElementById('id02');
-        window.onclick = function(event){
-          if (event.target == modal){
-             modal.style.display = "none";
-          }
-        }
         
 </script>
 

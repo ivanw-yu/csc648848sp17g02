@@ -57,104 +57,110 @@ use Cake\Network\Exception\NotFoundException;
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     
-    <div class="page-content"><!-- Your content goes here -->
+    <div class="content"><!-- Your content goes here -->
 
-      <div class="routing">
-        <a href="#">Home</a> > Browse</p>
+      <nav style="background-color: inherit; height: 50px; line-height: 50px;">
+        <div class="bread-wrapper">
+          <div class="col s12 bread-content">
+            <a class="breadcrumb" href="#!" onclick="window.location.href = './'">Home</a>
+            <a class="breadcrumb">Categories</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="page-content">
+        <div class="category-wrapper">
+          <div class="category-row">
+          <?php foreach ($id as $row): ?>
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card grey lighten-5">
+                  <div class="card-action">
+                    <?= $this->Html->link($row->category_name,
+                                          ['controller' => 'Listings',
+                                           'action' => 'index',
+                                           'category' => $row->category_name]
+                                           //'course' => $filters['course'],
+                                           //'condition' => $filters['condition']
+                                           );?>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
+          </div>
+          <!--<div class="category-row">
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card grey lighten-5">
+                  <div class="card-action">
+                    <//?= //$this->Html->link( 'Books', ['controller' => 'Categories', 'action' => 'view', 'books'] );?>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card grey lighten-5">
+                  <div class="card-action">
+                    <//?= //$this->Html->link( 'Clothings', ['controller' => 'Categories', 'action' => 'view', 'clothes'] );?>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card grey lighten-5">
+                  <div class="card-action">
+                    <a href="#">home & kitchen</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="category-row">
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card grey lighten-5">
+                  <div class="card-action">
+                    <a href="#">electronics</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card grey lighten-5">
+                  <div class="card-action">
+                    <a href="#">sports and outdoors</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card grey lighten-5">
+                  <div class="card-action">
+                    <a href="#">other</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+          <!--<div class="category-row">-->
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card  grey lighten-5">
+                  <div class="card-action">
+    <?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
-
-      <div class="category-wrapper">
-        <div class="category-row">
-        <?php foreach ($id as $row): ?>
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card grey lighten-5">
-                <div class="card-action">
-                  <?= $this->Html->link($row->category_name,
-                                        ['controller' => 'Listings',
-                                         'action' => 'index',
-                                         'category' => $row->category_name]
-                                         //'course' => $filters['course'],
-                                         //'condition' => $filters['condition']
-                                         );?>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        <?php endforeach; ?>
-        </div>
-        <!--<div class="category-row">
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card grey lighten-5">
-                <div class="card-action">
-                  <//?= //$this->Html->link( 'Books', ['controller' => 'Categories', 'action' => 'view', 'books'] );?>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card grey lighten-5">
-                <div class="card-action">
-                  <//?= //$this->Html->link( 'Clothings', ['controller' => 'Categories', 'action' => 'view', 'clothes'] );?>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card grey lighten-5">
-                <div class="card-action">
-                  <a href="#">home & kitchen</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="category-row">
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card grey lighten-5">
-                <div class="card-action">
-                  <a href="#">electronics</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card grey lighten-5">
-                <div class="card-action">
-                  <a href="#">sports and outdoors</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card grey lighten-5">
-                <div class="card-action">
-                  <a href="#">other</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>-->
-
-        <!--<div class="category-row">-->
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card  grey lighten-5">
-                <div class="card-action">
-  <?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         <!--<//?= //'works' ?> 
         <?php //foreach ($id as $row): ?>
           <li> <//?= $row//->category_name ?> </li>

@@ -25,7 +25,8 @@
       <?= $this->fetch('title') ?>
     </title>
 
-    <!--<//?= $this->Html->css('base.css') ?>
+    <!-- THIS COMMENTED PART IS GIVING ERRORS
+    <//?= $this->Html->css('base.css') ?>
     <//?= $this->Html->css('cake.css') ?> -->
 
     <?= $this->fetch('meta') ?>
@@ -125,7 +126,7 @@
           padding-bottom: 1rem;
         }
 
-        .search-content {
+        .page-content {
           background-color: #f4f4f4;
           height: auto;
           width: 100%;
@@ -212,7 +213,6 @@
           <center>
             <a href="#!" class="brand-logo"><?= $this->Html->link( "Home", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></a>
             <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
-            <li><a onclick="window.location.href = 'recent/'">Recent</a></li>
             <?php if($currentUser !== null): ?>
                 <li><?= $this->Html->link('Private messages',
                                         ['controller' => 'PrivateMessages',
@@ -245,7 +245,7 @@
         
         <div class="input-field col s6 grey darken-3 search-cat">
           <select class="browser-default grey search-select">
-            <option value=""><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
+            <option value=""><?= $this->Html->link( 'All Categories', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                 <?php foreach ($validCategories as $row): ?>
             <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
                 <?php endforeach; ?>

@@ -17,14 +17,14 @@ function f() {
   <nav style="background-color: inherit; height: 50px; line-height: 50px;">
     <div class="bread-wrapper">
       <div class="col s12 bread-content">
-        <a href="#!" class="breadcrumb">Home</a>
-        <a href="#!" class="breadcrumb">Listings</a>
+        <a class="breadcrumb" href="#!" onclick="window.location.href = './'">Home</a>
+            <a class="breadcrumb">Listings</a>
       </div>
     </div>
   </nav>
 
 
-  <div class="search-content">
+  <div class="page-content">
     <div class="row">
       <div class="search-details" style="width: 100%; padding-right: 4rem; padding-left: 4rem; padding-top: 1rem; padding-bottom: 1rem;">
         <div class="left col m7 s12"> Showing 1-9 of 19 results of "calculus 4th edition book"</div>
