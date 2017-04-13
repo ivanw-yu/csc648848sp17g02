@@ -3,30 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<!--<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><//?= __('Actions') ?></li>
-        <li><//?= $this->Html->link(__('New Listing'), ['action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Course'), ['controller' => 'Courses', 'action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Purchased Lists'), ['controller' => 'PurchasedLists', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Purchased List'), ['controller' => 'PurchasedLists', 'action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Selling Lists'), ['controller' => 'SellingLists', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Selling List'), ['controller' => 'SellingLists', 'action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Sold Lists'), ['controller' => 'SoldLists', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Sold List'), ['controller' => 'SoldLists', 'action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Watching Lists'), ['controller' => 'WatchingLists', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Watching List'), ['controller' => 'WatchingLists', 'action' => 'add']) ?></li>
-        <li><//?= $this->Html->link(__('List Wish Lists'), ['controller' => 'WishLists', 'action' => 'index']) ?></li>
-        <li><//?= $this->Html->link(__('New Wish List'), ['controller' => 'WishLists', 'action' => 'add']) ?></li>
-    </ul>
-</nav>-->
+
 <script type="text/javascript">
 function f() {
     var selectBox = document.getElementById("select_sort");
@@ -34,112 +11,197 @@ function f() {
     document.getElementById('sort_' + selectedValue).firstChild.click();
 }
 </script>
-<div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'asc']) ?></div>
-<div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'desc']) ?></div>
-<div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => 'asc']) ?></div>
-<div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => 'desc']) ?></div>
 
-<div>
-    <select id="select_sort" class="selectpicker form-control" data-style="btn-primary" onchange="f();">
-        <option value="title" disabled='true'>Sort</option>
-        <option value="price_desc">Price: high to low</option>
-        <option value="price_asc">Price: low to high</option>
-        <option value="date_desc">Date: new to old</option>
-        <option value="date_asc">Date: old to new</option>
-    </select>
-</div>
 
-<div class="listings index large-9 medium-8 columns content" style = "width: 100%">
-    <h3><?= __('Listings') ?></h3>
-           <!-- //<//?php foreach ($listings as $listing): ?>
-<<<<<<< HEAD
-            <tr>
-                <td><//?= //$this->Number->format($listing->listing_num) ?></td>
-                <td><//?= //h($listing->date_created) ?></td>
-                <td><//?= //h($listing->is_sold) ?></td>
-                <td><//?= //h($listing->price) ?></td>
-                <td><//?= //h($listing->location) ?></td>
-                <td><//?= //h($listing->item_desc) ?></td>
-                <td><//?= //h($listing->title) ?></td>
-                <td><//?=// $listing->has('category') ? $this->Html->link($listing->category->category_name, ['controller' => 'Categories', 'action' => 'view', $listing->category->category_name]) : '' ?></td>
-                <td><//?=// $listing->has('registered_user') ? $this->Html->link($listing->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $listing->registered_user->username]) : '' ?></td>
-                <td><//?=// $listing->has('course') ? $this->Html->link($listing->course->course_name, ['controller' => 'Courses', 'action' => 'view', $listing->course->course_name]) : '' ?></td>
-                <td>This is how blobs are displayed on the webpage. $listings->image will return a "resource id", stream_get_contents() gets the contents (binary) associated with the id, and base64_encode() encodes those contents so an image will be rendered
-                    //<//?php if($listing->image !== null): ?>
-                               <//?php //$blobimg = stream_get_contents($listing->image); ?>
-                               <a class = "aclass" onclick = "displaythumbnail('<//?php echo $blobimg; ?>');" >
-                               //<//?= '<img src = "' . $blobimg . '" style = "width: 60%; height: 10%" />' ?>
-                               </a>
-                     //<//?php endif; ?>         
-                </td>
-                <td class="actions">
-                    <//?=// $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
-                    <//?= $this->Html->link(__('Edit'), ['action' => 'edit', $listing->listing_num]) ?>-->
-                    <!--<//?= //$this->Form->postLink(__('Delete'), ['action' => 'delete', $listing->listing_num], [//'confirm' => __('Are you sure you want to delete # {0}?', $listing->listing_num)]) ?>
-                </td>
-            </tr>
-======= -->
-            <?php foreach ($listings as $listing): ?>
-                <div class='listing_cell'>
-                <!-- This is how blobs are displayed on the webpage. $listings->image will return the data url stored in the listings able for that image -->
-                <?php if($listing->image !== null): ?>
-                          <?php $blobimg = stream_get_contents($listing->image); ?>
-                          <a class = "aclass" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                          <?= '<img src = " ' . $blobimg . '" style = "width: 40px; height: 40px" />' ?>
-                          </a>
-                <?php endif; ?>
-                <?= h($listing->price) ?>
-                <?= h($listing->title) ?>
-                <?= h($listing->date_created) ?>
-                <?= h($listing->condition_id) ?>
-                <?= h($listing->category_id) ?>
-                <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
-
-                </div>
-<!-- <a> >>>>>>> d61402d4a6bbab4e52eef9976b8a878176f93468 </a>-->
-            <?php endforeach; ?>
-
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+<div class="content">
+  <nav style="background-color: inherit; height: 50px; line-height: 50px;">
+    <div class="bread-wrapper">
+      <div class="col s12 bread-content">
+        <a href="#!" class="breadcrumb">Home</a>
+        <a href="#!" class="breadcrumb">Listings</a>
+      </div>
     </div>
-    <a id = 'thumbnailImg' onclick = 'hide();'>
+  </nav>
+
+
+  <div class="search-content">
+    <div class="row">
+      <div class="search-details" style="width: 100%; padding-right: 4rem; padding-left: 4rem; padding-top: 1rem; padding-bottom: 1rem;">
+        <div class="left col m7 s12"> Showing 1-9 of 19 results of "calculus 4th edition book"</div>
+        <div class="right col m4 s12 sorting"> 
+          <div class="sorting right"> 
+            <div class="input-field col s3">
+              <label style="font-size: 1.1rem;">sort: </label>
+            </div>
+
+            <div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'asc']) ?></div>
+            <div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'desc']) ?></div>
+            <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => 'asc']) ?></div>
+            <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => 'desc']) ?></div>
+
+            <div class="input-field col s9">
+              <select id="select_sort" onchange="f();">
+                <option value="title" disabled="true">sort</option>
+                <option value="price_asc">$-$$$</option>
+                <option value="price_desc">$$$-$</option>
+                <option value="date_desc">Newest - Oldest</option>
+                <option value="date_asc">Oldest - Newest</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col m3 s12">
+        <form action="#">
+          <ul class="collapsible" data-collapsible="expandable" style="line-height: normal; min-width: 90%">
+            <li>
+              <div class="collapsible-header active" style="padding-left: 2rem;">CONDITION</div>
+              <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;">
+                <p>
+                  <input type="checkbox" id="test1" />
+                  <label for="test1">New</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test2" />
+                  <label for="test2">Like New</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test3" />
+                  <label for="test3">Good</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test4" />
+                  <label for="test4">Fair</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test5" />
+                  <label for="test5">Poor</label>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header active" style="padding-left: 2rem;">PRICE RANGE</div>
+              <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;"">
+                <p>
+                  <input type="checkbox" id="test6" />
+                  <label for="test6">Under $25</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test7" />
+                  <label for="test7">$25 - $49.99</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test8" />
+                  <label for="test8">$50 - $74.99</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test9" />
+                  <label for="test9">$75 - $100</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test10" />
+                  <label for="test10">Over $100</label>
+                </p>               
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+
+      <div class="col m9 s12">
+
         
-        </a>
-        <script>
-					 document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";  
-                                    var displayed = false;
-                                    // the parameter is the base64_encoded binary representation of the blob image.
-                                    function displaythumbnail(theimg) {
-                                        var thumbnailView = document.getElementById('thumbnailImg');
-                                            thumbnailView.style.display = ""; 
-                                            thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
-                                            thumbnailView.style.position = "fixed";
-                                            thumbnailView.style.top = "0%";
-                                            thumbnailView.style.left = "0%";
-                                            thumbnailView.zIndex = "100";
-                                            thumbnailView.style.width = "100%";
-                                            thumbnailView.style.height = "100%";
-                                            thumbnailView.style.textAlign = "center";
-                                            thumbnailView.style.cursor = "zoom-out"; 
-                                            thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
-                                            displayed = true;
-                                    }
-                                    function hide(){
-                                        // removes the image after it's clicked again in the enlarged view.
-                                        if(displayed){
-                                            document.getElementById('thumbnailImg').style.display = "none";
-                                            displayed = false;
-                                        }
-                                    }
-        </script>
+          <?php $counter = 0; ?>
+          <?php foreach ($listings as $listing): ?> 
+            <?php if($counter === 0): ?>
+                <?= '<div class="row' . $rownum . '">' ?>
+            <?php endif; ?>
+            <div class="col s12 m6 l4 card-container">
+              <div class="card medium">
+                <div class="card-image">
+                  <?php if($listing->image !== null): ?>
+                    <?php $blobimg = stream_get_contents($listing->image); ?>
+                    <a class = "aclass" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                    <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
+                    </a>
+                  <?php endif; ?>
+                </div>
+                <div class="card-content">
 
+                  <span class="card-title">
+                    <?= h($listing->title) ?>
+                  </span>
 
+                  <a>$ <?= h($listing->price) ?></a>
+                  <?= h($listing->condition_id) ?>
+                  <?= h($listing->category_id) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
+                </div>
+                <div class="card-action">
+                  <?= $this->Html->link( $item->title, ['controller' => 'Listings', 'action' => 'view', $item->listing_num] ) ?>
+                </div>
+              </div>
+            </div>
+
+          <?php $counter++;
+            if($counter >2){
+              $counter = 0;
+              echo '</div>';
+             }?>
+            
+          <?php endforeach; ?>
+          <?php if($counter < 3): ?>
+            <?= '</div>' ?>
+
+          <?php endif; ?>
+
+          
+
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<script>
+    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";  
+                              var displayed = false;
+                              // the parameter is the base64_encoded binary representation of the blob image.
+                              function displaythumbnail(theimg) {
+                                  var thumbnailView = document.getElementById('thumbnailImg');
+                                      thumbnailView.style.display = ""; 
+                                      thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
+                                      thumbnailView.style.position = "fixed";
+                                      thumbnailView.style.top = "0%";
+                                      thumbnailView.style.left = "0%";
+                                      thumbnailView.zIndex = "100";
+                                      thumbnailView.style.width = "100%";
+                                      thumbnailView.style.height = "100%";
+                                      thumbnailView.style.textAlign = "center";
+                                      thumbnailView.style.cursor = "zoom-out"; 
+                                      thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+                                      displayed = true;
+                              }
+                              function hide(){
+                                  // removes the image after it's clicked again in the enlarged view.
+                                  if(displayed){
+                                      document.getElementById('thumbnailImg').style.display = "none";
+                                      displayed = false;
+                                  }
+                              }
+
+   $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+
+  function f() {
+    var selectBox = document.getElementById("select_sort");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    document.getElementById('sort_' + selectedValue).firstChild.click();
+    alert('sort_' + selectedValue);
+  }
+</script>
 

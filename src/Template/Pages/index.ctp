@@ -76,7 +76,7 @@ use Cake\Network\Exception\NotFoundException;
           <div class="card medium">
             <div class="card-image">
               <?php $blobimg = stream_get_contents($item->image); ?>
-              <?= '<img src = " ' . $blobimg . '" style = "width: 200px; height: 140px" />' ?>
+              <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
             </div>
             <div class="card-action">
               <?= $this->Html->link( $item->title, ['controller' => 'Listings', 'action' => 'view', $item->listing_num] ) ?>

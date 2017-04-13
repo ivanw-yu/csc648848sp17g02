@@ -92,13 +92,13 @@ Router::scope('/', function (RouteBuilder $routes) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ajinkya_page']);
     } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~ivnyu') !== false) {
         // this displays ivan_page.ctp on the browser.
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'index']);
+        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ivan_page']);
     } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~bkng') !== false){
         // this displays brad_page.ctp on the browser.
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'brad_page']);
     } else if(strpos(dirname($_SERVER['PHP_SELF']),'/~tluu4') !== false){
         // this displays thaos_page.ctp on the browser
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'thaos_page']);
+        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'index']);
     } else if (strpos(dirname($_SERVER['PHP_SELF']), '/~jerrya') !== false) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']); 
     }  else if (strpos(dirname($_SERVER['PHP_SELF']), '/~tluu4/browse') !== false) {
