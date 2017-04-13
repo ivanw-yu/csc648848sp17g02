@@ -168,14 +168,22 @@
         <ul id="nav-mobile" class="left hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
           <li><?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
           <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
-          <li><a onclick="window.location.href = 'recent/'">Recent</a></li>
+          <li>
+            <?php if($currentUser !== null): ?>
+              <?= $this->Html->link('Sell',
+                                        ['controller' => 'Listings',
+                                         'action' => 'add']);?>
+
+            <?php else: ?>
+            <a href="#modal1">Sell<a>
+              
+            <?php endif; ?>
+          </li>
           <?php if($currentUser !== null): ?>
                 <li><?= $this->Html->link('Private messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
-                  <li><?= $this->Html->link('Sell',
-                                        ['controller' => 'Listings',
-                                         'action' => 'add']);?> </li>
+                  
                   <li><?= $this->Html->link('Selling',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
@@ -285,7 +293,7 @@
             </div>
 
             <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn-flat">SIGN IN</button></center>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            
             <?= $this->Form->end();?>
             <center><p>Don't have an account? Register <a href="#modal2" class="modal-close">here</a>!</p></center>
 
