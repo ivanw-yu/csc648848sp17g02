@@ -34,18 +34,19 @@ function f() {
               <label style="font-size: 1.1rem;">sort: </label>
             </div>
 
-            <div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'asc']) ?></div>
-            <div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'desc']) ?></div>
-            <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => 'asc']) ?></div>
-            <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => 'desc']) ?></div>
+            <div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></div>
+            <div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></div>
+            <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></div>
+            <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></div>
 
             <div class="input-field col s9">
               <select id="select_sort" onchange="f();">
                 <option value="title" disabled="true">sort</option>
-                <option value="price_asc">$-$$$</option>
-                <option value="price_desc">$$$-$</option>
-                <option value="date_desc">Newest - Oldest</option>
-                <option value="date_asc">Oldest - Newest</option>
+                <option value="date_desc" id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></option>
+                <option value="date_asc" id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></option>
+                <option value="price_asc" id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></option>
+                <option value="price_desc" id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></option>
+                
               </select>
             </div>
           </div>
@@ -201,7 +202,6 @@ function f() {
     var selectBox = document.getElementById("select_sort");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
     document.getElementById('sort_' + selectedValue).firstChild.click();
-    alert('sort_' + selectedValue);
   }
 </script>
 

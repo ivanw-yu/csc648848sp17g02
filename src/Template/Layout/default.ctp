@@ -219,7 +219,7 @@
                                         ['controller' => 'WatchingLists',
                                          'action' => 'index']); ?></li>
             <?php endif; ?>
-            <li><a href="#modal1"r>Register/Sign in</a></li>
+            <li><a href="#modal1">Register/Sign in</a></li>
             </center>
         </ul>
     </div>
@@ -234,22 +234,7 @@
                                    'action' => 'index'],
                                    'type' => 'get']) ?>
 
-        <div class="input-field col s6 grey darken-3 search-cat">
-          <select class="browser-default grey search-select">
-            <option value="">All courses</option>
-                <?php foreach ($select_courses as $row): ?>
-                    <option value="<?= $row->course_name?>"><?= $row->course_name; ?></option>
-                <?php endforeach; ?>
-          </select>
-        </div>
-        <div class="input-field col s6 grey darken-3 search-cat">
-          <select class="browser-default grey search-select">
-            <option value="">All conditions</option>
-                <?php foreach ($select_conditions as $row): ?>
-                    <option value="<?= $row->condition_name?>"><?= $row->condition_name; ?></option>
-                <?php endforeach; ?>
-          </select>
-        </div>
+        
         <div class="input-field col s6 grey darken-3 search-cat">
           <select class="browser-default grey search-select">
             <option value=""><?= $this->Html->link( 'All', ['controller' => 'Listings', 'action' => 'index'] );?></option>
@@ -260,7 +245,7 @@
         </div>
         
         <div class="input-field grey lighten-1" style="width:150%;">
-          <input id="txtkey" name="tags" type="search" placeholder="search..." aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" required>
+          <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" required>
           <label for="search"></label>
         </div>
         
@@ -300,7 +285,7 @@
             </div>
 
             <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn-flat">SIGN IN</button></center>
-
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
             <?= $this->Form->end();?>
             <center><p>Don't have an account? Register <a href="#modal2" class="modal-close">here</a>!</p></center>
 

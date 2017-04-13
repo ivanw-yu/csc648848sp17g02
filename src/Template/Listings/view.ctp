@@ -51,12 +51,13 @@
             <!-- Show contact seller button.  Popup a message box if the user
                  is signed in.  Otherwise, popup a registration form. -->
             <?php if($currentUser !== null): ?>
-              <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('contact_box').style.display ='block'" style = "width:auto;">Contace seller</button>
+              <button type="button" data-target="contact_box" class="btn">Contact Seller</button>
+
             <?php else: ?>
-              <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'block'" style = "width:auto;">Contact Seller</button>
+              <button type="button" data-target="modal1" class="btn">Contact Seller</button>
             <?php endif; ?>
       <div id = "contact_box" class= "modal">
-            <span onclick = "document.getElementById('contact_box').style.display = 'none'" class = "close" title = "Close">x</span>
+            <span onclick = "document.getElementById('contact_box').style.display = 'none'" class = "modal-close" title = "Close">x</span>
             <!--<form  method="post" class ="modal-content animate"
             action = "../RegisteredUsers/add">-->
             <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'class'=>'modal-content animate']); ?>
