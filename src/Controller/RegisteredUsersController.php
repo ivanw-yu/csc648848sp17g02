@@ -124,12 +124,17 @@ class RegisteredUsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
+                if($this->request->data['trigger']=='Sell'){
+                    return $this->redirect(['controller' => 'Listings',
+                                        'action' => 'add']);
+                }
                 // this currently allows user to go to the same page after logging in.
                 // change this back to $this->Auth->redirectUrl() if we want to redirect user to homepage after logging in.
                 return $this->redirect($this->referer());//Auth->redirectUrl());
             }
         }
         // added so logout will also redirect to same page?
+
         return $this->redirect($this->referer());//Auth->redirectUrl());
     }
 
@@ -138,7 +143,7 @@ class RegisteredUsersController extends AppController
         $this->setDefaultData();
         // this allows the user to logout, and the user is redirected to the same page.
         $this->Auth->logout();
-        return $this->redirect($this->referer());
+        return $this->redirect($this->Auth->redirectUrl());
     }
 
 }

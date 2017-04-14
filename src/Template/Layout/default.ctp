@@ -170,17 +170,17 @@
           <li><?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
           <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
           <li>
-            <?php if($currentUser !== null): ?>
+            <?php if(isset($currentUser)): ?>
               <?= $this->Html->link('Sell',
                                         ['controller' => 'Listings',
                                          'action' => 'add']);?>
 
             <?php else: ?>
-            <a href="#modal1">Sell<a>
+            <a href="#modal1" onclick="sellClicked();">Sell<a>
               
             <?php endif; ?>
           </li>
-          <?php if($currentUser !== null): ?>
+          <?php if(isset($currentUser)): ?>
                 <li><?= $this->Html->link('Private messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
@@ -197,11 +197,12 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
           <li></li>
           <!-- Modal Trigger -->
-          <?php if($currentUser === null): ?>
+          <?php if(!isset($currentUser)): ?>
             <li><a href="#modal1"r>Register/Sign in</a></li>
           <?php else: ?>
-
-                  <li> <?= "Welcome ". $currentUser . "!" ?> </li>
+                  <?php if(isset($currentUser)): ?>
+                    <li> <?= "Welcome ". $currentUser . "!" ?> </li>
+                  <?php endif; ?>        
                   <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
                   
           <?php endif; ?>
@@ -291,7 +292,7 @@
             <div class="row" style="display: flex; justify-content: flex-end; font-size: 12px; margin-bottom: 5px;">
                   <a href = "#"> Forgot password?</a>
             </div>
-
+            <input name = "trigger" id="trigger" type="hidden" >
             <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn-flat">SIGN IN</button></center>
             
             <?= $this->Form->end();?>
@@ -383,6 +384,9 @@
         $('.modal').modal();
 
       });
+      function sellClicked(){
+        document.getElementById("trigger").value="Sell";
+      };
 
     </script>
 

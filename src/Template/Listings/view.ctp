@@ -27,15 +27,16 @@
                                </a>-->
 
                                <!-- Since images are stored as blob data url's, this is how it's accessed now-->
-                               <?php if($listing->image !== null): ?>
+                    <?php if($listing->image !== null): ?>
                                <?php $blobimg = stream_get_contents($listing->image); ?>
                                <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
                                <?= '<img src = "' . $blobimg . '" style = "width: 10em; height: 10em" />' ?>
                                </a>
-                     <?php endif; ?>
+                    <?php endif; ?>
 
             <!-- Show contact seller button.  Popup a message box if the user
                  is signed in.  Otherwise, popup a registration form. -->
+            <br>
             <?php if($currentUser !== null): ?>
               <button type="button" data-target="contact_box" class="btn">Contact Seller</button>
 
@@ -66,11 +67,12 @@
 <?php if($currentUser !== null): ?>
     <?= $this->Form->create(null, ['url' => ['controller' => 'WatchingLists',
                                              'action' => 'add']]); ?>
-    <input type ="hidden" name="listing_id" value="<?= $listing->listing_num ?>">
-    <input type ="hidden" name="registered_user_id" value="<?= $currentUser ?>">
     <div class = "clearfix">
         <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Add to watching list </button>
     </div>
+    <input type ="hidden" name="listing_id" value="<?= $listing->listing_num ?>">
+    <input type ="hidden" name="registered_user_id" value="<?= $currentUser ?>">
+    
     <?= $this->Form->end();?>
 <?php else: ?>
     <button type="button" data-target="modal1" class="btn">Add to watching list</button>
