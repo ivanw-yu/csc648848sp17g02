@@ -73,7 +73,8 @@
     </div>
     <?= $this->Form->end();?>
 <?php else: ?>
-    <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'block'" style = "width:auto;">Add to watching list</button>
+    <button type="button" data-target="modal1" class="btn">Add to watching list</button>
+    <!-- <button type="button" class="btn btn-primary btn-md" onclick = "document.getElementById('id01').style.display = 'block'" style = "width:auto;">Add to watching list</button> -->
 <?php endif; ?>
 
     <table class="vertical-table">
