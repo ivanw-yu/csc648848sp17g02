@@ -90,7 +90,7 @@
         </tr>
          <tr>
             <th scope="row"><?= __('Category') ?></th>
-            <td><?= $listing->has('category') ? $this->Html->link($listing->category->category_name, ['controller' => 'Categories', 'action' => 'view', $listing->category->category_name]) : '' ?></td>
+            <td><?= h($listing->category->category_name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Date Added') ?></th>
