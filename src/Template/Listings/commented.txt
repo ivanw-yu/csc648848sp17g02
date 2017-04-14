@@ -1,0 +1,139 @@
+//Commented Section 1 starts
+<div class="related">
+        <!-- <h4><//?= __('Related Purchased Lists') ?></h4> -->
+        <?php if (!empty($listing->purchased_lists)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Registered User Id') ?></th>
+                <th scope="col"><?= __('Listing Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($listing->purchased_lists as $purchasedLists): ?>
+            <tr>
+                <td><?= h($purchasedLists->registered_user_id) ?></td>
+                <td><?= h($purchasedLists->listing_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'PurchasedLists', 'action' => 'view', $purchasedLists->registered_user_id]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'PurchasedLists', 'action' => 'edit', $purchasedLists->registered_user_id]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'PurchasedLists', 'action' => 'delete', $purchasedLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $purchasedLists->registered_user_id)]) ?> -->
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Selling Lists') ?></h4>
+        <?php if (!empty($listing->selling_lists)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Registered User Id') ?></th>
+                <th scope="col"><?= __('Listing Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($listing->selling_lists as $sellingLists): ?>
+            <tr>
+                <td><?= h($sellingLists->registered_user_id) ?></td>
+                <td><?= h($sellingLists->listing_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'SellingLists', 'action' => 'view', $sellingLists->registered_user_id]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'SellingLists', 'action' => 'edit', $sellingLists->registered_user_id]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'SellingLists', 'action' => 'delete', $sellingLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingLists->registered_user_id)]) ?>-->
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Sold Lists') ?></h4>
+        <?php if (!empty($listing->sold_lists)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Registered User Id') ?></th>
+                <th scope="col"><?= __('Listing Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($listing->sold_lists as $soldLists): ?>
+            <tr>
+                <td><?= h($soldLists->registered_user_id) ?></td>
+                <td><?= h($soldLists->listing_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'SoldLists', 'action' => 'view', $soldLists->registered_user_id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'SoldLists', 'action' => 'edit', $soldLists->registered_user_id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'SoldLists', 'action' => 'delete', $soldLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $soldLists->registered_user_id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Tags') ?></h4>
+        <?php if (!empty($listing->tags)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Listing Id') ?></th>
+                <th scope="col"><?= __('Tag Name') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($listing->tags as $tags): ?>
+            <tr>
+                <td><?= h($tags->listing_id) ?></td>
+                <td><?= h($tags->tag_name) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Tags', 'action' => 'view', $tags->listing_id]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'Tags', 'action' => 'edit', $tags->listing_id]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'Tags', 'action' => 'delete', $tags->listing_id], ['confirm' => __('Are you sure you want to delete # {0}?', $tags->listing_id)]) ?>-->
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Watching Lists') ?></h4>
+        <?php if (!empty($listing->watching_lists)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Registered User Id') ?></th>
+                <th scope="col"><?= __('Listing Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($listing->watching_lists as $watchingLists): ?>
+            <tr>
+                <td><?= h($watchingLists->registered_user_id) ?></td>
+                <td><?= h($watchingLists->listing_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'WatchingLists', 'action' => 'view', $watchingLists->registered_user_id]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'WatchingLists', 'action' => 'edit', $watchingLists->registered_user_id]) ?>
+                    <//?=// $this->Form->postLink(__('Delete'), ['controller' => 'WatchingLists', 'action' => 'delete', $watchingLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $watchingLists->registered_user_id)]) ?>-->
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Wish Lists') ?></h4>
+        <?php if (!empty($listing->wish_lists)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Registered User Id') ?></th>
+                <th scope="col"><?= __('Listing Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($listing->wish_lists as $wishLists): ?>
+            <tr>
+                <td><?= h($wishLists->registered_user_id) ?></td>
+                <td><?= h($wishLists->listing_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'WishLists', 'action' => 'view', $wishLists->registered_user_id]) ?>
+                    <!--<//?= //$this->Html->link(__('Edit'), ['controller' => 'WishLists', 'action' => 'edit', $wishLists->registered_user_id]) ?>
+                    <//?= //$this->Form->postLink(__('Delete'), ['controller' => 'WishLists', 'action' => 'delete', $wishLists->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $wishLists->registered_user_id)]) ?>-->
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+//Commented Section 1 ends
