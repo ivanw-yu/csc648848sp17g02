@@ -244,7 +244,7 @@
 
         
         <div class="input-field col s6 grey darken-3 search-cat">
-          <select class="browser-default grey search-select">
+          <select name="category_filter" class="browser-default grey search-select">
             <option value=""><?= $this->Html->link( 'All Categories', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                 <?php foreach ($validCategories as $row): ?>
             <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
@@ -253,7 +253,7 @@
         </div>
         
         <div class="input-field grey lighten-1" style="width:150%;">
-          <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" required>
+          <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" > <!--required>-->
           <label for="search"></label>
         </div>
         
@@ -335,9 +335,9 @@
 
             </div>
           </div>
-        <?= $this->Form->end();?>
+        <!--<//?= $this->Form->end();?>-->
         <center><p> By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</p></center>
-        <center><a href="#!" class="modal-action modal-close waves-effect waves-green btn grey darken-1">REGISTER</a></center>
+        <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn grey darken-1">REGISTER</button></center>
         <?= $this->Form->end();?>
         
         <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>

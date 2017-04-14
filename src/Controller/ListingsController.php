@@ -55,16 +55,30 @@ class ListingsController extends AppController
             // this if-stateument is true if the user has typed something into the search field.
             // this if-block will render the index page containing only items pertaining to the keywords.
             if(!empty($tags) && strlen($tags[0])>=1){
+                $category_search = $this->request->query['category_filter'];
+                if(strlen($category_search) === 0) {
+                   // $tags has all the keywords entered from the search text field. 
+                   foreach($tags as &$value) {
+                        // gets rows having the item_desc, title or category_id similar to the search key word.
+                          $other_query = $this->Listings->find()->where(['OR' => [['item_desc LIKE' => "%{$value}%"], 
+                                                                                ['title LIKE' => "%{$value}%"],
+                                                                                ['category_id LIKE' => "%{$value}%"]]]);
 
-               // $tags has all the keywords entered from the search text field. 
-               foreach($tags as &$value) {
-                    // gets rows having the item_desc, title or category_id similar to the search key word.
-                      $other_query = $this->Listings->find()->where(['OR' => [['item_desc LIKE' => "%{$value}%"], 
-                                                                            ['title LIKE' => "%{$value}%"],
-                                                                            ['category_id LIKE' => "%{$value}%"]]]);
+                        // this unions the new query result with the old ones.                                              
+                        $unioned_query->union($other_query);
+                    }
+                } else {
+                    // $tags has all the keywords entered from the search text field. 
+                   foreach($tags as &$value) {
+                        // gets rows having the item_desc, title or category_id similar to the search key word.
+                          $other_query = $this->Listings->find()->where(['category_id' => $category_search,
+                                                                                'OR' => [['item_desc LIKE' => "%{$value}%"], 
+                                                                                ['title LIKE' => "%{$value}%"],
+                                                                                ['category_id LIKE' => "%{$value}%"]]]);
 
-                    // this unions the new query result with the old ones.                                              
-                    $unioned_query->union($other_query);
+                        // this unions the new query result with the old ones.                                              
+                        $unioned_query->union($other_query);
+                    }
                 }
                 $this->set('listings', $unioned_query);
                 $this->set(compact('listings'));
