@@ -247,10 +247,17 @@
           <select name="category_filter" class="browser-default grey search-select">
             <option value=""><?= $this->Html->link( 'All Categories', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                 <?php foreach ($validCategories as $row): ?>
-            <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
+            <option id = "<?= $row->category_name . '_id' ?>" value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
                 <?php endforeach; ?>
           </select>
         </div>
+
+        <!-- this script sets the default category from the drop down list, which was determined from the previous page -->
+        <script>
+          var x = "<?php echo '' . $default_category . '_id' ?>";
+          document.getElementById("<?php echo $default_category . '_id' ?>").selected = true;
+        </script>
+
         
         <div class="input-field grey lighten-1" style="width:150%;">
           <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" > <!--required>-->
