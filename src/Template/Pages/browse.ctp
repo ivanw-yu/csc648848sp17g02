@@ -50,6 +50,11 @@ use Cake\Network\Exception\NotFoundException;
     margin-bottom: 10px;
     margin-top: 10px;
     text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
   }
   .card-image {
     padding-bottom: 30px;
