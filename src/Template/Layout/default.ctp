@@ -170,17 +170,17 @@
           <li><?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
           <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
           <li>
-            <?php if($currentUser !== null): ?>
+            <?php if(isset($currentUser)): ?>
               <?= $this->Html->link('Sell',
                                         ['controller' => 'Listings',
                                          'action' => 'add']);?>
 
             <?php else: ?>
-            <a href="#modal1">Sell<a>
+            <a href="#modal1" onclick="sellClicked();">Sell<a>
               
             <?php endif; ?>
           </li>
-          <?php if($currentUser !== null): ?>
+          <?php if(isset($currentUser)): ?>
                 <li><?= $this->Html->link('Private messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
@@ -197,11 +197,12 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
           <li></li>
           <!-- Modal Trigger -->
-          <?php if($currentUser === null): ?>
+          <?php if(!isset($currentUser)): ?>
             <li><a href="#modal1"r>Register/Sign in</a></li>
           <?php else: ?>
-
-                  <li> <?= "Welcome ". $currentUser . "!" ?> </li>
+                  <?php if(isset($currentUser)): ?>
+                    <li> <?= "Welcome ". $currentUser . "!" ?> </li>
+                  <?php endif; ?>        
                   <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
                   
           <?php endif; ?>
@@ -247,7 +248,8 @@
           <select name="category_filter" class="browser-default grey search-select">
             <option value=""><?= $this->Html->link( 'All Categories', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                 <?php foreach ($validCategories as $row): ?>
-            <option id = "<?= $row->category_name . '_id' ?>" value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
+            <option id = "<?= $row->category_name . '_id' ?>" value="<?= $row->category_name?>"><?= $row->category_name; ?>
+            </option>
                 <?php endforeach; ?>
           </select>
         </div>
@@ -256,7 +258,6 @@
         <script>
           document.getElementById("<?php echo $default_category . '_id' ?>").selected = true;
         </script>
-
         
         <div class="input-field grey lighten-1" style="width:150%;">
           <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" > <!--required>-->
@@ -266,6 +267,7 @@
         <button class="btn grey searchbutton" type="submit" style="height: 50px; box-shadow: none;">
           <i class="material-icons right" style="line-height: 50px;">search</i>
         </button>
+          <input id="price_range" name="price" type="hidden">
       <?= $this->Form->end() ?>
     </div>
   </nav>
@@ -297,7 +299,7 @@
             <div class="row" style="display: flex; justify-content: flex-end; font-size: 12px; margin-bottom: 5px;">
                   <a href = "#"> Forgot password?</a>
             </div>
-
+            <input name = "trigger" id="trigger" type="hidden" >
             <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn-flat">SIGN IN</button></center>
             
             <?= $this->Form->end();?>
@@ -381,7 +383,9 @@
   </footer>
 
 
-
+    <script>
+    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>"
+    </script>
     <script type="text/javascript">
       $(document).ready(function(){
         $(".button-collapse").sideNav();
@@ -389,6 +393,9 @@
         $('.modal').modal();
 
       });
+      function sellClicked(){
+        document.getElementById("trigger").value="Sell";
+      };
 
     </script>
 
