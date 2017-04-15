@@ -159,6 +159,14 @@ class ListingsController extends AppController
         if (!empty($get_request['condition'])) {
             $conditions['Conditions.condition_name'] = $get_request['condition'];
         }
+        if (!empty($get_request['price'])) {
+            // The 'price' element is between 1 and 5.
+            $price_max = 25.0 * ((double) $get_request['price']);
+            $conditions['Listings.price >= '] = $price_max - 25.0;
+            if ($price_max < 100.0) {
+                $conditions['Listings.price < '] = $price_max;
+            }
+        }
         $this->paginate = ['contain' => $contain,
                            'conditions' => $conditions,
                            'order' => ['Listings.date_created' => 'desc']];

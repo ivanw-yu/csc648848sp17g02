@@ -56,60 +56,75 @@ function f() {
 
     <div class="row">
       <div class="col m3 s12">
-        <form action="#">
+      <?= $this->Form->create(NULL, ['url' => [
+                                   'controller' => 'Listings',
+                                   'action' => 'index'],
+                                   'type' => 'get']) ?>
           <ul class="collapsible" data-collapsible="expandable" style="line-height: normal; min-width: 90%">
             <li>
               <div class="collapsible-header active" style="padding-left: 2rem;">CONDITION</div>
               <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;">
                 <p>
-                  <input type="checkbox" id="test1" />
+                  <input name='category' value='new' type="checkbox" id="test1" />
                   <label for="test1">New</label>
                 </p>
                 <p>
-                  <input type="checkbox" id="test2" />
+                  <input name='category' value='like_new' type="checkbox" id="test2" />
                   <label for="test2">Like New</label>
                 </p>
                 <p>
-                  <input type="checkbox" id="test3" />
+                  <input name='category' value='good' type="checkbox" id="test3" />
                   <label for="test3">Good</label>
                 </p>
                 <p>
-                  <input type="checkbox" id="test4" />
+                  <input name='category' value='fair' type="checkbox" id="test4" />
                   <label for="test4">Fair</label>
                 </p>
                 <p>
-                  <input type="checkbox" id="test5" />
+                  <input name='category' value='poor' type="checkbox" id="test5" />
                   <label for="test5">Poor</label>
                 </p>
               </div>
             </li>
             <li>
               <div class="collapsible-header active" style="padding-left: 2rem;">PRICE RANGE</div>
-              <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;"">
+              <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;">
+                <!-- Do not change the 'name' or 'value' attributes!  Also,
+                     the filtering code assumes price ranges are separated
+                     by steps of 25 ([0,25), [25,50), and so on.  Please do
+                     not change any of these without letting me know.
+                     (David, 4/15/17)-->
                 <p>
-                  <input type="checkbox" id="test6" />
+                  <input name='price' value='1' type="checkbox" id="test6" />
                   <label for="test6">Under $25</label>
                 </p>
                 <p>
-                  <input type="checkbox" id="test7" />
+                  <input name='price' value='2' type="checkbox" id="test7" />
                   <label for="test7">$25 - $49.99</label>
                 </p>
                 <p>
-                  <input type="checkbox" id="test8" />
+                  <input name='price' value='3' type="checkbox" id="test8" />
                   <label for="test8">$50 - $74.99</label>
                 </p>
                 <p>
-                  <input type="checkbox" id="test9" />
-                  <label for="test9">$75 - $100</label>
+                  <input name='price' value='4' type="checkbox" id="test9" />
+                  <label for="test9">$75 - $99.99</label>
                 </p>
                 <p>
-                  <input type="checkbox" id="test10" />
-                  <label for="test10">Over $100</label>
+                  <input name='price' value='5' type="checkbox" id="test10" />
+                  <label for="test10">$100 or more</label>
                 </p>               
               </div>
             </li>
           </ul>
-        </form>
+        <button type="submit">
+          Apply
+        </button>
+        <!-- Send the selected category and search terms -->
+        <input name='category_filter' value='<?= $default_category ?>' type="hidden" />
+        <input name='tags' value='<?= $this->request->query['tags']; ?>' type="hidden" />
+
+      <?= $this->Form->end() ?>
       </div>
 
       <div class="col m9 s12">
