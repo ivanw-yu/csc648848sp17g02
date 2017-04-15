@@ -64,24 +64,27 @@ function f() {
             <li>
               <div class="collapsible-header active" style="padding-left: 2rem;">CONDITION</div>
               <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;">
+                <!-- Do not change the 'name' or 'value' attributes!  Let me
+                     know if changes are necessary.
+                     (David, 4/15/17) -->
                 <p>
-                  <input name='category' value='new' type="checkbox" id="test1" />
+                  <input name='condition' value='new' type="checkbox" id="test1" />
                   <label for="test1">New</label>
                 </p>
                 <p>
-                  <input name='category' value='like_new' type="checkbox" id="test2" />
+                  <input name='condition' value='like_new' type="checkbox" id="test2" />
                   <label for="test2">Like New</label>
                 </p>
                 <p>
-                  <input name='category' value='good' type="checkbox" id="test3" />
+                  <input name='condition' value='good' type="checkbox" id="test3" />
                   <label for="test3">Good</label>
                 </p>
                 <p>
-                  <input name='category' value='fair' type="checkbox" id="test4" />
+                  <input name='condition' value='fair' type="checkbox" id="test4" />
                   <label for="test4">Fair</label>
                 </p>
                 <p>
-                  <input name='category' value='poor' type="checkbox" id="test5" />
+                  <input name='condition' value='poor' type="checkbox" id="test5" />
                   <label for="test5">Poor</label>
                 </p>
               </div>
