@@ -186,7 +186,12 @@ function f() {
 
 
 <script>
-    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";  
+    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>"
+    var price_range = <?= $this->request->query['price']; ?>;
+    if (price_range) {
+        document.getElementById('price_range').value = price_range;
+        document.getElementById('test' + (price_range + 5)).checked = true;
+    }
                               var displayed = false;
                               // the parameter is the base64_encoded binary representation of the blob image.
                               function displaythumbnail(theimg) {

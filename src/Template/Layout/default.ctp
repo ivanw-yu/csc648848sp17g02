@@ -267,6 +267,7 @@
         <button class="btn grey searchbutton" type="submit" style="height: 50px; box-shadow: none;">
           <i class="material-icons right" style="line-height: 50px;">search</i>
         </button>
+          <input id="price_range" name="price" type="hidden">
       <?= $this->Form->end() ?>
     </div>
   </nav>
