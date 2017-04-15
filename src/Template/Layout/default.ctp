@@ -254,7 +254,6 @@
 
         <!-- this script sets the default category from the drop down list, which was determined from the previous page -->
         <script>
-          var x = "<?php echo '' . $default_category . '_id' ?>";
           document.getElementById("<?php echo $default_category . '_id' ?>").selected = true;
         </script>
 
