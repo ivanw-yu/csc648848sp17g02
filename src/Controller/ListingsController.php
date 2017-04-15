@@ -146,6 +146,7 @@ class ListingsController extends AppController
         // are specified. 4/13/17.
         $contain = ['RegisteredUsers', 'Courses', 'Conditions', 'Categories'];
         $conditions = [];
+        $item_conditions = [];
         $get_request = $this->request->query;
         if (!empty($get_request['category_filter'])) {
             $conditions['Categories.category_name'] = $get_request['category_filter'];
@@ -156,8 +157,20 @@ class ListingsController extends AppController
         if (!empty($get_request['course'])) {
             $conditions['Courses.course_name'] = $get_request['course'];
         }
-        if (!empty($get_request['condition'])) {
-            $conditions['Conditions.condition_name'] = $get_request['condition'];
+        if (!empty($get_request['condition_like_new'])) {
+            $item_conditions[] = 'like_new';
+        }
+        if (!empty($get_request['condition_new'])) {
+            $item_conditions[] = 'new';
+        }
+        if (!empty($get_request['condition_good'])) {
+            $item_conditions[] = 'good';
+        }
+        if (!empty($get_request['condition_fair'])) {
+            $item_conditions[] = 'fair';
+        }
+        if (!empty($get_request['condition_poor'])) {
+            $item_conditions[] = 'poor';
         }
         if (!empty($get_request['price'])) {
             // The 'price' element is between 1 and 5.
@@ -166,6 +179,9 @@ class ListingsController extends AppController
             if ($price_max < 100.0) {
                 $conditions['Listings.price < '] = $price_max;
             }
+        }
+        if (count($item_conditions) > 0) {
+            $conditions['Conditions.condition_name IN'] = $item_conditions;
         }
         $this->paginate = ['contain' => $contain,
                            'conditions' => $conditions,
