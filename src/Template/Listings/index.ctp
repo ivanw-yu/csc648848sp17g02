@@ -64,7 +64,7 @@ function f() {
             <li>
               <div class="collapsible-header active" style="padding-left: 2rem;">CONDITION</div>
               <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;">
-                <!-- Do not change the 'name' or 'value' attributes!  Let me
+                <!-- Do not change any attributes or properties!  Let me
                      know if changes are necessary.
                      (David, 4/15/17) -->
                 <p>
@@ -92,7 +92,7 @@ function f() {
             <li>
               <div class="collapsible-header active" style="padding-left: 2rem;">PRICE RANGE</div>
               <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;">
-                <!-- Do not change the 'name' or 'value' attributes!  Also,
+                <!-- Do not change any attributes or properties!  Also,
                      the filtering code assumes price ranges are separated
                      by steps of 25 ([0,25), [25,50), and so on.  Please do
                      not change any of these without letting me know.
