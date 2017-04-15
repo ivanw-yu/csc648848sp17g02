@@ -43,89 +43,115 @@ class ListingsController extends AppController
      */
     public function index()
     {
-         $this->setDefaultData();
+        $this->setDefaultData();
         $filtered_listings = NULL;
         if (!empty($this->request->query)) {
             $tags = preg_split('/[\s,]+/', $this->request->query['tags']);
             $table =  TableRegistry::get('Tags');
             $opts = ['tags' => $tags];
             $filtered_listings = $table->find('listings', $opts);
-            $unioned_query = $filtered_listings;
-            $category_search = $this->request->query['category_filter'];
+
+            // THIS COMMENTED-OUT SECTION CAUSES PROBLEMS!  1) When a search
+            // term matches tags for listings across different categories, all
+            // the listings are shown, regardless of the category the user
+            // selected.  2) Sorting does not work because the pagination code
+            // is never executed.  3) Paginating $unioned_query causes adverse
+            // effects that I quite frankly have no clue how to address.
+            // Currently, $filtered_listings is paginated and doing so works
+            // fine.  However, when paging $unioned_query, or even assigning
+            // $filtered_listings to $unioned_query makes the page not load
+            // and bizarre debug messages to appear.  For example, with every-
+            // thing commented-out, the code runs fine, but even with just the
+            // follwing block uncommented, the code breaks.  This is important
+            // because without pagination, sorting is not easy, and searching
+            // is not completely correct in all cases (David, 4/14/17).
+            // $other_query = $this
+            //     ->Listings
+            //     ->find()
+            //     ->where(['OR' => [
+            //         ['item_desc LIKE' => "%e%"],
+            //         ['title LIKE' => "%e%"],
+            //         ['category_id LIKE' => "%e%"]]]);
+            // $filtered_query->union($other_query);
+
+            //$unioned_query = $filtered_listings;
+            //$category_search = $this->request->query['category_filter'];
             // this if-stateument is true if the user has typed something
             // into the search field.
             // this if-block will render the index page containing only
             // items pertaining to the keywords.
-            if(!empty($tags) && strlen($tags[0])>=1){
+            //if(!empty($tags) && strlen($tags[0])>=1){
                 //$category_search = $this->request->query['category_filter'];
-                if(strlen($category_search) === 0) {
+                //if(strlen($category_search) === 0) {
                    // $tags has all the keywords entered from the search text
-                   // field. 
-                   foreach($tags as &$value) {
+                   // field.
+                   //foreach($tags as &$value) {
                        // gets rows having the item_desc, title or category_id
                        // similar to the search key word.
-                       $other_query = $this
-                           ->Listings
-                           ->find()
-                           ->where(['OR' => [
-                               ['item_desc LIKE' => "%{$value}%"], 
-                               ['title LIKE' => "%{$value}%"],
-                               ['category_id LIKE' => "%{$value}%"]]]);
+                       //$other_query = $this
+                           //->Listings
+                           //->find()
+                           //->where(['OR' => [
+                               //['item_desc LIKE' => "%{$value}%"],
+                               //['title LIKE' => "%{$value}%"],
+                               //['category_id LIKE' => "%{$value}%"]]]);
                         // this unions the new query result with the old ones.
-                        $unioned_query->union($other_query);
-                    }
-                } else {
+                        //$unioned_query->union($other_query);
+                    //}
+                //} else { // User selected a category to search in.
                    // $tags has all the keywords entered from the search text
-                   // field. 
-                   foreach($tags as &$value) {
+                   // field.
+                   //foreach($tags as &$value) {
                        // gets rows having the item_desc, title or category_id
                        // similar to the search key word.
-                       $other_query = $this
-                           ->Listings
-                           ->find()
-                           ->where(['category_id' => $category_search,
-                                    'OR' => [
-                                        ['item_desc LIKE' => "%{$value}%"], 
-                                        ['title LIKE' => "%{$value}%"],
-                                        ['category_id LIKE' => "%{$value}%"]]]);
+                       //$other_query = $this
+                           //->Listings
+                           //->find()
+                           //->where(['category_id' => $category_search,
+                                    //'OR' => [
+                                        //['item_desc LIKE' => "%{$value}%"],
+                                        //['title LIKE' => "%{$value}%"],
+                                        //]]);
                         // this unions the new query result with the old ones.
-                        $unioned_query->union($other_query);
-                    }
-                }
-                $this->set('listings', $unioned_query);
-                $this->set(compact('listings'));
-                $this->set('_serialize', ['listings']);
+                        //$unioned_query->union($other_query);
+                    //}
+                //}
+                //$this->set('listings', $unioned_query);
+                //$this->set(compact('listings'));
+                //$this->set('_serialize', ['listings']);
                 // the current category selected. used to access on the next
                 // page so the next page will display that category as default.
-                $this->set('default_category', $category_search);
+                //$this->set('default_category', $category_search);
 
-                return;
+                //return;
                // if the search keyword is empty, but the search category
                // option was not
-            } else if(strlen($category_search) > 0){
+            //} else if(strlen($category_search) > 0){
                 //$category_search = $this->request->query['category_filter'];
-                echo $category_search . " < ---- search";
-                $query = $this->Listings
-                              ->find()
-                              ->where(['category_id' => $category_search]);
-                //$unioned_query->union($other_query);
-                $this->set('listings', $query);
-                $this->set(compact('listings'));
-                $this->set('_serialize', ['listings']);
-                // the current category selected. used to access on the next
-                // page so the next page will display that category as default.
-                $this->set('default_category', $category_search);
-                return;
-            }
+                //echo $category_search . " < ---- search";
+                //$query = $this->Listings
+                              //->find()
+                              //->where(['category_id' => $category_search]);
+                ////$unioned_query->union($other_query);
+                //$this->set('listings', $query);
+                //$this->set(compact('listings'));
+                //$this->set('_serialize', ['listings']);
+                //// the current category selected. used to access on the next
+                //// page so the next page will display that category as default.
+                //$this->set('default_category', $category_search);
+                //return;
+            //}
         }
         // code may not reach here if the search category or keywords
-        // are specified. 4/13/17. 
+        // are specified. 4/13/17.
         $contain = ['RegisteredUsers', 'Courses', 'Conditions', 'Categories'];
         $conditions = [];
         $get_request = $this->request->query;
-        if (!empty($get_request['category'])) {
-            echo "$get_request: "  . $get_request['category'];
-            $conditions['Categories.category_name'] = $get_request['category'];
+        if (!empty($get_request['category_filter'])) {
+            $conditions['Categories.category_name'] = $get_request['category_filter'];
+            // Set the category the user selected so that it can stay selected
+            // when a new page is accessed.
+            $this->set('default_category', $get_request['category_filter']);
         }
         if (!empty($get_request['course'])) {
             $conditions['Courses.course_name'] = $get_request['course'];
@@ -134,8 +160,9 @@ class ListingsController extends AppController
             $conditions['Conditions.condition_name'] = $get_request['condition'];
         }
         $this->paginate = ['contain' => $contain,
-                           'conditions' => $conditions];
-        if (empty($filtered_listings)) {
+                           'conditions' => $conditions,
+                           'order' => ['Listings.date_created' => 'desc']];
+        if (empty($filtered_listings) || ($filtered_listings->count() == 0)) {
             $listings = $this->paginate($this->Listings);
         }
         else {
@@ -193,7 +220,7 @@ class ListingsController extends AppController
             fclose($thumbnail);*/
             $listing->image = $this->request->data['image'];
             $save_successful = $this->Listings->save($listing);
-            
+
 
             // Then save tags.
             $tags_table = TableRegistry::get('Tags');
