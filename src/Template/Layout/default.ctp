@@ -422,9 +422,10 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Company Info</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Terms and Conditions</a></li>
+
+          <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
+          <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
+          <li><?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?></li>
           </ul>
         </div>
       </div>
