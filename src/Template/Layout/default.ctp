@@ -44,20 +44,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.2.0/nouislider.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
 
     <style>
 
-        body { 
-          background-color: #dddddd;
-        }
+        body { background-color: #dddddd; }
+
+        ul { line-height: 400%; }
+
+        a { color: #232323; }
+
         form {
           display: flex;
           justify-content: center;
           min-width: 60%;
-        }
-
-        ul {
-          line-height: 400%;
         }
 
         .search-select { 
@@ -105,6 +105,28 @@
           overflow: auto;
         }
 
+        .carousel.carousel-slider .carousel-item{
+          height: 70vh;
+        }
+
+        .carousel-title-container {
+          height: 100%;
+          width: 100%;
+          opacity: 0.7;
+          background-color: #333333;
+          cursor: pointer;
+        }
+
+        .carousel-title {
+          font-family: 'Comfortaa', cursive;
+          font-size: 42px;
+          font-weight: 500;
+          text-align: justify;
+          color: #6E94FF;
+          position: relative;
+          top: 40%;
+        }
+
         .recent-container{
           display: flex;
           justify-content: center;
@@ -142,6 +164,17 @@
 
         .card {
           max-width: 275px;
+          cursor: pointer;
+        }
+
+        .card .card-content {
+          padding-top: 12px;
+          padding-bottom: 14px;
+          max-height: 275px;
+        }
+
+        .card .card-title {
+          font-size: 21px;
         }
 
         .footer {
@@ -304,47 +337,67 @@
   </div>
 
       <!-- Registration Modal Structure -->
-    <div id="modal2" class="modal">
+  <div id="modal2" class="modal">
 
-      <div class="modal-content">
-        <h5><center>REGISTRATION</center></h5>
-        <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'add']]); ?>
-          <div class="row" style="width: 100%;">
-            <div class="col s6">
+    <div class="modal-content">
+      <h5><center>REGISTRATION</center></h5>
+      <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'add']]); ?>
+        <div class="row" style="width: 100%;">
+          <div class="col s6">
 
-              <div class="row">
-                <div class="input-field col s12">
-                  <input name = "email" id="email" type="email" class="validate" required>
-                  <label for="email" data-error="This email has already been registered">Email</label>
-                </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input name = "email" id="email" type="email" class="validate" required>
+                <label for="email" data-error="This email has already been registered">Email</label>
               </div>
-
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="name" name = "username" type="text" class="validate" required>
-                  <label for="name" data-error="Username has already been taken">Username</label>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="password" name = "password" type="password" class="validate" required>
-                  <label for="password" data-error="wrong">Password</label>
-                </div>
-              </div>
-
             </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="name" name = "username" type="text" class="validate" required>
+                <label for="name" data-error="Username has already been taken">Username</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" name = "password" type="password" class="validate" required>
+                <label for="password" data-error="wrong">Password</label>
+              </div>
+            </div>
+
           </div>
-        <?= $this->Form->end();?>
-        <center><p> By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</p></center>
-        <center><a href="#!" class="modal-action modal-close waves-effect waves-green btn grey darken-1">REGISTER</a></center>
-        <?= $this->Form->end();?>
-        
-        <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>
+        </div>
+      <?= $this->Form->end();?>
+      <center><p> By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</p></center>
+      <center><a href="#!" class="modal-action modal-close waves-effect waves-green btn grey darken-1">REGISTER</a></center>
+      <?= $this->Form->end();?>
+      
+      <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>
 
-      </div>
     </div>
+  </div>
 
+    <!-- Contact Seller Modal Structure -->
+  <div id = "contact_box" class= "modal">
+          <!-- <span onclick = "document.getElementById('contact_box').style.display = 'none'" class = "modal-close" title = "Close">x</span> -->
+          <!--<form  method="post" class ="modal-content animate"
+          action = "../RegisteredUsers/add">-->
+      <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'class'=>'modal-content animate']); ?>
+        <div class = "modal-content">
+            <label>Contact <?= $listing->registered_user->username ?></label><br>
+            <label><b>Subject</b></label><br>
+            <input type = "text" name = "subject" placeholder = "subject" required><br>
+            <label><b>Message</b></label><br>
+            <input type = "text" name = "message" placeholder = "message" required><br>
+            <input type ="hidden" name="recipient_id" value="<?= $listing->registered_user->username ?>">
+            <div class = "clearfix">
+              <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Send </button>
+              <button type = "button" class=" cancelbtn btn btn-primary btn-md modal-close" onclick = "document.getElementById('contact_box').style.display = 'none'">Cancel</button>
+              </div>
+        </div>
+      <?= $this->Form->end();?>
+  </div>
 
 
     <?= $this->Flash->render() ?>
@@ -352,7 +405,7 @@
 
   <footer class="page-footer grey">
     <div class="container">
-      <div class="row">
+      <div class="row" style="width: initial;">
         <div class="col l6 s12">
           <h5 class="white-text">TheGatorBay</h5>
           <p class="grey-text text-lighten-4">TheGatorBay is a unique website designed and developed by San Francisco State students to cater their needs for buying and selling items.</p>

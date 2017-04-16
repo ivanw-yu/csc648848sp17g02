@@ -22,7 +22,7 @@ use Cake\Network\Exception\NotFoundException;
 ?>
 
 <div class="content" style="padding: 0;">
-  <div class="carousel carousel-slider center" data-indicators="true">
+  <div class="carousel carousel-slider valign-wrapper center" data-indicators="true" style="">
     <div class="carousel-fixed-item center">
     </div>
     <div class="carousel-item deep-purple darken-1 white-text" href="#one!">
@@ -52,17 +52,26 @@ use Cake\Network\Exception\NotFoundException;
     -->
 
     <a href = "listings/index/books" style = "text-decoration: none; width: 100%; height: 100%;">
-      <div class="carousel-item amber white-text" style="width: 100%; height: 100%; background-image:  url('https://c1.staticflickr.com/2/1062/1375685165_0026af5223_b.jpg'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
+      <div class="carousel-item amber" style="width: 100%; height: 100%; background-image:  url(<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/books.jpg); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
+        <div class="carousel-title-container" href="#!" onclick="window.location.href = './listings/index/books'">
+          <a class="carousel-title">BOOKS</a>
+        </div>
       </div>
     </a>
-    <div class="carousel-item green white-text" href="#three!">
-      <h2>Third Panel</h2>
-      <p class="white-text">This is your third panel</p>
-    </div>
-    <div class="carousel-item blue white-text" href="#four!">
-      <h2>Fourth Panel</h2>
-      <p class="white-text">This is your fourth panel</p>
-    </div>
+    <a href = "listings/index/clothing" style = "text-decoration: none; width: 100%; height: 100%;">
+      <div class="carousel-item green" style="width: 100%; height: 100%; background-image:  url(<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/clothing.jpg); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
+        <div class="carousel-title-container" href="#!" onclick="window.location.href = './listings/index/clothing'">
+          <a class="carousel-title">CLOTHING</a>
+        </div>
+      </div>
+    </a>
+    <a href = "listings/index/electronics" style = "text-decoration: none; width: 100%; height: 100%;">
+      <div class="carousel-item blue" style="width: 100%; height: 100%; background-image:  url(<?php if(strpos(dirname($_SERVER['PHP_SELF']), 'sp17g02') !== false){echo '..';}else{ echo 'webroot';} ?>/img/electronics.jpg); background-size: cover; background-repeat: no-repeat; background-position: 50% 60%;">
+        <div class="carousel-title-container" href="#!" onclick="window.location.href = './listings/index/electronics'">
+          <a class="carousel-title">ELECTRONICS</a>
+        </div>
+      </div>
+    </a>
   </div>
 
   <div class="recent-container">
