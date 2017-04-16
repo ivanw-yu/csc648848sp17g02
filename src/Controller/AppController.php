@@ -90,6 +90,17 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
+
+        // the following allows "Back to Search" button.4/15/17
+        // the Session variable 'User.lastsearch' is updated only whenever the user
+        // accesses the index.ctp with any search criterias.
+        $session = $this->request->session();
+        $current_uri = $this->request->here();
+        if(strpos($current_uri, 'listings?') || strpos($current_uri, 'listings/index')){
+             $session->delete('User.lastsearch');
+             $session->write('User.lastsearch', $current_uri);
+        }
+
         // the next 3 lines of codes was added to allow default.ctp to have access to the categories table.
         $this->loadModel('Categories');
         $categoryEntries = $this->Categories->find('all');

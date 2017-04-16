@@ -269,13 +269,26 @@
 
   <!-- search bar -->
   <nav style="max-height: 50px;">
+
     <div class="nav-wrapper grey darken-2 searchbar">
+
+    <!--The entire url is $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] -->
+    <!-- The following if-statement allows the "Back To Search" button to show in pages that do not display the index.ctp
+         It will link to the previous search, accessed through the $this->request->session()->read('User.lastsearch'),
+          which is set in the AppController. The Back to search button will not show up in the homepage -->
+    <?php $complete_url  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+      <?php if(!strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
+          <?php $last_search_url =  $this->request->session()->read('User.lastsearch'); ?> 
+          <?= '<div class="col s6" style = "margin-right: 2%; border-radius: 3%; margin-left: -5%; padding: 0">' ?>
+            <?= $this->Html->link( ' < Back to Search', ['controller' => 'Listings', 'action' => 'index', basename($last_search_url) ]) ?>
+          <?= '</div>' ?>
+      <?php endif; ?>
       
+
       <?= $this->Form->create(NULL, ['url' => [
                                    'controller' => 'Listings',
                                    'action' => 'index'],
                                    'type' => 'get']) ?>
-
         
         <div class="input-field col s6 grey darken-3 search-cat">
           <select name="category_filter" class="browser-default grey search-select">
@@ -443,6 +456,11 @@
     </div>
   </footer>
 
+  <?php if(strpos($this->Url->build(null, true), 'listings?') || strpos($this->Url->build(null, true), 'listings/index') ): ?>
+    <!--<//?= $this->Url->build(null, true) . "?" . "tags=" . $this->request->query['tags'] 
+                                          . "&category_filter=". $this->request->query['category_filter']
+                                          . "&price=" . $this->request->query['price']  ?>-->
+  <?php endif; ?>
 
     <script>
     document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>"
