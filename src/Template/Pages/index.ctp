@@ -58,19 +58,16 @@ use Cake\Network\Exception\NotFoundException;
 
     <?php foreach($all_categories as $category): ?>
         <?php $cat_image = ($category->image !== NULL) ? base64_encode(stream_get_contents($category->image)) : NULL; ?>
-        <script>
-
-        </script>
-        <a href = <?= '"listings/index/'.$category->category_name ?> style = "text-decoration: none; width: 100%; height: 100%;">
-        <div class="carousel-item amber" style="width: 100%; height: 100%; 
-        <?php if($cat_image !== NULL): ?>
-          <?= "background-image:  url(data:image/png;base64,". $cat_image .");" ?>
-        <?php endif; ?>
-         background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
-          <div class="carousel-title-container" href="#!" onclick="window.location.href = './listings/index/books'">
-            <a class="carousel-title"><?= strtoupper($category->category_name) ?></a>
+        <a href = <?php echo '\'listings/index/'. $category->category_name . '\''; ?> style = "text-decoration: none; width: 100%; height: 100%;">
+          <div class="carousel-item amber" style="width: 100%; height: 100%; 
+          <?php if($cat_image !== NULL): ?>
+            <?= "background-image:  url(data:image/png;base64,". $cat_image .");" ?>
+          <?php endif; ?>
+           background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
+            <div class="carousel-title-container" onclick="window.location.href = <?= '\'listings?category='.$category->category_name. '\'' ?>" >
+              <a class="carousel-title" href = <?php echo '\'listings/index/'. $category->category_name . '\''; ?> > <?= strtoupper($category->category_name) ?></a>
+            </div>
           </div>
-        </div>
       </a>
 
     <?php endforeach ?>  
