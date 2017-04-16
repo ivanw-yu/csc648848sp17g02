@@ -47,9 +47,29 @@ class ListingsController extends AppController
         $filtered_listings = NULL;
         if (!empty($this->request->query)) {
             $tags = preg_split('/[\s,]+/', $this->request->query['tags']);
-            $table =  TableRegistry::get('Tags');
-            $opts = ['tags' => $tags];
-            $filtered_listings = $table->find('listings', $opts);
+            //$table =  TableRegistry::get('Tags');
+            //$opts = ['tags' => $tags];
+            //$filtered_listings = $table->find('listings', $opts);
+
+            // Get all listings with titles/item desc that contain the tags.
+            $j = 0;
+            $n = count($tags);
+            $filtered_listings = $this
+                ->Listings
+                ->find()
+                ->distinct(['listing_num'])
+                ->where(['OR' => [
+                    ['item_desc LIKE' => "%{$tags[$j]}%"],
+                    ['title LIKE' => "%{$tags[$j]}%"]]]);
+            $j = $j + 1;
+            while ($j < $n) {
+                $filtered_listings = $filtered_listings
+                    ->orWhere(['OR' => [
+                        ['item_desc LIKE' => "%{$tags[$j]}%"],
+                        ['title LIKE' => "%{$tags[$j]}%"]]]);
+                $j = $j + 1;
+            }
+
             // THIS COMMENTED-OUT SECTION CAUSES PROBLEMS!  1) When a search
             // term matches tags for listings across different categories, all
             // the listings are shown, regardless of the category the user
@@ -81,27 +101,28 @@ class ListingsController extends AppController
             //if(!empty($tags) && strlen($tags[0])>=1){
                 //$category_search = $this->request->query['category_filter'];
                 //if(strlen($category_search) === 0) {
-                   // $tags has all the keywords entered from the search text
-                   // field.
+                    //// $tags has all the keywords entered from the search text
+                    //// field.
                    //foreach($tags as &$value) {
-                       // gets rows having the item_desc, title or category_id
-                       // similar to the search key word.
+                        //// gets rows having the item_desc, title or category_id
+                        //// similar to the search key word.
                        //$other_query = $this
                            //->Listings
                            //->find()
                            //->where(['OR' => [
                                //['item_desc LIKE' => "%{$value}%"],
-                               //['title LIKE' => "%{$value}%"],
-                               //['category_id LIKE' => "%{$value}%"]]]);
-                        // this unions the new query result with the old ones.
+                               //['title LIKE' => "%{$value}%"]]]);
+                               ////['category_id LIKE' => "%{$value}%"]]]);
+                         //// this unions the new query result with the old ones.
                         //$unioned_query->union($other_query);
                     //}
+                        //$filtered_listings = $unioned_query;
                 //} else { // User selected a category to search in.
-                   // $tags has all the keywords entered from the search text
-                   // field.
+                    ////$tags has all the keywords entered from the search text
+                    ////field.
                    //foreach($tags as &$value) {
-                       // gets rows having the item_desc, title or category_id
-                       // similar to the search key word.
+                        ////gets rows having the item_desc, title or category_id
+                        ////similar to the search key word.
                        //$other_query = $this
                            //->Listings
                            //->find()
@@ -110,19 +131,19 @@ class ListingsController extends AppController
                                         //['item_desc LIKE' => "%{$value}%"],
                                         //['title LIKE' => "%{$value}%"],
                                         //]]);
-                        // this unions the new query result with the old ones.
+                         ////this unions the new query result with the old ones.
                         //$unioned_query->union($other_query);
                     //}
                 //}
                 //$this->set('listings', $unioned_query);
                 //$this->set(compact('listings'));
                 //$this->set('_serialize', ['listings']);
-                // the current category selected. used to access on the next
-                // page so the next page will display that category as default.
+                 ////the current category selected. used to access on the next
+                 ////page so the next page will display that category as default.
                 //$this->set('default_category', $category_search);
                 //return;
-               // if the search keyword is empty, but the search category
-               // option was not
+                ////if the search keyword is empty, but the search category
+                ////option was not
             //} else if(strlen($category_search) > 0){
                 //$category_search = $this->request->query['category_filter'];
                 //echo $category_search . " < ---- search";
