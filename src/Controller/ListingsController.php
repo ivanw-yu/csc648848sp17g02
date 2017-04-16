@@ -165,6 +165,7 @@ class ListingsController extends AppController
         $contain = ['RegisteredUsers', 'Courses', 'Conditions', 'Categories'];
         $conditions = [];
         $item_conditions = [];
+        $condition_filters = []; // Stores the conditions that are checked.
         $get_request = $this->request->query;
         if (!empty($get_request['category_filter'])) {
             $conditions['Categories.category_name'] = $get_request['category_filter'];
@@ -177,18 +178,23 @@ class ListingsController extends AppController
         }
         if (!empty($get_request['condition_like_new'])) {
             $item_conditions[] = 'like_new';
+            $condition_filters['like_new'] = true;
         }
         if (!empty($get_request['condition_new'])) {
             $item_conditions[] = 'new';
+            $condition_filters['new'] = true;
         }
         if (!empty($get_request['condition_good'])) {
             $item_conditions[] = 'good';
+            $condition_filters['good'] = true;
         }
         if (!empty($get_request['condition_fair'])) {
             $item_conditions[] = 'fair';
+            $condition_filters['fair'] = true;
         }
         if (!empty($get_request['condition_poor'])) {
             $item_conditions[] = 'poor';
+            $condition_filters['poor'] = true;
         }
         if (!empty($get_request['price'])) {
             // The 'price' element is between 1 and 5.
@@ -210,6 +216,7 @@ class ListingsController extends AppController
         else {
             $listings = $this->paginate($filtered_listings);
         }
+        $this->set('condition_filters', $condition_filters);
         $this->set(compact('listings'));
         $this->set('_serialize', ['listings']);
     }
