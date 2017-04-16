@@ -242,8 +242,44 @@ function f() {
 </div>
 
 
+<!-- These if-blocks set the checked state of conditions filters. -->
+<?php if(!empty($condition_filters['new'])): ?>
+    <script>
+        document.getElementById('test1').checked = true;
+        document.getElementById('filter_new').value = 'new';
+    </script>
+<?php endif; ?>
+
+<?php if(!empty($condition_filters['like_new'])): ?>
+    <script>
+        document.getElementById('test2').checked = true;
+        document.getElementById('filter_like_new').value = 'like_new';
+    </script>
+<?php endif; ?>
+
+<?php if(!empty($condition_filters['good'])): ?>
+    <script>
+        document.getElementById('test3').checked = true;
+        document.getElementById('filter_good').value = 'good';
+    </script>
+<?php endif; ?>
+
+<?php if(!empty($condition_filters['fair'])): ?>
+    <script>
+        document.getElementById('test4').checked = true;
+        document.getElementById('filter_fair').value = 'fair';
+    </script>
+<?php endif; ?>
+
+<?php if(!empty($condition_filters['poor'])): ?>
+    <script>
+        document.getElementById('test5').checked = true;
+        document.getElementById('filter_poor').value = 'poor';
+    </script>
+<?php endif; ?>
+
 <script>
-    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>"
+    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";
     var price_range = <?= $this->request->query['price']; ?>;
     if (price_range) {
         document.getElementById('price_range').value = price_range;

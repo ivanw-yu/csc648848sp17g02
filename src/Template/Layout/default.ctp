@@ -301,6 +301,12 @@
           <i class="material-icons right" style="line-height: 50px;">search</i>
         </button>
           <input id="price_range" name="price" type="hidden">
+          <!-- These remember the checked state of condition filters. -->
+          <input id="filter_new" name="condition_new" type="hidden">
+          <input id="filter_like_new" name="condition_like_new" type="hidden">
+          <input id="filter_good" name="condition_good" type="hidden">
+          <input id="filter_fair" name="condition_fair" type="hidden">
+          <input id="filter_poor" name="condition_poor" type="hidden">
       <?= $this->Form->end() ?>
     </div>
   </nav>
