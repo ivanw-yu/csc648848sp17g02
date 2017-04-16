@@ -124,7 +124,7 @@ function f() {
           Apply
         </button>
         <!-- Send the selected category and search terms -->
-        <input name='category_filter' value='<?= $default_category ?>' type="hidden" />
+        <input name='category_filter' value='<?= $default_category; ?>' type="hidden" />
         <input name='tags' value='<?= $this->request->query['tags']; ?>' type="hidden" />
 
       <?= $this->Form->end() ?>
