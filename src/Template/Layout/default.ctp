@@ -203,17 +203,17 @@
           <li><?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
           <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
           <li>
-            <?php if($currentUser !== null): ?>
+            <?php if(isset($currentUser)): ?>
               <?= $this->Html->link('Sell',
                                         ['controller' => 'Listings',
                                          'action' => 'add']);?>
 
             <?php else: ?>
-            <a href="#modal1">Sell<a>
+            <a href="#modal1" onclick="sellClicked();">Sell<a>
               
             <?php endif; ?>
           </li>
-          <?php if($currentUser !== null): ?>
+          <?php if(isset($currentUser)): ?>
                 <li><?= $this->Html->link('Private messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
@@ -230,11 +230,12 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
           <li></li>
           <!-- Modal Trigger -->
-          <?php if($currentUser === null): ?>
+          <?php if(!isset($currentUser)): ?>
             <li><a href="#modal1"r>Register/Sign in</a></li>
           <?php else: ?>
-
-                  <li> <?= "Welcome ". $currentUser . "!" ?> </li>
+                  <?php if(isset($currentUser)): ?>
+                    <li> <?= "Welcome ". $currentUser . "!" ?> </li>
+                  <?php endif; ?>        
                   <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
                   
           <?php endif; ?>
@@ -277,22 +278,29 @@
 
         
         <div class="input-field col s6 grey darken-3 search-cat">
-          <select class="browser-default grey search-select">
+          <select name="category_filter" class="browser-default grey search-select">
             <option value=""><?= $this->Html->link( 'All Categories', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                 <?php foreach ($validCategories as $row): ?>
-            <option value="<?= $row->category_name?>"><?= $row->category_name; ?></option>
+            <option id = "<?= $row->category_name . '_id' ?>" value="<?= $row->category_name?>"><?= $row->category_name; ?>
+            </option>
                 <?php endforeach; ?>
           </select>
         </div>
+
+        <!-- this script sets the default category from the drop down list, which was determined from the previous page -->
+        <script>
+          document.getElementById("<?php echo $default_category . '_id' ?>").selected = true;
+        </script>
         
         <div class="input-field grey lighten-1" style="width:150%;">
-          <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" required>
+          <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" > <!--required>-->
           <label for="search"></label>
         </div>
         
         <button class="btn grey searchbutton" type="submit" style="height: 50px; box-shadow: none;">
           <i class="material-icons right" style="line-height: 50px;">search</i>
         </button>
+          <input id="price_range" name="price" type="hidden">
       <?= $this->Form->end() ?>
     </div>
   </nav>
@@ -324,7 +332,7 @@
             <div class="row" style="display: flex; justify-content: flex-end; font-size: 12px; margin-bottom: 5px;">
                   <a href = "#"> Forgot password?</a>
             </div>
-
+            <input name = "trigger" id="trigger" type="hidden" >
             <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn-flat">SIGN IN</button></center>
             
             <?= $this->Form->end();?>
@@ -368,15 +376,16 @@
 
           </div>
         </div>
-      <?= $this->Form->end();?>
-      <center><p> By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</p></center>
-      <center><a href="#!" class="modal-action modal-close waves-effect waves-green btn grey darken-1">REGISTER</a></center>
-      <?= $this->Form->end();?>
-      
-      <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>
+        <!--<//?= $this->Form->end();?>-->
+        <center><p> By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</p></center>
+        <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn grey darken-1">REGISTER</button></center>
+        <?= $this->Form->end();?>
+        
+        <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>
 
     </div>
   </div>
+
 
     <!-- Contact Seller Modal Structure -->
   <div id = "contact_box" class= "modal">
@@ -428,7 +437,9 @@
   </footer>
 
 
-
+    <script>
+    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>"
+    </script>
     <script type="text/javascript">
       $(document).ready(function(){
         $(".button-collapse").sideNav();
@@ -436,6 +447,9 @@
         $('.modal').modal();
 
       });
+      function sellClicked(){
+        document.getElementById("trigger").value="Sell";
+      };
 
     </script>
 

@@ -5,6 +5,7 @@ INSERT INTO courses (course_name) VALUES ('csc675');
 INSERT INTO categories (category_name) VALUES ('books');
 INSERT INTO categories (category_name) VALUES ('electronics');
 INSERT INTO categories (category_name) VALUES ('clothes');
+INSERT INTO categories (category_name) VALUES ('others');
 
 INSERT INTO registered_users (
     username,

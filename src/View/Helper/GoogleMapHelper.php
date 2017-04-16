@@ -44,7 +44,7 @@ class GoogleMapHelper extends Helper {
   // Default zoom
   var $defaultZoom          = 6;
   // Type of map (ROADMAP, SATELLITE, HYBRID or TERRAIN)
-  var $defaultType          = 'HYBRID';
+  var $defaultType          = 'ROADMAP';
   // Any other map option not mentioned before and available for the map.
   // For example 'mapTypeControl: true' (http://code.google.com/apis/maps/documentation/javascript/controls.html)
   var $defaultCustom        = "";
