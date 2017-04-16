@@ -29,18 +29,18 @@ function f() {
 
       <div class="row">
         <div class="search-details" style="width: 100%; padding-right: 4rem; padding-left: 4rem; padding-top: 1rem; padding-bottom: 1rem;">
-          <div class="left col m7 s12"> Showing 1-9 of 19 results of "calculus 4th edition book"</div>
+          <div class="left col m7 s12"> Showing <?= count($listings) ?> results of "<?= $this->request->query['tags'] ?>"</div>
           <div class="right col m4 s12 sorting"> 
             <div class="sorting right"> 
               <div class="input-field col s3">
                 <label style="font-size: 1.1rem;">sort: </label>
               </div>
-
+              <div style = "display: none;" >
               <div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></div>
               <div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></div>
               <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></div>
               <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></div>
-
+              </div>
               <div class="input-field col s9">
                 <select id="select_sort" onchange="f();">
                   <option value="title" disabled="true">sort</option>
