@@ -29,7 +29,10 @@ function f() {
 
       <div class="row">
         <div class="search-details" style="width: 100%; padding-right: 4rem; padding-left: 4rem; padding-top: 1rem; padding-bottom: 1rem;">
-          <div class="left col m7 s12"> Showing <?= count($listings) ?> results of "<?= $this->request->query['tags'] ?>"</div>
+          <div class="left col m7 s12"> 
+            Showing <?= count($listings) ?> results 
+            <?= strlen($this->request->query['tags']) ? 'of "' . $this->request->query['tags'] . '"' : 'from ' . (strlen($this->request->query['category_filter']) ? $this->request->query['category_filter'] : ' all categories')   ?>
+          </div>
           <div class="right col m4 s12 sorting"> 
             <div class="sorting right"> 
               <div class="input-field col s3">
@@ -93,6 +96,7 @@ function f() {
               </div>
             </li>
             <li>
+
               <div class="collapsible-header active" style="padding-left: 2rem;">PRICE RANGE</div>
               <div class="collapsible-body" style="padding-top: 10px; padding-bottom: 10px;">
                 <!-- Do not change any attributes or properties!  Also,
@@ -122,10 +126,14 @@ function f() {
                 </p>               
               </div>
             </li>
+            <div class="collapsible-header active" style="padding-left: 2rem;"> 
+                <button type="submit" style= "width: 100%;">
+                  Apply
+                </button>
+              </div>
           </ul>
-        <button type="submit">
-          Apply
-        </button>
+
+        
         <!-- Send the selected category and search terms -->
         <input name='category_filter' value='<?= $default_category ?>' type="hidden" />
         <input name='tags' value='<?= $this->request->query['tags'] ?>' type="hidden" />
