@@ -23,36 +23,39 @@ function f() {
     </div>
   </nav>
 
+  <!--<form class="filter" action="">-->
 
-  <div class="page-content">
-    <div class="row">
-      <div class="search-details" style="width: 100%; padding-right: 4rem; padding-left: 4rem; padding-top: 1rem; padding-bottom: 1rem;">
-        <div class="left col m7 s12"> Showing 1-9 of 19 results of "calculus 4th edition book"</div>
-        <div class="right col m4 s12 sorting"> 
-          <div class="sorting right"> 
-            <div class="input-field col s3">
-              <label style="font-size: 1.1rem;">sort: </label>
-            </div>
+    <div class="page-content">
 
-            <div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></div>
-            <div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></div>
-            <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></div>
-            <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></div>
+      <div class="row">
+        <div class="search-details" style="width: 100%; padding-right: 4rem; padding-left: 4rem; padding-top: 1rem; padding-bottom: 1rem;">
+          <div class="left col m7 s12"> Showing 1-9 of 19 results of "calculus 4th edition book"</div>
+          <div class="right col m4 s12 sorting"> 
+            <div class="sorting right"> 
+              <div class="input-field col s3">
+                <label style="font-size: 1.1rem;">sort: </label>
+              </div>
 
-            <div class="input-field col s9">
-              <select id="select_sort" onchange="f();">
-                <option value="title" disabled="true">sort</option>
-                <option value="date_desc" id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></option>
-                <option value="date_asc" id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></option>
-                <option value="price_asc" id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></option>
-                <option value="price_desc" id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></option>
-                
-              </select>
+              <div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></div>
+              <div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></div>
+              <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></div>
+              <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></div>
+
+              <div class="input-field col s9">
+                <select id="select_sort" onchange="f();">
+                  <option value="title" disabled="true">sort</option>
+                  <option value="date_desc" id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></option>
+                  <option value="date_asc" id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></option>
+                  <option value="price_asc" id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></option>
+                  <option value="price_desc" id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></option>
+                  
+                </select>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
 
     <div class="row">
       <div class="col m3 s12">
@@ -124,64 +127,110 @@ function f() {
           Apply
         </button>
         <!-- Send the selected category and search terms -->
-        <input name='category_filter' value='<?= $default_category; ?>' type="hidden" />
-        <input name='tags' value='<?= $this->request->query['tags']; ?>' type="hidden" />
+        <input name='category_filter' value='<?= $default_category ?>' type="hidden" />
+        <input name='tags' value='<?= $this->request->query['tags'] ?>' type="hidden" />
 
       <?= $this->Form->end() ?>
       </div>
 
-      <div class="col m9 s12">
 
-        
-          <?php $counter = 0; ?>
-          <?php foreach ($listings as $listing): ?> 
-            <?php if($counter === 0): ?>
-                <?= '<div class="row' . $rownum . '">' ?>
-            <?php endif; ?>
-            <div class="col s12 m6 l4 card-container">
-              <div class="card medium">
-                <div class="card-image">
-                  <?php if($listing->image !== null): ?>
-                    <?php $blobimg = stream_get_contents($listing->image); ?>
-                    <a class = "aclass" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                    <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
-                    </a>
-                  <?php endif; ?>
-                </div>
-                <div class="card-content">
 
-                  <span class="card-title">
-                    <?= h($listing->title) ?>
-                  </span>
-
-                  <a>$ <?= h($listing->price) ?></a>
-                  <?= h($listing->condition_id) ?>
-                  <?= h($listing->category_id) ?>
-                <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
-                </div>
-                <div class="card-action">
-                  <?= $this->Html->link( $item->title, ['controller' => 'Listings', 'action' => 'view', $item->listing_num] ) ?>
-                </div>
-              </div>
-            </div>
-
-          <?php $counter++;
-            if($counter >2){
-              $counter = 0;
-              echo '</div>';
-             }?>
-            
-          <?php endforeach; ?>
-          <?php if($counter < 3): ?>
-            <?= '</div>' ?>
-
-          <?php endif; ?>
+        <div class="col m9 s12">
 
           
+            <?php $counter = 0; ?>
+            <?php foreach ($listings as $listing): ?> 
+              <?php if($counter === 0): ?>
+                  <?= '<div class="row' . $rownum . '">' ?>
+              <?php endif; ?>
+              <div class="col s12 m6 l4 card-container">
+                <div class="card medium hoverable">
+                  <div class="card-image">
+                    <?php if($listing->image !== null): ?>
+                      <?php $blobimg = stream_get_contents($listing->image); ?>
+                      <a class = "item-img" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                      <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
+                      </a>
+                    <?php endif; ?>
+                  </div>
+                  <div class="card-content">
 
+                    <span class="card-title">
+                      <?= $this->Html->link(__($listing->title), ['action' => 'view', $listing->listing_num]) ?>
+                    </span>
+
+                    <a class="left"><?= h($listing->condition_id) ?></a>
+                    <a class="right">$ <?= h($listing->price) ?></a>
+                    
+                  
+                  </div>
+                  <div class="card-action">
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
+                    <?= '<a href="#quickview' . $listing->listing_num . '">Quick View</a>' ?>
+
+                
+
+                    <?= '<div class="modal" id="quickview' . $listing->listing_num . '">' ?>
+                      <div class="modal-content">
+                        <div class="row">
+                          <h5><?= $this->Html->link(__($listing->title), ['action' => 'view', $listing->listing_num]) ?></h5>  
+                        </div>
+                        <div class="row">
+
+                          <div class="col m7" style="overflow: hidden;">
+                            <a class = "item-img" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                              <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
+                            </a>
+                          </div>
+
+                          <div class="col m5">
+                            <div class="row">
+                              <span><?= h($listing->condition_id) ?></span>
+                              <span class="right">$ <?= h($listing->price) ?></span>
+                            </div>
+                            <div class="row">
+                              <span><strong>Description: </strong> <?= h($listing->item_desc) ?></span>
+                            </div>
+                            <div class="row">
+                              <?= $this->Html->link(__('View more details'), ['action' => 'view', $listing->listing_num]) ?>
+                            </div>
+
+                          </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                          <?php if($currentUser !== null): ?>
+                            <a class="btn modal-close" href="#contact_box">Contact Seller</a>
+                          <?php else: ?>
+                            <a class="btn modal-close" href="#modal1">Contact Seller</a>
+                          <?php endif; ?>
+
+                        </div>
+                      </div>
+                    <?= '</div>'; ?> 
+                    <?= $this->Html->link( $item->title, ['controller' => 'Listings', 'action' => 'view', $item->listing_num] ) ?>
+                  </div>
+                </div>
+              </div>
+
+            <?php $counter++;
+              if($counter >2){
+                $counter = 0;
+                echo '</div>';
+               }?>
+              
+            <?php endforeach; ?>
+            <?php if($counter < 3): ?>
+              <?= '</div>' ?>
+
+            <?php endif; ?>
+
+            
+
+        </div>
       </div>
-    </div>
-  </div>
+
+  <!--</form>-->
 </div>
 
 

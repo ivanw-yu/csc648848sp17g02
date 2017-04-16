@@ -57,7 +57,9 @@ class PagesController extends AppController
         $most_expensive_items->order(['price' => 'DESC']);
         $this->set(['expensive_items' => $most_expensive_items]);
 
-
+        // gets all categories available
+        $all_categories = TableRegistry::get('Categories')->find('all');
+        $this->set(['all_categories' => $all_categories]);
 
         $this->setDefaultData();
         $path = func_get_args();

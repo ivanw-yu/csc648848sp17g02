@@ -43,25 +43,7 @@
             <?php else: ?>
               <button type="button" data-target="modal1" class="btn">Contact Seller</button>
             <?php endif; ?>
-      <div id = "contact_box" class= "modal">
-            <span onclick = "document.getElementById('contact_box').style.display = 'none'" class = "modal-close" title = "Close">x</span>
-            <!--<form  method="post" class ="modal-content animate"
-            action = "../RegisteredUsers/add">-->
-            <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'class'=>'modal-content animate']); ?>
-              <div class = "container1">
-              <label>Contact <?= $listing->registered_user->username ?></label><br>
-              <label><b>Subject</b></label><br>
-              <input type = "text" name = "subject" placeholder = "subject" required><br>
-              <label><b>Message</b></label><br>
-              <input type = "text" name = "message" placeholder = "message" required><br>
-              <input type ="hidden" name="recipient_id" value="<?= $listing->registered_user->username ?>">
-              <div class = "clearfix">
-                <button type = "button" class=" cancelbtn btn btn-primary btn-md" onclick = "document.getElementById('contact_box').style.display = 'none'">Cancel</button>
-                <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Send </button>
-                </div>
-                </div>
-              <?= $this->Form->end();?>
-        </div>
+      
 
 <!-- Button for adding the listing to watching list. -->
 <?php if($currentUser !== null): ?>
