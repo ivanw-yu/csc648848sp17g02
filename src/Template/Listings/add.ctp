@@ -23,7 +23,7 @@
             echo $this->Form->input('category_id', ['options' => $categories]);
             echo $this->Form->input('image', [ 'id' => 'blobfield' , 'type' => 'hidden']);
             //echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
-            echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
+            //echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]); //Commented out for now, need to find a way to make this optional
             echo $this->Form->input('condition_id'/*, ['options' => $conditions, 'empty' => true]*/);
             echo $this->Form->input('tags');
         ?>

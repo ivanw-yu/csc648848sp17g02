@@ -26,6 +26,7 @@ CREATE TABLE registered_users (
 
 CREATE TABLE categories (
     category_name VARCHAR(64),
+    image LONGBLOB,
     PRIMARY KEY (category_name)
 );
 
@@ -43,7 +44,7 @@ CREATE TABLE listings (
     listing_num INTEGER AUTO_INCREMENT,
     date_created DATETIME NOT NULL,
     is_sold BOOLEAN NOT NULL,
-    price VARCHAR(64) NOT NULL,
+    price FLOAT NOT NULL,
     location VARCHAR(128) NOT NULL,
     item_desc VARCHAR(256) NOT NULL,
     title VARCHAR(64) NOT NULL,
@@ -157,11 +158,15 @@ CREATE TABLE images (
 INSERT INTO categories (category_name) VALUES ('books');
 INSERT INTO categories (category_name) VALUES ('clothes');
 INSERT INTO categories (category_name) VALUES ('electronics');
+INSERT INTO categories (category_name) VALUES ('others');
 
 INSERT INTO courses (course_name) VALUES ('csc600');
 INSERT INTO courses (course_name) VALUES ('csc648');
 INSERT INTO courses (course_name) VALUES ('csc667');
 
-
+INSERT INTO conditions (condition_name) VALUES ('good');
+INSERT INTO conditions (condition_name) VALUES ('new');
+INSERT INTO conditions (condition_name) VALUES ('fair');
+INSERT INTO conditions (condition_name) VALUES ('poor');
 
 
