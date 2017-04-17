@@ -18,21 +18,16 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('listing_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Listings') ?></th>
+                <th scope="col" class="actions"><?= __('Price') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($watchingLists as $watchingList): ?>
             <tr>
-                <td><?= $watchingList->has('registered_user') ? $this->Html->link($watchingList->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $watchingList->registered_user->username]) : '' ?></td>
                 <td><?= $watchingList->has('listing') ? $this->Html->link($watchingList->listing->title, ['controller' => 'Listings', 'action' => 'view', $watchingList->listing->listing_num]) : '' ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $watchingList->registered_user_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $watchingList->registered_user_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $watchingList->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $watchingList->registered_user_id)]) ?>
-                </td>
+                <td>$<?= $watchingList->has('listing') ? $this->Html->link($watchingList->listing->price, ['controller' => 'Listings', 'action' => 'view', $watchingList->listing->listing_num]) : '' ?></td>
+               
             </tr>
             <?php endforeach; ?>
         </tbody>
