@@ -52,7 +52,7 @@
 
         ul { line-height: 400%; }
 
-        a { color: #232323; }
+        a { color: #424242; }
 
         form {
           display: flex;
@@ -182,10 +182,6 @@
           justify-content: flex-end;
           max-height: 100%;
           max-width: 100%;
-        }
-
-        .footer-links {
-          line-height: 200%;
         }
 
     </style>
@@ -442,10 +438,9 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
           <ul>
-
-          <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
-          <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
-          <li><?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?></li>
+            <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
+            <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
+            <li><?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?></li>
           </ul>
         </div>
       </div>
