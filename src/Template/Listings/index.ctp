@@ -266,8 +266,9 @@ function f() {
       if (!results) return null;
       if (!results[2]) return '';
       return decodeURIComponent(results[2].replace(/\+/g, " "));
-  }
+  };
   document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";
+
   var price_range = <?= $this->request->query['price']; ?>;
   if (price_range) {
       document.getElementById('price_range').value = price_range;
@@ -292,11 +293,6 @@ function f() {
   var condition_poor = getParameterByName('condition_poor');
   if(condition_poor){
     document.getElementById('condition_poor').checked=true;
-  }
-  var sort = getParameterByName('sort');
-  var direction = getParameterByName('direction');
-  if(sort && direction){
-    document.getElementById('select_sort').value=(sort+'_'+direction);
   }
   var displayed = false;
   // the parameter is the base64_encoded binary representation of the blob image.
@@ -325,6 +321,11 @@ function f() {
 
    $(document).ready(function(){
     $('.collapsible').collapsible();
+    var sort = getParameterByName('sort');
+    var direction = getParameterByName('direction');
+    if(sort && direction){
+      document.getElementById('select_sort').value=(sort+'_'+direction);
+      }
   });
 
   function f() {
