@@ -17,7 +17,7 @@
             //echo $this->Form->input('is_sold');
             echo $this->Form->input('file', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'imageUpload();']);
             echo $this->Form->input('price');
-            echo $this->Form->input('location');
+            echo $this->Form->input('location',array('default'=>'SFSU'));
             echo $this->Form->input('item_desc');
             echo $this->Form->input('title');
             echo $this->Form->input('category_id', ['options' => $categories]);

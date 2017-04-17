@@ -30,9 +30,7 @@ use Cake\Network\Exception\NotFoundException;
   body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   }
-  a {
-    color: #00B7FF;
-  }
+  
   .ddl-select.input-group-btn{
     width: 100px;
   }

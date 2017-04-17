@@ -52,7 +52,7 @@
 
         ul { line-height: 400%; }
 
-        a { color: #232323; }
+        a { color: #424242; }
 
         form {
           display: flex;
@@ -184,10 +184,6 @@
           max-width: 100%;
         }
 
-        .footer-links {
-          line-height: 200%;
-        }
-
     </style>
 </head>
 <body>
@@ -277,7 +273,7 @@
          It will link to the previous search, accessed through the $this->request->session()->read('User.lastsearch'),
           which is set in the AppController. The Back to search button will not show up in the homepage -->
     <?php $complete_url  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
-      <?php if(!strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && !strpos($complete_url, 'browse') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
+      <?php if(((strrpos($complete_url,'listings')+8)!==strlen($complete_url)) && !strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && !strpos($complete_url, 'browse') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
           <?php $last_search_url =  $this->request->session()->read('User.lastsearch'); ?> 
           <?= '<div class="col s6" style = "margin-right: 2%; border-radius: 3%; margin-left: -5%; padding: 0">' ?>
             <?= $this->Html->link( ' < Back to Search', ['controller' => 'Listings', 'action' => 'index', basename($last_search_url) ]) ?>
@@ -442,10 +438,9 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
           <ul>
-
-          <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
-          <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
-          <li><?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?></li>
+            <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
+            <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
+            <li><?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?></li>
           </ul>
         </div>
       </div>
