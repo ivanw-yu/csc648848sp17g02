@@ -167,12 +167,14 @@ function f() {
                   </div>
                   <div class="card-content">
 
-                    <span class="card-title">
+                    <span class="card-title" style="font-size: 8px; font-size: 1vmax; font-weight: bold; text-transform: uppercase; text-align: center">
                       <?= $this->Html->link(__($listing->title), ['action' => 'view', $listing->listing_num]) ?>
                     </span>
-
-                    <a class="left"><?= h($listing->condition_id) ?></a>
+                    <a class="left">Category: <?= h($listing->category->category_name) ?></a>
+                    <br>
+                    <a class="left">Condition: <?= h($listing->condition_id) ?></a>
                     <a class="right">$ <?= h($listing->price) ?></a>
+                    
                     
                   
                   </div>
