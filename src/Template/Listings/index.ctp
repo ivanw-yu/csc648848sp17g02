@@ -45,9 +45,13 @@ function f() {
               <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></div>
               </div>
               <div class="input-field col s9">
+
+                <?php $select_sort_options = array('date_createddesc' => 'Newest', 'date_createdasc' =>'Oldest', 'priceasc' =>'$-$$$', 'pricedesc' =>'$$$-$'); 
+                  $queried_sort = $this->request->query['sort'] . $this->request->query['direction'];
+                  $sort_selected = strlen($queried_sort) ? $select_sort_options[$queried_sort] : 'Newest'; ?>
                 <select id="select_sort" onchange="f();">
-                  <option value="title" disabled="true">sort</option>
-                  <option value="date_desc" id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></option>
+                  <option value="title" disabled="true" selected> <?= $sort_selected ?></option>
+                    <option value="date_desc" id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></option>
                   <option value="date_asc" id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></option>
                   <option value="price_asc" id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></option>
                   <option value="price_desc" id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></option>
@@ -134,7 +138,7 @@ function f() {
           </ul>
 
         
-        <!-- Send the selected category and search terms -->
+        <!-- Send the selected fory and search terms -->
         <input name='category_filter' value='<?= $default_category ?>' type="hidden" />
         <input name='tags' value='<?= $this->request->query['tags'] ?>' type="hidden" />
 
@@ -163,12 +167,11 @@ function f() {
                   </div>
                   <div class="card-content">
 
-                    <span class="card-title" style="font-size: 8px; font-size: 1vmax; font-weight: bold; text-transform: uppercase; text-align: center">
+                    <span class="card-title">
                       <?= $this->Html->link(__($listing->title), ['action' => 'view', $listing->listing_num]) ?>
                     </span>
-                    <a class="left">Category: <?= h($listing->category->category_name) ?></a>
-                    <br>
-                    <a class="left">Condition: <?= h($listing->condition_id) ?></a>
+
+                    <a class="left"><?= h($listing->condition_id) ?></a>
                     <a class="right">$ <?= h($listing->price) ?></a>
                     
                   
@@ -241,43 +244,6 @@ function f() {
 
   <!--</form>-->
 </div>
-
-
-<!-- These if-blocks set the checked state of conditions filters. -->
-<?php if(!empty($condition_filters['new'])): ?>
-    <script>
-        document.getElementById('test1').checked = true;
-        document.getElementById('filter_new').value = 'new';
-    </script>
-<?php endif; ?>
-
-<?php if(!empty($condition_filters['like_new'])): ?>
-    <script>
-        document.getElementById('test2').checked = true;
-        document.getElementById('filter_like_new').value = 'like_new';
-    </script>
-<?php endif; ?>
-
-<?php if(!empty($condition_filters['good'])): ?>
-    <script>
-        document.getElementById('test3').checked = true;
-        document.getElementById('filter_good').value = 'good';
-    </script>
-<?php endif; ?>
-
-<?php if(!empty($condition_filters['fair'])): ?>
-    <script>
-        document.getElementById('test4').checked = true;
-        document.getElementById('filter_fair').value = 'fair';
-    </script>
-<?php endif; ?>
-
-<?php if(!empty($condition_filters['poor'])): ?>
-    <script>
-        document.getElementById('test5').checked = true;
-        document.getElementById('filter_poor').value = 'poor';
-    </script>
-<?php endif; ?>
 
 <script>
     document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";
