@@ -66,7 +66,7 @@ class RegisteredUsersController extends AppController
             }
             if (!$this->RegisteredUsers->exists(['username' => $registeredUser->username])&& !$this->RegisteredUsers->exists(['email' => $registeredUser->email])) 
             {
-                $this->Flash->success(__('You are registered, welcome!'));
+                $this->Flash->success(__('You are registered, welcome! Please login with your new credentials.'));
                 $this->RegisteredUsers->save($registeredUser);
                 return $this->redirect($this->referer());
             }
