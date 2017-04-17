@@ -2,8 +2,8 @@
 /**
   * @var \App\View\AppView $this
   */
- $title = 'GatorBay - Listings';		
- $this->assign('title', $title);		
+  $title = 'GatorBay - Listings';   
+  $this->assign('title', $title);   
 ?>
 
 <script type="text/javascript">
@@ -41,22 +41,22 @@ function f() {
                 <label style="font-size: 1.1rem;">sort: </label>
               </div>
               <div style = "display: none;" >
-              <div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></div>
-              <div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></div>
-              <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></div>
-              <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></div>
+              <div class='hidden' id="sort_date_created_asc"><?= $this->Paginator->sort('date_created',null,['direction'=>'asc','lock'=>true] ) ?></div>
+              <div class='hidden' id="sort_date_created_desc"><?= $this->Paginator->sort('date_created',null,['direction' => 'desc','lock'=>true] ) ?></div>
+              <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price',null,['direction'=>'asc','lock'=>true]) ?></div>
+              <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', null,['direction' => 'desc','lock'=>true]) ?></div>
               </div>
               <div class="input-field col s9">
 
-                <?php $select_sort_options = array('date_createddesc' => 'Newest', 'date_createdasc' =>'Oldest', 'priceasc' =>'$-$$$', 'pricedesc' =>'$$$-$'); 
-                  $queried_sort = $this->request->query['sort'] . $this->request->query['direction'];
-                  $sort_selected = strlen($queried_sort) ? $select_sort_options[$queried_sort] : 'Newest'; ?>
+                <!-- <//?php $select_sort_options = array('date_createddesc' => 'Newest', 'date_createdasc' =>'Oldest', '//priceasc' =>'$-$$$', 'pricedesc' =>'$$$-$'); 
+                 //  $queried_sort = $this->request->query['sort'] . $this->request->query['direction'];
+                //   $sort_selected = strlen($queried_sort) ? $select_sort_options[$queried_sort] : 'Newest'; ?>-->
                 <select id="select_sort" onchange="f();">
-                  <option value="title" disabled="true" selected> <?= $sort_selected ?></option>
-                    <option value="date_desc" id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></option>
-                  <option value="date_asc" id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></option>
-                  <option value="price_asc" id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></option>
-                  <option value="price_desc" id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></option>
+                  <!--<option value="title" disabled="true" selected> <//?= $sort_selected ?></option>-->
+                  <option value="date_created_desc" id="date_created_desc">Newest</option>
+                  <option value="date_created_asc" id="date_created_asc">Oldest</option>
+                  <option value="price_asc" id="sort_price_asc">$-$$$</option>
+                  <option value="price_desc" id="sort_price_desc">$$$-$</option>
                   
                 </select>
               </div>
@@ -273,23 +273,28 @@ function f() {
   }
   var condition_new = getParameterByName('condition_new');
   if(condition_new){
-    document.getElementById('condition_new').checked=true
+    document.getElementById('condition_new').checked=true;
   }
   var condition_like_new = getParameterByName('condition_like_new');
   if(condition_like_new){
-    document.getElementById('condition_like_new').checked=true
+    document.getElementById('condition_like_new').checked=true;
   }
   var condition_good = getParameterByName('condition_good');
   if(condition_good){
-    document.getElementById('condition_good').checked=true
+    document.getElementById('condition_good').checked=true;
   }
   var condition_fair = getParameterByName('condition_fair');
   if(condition_fair){
-    document.getElementById('condition_fair').checked=true
+    document.getElementById('condition_fair').checked=true;
   }
   var condition_poor = getParameterByName('condition_poor');
   if(condition_poor){
-    document.getElementById('condition_poor').checked=true
+    document.getElementById('condition_poor').checked=true;
+  }
+  var sort = getParameterByName('sort');
+  var direction = getParameterByName('direction');
+  if(sort && direction){
+    document.getElementById('select_sort').value=(sort+'_'+direction);
   }
   var displayed = false;
   // the parameter is the base64_encoded binary representation of the blob image.
