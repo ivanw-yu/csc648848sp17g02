@@ -148,10 +148,9 @@ function f() {
       </div>
 
 
-
         <div class="col m9 s12">
 
-          
+            <?php $user_array = array(); ?>          
             <?php $counter = 0; ?>
             <?php foreach ($listings as $listing): ?> 
               <?php if($counter === 0): ?>
@@ -216,7 +215,8 @@ function f() {
                         </div>
                         <div class="modal-footer">
                           <?php if($currentUser !== null): ?>
-                            <a class="btn modal-close" href="#contact_box">Contact Seller</a>
+                            <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
+                            <a class="btn modal-close" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
                           <?php else: ?>
                             <a class="btn modal-close" href="#modal1">Contact Seller</a>
                           <?php endif; ?>
@@ -228,6 +228,8 @@ function f() {
                   </div>
                 </div>
               </div>
+
+            
 
             <?php $counter++;
               if($counter >2){
