@@ -72,7 +72,7 @@ class RegisteredUsersController extends AppController
             }
             else
             {
-                $this->Flash->error(__('Registration has failed...Please try again :)'));
+                $this->Flash->error(__('Registration has failed, username or email has already been taken... Please try again.'));
                 return $this->redirect($this->referer());
             }
             
@@ -146,6 +146,9 @@ class RegisteredUsersController extends AppController
                 // this currently allows user to go to the same page after logging in.
                 // change this back to $this->Auth->redirectUrl() if we want to redirect user to homepage after logging in.
                 return $this->redirect($this->referer());//Auth->redirectUrl());
+            } else {
+                $this->Flash->error(__('Login failed. Username or password is incorrect'));
+                return  $this->redirect($this->referer());
             }
         }
         // added so logout will also redirect to same page?

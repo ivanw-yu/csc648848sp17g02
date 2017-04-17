@@ -2,6 +2,8 @@
 /**
   * @var \App\View\AppView $this
   */
+$title = 'Edit item';
+$this->assign('title', $title);d
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
@@ -46,9 +48,9 @@
             echo $this->Form->input('title');
             echo $this->Form->input('category_id', ['options' => $categories]);
             echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
-            echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
+            // echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
         ?>
+        <?= $this->Form->button(__('Submit')) ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>

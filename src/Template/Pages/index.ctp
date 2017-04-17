@@ -19,6 +19,8 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
 //$this->layout = true;
+$title = 'GatorBay: A Place For Gators to Buy and Sell.';
+$this->assign('title', $title);
 ?>
 
 <div class="content" style="padding: 0;">
