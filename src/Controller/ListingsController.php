@@ -45,12 +45,13 @@ class ListingsController extends AppController
     {
         $this->setDefaultData();
         $filtered_listings = NULL;
-        if (!empty($this->request->query)) {
+        $list_was_filtered = false;
+        if (!empty($this->request->query) && $this->request->query['tags'] !== NULL) {
             $tags = preg_split('/[\s,]+/', $this->request->query['tags']);
+            $list_was_filtered = true;
             //$table =  TableRegistry::get('Tags');
             //$opts = ['tags' => $tags];
             //$filtered_listings = $table->find('listings', $opts);
-
             // Get all listings with titles/item desc that contain the tags.
             $j = 0;
             $n = count($tags);
@@ -159,9 +160,15 @@ class ListingsController extends AppController
                 //$this->set('default_category', $category_search);
                 //return;
             //}
+
+        // added 4/16/17. this will allow clicking categories in browse page to only list items in the same categories.
+        // if category ever appears in the query string (not category_filter, which narrows the search for the search bar instead)
+        // then we know that only items of that category should appear, since a category link from the browse page has been clicked.
+        } else if($this->request->query['category']!== NULL) {
+            $filtered_listings = $this->Listings->find('all')->where(['category_id' => $this->request->query['category']]);
+            $list_was_filtered = true;
         }
-        // code may not reach here if the search category or keywords
-        // are specified. 4/13/17.
+
         $contain = ['RegisteredUsers', 'Courses', 'Conditions', 'Categories'];
         $conditions = [];
         $item_conditions = [];
@@ -210,7 +217,7 @@ class ListingsController extends AppController
         $this->paginate = ['contain' => $contain,
                            'conditions' => $conditions,
                            'order' => ['Listings.date_created' => 'desc']];
-        if (empty($filtered_listings) || ($filtered_listings->count() == 0)) {
+        if ($list_was_filtered!==true && (empty($filtered_listings) || ($filtered_listings->count() == 0))) {
             $listings = $this->paginate($this->Listings);
         }
         else {
