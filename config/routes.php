@@ -105,7 +105,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     }  else if (strpos(dirname($_SERVER['PHP_SELF']), '/~tluu4/browse') !== false) {
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'browse']); 
     } else {
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'homepage']);
+        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'index']);
     }
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
