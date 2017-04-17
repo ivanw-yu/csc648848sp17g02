@@ -88,6 +88,8 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
 Router::scope('/', function (RouteBuilder $routes) {
 
     // The page to render depends on the site visited. (Ex: sfsuse.com/~ivnyu will render ivan_page)
+
+    // The page to render depends on the site visited. (Ex: sfsuse.com/~ivnyu will render ivan_page)
     if(strpos(dirname($_SERVER['PHP_SELF']), '/~achalke') !== false){
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'index']);
     } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~ivnyu') !== false) {

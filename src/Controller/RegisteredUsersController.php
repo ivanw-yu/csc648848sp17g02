@@ -57,17 +57,32 @@ class RegisteredUsersController extends AppController
         $registeredUser = $this->RegisteredUsers->newEntity();
         if ($this->request->is('post')) {
             $registeredUser = $this->RegisteredUsers->patchEntity($registeredUser, $this->request->data);
+
             if (isset($this->request->data['username'])) {
                 $registeredUser->username = $this->request->data['username'];
             }
             else {
                 $registeredUser->username = $this->request->data['Username'];
             }
-            if (!$this->RegisteredUsers->exists(
-                    ['username' => $registeredUser->username])) {
+            if (!$this->RegisteredUsers->exists(['username' => $registeredUser->username])&& !$this->RegisteredUsers->exists(['email' => $registeredUser->email])) 
+            {
+                $this->Flash->success(__('You are registered, welcome!'));
                 $this->RegisteredUsers->save($registeredUser);
                 return $this->redirect($this->referer());
             }
+            else
+            {
+                $this->Flash->error(__('Registration has failed...Please try again :)'));
+                return $this->redirect($this->referer());
+            }
+            
+            /*if (!$this->RegisteredUsers->hasAny((array('RegisteredUsers.username' => $registeredUser->username, 'RegisteredUsers.email' => $registeredUser->email,))) 
+            {
+                $this->RegisteredUsers->save($registeredUser);
+                return $this->redirect($this->referer());
+            }
+            */
+
         }
         $this->set(compact('registeredUser'));
         $this->set('_serialize', ['registeredUser']);
