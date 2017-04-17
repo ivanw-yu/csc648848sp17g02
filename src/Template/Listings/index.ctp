@@ -4,7 +4,6 @@
   */
  $title = 'GatorBay - Listings';		
  $this->assign('title', $title);		
-  ?>
 ?>
 
 <script type="text/javascript">
