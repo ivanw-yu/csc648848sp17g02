@@ -2,8 +2,10 @@
 /**
   * @var \App\View\AppView $this
   */
+$title = 'Edit item';
+$this->assign('title', $title);
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -32,8 +34,8 @@
         <li><?= $this->Html->link(__('List Wish Lists'), ['controller' => 'WishLists', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Wish List'), ['controller' => 'WishLists', 'action' => 'add']) ?></li>
     </ul>
-</nav>
-<div class="listings form large-9 medium-8 columns content">
+</nav> -->
+<div class="listings form large-9 medium-8 columns content" style="padding: 5%;">
     <?= $this->Form->create($listing) ?>
     <fieldset>
         <legend><?= __('Edit Listing') ?></legend>
@@ -46,9 +48,9 @@
             echo $this->Form->input('title');
             echo $this->Form->input('category_id', ['options' => $categories]);
             echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
-            echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
+            // echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
         ?>
+        <?= $this->Form->button(__('Submit')) ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>

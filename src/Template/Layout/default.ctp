@@ -52,7 +52,8 @@
 
         ul { line-height: 400%; }
 
-        a { color: #424242; }
+        a{ color: #5e35b1; }
+        
 
         form {
           display: flex;
@@ -432,11 +433,11 @@
     <div class="container">
       <div class="row" style="width: initial;">
         <div class="col l6 s12">
-          <h5 class="white-text">TheGatorBay</h5>
+          <h5 style="color: #424242;">TheGatorBay</h5>
           <p class="grey-text text-lighten-4">TheGatorBay is a unique website designed and developed by San Francisco State students to cater their needs for buying and selling items.</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
+          <h5 style="color: #424242;">Links</h5>
           <ul>
             <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
             <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
