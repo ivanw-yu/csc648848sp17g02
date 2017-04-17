@@ -277,7 +277,7 @@
          It will link to the previous search, accessed through the $this->request->session()->read('User.lastsearch'),
           which is set in the AppController. The Back to search button will not show up in the homepage -->
     <?php $complete_url  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
-      <?php if(!strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
+      <?php if(!strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && !strpos($complete_url, 'browse') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
           <?php $last_search_url =  $this->request->session()->read('User.lastsearch'); ?> 
           <?= '<div class="col s6" style = "margin-right: 2%; border-radius: 3%; margin-left: -5%; padding: 0">' ?>
             <?= $this->Html->link( ' < Back to Search', ['controller' => 'Listings', 'action' => 'index', basename($last_search_url) ]) ?>
@@ -455,12 +455,6 @@
       </div>
     </div>
   </footer>
-
-  <?php if(strpos($this->Url->build(null, true), 'listings?') || strpos($this->Url->build(null, true), 'listings/index') ): ?>
-    <!--<//?= $this->Url->build(null, true) . "?" . "tags=" . $this->request->query['tags'] 
-                                          . "&category_filter=". $this->request->query['category_filter']
-                                          . "&price=" . $this->request->query['price']  ?>-->
-  <?php endif; ?>
 
     <script>
     document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>"
