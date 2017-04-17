@@ -18,6 +18,8 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
+$title = 'GatorBay - Browse';
+$this->assign('title', $title);
 ?>
 
 <style>
