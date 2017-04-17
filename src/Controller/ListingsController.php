@@ -167,6 +167,7 @@ class ListingsController extends AppController
         } else if($this->request->query['category']!== NULL) {
             $filtered_listings = $this->Listings->find('all')->where(['category_id' => $this->request->query['category']]);
             $list_was_filtered = true;
+            $this->set('default_category', $this->request->query['category']);
         }
 
         $contain = ['RegisteredUsers', 'Courses', 'Conditions', 'Categories'];
@@ -203,10 +204,16 @@ class ListingsController extends AppController
             $item_conditions[] = 'poor';
             $condition_filters['poor'] = true;
         }
-        if (!empty($get_request['price'])) {
+        if (!empty($get_request['price']) && $get_request['price']==6) {
+            $conditions['Listings.price > ']=0;
+        }
+        else if (!empty($get_request['price']) && $get_request['price']!==6) {
             // The 'price' element is between 1 and 5.
             $price_max = 25.0 * ((double) $get_request['price']);
             $conditions['Listings.price >= '] = $price_max - 25.0;
+            if($price_max === 100.0){
+                $price_max = $price_max - 1; 
+            }
             if ($price_max < 100.0) {
                 $conditions['Listings.price < '] = $price_max;
             }

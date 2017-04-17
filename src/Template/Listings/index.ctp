@@ -109,23 +109,27 @@ function f() {
                      not change any of these without letting me know.
                      (David, 4/15/17)-->
                 <p>
-                  <input name='price' value='1' type="checkbox" id="test6" />
+                  <input name='price' value='6' type="radio" id="test11" checked="checked"/>
+                  <label for="test11">Any price</label>
+                </p>
+                <p>
+                  <input name='price' value='1' type="radio" id="test6" />
                   <label for="test6">Under $25</label>
                 </p>
                 <p>
-                  <input name='price' value='2' type="checkbox" id="test7" />
+                  <input name='price' value='2' type="radio" id="test7" />
                   <label for="test7">$25 - $49.99</label>
                 </p>
                 <p>
-                  <input name='price' value='3' type="checkbox" id="test8" />
+                  <input name='price' value='3' type="radio" id="test8" />
                   <label for="test8">$50 - $74.99</label>
                 </p>
                 <p>
-                  <input name='price' value='4' type="checkbox" id="test9" />
+                  <input name='price' value='4' type="radio" id="test9" />
                   <label for="test9">$75 - $99.99</label>
                 </p>
                 <p>
-                  <input name='price' value='5' type="checkbox" id="test10" />
+                  <input name='price' value='5' type="radio" id="test10" />
                   <label for="test10">$100 or more</label>
                 </p>               
               </div>
