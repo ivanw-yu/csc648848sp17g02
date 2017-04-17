@@ -88,25 +88,8 @@ Router::scope('/db_test', function(RouteBuilder $routes) {
 Router::scope('/', function (RouteBuilder $routes) {
 
     // The page to render depends on the site visited. (Ex: sfsuse.com/~ivnyu will render ivan_page)
-    if(strpos(dirname($_SERVER['PHP_SELF']), '/~achalke') !== false){
+
         $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'index']);
-    } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~ivnyu') !== false) {
-        // this displays ivan_page.ctp on the browser.
-        //$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'ivan_page']);
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'index']);
-    } else if(strpos(dirname($_SERVER['PHP_SELF']), '/~bkng') !== false){
-        // this displays brad_page.ctp on the browser.
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'brad_page']);
-    } else if(strpos(dirname($_SERVER['PHP_SELF']),'/~tluu4') !== false){
-        // this displays thaos_page.ctp on the browser
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'index']);
-    } else if (strpos(dirname($_SERVER['PHP_SELF']), '/~jerrya') !== false) {
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'jerry_page']); 
-    }  else if (strpos(dirname($_SERVER['PHP_SELF']), '/~tluu4/browse') !== false) {
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'browse']); 
-    } else {
-        $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'homepage']);
-    }
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */

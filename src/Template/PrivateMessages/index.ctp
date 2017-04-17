@@ -3,19 +3,20 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!--<nav class="large3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Private Message'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?></li>
+        <li class="heading"><//?= __('Actions') ?></li>
+        <li><//?= $this->Html->link(__('New Private Message'), ['action' => 'add']) ?></li>
+        <li><//?= $this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?></li>
+        <li><//?= $this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?></li>
         <!-- Conversations can only be seen by clicking on one in the table.
              They can only be added by creating a new private message or by
              clicking on a conversation and replying. -->
-        <!--<li><?= $this->Html->link(__('List Conversations'), ['controller' => 'Conversations', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Conversation'), ['controller' => 'Conversations', 'action' => 'add']) ?></li>-->
+        <!--<li><//?= $this->Html->link(__('List Conversations'), ['controller' => 'Conversations', 'action' => 'index']) ?></li>
+        <li><//?= $this->Html->link(__('New Conversation'), ['controller' => 'Conversations', 'action' => 'add']) ?></li>
     </ul>
-</nav>
+</nav> 
+-->
 <div class="privateMessages index large-9 medium-8 columns content">
     <h3><?= __('Private Messages') ?></h3>
     <table cellpadding="0" cellspacing="0">

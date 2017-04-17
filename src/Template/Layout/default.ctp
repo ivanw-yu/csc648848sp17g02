@@ -364,6 +364,7 @@
               <div class="input-field col s12">
                 <input id="name" name = "username" type="text" class="validate" required>
                 <label for="name" data-error="Username has already been taken">Username</label>
+
               </div>
             </div>
 
@@ -378,7 +379,7 @@
         </div>
         <!--<//?= $this->Form->end();?>-->
         <center><p> By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</p></center>
-        <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn grey darken-1">REGISTER</button></center>
+        <center><button type = "submit" class="modal-action waves-effect waves-green btn grey darken-1">REGISTER</button></center>
         <?= $this->Form->end();?>
         
         <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>
