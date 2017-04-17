@@ -2,8 +2,6 @@
 /**
   * @var \App\View\AppView $this
   */
-$title = 'GatorBay - Listings';
-$this->assign('title', $title);
 ?>
 
 <script type="text/javascript">
@@ -80,24 +78,24 @@ function f() {
                      know if changes are necessary.
                      (David, 4/15/17) -->
                 <p>
-                  <input name='condition_new' value='new' type="checkbox" id="test1" />
-                  <label for="test1">New</label>
+                  <input name='condition_new' value='new' type="checkbox" id="condition_new" />
+                  <label for="condition_new">New</label>
                 </p>
                 <p>
-                  <input name='condition_like_new' value='like_new' type="checkbox" id="test2" />
-                  <label for="test2">Like New</label>
+                  <input name='condition_like_new' value='like_new' type="checkbox" id="condition_like_new" />
+                  <label for="condition_like_new">Like New</label>
                 </p>
                 <p>
-                  <input name='condition_good' value='good' type="checkbox" id="test3" />
-                  <label for="test3">Good</label>
+                  <input name='condition_good' value='good' type="checkbox" id="condition_good" />
+                  <label for="condition_good">Good</label>
                 </p>
                 <p>
-                  <input name='condition_fair' value='fair' type="checkbox" id="test4" />
-                  <label for="test4">Fair</label>
+                  <input name='condition_fair' value='fair' type="checkbox" id="condition_fair" />
+                  <label for="condition_fair">Fair</label>
                 </p>
                 <p>
-                  <input name='condition_poor' value='poor' type="checkbox" id="test5" />
-                  <label for="test5">Poor</label>
+                  <input name='condition_poor' value='poor' type="checkbox" id="condition_poor" />
+                  <label for="condition_poor">Poor</label>
                 </p>
               </div>
             </li>
@@ -254,36 +252,67 @@ function f() {
 </div>
 
 <script>
-    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";
-    var price_range = <?= $this->request->query['price']; ?>;
-    if (price_range) {
-        document.getElementById('price_range').value = price_range;
-        document.getElementById('test' + (price_range + 5)).checked = true;
-    }
-                              var displayed = false;
-                              // the parameter is the base64_encoded binary representation of the blob image.
-                              function displaythumbnail(theimg) {
-                                  var thumbnailView = document.getElementById('thumbnailImg');
-                                      thumbnailView.style.display = ""; 
-                                      thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
-                                      thumbnailView.style.position = "fixed";
-                                      thumbnailView.style.top = "0%";
-                                      thumbnailView.style.left = "0%";
-                                      thumbnailView.zIndex = "100";
-                                      thumbnailView.style.width = "100%";
-                                      thumbnailView.style.height = "100%";
-                                      thumbnailView.style.textAlign = "center";
-                                      thumbnailView.style.cursor = "zoom-out"; 
-                                      thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
-                                      displayed = true;
-                              }
-                              function hide(){
-                                  // removes the image after it's clicked again in the enlarged view.
-                                  if(displayed){
-                                      document.getElementById('thumbnailImg').style.display = "none";
-                                      displayed = false;
-                                  }
-                              }
+  function getParameterByName(name, url) {
+      if (!url) {
+        url = window.location.href;
+      }
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+  document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";
+  var price_range = <?= $this->request->query['price']; ?>;
+  if (price_range) {
+      document.getElementById('price_range').value = price_range;
+      document.getElementById('test' + (price_range + 5)).checked = true;
+  }
+  var condition_new = getParameterByName('condition_new');
+  if(condition_new){
+    document.getElementById('condition_new').checked=true
+  }
+  var condition_like_new = getParameterByName('condition_like_new');
+  if(condition_like_new){
+    document.getElementById('condition_like_new').checked=true
+  }
+  var condition_good = getParameterByName('condition_good');
+  if(condition_good){
+    document.getElementById('condition_good').checked=true
+  }
+  var condition_fair = getParameterByName('condition_fair');
+  if(condition_fair){
+    document.getElementById('condition_fair').checked=true
+  }
+  var condition_poor = getParameterByName('condition_poor');
+  if(condition_poor){
+    document.getElementById('condition_poor').checked=true
+  }
+  var displayed = false;
+  // the parameter is the base64_encoded binary representation of the blob image.
+  function displaythumbnail(theimg) {
+      var thumbnailView = document.getElementById('thumbnailImg');
+          thumbnailView.style.display = ""; 
+          thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
+          thumbnailView.style.position = "fixed";
+          thumbnailView.style.top = "0%";
+          thumbnailView.style.left = "0%";
+          thumbnailView.zIndex = "100";
+          thumbnailView.style.width = "100%";
+          thumbnailView.style.height = "100%";
+          thumbnailView.style.textAlign = "center";
+          thumbnailView.style.cursor = "zoom-out"; 
+          thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+          displayed = true;
+  }
+  function hide(){
+      // removes the image after it's clicked again in the enlarged view.
+      if(displayed){
+          document.getElementById('thumbnailImg').style.display = "none";
+          displayed = false;
+      }
+  }
 
    $(document).ready(function(){
     $('.collapsible').collapsible();
