@@ -52,7 +52,8 @@
 
         ul { line-height: 400%; }
 
-        a { color: #424242; }
+        a{ color: #5e35b1; }
+        
 
         form {
           display: flex;
@@ -408,14 +409,14 @@
           <!-- <span onclick = "document.getElementById('contact_box').style.display = 'none'" class = "modal-close" title = "Close">x</span> -->
           <!--<form  method="post" class ="modal-content animate"
           action = "../RegisteredUsers/add">-->
-      <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'class'=>'modal-content animate']); ?>
+      <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'name' => 'message_form', 'class'=>'modal-content animate']); ?>
         <div class = "modal-content">
-            <label>Contact <?= $listing->registered_user->username ?></label><br>
+            <label>Contact <?= $listing->registered_user_id ?></label><br>
             <label><b>Subject</b></label><br>
             <input type = "text" name = "subject" placeholder = "subject" required><br>
             <label><b>Message</b></label><br>
             <input type = "text" name = "message" placeholder = "message" required><br>
-            <input type ="hidden" name="recipient_id" value="<?= $listing->registered_user->username ?>">
+            <input type ="hidden" id = "receiver" name="recipient_id" value="<?= $listing->registered_user_id ?>">
             <div class = "clearfix">
               <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Send </button>
               <button type = "button" class=" cancelbtn btn btn-primary btn-md modal-close" onclick = "document.getElementById('contact_box').style.display = 'none'">Cancel</button>
@@ -432,11 +433,11 @@
     <div class="container">
       <div class="row" style="width: initial;">
         <div class="col l6 s12">
-          <h5 class="white-text">TheGatorBay</h5>
+          <h5 style="color: #424242;">TheGatorBay</h5>
           <p class="grey-text text-lighten-4">TheGatorBay is a unique website designed and developed by San Francisco State students to cater their needs for buying and selling items.</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
+          <h5 style="color: #424242;">Links</h5>
           <ul>
             <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
             <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
