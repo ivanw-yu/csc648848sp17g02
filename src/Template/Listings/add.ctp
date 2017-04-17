@@ -2,6 +2,8 @@
 /**
   * @var \App\View\AppView $this
   */
+$title = 'GatorBay - Add Listing';
+$this->assign('title', $title);
 ?>
 
 <div class="listings form large-9 medium-8 columns content">

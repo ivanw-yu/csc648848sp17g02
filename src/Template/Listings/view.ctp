@@ -2,6 +2,8 @@
 /**
   * @var \App\View\AppView $this
   */
+$title = $listing->title;
+$this->assign('title', $title);
 ?>
 
 
