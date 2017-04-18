@@ -48,11 +48,11 @@ function f() {
               </div>
               <div class="input-field col s9">
 
-                <!-- <//?php $select_sort_options = array('date_createddesc' => 'Newest', 'date_createdasc' =>'Oldest', '//priceasc' =>'$-$$$', 'pricedesc' =>'$$$-$'); 
-                 //  $queried_sort = $this->request->query['sort'] . $this->request->query['direction'];
-                //   $sort_selected = strlen($queried_sort) ? $select_sort_options[$queried_sort] : 'Newest'; ?>-->
+                <?php $select_sort_options = array('date_createddesc' => 'Newest', 'date_createdasc' =>'Oldest', 'priceasc' =>'$-$$$', 'pricedesc' =>'$$$-$'); 
+                  $queried_sort = $this->request->query['sort'] . $this->request->query['direction'];
+                  $sort_selected = strlen($queried_sort) ? $select_sort_options[$queried_sort] : 'Newest'; ?>
                 <select id="select_sort" onchange="f();">
-                  <!--<option value="title" disabled="true" selected> <//?= $sort_selected ?></option>-->
+                  <option value="title" disabled="true" selected> <?= $sort_selected ?></option>
                   <option value="date_created_desc" id="date_created_desc">Newest</option>
                   <option value="date_created_asc" id="date_created_asc">Oldest</option>
                   <option value="price_asc" id="sort_price_asc">$-$$$</option>
