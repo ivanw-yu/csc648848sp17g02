@@ -211,7 +211,7 @@
             <?php endif; ?>
           </li>
           <?php if(isset($currentUser)): ?>
-                <li><?= $this->Html->link('Private messages',
+                <li><?= $this->Html->link('Buyer Messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
                   
