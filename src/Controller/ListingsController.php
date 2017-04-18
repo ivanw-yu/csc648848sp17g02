@@ -61,12 +61,14 @@ class ListingsController extends AppController
                 ->distinct(['listing_num'])
                 ->where(['OR' => [
                     ['item_desc LIKE' => "%{$tags[$j]}%"],
+                    ['category_id LIKE' => "%{$tags[$j]}%"],
                     ['title LIKE' => "%{$tags[$j]}%"]]]);
             $j = $j + 1;
             while ($j < $n) {
                 $filtered_listings = $filtered_listings
                     ->orWhere(['OR' => [
                         ['item_desc LIKE' => "%{$tags[$j]}%"],
+                        ['category_id LIKE' => "%{$tags[$j]}%"],
                         ['title LIKE' => "%{$tags[$j]}%"]]]);
                 $j = $j + 1;
             }
