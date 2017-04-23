@@ -44,7 +44,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.2.0/nouislider.min.css">
+
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
 
     <style>
 
@@ -106,10 +111,6 @@
           overflow: auto;
         }
 
-        .carousel.carousel-slider .carousel-item{
-          height: 70vh;
-        }
-
         .carousel-title-container {
           height: 100%;
           width: 100%;
@@ -136,8 +137,6 @@
         }
 
         .recent-content {
-          max-height: 450px;
-          max-width: 1200px;
           background-color: #fcfcfc;
           box-shadow: 5px 5px 10px #cecece;
 
@@ -174,8 +173,22 @@
           max-height: 275px;
         }
 
-        .card .card-title {
+
+        .card .card-content .card-title {
           font-size: 21px;
+          margin-bottom: 0px;
+        }
+
+        .card .card-action {
+          padding: 10px 16px;
+        }
+
+        .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+          color: #5e35b1;
+        }
+
+        .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
+          color: #5e35b1;
         }
 
         .footer {
@@ -196,21 +209,20 @@
     <div class="nav-wrapper grey darken-3">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-        <ul id="nav-mobile" class="left hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
-          <li><?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
-          <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
-          <li>
-            <?php if(isset($currentUser)): ?>
-              <?= $this->Html->link('Sell',
-                                        ['controller' => 'Listings',
-                                         'action' => 'add']);?>
+        <?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand', 'style' => "padding-left: 15px; padding-right: 15px; font-family: 'Comfortaa', cursive; font-size: 24px; font-weight: bold;"] );?>
+          
 
+        <ul id="nav-mobile" class="right hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
+
+            <?php if(isset($currentUser)): ?>
+                <li style="padding-right: 10px;"> <?= "Welcome ". $currentUser . "!" ?> </li>
+                <li><?= $this->Html->link('Sell',
+                                            ['controller' => 'Listings',
+                                             'action' => 'add']);?></li>
             <?php else: ?>
-            <a href="#modal1" onclick="sellClicked();">Sell<a>
-              
+                <li><a href="#modal1" onclick="sellClicked();">Sell</a></li>
             <?php endif; ?>
-          </li>
-          <?php if(isset($currentUser)): ?>
+            <?php if(isset($currentUser)): ?>
                 <li><?= $this->Html->link('Buyer Messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
@@ -222,43 +234,47 @@
                                         ['controller' => 'WatchingLists',
                                          'action' => 'index']); ?></li>
           <?php endif; ?>
-        </ul>
-
-        <ul id="nav-mobile" class="right hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
-          <li></li>
           <!-- Modal Trigger -->
           <?php if(!isset($currentUser)): ?>
             <li><a href="#modal1"r>Register/Sign in</a></li>
-          <?php else: ?>
-                  <?php if(isset($currentUser)): ?>
-                    <li> <?= "Welcome ". $currentUser . "!" ?> </li>
-                  <?php endif; ?>        
-                  <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
+          <?php else: ?>      
+              <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
                   
           <?php endif; ?>
         </ul>
 
-      
+      <!-- MOBILE NAV/SIDE BAR -->
         <ul class="side-nav" id="mobile-demo">
           <!-- Modal Trigger -->
           <center>
-            <a href="#!" class="brand-logo"><?= $this->Html->link( "Home", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></a>
-            <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
-            <?php if($currentUser !== null): ?>
-                <li><?= $this->Html->link('Private messages',
+            <?php if(isset($currentUser)): ?>
+                <li style="color: black; font-weight: bold;"> <?= "Welcome ". $currentUser . "!" ?> </li>
+                <li><?= $this->Html->link( "Home", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
+                <li><?= $this->Html->link('Sell',
+                                            ['controller' => 'Listings',
+                                             'action' => 'add']);?></li>
+            <?php else: ?>
+                <li><a href="#modal1" onclick="sellClicked();">Sell</a></li>
+            <?php endif; ?>
+            <?php if(isset($currentUser)): ?>
+                <li><?= $this->Html->link('Buyer Messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
-                  <li><?= $this->Html->link('Sell',
-                                        ['controller' => 'Listings',
-                                         'action' => 'add']);?> </li>
+                  
                   <li><?= $this->Html->link('Selling',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
                   <li><?= $this->Html->link('Watching',
                                         ['controller' => 'WatchingLists',
                                          'action' => 'index']); ?></li>
-            <?php endif; ?>
-            <li><a href="#modal1">Register/Sign in</a></li>
+          <?php endif; ?>
+          <!-- Modal Trigger -->
+          <?php if(!isset($currentUser)): ?>
+            <li><a href="#modal1"r>Register/Sign in</a></li>
+          <?php else: ?>      
+              <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
+                  
+          <?php endif; ?>
             </center>
         </ul>
     </div>
