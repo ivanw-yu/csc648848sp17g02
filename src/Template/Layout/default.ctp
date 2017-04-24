@@ -154,6 +154,26 @@
           width: 100%;
         }
 
+        /* label focus color */
+        .input-field input[type=text]:focus + label {
+          color: #5e35b1;
+        }
+        /* label underline focus color */
+        .input-field input[type=text]:focus {
+          border-bottom: 1px solid #5e35b1;
+          box-shadow: 0 1px 0 0 #5e35b1;
+        }
+
+        /* label focus color */
+        .input-field textarea[type=text]:focus + label {
+          color: #5e35b1;
+        }
+        /* label underline focus color */
+        .input-field textarea[type=text]:focus {
+          border-bottom: 1px solid #5e35b1;
+          box-shadow: 0 1px 0 0 #5e35b1;
+        }
+
         .col {
           margin: 0 auto;
         }
@@ -337,14 +357,14 @@
     </div>
   </nav>
 
-  <!-- Login Modal Structure -->
+  <!-- SIGN IN Modal Structure -->
   <div id="modal1" class="modal">
     
     <div class="modal-content">
-      <h5><center>LOG IN</center></h5>
+      <h5><center>SIGN IN</center></h5>
        <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'login'], 'class'=>'modal-content animate']) ?>
-        <div class="row" style="width: 100%;">
-          <div class="col s6">
+        <div class="row" style="width: 100%; display: flex; justify-content: space-around;">
+          <div class="col s12 m7">
 
             <div class="row">
               <div class="input-field col s12">
@@ -355,20 +375,20 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="password" name="password" type="password" class="validate">
+                <input id="password" name="password" type="text" class="validate">
                 <label for="password" data-error="incorrect password">Password</label>
               </div>
             </div>
-
 
             <div class="row" style="display: flex; justify-content: flex-end; font-size: 12px; margin-bottom: 5px;">
                   <a href = "#"> Forgot password?</a>
             </div>
             <input name = "trigger" id="trigger" type="hidden" >
-            <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn-flat">SIGN IN</button></center>
+            <center><button type = "submit" class="modal-action modal-close waves-effect waves-purple btn-flat">SIGN IN</button></center>
             
             <?= $this->Form->end();?>
-            <center><p>Don't have an account? Register <a href="#modal2" class="modal-close">here</a>!</p></center>
+            <p></p>
+            <center>Don't have an account? Register <a href="#modal2" class="modal-close">here</a>!</center>
 
           </div>
         </div> 
@@ -382,12 +402,12 @@
     <div class="modal-content">
       <h5><center>REGISTRATION</center></h5>
       <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'add']]); ?>
-        <div class="row" style="width: 100%;">
-          <div class="col s6">
+        <div class="row" style="width: 100%; display: flex; justify-content: space-around;"">
+          <div class="col s12 m7">
 
             <div class="row">
               <div class="input-field col s12">
-                <input name = "email" id="email" type="email" class="validate" required>
+                <input name = "email" id="email" type="text" class="validate" required>
                 <label for="email" data-error="This email has already been registered">Email</label>
               </div>
             </div>
@@ -402,19 +422,20 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="password" name = "password" type="password" class="validate" required>
+                <input id="password" name = "password" type="text" class="validate" required>
                 <label for="password" data-error="wrong">Password</label>
               </div>
             </div>
 
+            <center style="font-size: 13px;">By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</center><p></p>
+            <center><button type = "submit" class="modal-action waves-effect waves-purple btn-flat">REGISTER</button></center>
+            <?= $this->Form->end();?>
+            <p></p>
+            <center>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</center>
           </div>
         </div>
         <!--<//?= $this->Form->end();?>-->
-        <center><p> By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</p></center>
-        <center><button type = "submit" class="modal-action waves-effect waves-green btn grey darken-1">REGISTER</button></center>
-        <?= $this->Form->end();?>
         
-        <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>
 
     </div>
   </div>
@@ -427,15 +448,27 @@
           action = "../RegisteredUsers/add">-->
       <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'name' => 'message_form', 'class'=>'modal-content animate']); ?>
         <div class = "modal-content">
-            <label>Contact <?= $listing->registered_user_id ?></label><br>
-            <label><b>Subject</b></label><br>
-            <input type = "text" name = "subject" placeholder = "subject" required><br>
-            <label><b>Message</b></label><br>
-            <input type = "text" name = "message" placeholder = "message" required><br>
+            <h5><center>CONTACT <?= $listing->registered_user_id ?></center></h5>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="subject" type="text" name="subject" required><br>
+                <label for="subject" data-error="Please enter the subject">Subject</label><br>              
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" name="message" class="materialize-textarea" type="text" required=""></textarea>
+                <label for="textarea1" data-error="Message required.">Message</label><br>
+
+              </div>
+            </div>
+            
             <input type ="hidden" id = "receiver" name="recipient_id" value="<?= $listing->registered_user_id ?>">
             <div class = "clearfix">
-              <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Send </button>
-              <button type = "button" class=" cancelbtn btn btn-primary btn-md modal-close" onclick = "document.getElementById('contact_box').style.display = 'none'">Cancel</button>
+              <button type = "submit" class ="btn grey signupbtn"> Send </button>
+              <button type = "button" class="btn grey cancelbtn modal-close">Cancel</button>
               </div>
         </div>
       <?= $this->Form->end();?>

@@ -140,13 +140,13 @@ $this->assign('title', $title);
                         </div>
                         <div class="row">
 
-                          <div class="col m7" style="overflow: hidden;">
-                            <a class = "item-img" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                              <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
+                          <div class="col m7 12" style="overflow: hidden;">
+                            <a class = "col s12 item-img" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                              <?= '<img src = " ' . $blobimg . '" style = "width: 100%; height: 100%; position: 50% 50%;" />' ?>
                             </a>
                           </div>
 
-                          <div class="col m5">
+                          <div class="col m5 12">
                             <div class="row">
                               <span><?= h($item->condition_id) ?></span>
                               <span class="right">$ <?= h($item->price) ?></span>
@@ -163,9 +163,9 @@ $this->assign('title', $title);
                         <div class="modal-footer">
                           <?php if($currentUser !== null): ?>
                             <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
-                            <a class="btn modal-close" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
+                            <a class="btn grey modal-close" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
                           <?php else: ?>
-                            <a class="btn modal-close" href="#modal1">Contact Seller</a>
+                            <a class="btn grey modal-close" href="#modal1">Contact Seller</a>
                           <?php endif; ?>
 
                         </div>
