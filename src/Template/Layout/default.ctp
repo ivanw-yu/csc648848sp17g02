@@ -155,24 +155,16 @@
         }
 
         /* label focus color */
-        .input-field input[type=text]:focus + label {
+        .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label, .input-field textarea[type=text]:focus + label, .input-field input[type=username]:focus + label, .input-field input[type=email]:focus + label {
           color: #5e35b1;
         }
         /* label underline focus color */
-        .input-field input[type=text]:focus {
+        .input-field input[type=text]:focus, .input-field input[type=password]:focus, .input-field textarea[type=text]:focus, .input-field input[type=user]:focus, .input-field input[type=email]:focus {
           border-bottom: 1px solid #5e35b1;
           box-shadow: 0 1px 0 0 #5e35b1;
         }
 
-        /* label focus color */
-        .input-field textarea[type=text]:focus + label {
-          color: #5e35b1;
-        }
-        /* label underline focus color */
-        .input-field textarea[type=text]:focus {
-          border-bottom: 1px solid #5e35b1;
-          box-shadow: 0 1px 0 0 #5e35b1;
-        }
+
 
         .col {
           margin: 0 auto;
@@ -375,7 +367,7 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="password" name="password" type="text" class="validate">
+                <input id="password" name="password" type="password" class="validate">
                 <label for="password" data-error="incorrect password">Password</label>
               </div>
             </div>
@@ -407,7 +399,7 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <input name = "email" id="email" type="text" class="validate" required>
+                <input name = "email" id="email" type="email" class="validate" required>
                 <label for="email" data-error="This email has already been registered">Email</label>
               </div>
             </div>
@@ -422,7 +414,7 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="password" name = "password" type="text" class="validate" required>
+                <input id="password" name = "password" type="password" class="validate" required>
                 <label for="password" data-error="wrong">Password</label>
               </div>
             </div>
