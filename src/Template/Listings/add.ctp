@@ -25,7 +25,7 @@
             //echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
             //echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]); //Commented out for now, need to find a way to make this optional
             echo $this->Form->input('condition_id'/*, ['options' => $conditions, 'empty' => true]*/);
-            echo $this->Form->input('tags');
+            //echo $this->Form->input('tags');
         ?>
         <script>
             function initAutocomplete() {

@@ -272,14 +272,14 @@ class ListingsController extends AppController
 
 
             // Then save tags.
-            $tags_table = TableRegistry::get('Tags');
-            $tags_table->createTags($listing->listing_num,
-                                    preg_split('/[\s,]+/',
-                                               $this->request->data['tags']));
+            //$tags_table = TableRegistry::get('Tags');
+            //$tags_table->createTags($listing->listing_num,
+                                    //preg_split('/[\s,]+/',
+                                               //$this->request->data['tags']));
             // Save the title as a tag to make it searchable.
-            $tags_table->createTags($listing->listing_num,
-                                    preg_split('/[\s,]+/',
-                                               $listing->title));
+            //$tags_table->createTags($listing->listing_num,
+                                    //preg_split('/[\s,]+/',
+                                               //$listing->title));
             // And save to Selling List.
             $selling_list_table = TableRegistry::get('SellingLists');
             $selling_list_table->add($listing->listing_num,
@@ -320,7 +320,8 @@ class ListingsController extends AppController
             if ($this->Listings->save($listing)) {
                 $this->Flash->success(__('The listing has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'SellingLists',
+                                        'action' => 'index']);
             }
             $this->Flash->error(__('The listing could not be saved. Please, try again.'));
         }
