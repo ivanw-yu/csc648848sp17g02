@@ -19,6 +19,8 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
 //$this->layout = true;
+$title = 'GatorBay: A Place For Gators to Buy and Sell.';
+$this->assign('title', $title);
 ?>
 
 <div class="content" style="padding: 0;">
@@ -96,69 +98,88 @@ use Cake\Network\Exception\NotFoundException;
   </div>
 
   <div class="recent-container">
-    <div class="recent-content">
-      <span><center>Recent Items</center></span>
-      <div class="row" style="display: flex; justify-content: center;">
-
-      <?php $counter = 0; ?>
-      <?php foreach ($recent_items as $item): ?> 
-        <div class="col s12 m6 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <?php $blobimg = stream_get_contents($item->image); ?>
-              <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
-            </div>
-            <div class="card-action">
-              <?= $this->Html->link( $item->title, ['controller' => 'Listings', 'action' => 'view', $item->listing_num] ) ?>
-            </div>
-          </div>
+    <div class="row recent-content" style="display: flex; justify-content: space-around;">
+      <div class="col">
+        <div class="row">
+        <center><strong>RECENT ITEMS</strong></center>
         </div>
-      <?php $counter++;
-        if($counter >3)
-          break; ?>
-      <?php endforeach; ?>
-        <!--<div class="col s12 m6 l3">
-          <div class="card small">
-            <div class="card-image">
-              <img src="http://www.publicdomainpictures.net/pictures/170000/nahled/math.jpg">
+        <div class="row">
+          <?php $counter = 0; ?>
+          <?php foreach ($recent_items as $item): ?> 
+            <div class="col s12 m10 l3" style="display: flex; justify-content: space-around;">
+              <div class="card medium hoverable">
+                <div class="clickable" onclick="window.location.href = <?= '\'listings/view/'.$item->listing_num. '\'' ?>">
+                  <div class="card-image">
+                    <?php $blobimg = stream_get_contents($item->image); ?>
+                    <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title" style="font-size: 8px; font-size: 1vmax; font-weight: bold; text-transform: uppercase; text-align: center">
+                        <?= $this->Html->link( $item->title, ['controller' => 'Listings', 'action' => 'view', $item->listing_num] ) ?>
+                    </span>
+                    <a class="left"><strong>Category: </strong> <?= h($item->category_id) ?></a>
+                    <br>
+                    <a class="left"><strong>Condition: </strong> <?= h($item->condition_id) ?></a>
+                    <a class="right"><strong>$ </strong><?= h($item->price) ?></a>
+                  </div>
+                </div>
+                <div class="card-action">
+                    <?= '<a class="btn-flat left" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem;" href="#quickview' . $item->listing_num . '">Quick View</a>' ?>
+
+                    <?php if($currentUser !== null): ?>
+                            <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
+                            <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
+                          <?php else: ?>
+                            <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#modal1">Contact Seller</a>
+                          <?php endif; ?>
+
+                    <?= '<div class="modal" id="quickview' . $item->listing_num . '">' ?>
+                      <div class="modal-content">
+                        <div class="row">
+                          <h5><?= $this->Html->link(__($item->title), ['action' => 'view', $item->listing_num]) ?></h5>  
+                        </div>
+                        <div class="row">
+
+                          <div class="col m7 12" style="overflow: hidden;">
+                            <a class = "col s12 item-img" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                              <?= '<img src = " ' . $blobimg . '" style = "width: 100%; height: 100%; position: 50% 50%;" />' ?>
+                            </a>
+                          </div>
+
+                          <div class="col m5 12">
+                            <div class="row">
+                              <span><?= h($item->condition_id) ?></span>
+                              <span class="right">$ <?= h($item->price) ?></span>
+                            </div>
+                            <div class="row">
+                              <span><strong>Description: </strong> <?= h($item->item_desc) ?></span>
+                            </div>
+                            <div class="row">
+                              <?= $this->Html->link( 'View more details', ['controller' => 'Listings', 'action' => 'view', $item->listing_num] ) ?>
+                            </div>
+                          </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                          <?php if($currentUser !== null): ?>
+                            <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
+                            <a class="btn grey modal-close" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
+                          <?php else: ?>
+                            <a class="btn grey modal-close" href="#modal1">Contact Seller</a>
+                          <?php endif; ?>
+
+                        </div>
+                      </div>
+                    <?= '</div>'; ?> 
+                  
+                </div>
+              </div>
             </div>
-            <div class="card-content">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
+          <?php $counter++;
+            if($counter >3)
+              break; ?>
+          <?php endforeach; ?>
         </div>
-
-        <div class="col s12 m6 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="http://www.publicdomainpictures.net/pictures/170000/nahled/math.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 m6 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="http://www.publicdomainpictures.net/pictures/170000/nahled/math.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>-->
-
       </div>
 
     </div>
@@ -172,9 +193,9 @@ use Cake\Network\Exception\NotFoundException;
 <script>
   $('.carousel.carousel-slider').carousel({fullWidth: true});
   $('.carousel').carousel();
-  setInterval(function() {
-    $('.carousel').carousel('next');
-  }, 6000); //6000 = 6 secs
+  // setInterval(function() {
+  //   $('.carousel').carousel('next');
+  // }, 6000); //6000 = 6 secs
         
 </script>
 

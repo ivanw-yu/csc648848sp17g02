@@ -2,6 +2,8 @@
 /**
   * @var \App\View\AppView $this
   */
+  $title = 'GatorBay - Listings';   
+  $this->assign('title', $title);   
 ?>
 
 <script type="text/javascript">
@@ -39,10 +41,10 @@ function f() {
                 <label style="font-size: 1.1rem;">sort: </label>
               </div>
               <div style = "display: none;" >
-              <div class='hidden' id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></div>
-              <div class='hidden' id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></div>
-              <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></div>
-              <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></div>
+              <div class='hidden' id="sort_date_created_asc"><?= $this->Paginator->sort('date_created',null,['direction'=>'asc','lock'=>true] ) ?></div>
+              <div class='hidden' id="sort_date_created_desc"><?= $this->Paginator->sort('date_created',null,['direction' => 'desc','lock'=>true] ) ?></div>
+              <div class='hidden' id="sort_price_asc"><?= $this->Paginator->sort('price',null,['direction'=>'asc','lock'=>true]) ?></div>
+              <div class='hidden' id="sort_price_desc"><?= $this->Paginator->sort('price', null,['direction' => 'desc','lock'=>true]) ?></div>
               </div>
               <div class="input-field col s9">
 
@@ -51,10 +53,10 @@ function f() {
                   $sort_selected = strlen($queried_sort) ? $select_sort_options[$queried_sort] : 'Newest'; ?>
                 <select id="select_sort" onchange="f();">
                   <option value="title" disabled="true" selected> <?= $sort_selected ?></option>
-                    <option value="date_desc" id="sort_date_desc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Newest']) ?></option>
-                  <option value="date_asc" id="sort_date_asc"><?= $this->Paginator->sort('date_created', $options=['direction' => 'Oldest']) ?></option>
-                  <option value="price_asc" id="sort_price_asc"><?= $this->Paginator->sort('price', $options=['direction' => '$-$$$']) ?></option>
-                  <option value="price_desc" id="sort_price_desc"><?= $this->Paginator->sort('price', $options=['direction' => '$$$-$']) ?></option>
+                  <option value="date_created_desc" id="date_created_desc">Newest</option>
+                  <option value="date_created_asc" id="date_created_asc">Oldest</option>
+                  <option value="price_asc" id="sort_price_asc">$-$$$</option>
+                  <option value="price_desc" id="sort_price_desc">$$$-$</option>
                   
                 </select>
               </div>
@@ -78,24 +80,24 @@ function f() {
                      know if changes are necessary.
                      (David, 4/15/17) -->
                 <p>
-                  <input name='condition_new' value='new' type="checkbox" id="test1" />
-                  <label for="test1">New</label>
+                  <input name='condition_new' value='new' type="checkbox" id="condition_new" />
+                  <label for="condition_new">New</label>
                 </p>
                 <p>
-                  <input name='condition_like_new' value='like_new' type="checkbox" id="test2" />
-                  <label for="test2">Like New</label>
+                  <input name='condition_like_new' value='like_new' type="checkbox" id="condition_like_new" />
+                  <label for="condition_like_new">Like New</label>
                 </p>
                 <p>
-                  <input name='condition_good' value='good' type="checkbox" id="test3" />
-                  <label for="test3">Good</label>
+                  <input name='condition_good' value='good' type="checkbox" id="condition_good" />
+                  <label for="condition_good">Good</label>
                 </p>
                 <p>
-                  <input name='condition_fair' value='fair' type="checkbox" id="test4" />
-                  <label for="test4">Fair</label>
+                  <input name='condition_fair' value='fair' type="checkbox" id="condition_fair" />
+                  <label for="condition_fair">Fair</label>
                 </p>
                 <p>
-                  <input name='condition_poor' value='poor' type="checkbox" id="test5" />
-                  <label for="test5">Poor</label>
+                  <input name='condition_poor' value='poor' type="checkbox" id="condition_poor" />
+                  <label for="condition_poor">Poor</label>
                 </p>
               </div>
             </li>
@@ -109,23 +111,27 @@ function f() {
                      not change any of these without letting me know.
                      (David, 4/15/17)-->
                 <p>
-                  <input name='price' value='1' type="checkbox" id="test6" />
+                  <input name='price' value='6' type="radio" id="test11" checked="checked"/>
+                  <label for="test11">Any price</label>
+                </p>
+                <p>
+                  <input name='price' value='1' type="radio" id="test6" />
                   <label for="test6">Under $25</label>
                 </p>
                 <p>
-                  <input name='price' value='2' type="checkbox" id="test7" />
+                  <input name='price' value='2' type="radio" id="test7" />
                   <label for="test7">$25 - $49.99</label>
                 </p>
                 <p>
-                  <input name='price' value='3' type="checkbox" id="test8" />
+                  <input name='price' value='3' type="radio" id="test8" />
                   <label for="test8">$50 - $74.99</label>
                 </p>
                 <p>
-                  <input name='price' value='4' type="checkbox" id="test9" />
+                  <input name='price' value='4' type="radio" id="test9" />
                   <label for="test9">$75 - $99.99</label>
                 </p>
                 <p>
-                  <input name='price' value='5' type="checkbox" id="test10" />
+                  <input name='price' value='5' type="radio" id="test10" />
                   <label for="test10">$100 or more</label>
                 </p>               
               </div>
@@ -146,10 +152,9 @@ function f() {
       </div>
 
 
-
         <div class="col m9 s12">
 
-          
+            <?php $user_array = array(); ?>          
             <?php $counter = 0; ?>
             <?php foreach ($listings as $listing): ?> 
               <?php if($counter === 0): ?>
@@ -214,7 +219,8 @@ function f() {
                         </div>
                         <div class="modal-footer">
                           <?php if($currentUser !== null): ?>
-                            <a class="btn modal-close" href="#contact_box">Contact Seller</a>
+                            <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
+                            <a class="btn modal-close" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
                           <?php else: ?>
                             <a class="btn modal-close" href="#modal1">Contact Seller</a>
                           <?php endif; ?>
@@ -226,6 +232,8 @@ function f() {
                   </div>
                 </div>
               </div>
+
+            
 
             <?php $counter++;
               if($counter >2){
@@ -248,39 +256,76 @@ function f() {
 </div>
 
 <script>
-    document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";
-    var price_range = <?= $this->request->query['price']; ?>;
-    if (price_range) {
-        document.getElementById('price_range').value = price_range;
-        document.getElementById('test' + (price_range + 5)).checked = true;
-    }
-                              var displayed = false;
-                              // the parameter is the base64_encoded binary representation of the blob image.
-                              function displaythumbnail(theimg) {
-                                  var thumbnailView = document.getElementById('thumbnailImg');
-                                      thumbnailView.style.display = ""; 
-                                      thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
-                                      thumbnailView.style.position = "fixed";
-                                      thumbnailView.style.top = "0%";
-                                      thumbnailView.style.left = "0%";
-                                      thumbnailView.zIndex = "100";
-                                      thumbnailView.style.width = "100%";
-                                      thumbnailView.style.height = "100%";
-                                      thumbnailView.style.textAlign = "center";
-                                      thumbnailView.style.cursor = "zoom-out"; 
-                                      thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
-                                      displayed = true;
-                              }
-                              function hide(){
-                                  // removes the image after it's clicked again in the enlarged view.
-                                  if(displayed){
-                                      document.getElementById('thumbnailImg').style.display = "none";
-                                      displayed = false;
-                                  }
-                              }
+  function getParameterByName(name, url) {
+      if (!url) {
+        url = window.location.href;
+      }
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+  };
+  document.getElementById('txtkey').value = "<?= $this->request->query['tags']; ?>";
+
+  var price_range = <?= $this->request->query['price']; ?>;
+  if (price_range) {
+      document.getElementById('price_range').value = price_range;
+      document.getElementById('test' + (price_range + 5)).checked = true;
+  }
+  var condition_new = getParameterByName('condition_new');
+  if(condition_new){
+    document.getElementById('condition_new').checked=true;
+  }
+  var condition_like_new = getParameterByName('condition_like_new');
+  if(condition_like_new){
+    document.getElementById('condition_like_new').checked=true;
+  }
+  var condition_good = getParameterByName('condition_good');
+  if(condition_good){
+    document.getElementById('condition_good').checked=true;
+  }
+  var condition_fair = getParameterByName('condition_fair');
+  if(condition_fair){
+    document.getElementById('condition_fair').checked=true;
+  }
+  var condition_poor = getParameterByName('condition_poor');
+  if(condition_poor){
+    document.getElementById('condition_poor').checked=true;
+  }
+  var displayed = false;
+  // the parameter is the base64_encoded binary representation of the blob image.
+  function displaythumbnail(theimg) {
+      var thumbnailView = document.getElementById('thumbnailImg');
+          thumbnailView.style.display = ""; 
+          thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
+          thumbnailView.style.position = "fixed";
+          thumbnailView.style.top = "0%";
+          thumbnailView.style.left = "0%";
+          thumbnailView.zIndex = "100";
+          thumbnailView.style.width = "100%";
+          thumbnailView.style.height = "100%";
+          thumbnailView.style.textAlign = "center";
+          thumbnailView.style.cursor = "zoom-out"; 
+          thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+          displayed = true;
+  }
+  function hide(){
+      // removes the image after it's clicked again in the enlarged view.
+      if(displayed){
+          document.getElementById('thumbnailImg').style.display = "none";
+          displayed = false;
+      }
+  }
 
    $(document).ready(function(){
     $('.collapsible').collapsible();
+    var sort = getParameterByName('sort');
+    var direction = getParameterByName('direction');
+    if(sort && direction){
+      document.getElementById('select_sort').value=(sort+'_'+direction);
+      }
   });
 
   function f() {

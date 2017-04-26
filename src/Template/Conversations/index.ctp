@@ -3,34 +3,21 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <!-- New conversations can only be starting by creating a new
-             private message.
-         -->
-        <!--<li><?= $this->Html->link(__('New Conversation'), ['action' => 'add']) ?></li>-->
-        <li><?= $this->Html->link(__('List Registered Users'), ['controller' => 'RegisteredUsers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Registered User'), ['controller' => 'RegisteredUsers', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
 <div class="conversations index large-9 medium-8 columns content">
-    <h3><?= __('Conversations') ?></h3>
+    <h3><?= __('Conversations Inbox') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('conversation_num') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('date_created') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('date_created', 'Date Sent') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('message') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('registered_user_id', 'Buyer') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('recipient_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($conversations as $conversation): ?>
             <tr>
-                <td><?= $this->Number->format($conversation->conversation_num) ?></td>
                 <td><?= h($conversation->date_created) ?></td>
                 <td><?= h($conversation->message) ?></td>
                 <td><?= h($conversation->registered_user_id) ?></td>
@@ -40,9 +27,9 @@
              sense right now.  Maybe in the future, but it's not first
              priority.
          -->
-                    <!--<?= $this->Html->link(__('View'), ['action' => 'view', $conversation->conversation_num]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $conversation->conversation_num]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $conversation->conversation_num], ['confirm' => __('Are you sure you want to delete # {0}?', $conversation->conversation_num)]) ?>-->
+                    <!--<//?= $this->Html->link(__('View'), ['action' => 'view', $conversation->conversation_num]) ?>
+                    <//?= $this->Html->link(__('Edit'), ['action' => 'edit', $conversation->conversation_num]) ?>
+                    <//?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $conversation->conversation_num], ['confirm' => __('Are you sure you want to delete # {0}?', $conversation->conversation_num)]) ?>-->
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -63,12 +50,13 @@
                                                                 $recipient,
                                                                 $conversation_id
                                   ]]) ?>
-    <fieldset>
+    <fieldset style = "width: 50%; height: 200px">
         <legend><?= __('Reply') ?></legend>
         <?php
-            echo $this->Form->input('message');
+            echo $this->Form->input('message', ['type' =>'textarea', 'rows' => '100']);
         ?>
+        <?= $this->Form->button(__('Submit')) ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    
     <?= $this->Form->end() ?>
 </div>

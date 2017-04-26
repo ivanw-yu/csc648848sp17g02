@@ -7,7 +7,7 @@
 <div class="images form large-9 medium-8 columns content">
     <?= $this->Form->create($image) ?>
     <fieldset style = "width: 50%; margin: 5%; font-size: 1.2em">
-        <legend><?= __('Add Image') ?></legend>
+        <legend><?= __('Add Additional Images') ?></legend>
         <?php
             //echo $this->Form->input('listing_id', ['options' => $listings, 'empty' => true]);
             echo $this->Form->input('image 1', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'imageUpload(1);']);

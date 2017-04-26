@@ -44,7 +44,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.2.0/nouislider.min.css">
+
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
 
     <style>
 
@@ -52,7 +57,8 @@
 
         ul { line-height: 400%; }
 
-        a { color: #232323; }
+        a{ color: #5e35b1; }
+        
 
         form {
           display: flex;
@@ -105,10 +111,6 @@
           overflow: auto;
         }
 
-        .carousel.carousel-slider .carousel-item{
-          height: 70vh;
-        }
-
         .carousel-title-container {
           height: 100%;
           width: 100%;
@@ -135,8 +137,6 @@
         }
 
         .recent-content {
-          max-height: 450px;
-          max-width: 1200px;
           background-color: #fcfcfc;
           box-shadow: 5px 5px 10px #cecece;
 
@@ -153,6 +153,18 @@
           height: auto;
           width: 100%;
         }
+
+        /* label focus color */
+        .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label, .input-field textarea[type=text]:focus + label, .input-field input[type=username]:focus + label, .input-field input[type=email]:focus + label {
+          color: #5e35b1;
+        }
+        /* label underline focus color */
+        .input-field input[type=text]:focus, .input-field input[type=password]:focus, .input-field textarea[type=text]:focus, .input-field input[type=user]:focus, .input-field input[type=email]:focus {
+          border-bottom: 1px solid #5e35b1;
+          box-shadow: 0 1px 0 0 #5e35b1;
+        }
+
+
 
         .col {
           margin: 0 auto;
@@ -173,8 +185,22 @@
           max-height: 275px;
         }
 
-        .card .card-title {
+
+        .card .card-content .card-title {
           font-size: 21px;
+          margin-bottom: 0px;
+        }
+
+        .card .card-action {
+          padding: 10px 16px;
+        }
+
+        .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+          color: #5e35b1;
+        }
+
+        .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
+          color: #5e35b1;
         }
 
         .footer {
@@ -182,10 +208,6 @@
           justify-content: flex-end;
           max-height: 100%;
           max-width: 100%;
-        }
-
-        .footer-links {
-          line-height: 200%;
         }
 
     </style>
@@ -199,22 +221,21 @@
     <div class="nav-wrapper grey darken-3">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-        <ul id="nav-mobile" class="left hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
-          <li><?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
-          <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
-          <li>
-            <?php if(isset($currentUser)): ?>
-              <?= $this->Html->link('Sell',
-                                        ['controller' => 'Listings',
-                                         'action' => 'add']);?>
+        <?= $this->Html->link( "GatorBay", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand', 'style' => "padding-left: 15px; padding-right: 15px; font-family: 'Comfortaa', cursive; font-size: 24px; font-weight: bold;"] );?>
+          
 
+        <ul id="nav-mobile" class="right hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
+
+            <?php if(isset($currentUser)): ?>
+                <li style="padding-right: 10px;"> <?= "Welcome ". $currentUser . "!" ?> </li>
+                <li><?= $this->Html->link('Sell',
+                                            ['controller' => 'Listings',
+                                             'action' => 'add']);?></li>
             <?php else: ?>
-            <a href="#modal1" onclick="sellClicked();">Sell<a>
-              
+                <li><a href="#modal1" onclick="sellClicked();">Sell</a></li>
             <?php endif; ?>
-          </li>
-          <?php if(isset($currentUser)): ?>
-                <li><?= $this->Html->link('Private messages',
+            <?php if(isset($currentUser)): ?>
+                <li><?= $this->Html->link('Buyer Messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
                   
@@ -225,43 +246,47 @@
                                         ['controller' => 'WatchingLists',
                                          'action' => 'index']); ?></li>
           <?php endif; ?>
-        </ul>
-
-        <ul id="nav-mobile" class="right hide-on-med-and-down" style="height: 100%; display: flex; align-items: center;">
-          <li></li>
           <!-- Modal Trigger -->
           <?php if(!isset($currentUser)): ?>
             <li><a href="#modal1"r>Register/Sign in</a></li>
-          <?php else: ?>
-                  <?php if(isset($currentUser)): ?>
-                    <li> <?= "Welcome ". $currentUser . "!" ?> </li>
-                  <?php endif; ?>        
-                  <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
+          <?php else: ?>      
+              <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
                   
           <?php endif; ?>
         </ul>
 
-      
+      <!-- MOBILE NAV/SIDE BAR -->
         <ul class="side-nav" id="mobile-demo">
           <!-- Modal Trigger -->
           <center>
-            <a href="#!" class="brand-logo"><?= $this->Html->link( "Home", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></a>
-            <li><?= $this->Html->link( 'Browse', ['controller' => 'Pages', 'action' => 'display', 'browse' ]) ?></li>
-            <?php if($currentUser !== null): ?>
-                <li><?= $this->Html->link('Private messages',
+            <?php if(isset($currentUser)): ?>
+                <li style="color: black; font-weight: bold;"> <?= "Welcome ". $currentUser . "!" ?> </li>
+                <li><?= $this->Html->link( "Home", ['controller' => 'Pages', 'action' => 'display'], ['class' => 'navbar-brand'] );?></li>
+                <li><?= $this->Html->link('Sell',
+                                            ['controller' => 'Listings',
+                                             'action' => 'add']);?></li>
+            <?php else: ?>
+                <li><a href="#modal1" onclick="sellClicked();">Sell</a></li>
+            <?php endif; ?>
+            <?php if(isset($currentUser)): ?>
+                <li><?= $this->Html->link('Buyer Messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
-                  <li><?= $this->Html->link('Sell',
-                                        ['controller' => 'Listings',
-                                         'action' => 'add']);?> </li>
+                  
                   <li><?= $this->Html->link('Selling',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
                   <li><?= $this->Html->link('Watching',
                                         ['controller' => 'WatchingLists',
                                          'action' => 'index']); ?></li>
-            <?php endif; ?>
-            <li><a href="#modal1">Register/Sign in</a></li>
+          <?php endif; ?>
+          <!-- Modal Trigger -->
+          <?php if(!isset($currentUser)): ?>
+            <li><a href="#modal1"r>Register/Sign in</a></li>
+          <?php else: ?>      
+              <li><?= $this->Html->link('Logout', ['controller' => 'RegisteredUsers', 'action' => 'logout']) ?></li>
+                  
+          <?php endif; ?>
             </center>
         </ul>
     </div>
@@ -277,7 +302,7 @@
          It will link to the previous search, accessed through the $this->request->session()->read('User.lastsearch'),
           which is set in the AppController. The Back to search button will not show up in the homepage -->
     <?php $complete_url  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
-      <?php if(!strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && !strpos($complete_url, 'browse') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
+      <?php if(((strrpos($complete_url,'listings')+8)!==strlen($complete_url)) && !strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && !strpos($complete_url, 'browse') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
           <?php $last_search_url =  $this->request->session()->read('User.lastsearch'); ?> 
           <?= '<div class="col s6" style = "margin-right: 2%; border-radius: 3%; margin-left: -5%; padding: 0">' ?>
             <?= $this->Html->link( ' < Back to Search', ['controller' => 'Listings', 'action' => 'index', basename($last_search_url) ]) ?>
@@ -324,14 +349,14 @@
     </div>
   </nav>
 
-  <!-- Login Modal Structure -->
+  <!-- SIGN IN Modal Structure -->
   <div id="modal1" class="modal">
     
     <div class="modal-content">
-      <h5><center>LOG IN</center></h5>
+      <h5><center>SIGN IN</center></h5>
        <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'login'], 'class'=>'modal-content animate']) ?>
-        <div class="row" style="width: 100%;">
-          <div class="col s6">
+        <div class="row" style="width: 100%; display: flex; justify-content: space-around;">
+          <div class="col s12 m7">
 
             <div class="row">
               <div class="input-field col s12">
@@ -347,15 +372,15 @@
               </div>
             </div>
 
-
             <div class="row" style="display: flex; justify-content: flex-end; font-size: 12px; margin-bottom: 5px;">
                   <a href = "#"> Forgot password?</a>
             </div>
             <input name = "trigger" id="trigger" type="hidden" >
-            <center><button type = "submit" class="modal-action modal-close waves-effect waves-green btn-flat">SIGN IN</button></center>
+            <center><button type = "submit" class="modal-action modal-close waves-effect waves-purple btn-flat">SIGN IN</button></center>
             
             <?= $this->Form->end();?>
-            <center><p>Don't have an account? Register <a href="#modal2" class="modal-close">here</a>!</p></center>
+            <p></p>
+            <center>Don't have an account? Register <a href="#modal2" class="modal-close">here</a>!</center>
 
           </div>
         </div> 
@@ -369,8 +394,8 @@
     <div class="modal-content">
       <h5><center>REGISTRATION</center></h5>
       <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'add']]); ?>
-        <div class="row" style="width: 100%;">
-          <div class="col s6">
+        <div class="row" style="width: 100%; display: flex; justify-content: space-around;"">
+          <div class="col s12 m7">
 
             <div class="row">
               <div class="input-field col s12">
@@ -394,14 +419,15 @@
               </div>
             </div>
 
+            <center style="font-size: 13px;">By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</center><p></p>
+            <center><button type = "submit" class="modal-action waves-effect waves-purple btn-flat">REGISTER</button></center>
+            <?= $this->Form->end();?>
+            <p></p>
+            <center>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</center>
           </div>
         </div>
         <!--<//?= $this->Form->end();?>-->
-        <center><p> By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</p></center>
-        <center><button type = "submit" class="modal-action waves-effect waves-green btn grey darken-1">REGISTER</button></center>
-        <?= $this->Form->end();?>
         
-        <center><p>Already have an account? Log in <a href="#modal1" class="modal-close">here</a>!</p></center>
 
     </div>
   </div>
@@ -412,17 +438,29 @@
           <!-- <span onclick = "document.getElementById('contact_box').style.display = 'none'" class = "modal-close" title = "Close">x</span> -->
           <!--<form  method="post" class ="modal-content animate"
           action = "../RegisteredUsers/add">-->
-      <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'class'=>'modal-content animate']); ?>
+      <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'name' => 'message_form', 'class'=>'modal-content animate']); ?>
         <div class = "modal-content">
-            <label>Contact <?= $listing->registered_user->username ?></label><br>
-            <label><b>Subject</b></label><br>
-            <input type = "text" name = "subject" placeholder = "subject" required><br>
-            <label><b>Message</b></label><br>
-            <input type = "text" name = "message" placeholder = "message" required><br>
-            <input type ="hidden" name="recipient_id" value="<?= $listing->registered_user->username ?>">
+            <h5><center>CONTACT <?= $listing->registered_user_id ?></center></h5>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="subject" type="text" name="subject" required><br>
+                <label for="subject" data-error="Please enter the subject">Subject</label><br>              
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" name="message" class="materialize-textarea" type="text" required=""></textarea>
+                <label for="textarea1" data-error="Message required.">Message</label><br>
+
+              </div>
+            </div>
+            
+            <input type ="hidden" id = "receiver" name="recipient_id" value="<?= $listing->registered_user_id ?>">
             <div class = "clearfix">
-              <button type = "submit" class ="btn btn-primary btn-md signupbtn"> Send </button>
-              <button type = "button" class=" cancelbtn btn btn-primary btn-md modal-close" onclick = "document.getElementById('contact_box').style.display = 'none'">Cancel</button>
+              <button type = "submit" class ="btn grey signupbtn"> Send </button>
+              <button type = "button" class="btn grey cancelbtn modal-close">Cancel</button>
               </div>
         </div>
       <?= $this->Form->end();?>
@@ -436,16 +474,15 @@
     <div class="container">
       <div class="row" style="width: initial;">
         <div class="col l6 s12">
-          <h5 class="white-text">TheGatorBay</h5>
+          <h5 style="color: #424242;">TheGatorBay</h5>
           <p class="grey-text text-lighten-4">TheGatorBay is a unique website designed and developed by San Francisco State students to cater their needs for buying and selling items.</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
+          <h5 style="color: #424242;">Links</h5>
           <ul>
-
-          <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
-          <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
-          <li><?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?></li>
+            <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
+            <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
+            <li><?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?></li>
           </ul>
         </div>
       </div>

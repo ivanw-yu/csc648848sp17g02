@@ -18,6 +18,8 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
+$title = 'GatorBay - Browse';
+$this->assign('title', $title);
 ?>
 
 <style>
@@ -30,9 +32,7 @@ use Cake\Network\Exception\NotFoundException;
   body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   }
-  a {
-    color: #00B7FF;
-  }
+  
   .ddl-select.input-group-btn{
     width: 100px;
   }
