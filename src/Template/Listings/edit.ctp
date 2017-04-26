@@ -38,15 +38,15 @@
     <fieldset>
         <legend><?= __('Edit Listing') ?></legend>
         <?php
-            echo $this->Form->input('date_created');
+            //echo $this->Form->input('date_created');
             echo $this->Form->input('is_sold');
             echo $this->Form->input('price');
             echo $this->Form->input('location');
             echo $this->Form->input('item_desc');
             echo $this->Form->input('title');
-            echo $this->Form->input('category_id', ['options' => $categories]);
-            echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
-            echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
+            //echo $this->Form->input('category_id', ['options' => $categories]);
+            //echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
+            //echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
