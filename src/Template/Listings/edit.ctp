@@ -40,15 +40,22 @@ $this->assign('title', $title);
     <fieldset>
         <legend><?= __('Edit Listing') ?></legend>
         <?php
-            echo $this->Form->input('date_created');
-            echo $this->Form->input('is_sold');
+            $checked = '';
+            if ($listing->is_sold == 1) {
+                $checked = 'checked';
+            }
+            //echo $this->Form->input('date_created');
+            //echo $this->Form->input('is_sold');
+            echo "<input name='is_sold' {$checked} " .
+                 "type='checkbox' id='is_sold_checkbox' /> ".
+                 "<label for='is_sold_checkbox'>Sold</label>";
             echo $this->Form->input('price');
             echo $this->Form->input('location');
             echo $this->Form->input('item_desc');
             echo $this->Form->input('title');
-            echo $this->Form->input('category_id', ['options' => $categories]);
-            echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
-            // echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
+            //echo $this->Form->input('category_id', ['options' => $categories]);
+            //echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
+            //echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
         ?>
         <?= $this->Form->button(__('Submit')) ?>
     </fieldset>

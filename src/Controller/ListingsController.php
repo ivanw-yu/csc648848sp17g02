@@ -61,14 +61,16 @@ class ListingsController extends AppController
                 ->distinct(['listing_num'])
                 ->where(['OR' => [
                     ['item_desc LIKE' => "%{$tags[$j]}%"],
-                    ['category_id LIKE' => "%{$tags[$j]}%"],
+		    // This shows unrelated listings.
+                    //['category_id LIKE' => "%{$tags[$j]}%"],
                     ['title LIKE' => "%{$tags[$j]}%"]]]);
             $j = $j + 1;
             while ($j < $n) {
                 $filtered_listings = $filtered_listings
                     ->orWhere(['OR' => [
                         ['item_desc LIKE' => "%{$tags[$j]}%"],
-                        ['category_id LIKE' => "%{$tags[$j]}%"],
+		        // This shows unrelated listings.
+                        //['category_id LIKE' => "%{$tags[$j]}%"],
                         ['title LIKE' => "%{$tags[$j]}%"]]]);
                 $j = $j + 1;
             }
@@ -223,6 +225,7 @@ class ListingsController extends AppController
         if (count($item_conditions) > 0) {
             $conditions['Conditions.condition_name IN'] = $item_conditions;
         }
+        $conditions['Listings.is_sold'] = 0; // Only show non-sold listings.
         $this->paginate = ['contain' => $contain,
                            'conditions' => $conditions,
                            'order' => ['Listings.date_created' => 'desc']];
@@ -288,14 +291,14 @@ class ListingsController extends AppController
 
 
             // Then save tags.
-            $tags_table = TableRegistry::get('Tags');
-            $tags_table->createTags($listing->listing_num,
-                                    preg_split('/[\s,]+/',
-                                               $this->request->data['tags']));
+            //$tags_table = TableRegistry::get('Tags');
+            //$tags_table->createTags($listing->listing_num,
+                                    //preg_split('/[\s,]+/',
+                                               //$this->request->data['tags']));
             // Save the title as a tag to make it searchable.
-            $tags_table->createTags($listing->listing_num,
-                                    preg_split('/[\s,]+/',
-                                               $listing->title));
+            //$tags_table->createTags($listing->listing_num,
+                                    //preg_split('/[\s,]+/',
+                                               //$listing->title));
             // And save to Selling List.
             $selling_list_table = TableRegistry::get('SellingLists');
             $selling_list_table->add($listing->listing_num,
@@ -332,10 +335,12 @@ class ListingsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $listing = $this->Listings->patchEntity($listing, $this->request->data);
+            $listing->is_sold = $this->request->data['is_sold'] == true ? 1 : 0;
             if ($this->Listings->save($listing)) {
                 $this->Flash->success(__('The listing has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'SellingLists',
+                                        'action' => 'index']);
             }
             $this->Flash->error(__('The listing could not be saved. Please, try again.'));
         }
