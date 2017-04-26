@@ -458,6 +458,9 @@
             </div>
             
             <input type ="hidden" id = "receiver" name="recipient_id" value="<?= $listing->registered_user_id ?>">
+            <!-- added 4/27/17 to pass in listing_id to private message to be created-->
+            <input type = "hidden" id = "items_listing_id" name = "listing_id" value = "<?= $listing->listing_num ?>"> 
+
             <div class = "clearfix">
               <button type = "submit" class ="btn grey signupbtn"> Send </button>
               <button type = "button" class="btn grey cancelbtn modal-close">Cancel</button>

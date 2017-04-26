@@ -23,6 +23,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
+                <th scope="col" class="actions">Listing Id</th>
                 <th scope="col"><?= $this->Paginator->sort('subject') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('recipient_id') ?></th>
@@ -34,6 +35,7 @@
         <tbody>
             <?php foreach ($privateMessages as $privateMessage): ?>
             <tr>
+                <td><?= h($privateMessage->listing_id) ?></td>
                 <td><?= h($privateMessage->subject) ?></td>
                 <td><?= h($privateMessage->registered_user_id) ?></td>
                 <td><?= h($privateMessage->recipient_id) ?></td>

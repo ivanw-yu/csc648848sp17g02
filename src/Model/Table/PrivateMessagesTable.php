@@ -50,6 +50,12 @@ class PrivateMessagesTable extends Table
             'foreignKey' => 'conversation_id',
             'joinType' => 'INNER'
         ]);
+
+        // added 4/26/17 to account for new foreign key referencing listings id
+        $this->belongsTo('Listings', [
+            'foreignKey' => 'listing_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**

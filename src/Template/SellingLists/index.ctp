@@ -20,7 +20,7 @@
         <thead>
             <tr>
                 <!--<th scope="col"><//?= $this->Paginator->sort('registered_user_id') ?></th>-->
-                <th scope="col"><?= $this->Paginator->sort('listing_id') ?></th>
+                <!--<th scope="col"><//?= //$this->Paginator->sort('listing_id') ?></th>-->
                 <th scope="col"><?= $this->Paginator->sort('image') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('price') ?></th>
                 <th scope="col">Item Description</th>
@@ -44,7 +44,9 @@
                 <td class="actions">
 <!-- There is already a link to view a listing.
                     <//?= $this->Html->link(__('View'), ['action' => 'view', $sellingList->registered_user_id]) ?>
--->
+-->                 <!-- Added 4/27 to allow user to view the messages sent from buyers for corresponding item-->
+                    <h5><?= $this->Html->link('View Messages', ['controller' => 'PrivateMessages', 'action' => 'index', $sellingList->listing_id]) ?></h5>
+                    <br>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $sellingList->listing->listing_num]) ?>
 <!-- No deleting allowed at the moment. Update 4/8: Let users remove their own items. -->
                     <?= $this->Form->postLink(__('Remove'), ['action' => 'delete', $sellingList->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingList->registered_user_id)]) ?>

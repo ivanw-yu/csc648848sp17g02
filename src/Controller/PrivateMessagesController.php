@@ -18,7 +18,7 @@ class PrivateMessagesController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function index($id = null)
     {
         $this->setDefaultData();
         // This block does not work.
@@ -26,20 +26,45 @@ class PrivateMessagesController extends AppController
             //'contain' => ['RegisteredUsers', 'Conversations']
         //];
         $user = $this->Auth->user()['username'];
-        $this->paginate = [
-            'fields' => [
-                         'subject',
-                         'registered_user_id',
-                         'recipient_id',
-                         'conversation_id',
-                         'is_read'
-                        ],
-            'order' => ['conversation_id' => 'desc'], // newest first.
-            // Get only conversations that involve the current user.
-            'conditions' => ['OR' => ['registered_user_id' => $user,
-                                      'recipient_id' => $user]]
-        ];
+        if($id === null) {
+            // 4/27 if $id is null, then just get all private messages associated with user.
+            // 4/27/17: added 'listing_id' to reference the item being talked about in the message
+            $this->paginate = [
+                'fields' => [
+                             'subject',
+                             'registered_user_id',
+                             'recipient_id',
+                             'conversation_id',
+                             'is_read'
+                            ],
+                'order' => ['conversation_id' => 'desc'], // newest first.
+                // Get only conversations that involve the current user.
+                'conditions' => ['OR' => ['registered_user_id' => $user,
+                                          'recipient_id' => $user]]
+            ];
+        } else {
+        // 4/27 else if $id isn't null, then the user must be viewing all messages related to item, given by $id, and index will only show such items.
+
+            $this->paginate = [
+                'fields' => [
+                             'subject',
+                             'listing_id',
+                             'registered_user_id',
+                             'recipient_id',
+                             'conversation_id',
+                             'is_read'
+                            ],
+                'order' => ['conversation_id' => 'desc'], // newest first.
+                // Get only conversations that involve the current user.
+                'conditions' => ['OR' => ['registered_user_id' => $user,
+                                          'recipient_id' => $user],
+                                          'AND' => ['listing_id' => $id]]// 'AND' added 4/27/17
+            ];
+            //$privateMessages = $this->paginate($this->PrivateMessages);
+        }  
         $privateMessages = $this->paginate($this->PrivateMessages);
+
+
 
         $this->set(compact('privateMessages'));
         $this->set('_serialize', ['privateMessages']);
@@ -68,6 +93,7 @@ class PrivateMessagesController extends AppController
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
+    
     public function add()
     {
         $this->setDefaultData();
@@ -90,6 +116,7 @@ class PrivateMessagesController extends AppController
                 $privateMessage, $data);
             $privateMessage->conversation_id = $convo_entity->conversation_num;
             $privateMessage->registered_user_id = $sender;
+            $privateMessage->listings_id = $data['listings_id']; // added 4/27/17 to allow listings_id foreign key to be placed in the new private messages row.
             $privateMessage->is_read = 0;
             if ($this->PrivateMessages->save($privateMessage)) {
                 $this->Flash->success(__('The private message has been saved.'));

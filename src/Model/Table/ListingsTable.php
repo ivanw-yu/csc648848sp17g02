@@ -81,6 +81,11 @@ class ListingsTable extends Table
         $this->hasMany('WishLists', [
             'foreignKey' => 'listing_id'
         ]);
+
+        // added 4/26/17 to account for new foreign key referencing listings id
+        $this->hasMany('PrivateMessages', [
+            'foreignKey' => 'listing_id'
+        ]);
     }
 
     /**
