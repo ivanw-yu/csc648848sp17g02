@@ -207,6 +207,7 @@ class ListingsController extends AppController
         if (count($item_conditions) > 0) {
             $conditions['Conditions.condition_name IN'] = $item_conditions;
         }
+        $conditions['Listings.is_sold'] = 0; // Only show non-sold listings.
         $this->paginate = ['contain' => $contain,
                            'conditions' => $conditions,
                            'order' => ['Listings.date_created' => 'desc']];
