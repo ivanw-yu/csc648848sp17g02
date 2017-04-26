@@ -316,6 +316,7 @@ class ListingsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $listing = $this->Listings->patchEntity($listing, $this->request->data);
+            $listing->is_sold = $this->request->data['is_sold'] == true ? 1 : 0;
             if ($this->Listings->save($listing)) {
                 $this->Flash->success(__('The listing has been saved.'));
 

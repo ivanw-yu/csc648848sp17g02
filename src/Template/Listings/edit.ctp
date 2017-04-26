@@ -38,8 +38,15 @@
     <fieldset>
         <legend><?= __('Edit Listing') ?></legend>
         <?php
+            $checked = '';
+            if ($listing->is_sold == 1) {
+                $checked = 'checked';
+            }
             //echo $this->Form->input('date_created');
-            echo $this->Form->input('is_sold');
+            //echo $this->Form->input('is_sold');
+            echo "<input name='is_sold' {$checked} " .
+                 "type='checkbox' id='is_sold_checkbox' /> ".
+                 "<label for='is_sold_checkbox'>Sold</label>";
             echo $this->Form->input('price');
             echo $this->Form->input('location');
             echo $this->Form->input('item_desc');
