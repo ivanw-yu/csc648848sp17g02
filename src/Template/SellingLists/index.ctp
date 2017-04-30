@@ -16,11 +16,14 @@
 <div class="sellingLists index large-9 medium-8 columns content">
     <h3><?= 'Welcome ' . $currentUser . ', here are items you\'re selling: ' ?></h3>
     <h4> <?= __('Selling Lists') ?></h4>
-    <table cellpadding="0" cellspacing="0" >
+   <!-- <div class="row">
+    <div class="col-sm-6" style = "width: 50%">-->
+    <table cellpadding="0" cellspacing="0" style = "margin: auto">
         <thead>
             <tr>
                 <!--<th scope="col"><//?= $this->Paginator->sort('registered_user_id') ?></th>-->
                 <!--<th scope="col"><//?= //$this->Paginator->sort('listing_id') ?></th>-->
+                <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('image') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('price') ?></th>
                 <th scope="col">Item Description</th>
@@ -55,6 +58,8 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <!--</div>
+    </div>-->
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
