@@ -110,6 +110,8 @@ class AppController extends Controller
         // Some pages access categories with the id variable.
         $this->set(['id' => $categoryEntries]);
 
+        // loadComponent added 4/30 to allow deletion and prevent error from if-condition when on debug mode
+        $this->loadComponent('Auth');
         // $this->Auth->user(_id_) isn't null after login() successful.
         if($this->Auth->user('username') !== null){
             // allows the name of the user to be accessed in default.ctp and all other pages.

@@ -52,7 +52,7 @@
                     <br>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $sellingList->listing->listing_num]) ?>
 <!-- No deleting allowed at the moment. Update 4/8: Let users remove their own items. -->
-                    <?= $this->Form->postLink(__('Remove'), ['action' => 'delete', $sellingList->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingList->registered_user_id)]) ?>
+                    <?= $this->Form->postLink(__('Remove'), ['action' => 'delete', $sellingList->listing_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingList->title)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

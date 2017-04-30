@@ -59,6 +59,10 @@ class SellingListsTable extends Table
         $rules->add($rules->existsIn(['registered_user_id'], 'RegisteredUsers'));
         $rules->add($rules->existsIn(['listing_id'], 'Listings'));
 
+    //     $rules->addDelete(function ($entity, $options) {
+    //      return true;
+    // }, 'ruleName');
+
         return $rules;
     }
 

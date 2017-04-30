@@ -67,7 +67,10 @@ class ListingsTable extends Table
             'foreignKey' => 'listing_id'
         ]);
         $this->hasMany('SellingLists', [
-            'foreignKey' => 'listing_id'
+            'foreignKey' => 'listing_id',
+            // added dependent and cascadeCallbacks, 4/29 in attempt to get delete working.
+            'dependent' => true,
+            'cascadeCallbacks' => true
         ]);
         $this->hasMany('SoldLists', [
             'foreignKey' => 'listing_id'
