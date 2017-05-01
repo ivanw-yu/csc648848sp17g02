@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
+use Cake\ORM\TableRegistry;
 /**
  * SellingLists Controller
  *
@@ -105,11 +105,14 @@ class SellingListsController extends AppController
      * @return \Cake\Network\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
+    public function delete($id)
     {
+        // when item is deleted, the corresponding row in listings and selling_lists are deleted
         $this->request->allowMethod(['post', 'delete']);
-        $sellingList = $this->SellingLists->get($id);
-        if ($this->SellingLists->delete($sellingList)) {
+        $sellingList = $this->SellingLists->find()->where(['listing_id' => $id, 'registered_user_id' => $this->Auth->user('username')])->first();
+        $listings = TableRegistry::get('Listings');
+        $listing = $listings->get($id);
+        if ($this->SellingLists->delete($sellingList) && $listings->delete($listing)) {
             $this->Flash->success(__('The selling list has been deleted.'));
         } else {
             $this->Flash->error(__('The selling list could not be deleted. Please, try again.'));
@@ -125,11 +128,17 @@ class SellingListsController extends AppController
 
     public function isAuthorized($user) {
         $action = $this->request->param('action');
-        if (in_array($action, ['index'])) {
+        if (in_array($action, ['index']) || in_array($action, ['delete'])) {
             if (!empty($this->Auth->user())) {
                 return true;
             }
         }
+        // added to try to allow user to delete item 4/30
+        // if (in_array($action, ['delete'])) {
+        //     if (!empty($this->Auth->user())) {
+        //         return true;
+        //     }
+        // }
         return false;
     }
 }

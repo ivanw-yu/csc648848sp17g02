@@ -53,6 +53,9 @@ $this->assign('title', $title);
             echo $this->Form->input('location');
             echo $this->Form->input('item_desc');
             echo $this->Form->input('title');
+            echo $this->Form->input('image', [ 'id' => 'blobfield' , 'type' => 'hidden']);
+            echo "<label> Edit Image </label>";
+            echo $this->Form->input('file', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'imageUpload();']);
             //echo $this->Form->input('category_id', ['options' => $categories]);
             //echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
             //echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
@@ -61,3 +64,21 @@ $this->assign('title', $title);
     </fieldset>
     <?= $this->Form->end() ?>
 </div>
+
+<script>
+    // This stores the image as a data url. in html, just do <img src = stream_get_contents($listing->image) ...> to display, base64 encoding is not needed.
+    function imageUpload(){
+        var file = document.querySelector('input[type=file]').files[0];
+        var blob = document.getElementById('blobfield');
+        var reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            blob.value = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+

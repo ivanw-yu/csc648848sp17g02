@@ -12,12 +12,11 @@ $this->assign('title', $title);
     <!-- the image doesn't get submitted -->
     
     <?= $this->Form->create($listing, ['enctype' =>'multipart/form-data']) ?>
-    <fieldset style = "width: 50%; margin: 5%; font-size: 1.2em">
-        <legend style = "font-size: 2em"><?= __('Add Listing') ?></legend>
+    <fieldset style = "width: 50%; margin: 5%;background-color:white;border:solid; font-size: 1.2em">
+        <legend style = "font-size: 2em"><?= __('Add Item') ?></legend>
         <?php
             //echo $this->Form->input('date_created');
             //echo $this->Form->input('is_sold');
-            echo $this->Form->input('file', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'imageUpload();']);
             echo $this->Form->input('price');
             echo $this->Form->input('location',array('default'=>'SFSU'));
             echo $this->Form->input('item_desc');
@@ -28,6 +27,9 @@ $this->assign('title', $title);
             //echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]); //Commented out for now, need to find a way to make this optional
             echo $this->Form->input('condition_id'/*, ['options' => $conditions, 'empty' => true]*/);
             //echo $this->Form->input('tags');
+            echo $this->Form->input('file', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'imageUpload();']);
+	    echo nl2br ( "\r\n");
+	    echo nl2br ( "\r\n");
         ?>
         <script>
             function initAutocomplete() {
