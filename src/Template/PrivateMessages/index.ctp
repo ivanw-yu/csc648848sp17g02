@@ -19,14 +19,30 @@
 </nav>-->
 
 <div class="privateMessages index large-9 medium-8 columns content">
-    <h3><?= __('Buyer Messages') ?></h3>
+    <h2> Welcome <?= $currentUser ?>, here are your messages</h2>
+    <?php if($message_id === null): ?>
+        <h3><?= __('Buyer Messages')?></h3>
+    <?php else: ?>
+        <h3><?= __('Buyer Messages for ' . $item->title)?></h3>
+    <?php endif; ?>
+    <?php if($message_id !== null): ?>
+        <?php $blobimg = stream_get_contents($item->image); ?>
+            <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                <?= $item->has('image') ? '<img src = "' . $blobimg . '" style = "width: 100px; height: 100px; margin-right: 100px;" />' : '' ?>
+            </a>
+    <?php endif; ?>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col" class="actions">Listing Id</th>
+                
+                <?php if($message_id === null): ?>
+                    <th scope="col">Title</th>
+                    <th scope="col"> Image </th>
+                <?php endif; ?>
+                <th scope="col"><?= $this->Paginator->sort('listing_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('subject') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('registered_user_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('recipient_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('registered_user_id', 'Buyer') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('recipient_id', 'Seller') ?></th>
                 <!--<th scope="col"><//?= $this->Paginator->sort('conversation_id') ?></th>-->
                 <!--<th scope="col"><//?= $this->Paginator->sort('is_read') ?></th>-->
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -35,6 +51,17 @@
         <tbody>
             <?php foreach ($privateMessages as $privateMessage): ?>
             <tr>
+               
+                <?php if($message_id === null): ?>
+                         <td><?= h($items->find()->where(['listing_num' => $privateMessage->listing_id])->first()->title) ?> </td>
+                        <?php $blobimg = stream_get_contents($items->find()->where(['listing_num' => $privateMessage->listing_id])->first()->image); ?>
+                        <td>
+                        <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                            <?= $blobimg!== null ? '<img src = "' . $blobimg . '" style = "width: 100px; height: 100px; margin-right: 100px;"  alt = "no image"/>' : 'Item has been removed'?>
+                        </a>
+                        </td>
+
+                <?php endif; ?>
                 <td><?= h($privateMessage->listing_id) ?></td>
                 <td><?= h($privateMessage->subject) ?></td>
                 <td><?= h($privateMessage->registered_user_id) ?></td>
@@ -67,3 +94,34 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+
+<a id = 'thumbnailImg' onclick = 'hide();'>
+
+        </a>
+        <script>
+                                    var displayed = false;
+                                    // the parameter is the data url of the blob image.
+                                    function displaythumbnail(theimg) {
+                                        var thumbnailView = document.getElementById('thumbnailImg');
+                                            thumbnailView.style.display = "";
+                                            thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
+                                            thumbnailView.style.position = "fixed";
+                                            thumbnailView.style.top = "0%";
+                                            thumbnailView.style.left = "0%";
+                                            thumbnailView.zIndex = "100";
+                                            thumbnailView.style.width = "100%";
+                                            thumbnailView.style.height = "100%";
+                                            thumbnailView.style.textAlign = "center";
+                                            thumbnailView.style.cursor = "zoom-out";
+                                             thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+                                            displayed = true;
+                                    }
+                                    function hide(){
+                                        // removes the image after it's clicked again in the enlarged view.
+                                        if(displayed){
+                                            document.getElementById('thumbnailImg').style.display = "none";
+                                            displayed = false;
+                                        }
+                                    }
+        </script>
+
