@@ -36,7 +36,10 @@
                 <!--<td><//?= $sellingList->has('registered_user') ? $this->Html->link($sellingList->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $sellingList->registered_user->username]) : '' ?></td>-->
                 <td><?= $sellingList->has('listing') ? $this->Html->link($sellingList->listing->title, ['controller' => 'Listings', 'action' => 'view', $sellingList->listing->listing_num]) : '' ?></td>
                 <td>
-                    <?= $sellingList->has('listing') && $sellingList->listing->has('image') ? '<img src = "' . stream_get_contents($sellingList->listing->image) . '" style = "width: 100px; height: 100px; margin-right: 100px;" />' : '' ?>
+                    <?php $blobimg = stream_get_contents($sellingList->listing->image); ?>
+                    <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                    <?= $sellingList->has('listing') && $sellingList->listing->has('image') ? '<img src = "' . $blobimg . '" style = "width: 100px; height: 100px; margin-right: 100px;" />' : '' ?>
+                    </a>
                 </td>
                 <td>
                     <?= $sellingList->has('listing') ? '$' . $sellingList->listing->price : '' ?>
@@ -71,3 +74,33 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+
+<a id = 'thumbnailImg' onclick = 'hide();'>
+
+        </a>
+        <script>
+                                    var displayed = false;
+                                    // the parameter is the data url of the blob image.
+                                    function displaythumbnail(theimg) {
+                                        var thumbnailView = document.getElementById('thumbnailImg');
+                                            thumbnailView.style.display = "";
+                                            thumbnailView.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; //makes transparent background.
+                                            thumbnailView.style.position = "fixed";
+                                            thumbnailView.style.top = "0%";
+                                            thumbnailView.style.left = "0%";
+                                            thumbnailView.zIndex = "100";
+                                            thumbnailView.style.width = "100%";
+                                            thumbnailView.style.height = "100%";
+                                            thumbnailView.style.textAlign = "center";
+                                            thumbnailView.style.cursor = "zoom-out";
+                                             thumbnailView.innerHTML = '<img src = "' + theimg + '" style = "position: relative; top: 15%; width: 60%; height: 70%" />';
+                                            displayed = true;
+                                    }
+                                    function hide(){
+                                        // removes the image after it's clicked again in the enlarged view.
+                                        if(displayed){
+                                            document.getElementById('thumbnailImg').style.display = "none";
+                                            displayed = false;
+                                        }
+                                    }
+        </script>
