@@ -45,10 +45,10 @@ class ListingsController extends AppController
     {
         $this->setDefaultData();
         $filtered_listings = NULL;
-        $list_was_filtered = false;
+        $list_was_filtered = false; // True if user filtered by category.
+	$no_results_found = false; // True if no results were found.
         if (!empty($this->request->query) && $this->request->query['tags'] !== NULL) {
             $tags = preg_split('/[\s,]+/', $this->request->query['tags']);
-            $list_was_filtered = true;
             //$table =  TableRegistry::get('Tags');
             //$opts = ['tags' => $tags];
             //$filtered_listings = $table->find('listings', $opts);
@@ -231,11 +231,13 @@ class ListingsController extends AppController
                            'order' => ['Listings.date_created' => 'desc']];
         if ($list_was_filtered!==true && (empty($filtered_listings) || ($filtered_listings->count() == 0))) {
             $listings = $this->paginate($this->Listings);
+            $no_results_found = true;
         }
         else {
             $listings = $this->paginate($filtered_listings);
         }
         $this->set('condition_filters', $condition_filters);
+        $this->set('no_results_found', $no_results_found);
         $this->set(compact('listings'));
         $this->set('_serialize', ['listings']);
     }
