@@ -52,6 +52,7 @@
                     <//?= $this->Html->link(__('View'), ['action' => 'view', $sellingList->registered_user_id]) ?>
 -->                 <!-- Added 4/27 to allow user to view the messages sent from buyers for corresponding item-->
                     <h5><?= $this->Html->link('View Messages', ['controller' => 'PrivateMessages', 'action' => 'index', $sellingList->listing_id]) ?></h5>
+                    <h6> SellingList Id: <?= $sellingList->listing_id ?> </h6>
                     <br>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $sellingList->listing->listing_num]) ?>
 <!-- No deleting allowed at the moment. Update 4/8: Let users remove their own items. -->

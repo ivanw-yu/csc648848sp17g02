@@ -90,7 +90,8 @@ CREATE TABLE private_messages (
     is_read BOOLEAN NOT NULL,
     listing_id INTEGER,
     PRIMARY KEY (conversation_id),
-    FOREIGN KEY listing_id REFERENCES listings(listing_num) ON DELETE CASCADE,
+   FOREIGN KEY listing_key (listing_id)
+        REFERENCES listings (listing_num) ON DELETE CASCADE,
     FOREIGN KEY conversation_key (conversation_id)
         REFERENCES conversations (conversation_num),
     FOREIGN KEY registered_user_key (registered_user_id)

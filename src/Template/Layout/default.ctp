@@ -440,7 +440,7 @@
           action = "../RegisteredUsers/add">-->
       <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'name' => 'message_form', 'class'=>'modal-content animate']); ?>
         <div class = "modal-content">
-            <h5><center>CONTACT <?= $listing->registered_user_id ?></center></h5>
+            <h5><center>CONTACT <?= $listing->registered_user_id ?> for <?= $listing->listing_num ?></center></h5>
             <div class="row">
               <div class="input-field col s12">
                 <input id="subject" type="text" name="subject" required><br>
