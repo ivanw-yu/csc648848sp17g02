@@ -235,11 +235,11 @@
                 <li><a href="#modal1" onclick="sellClicked();">Sell</a></li>
             <?php endif; ?>
             <?php if(isset($currentUser)): ?>
-                <li><?= $this->Html->link('Buyer Messages',
+                <li><?= $this->Html->link('Messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
                   
-                  <li><?= $this->Html->link('Selling',
+                  <li><?= $this->Html->link('My Items',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
                   <li><?= $this->Html->link('Watching',
@@ -269,11 +269,11 @@
                 <li><a href="#modal1" onclick="sellClicked();">Sell</a></li>
             <?php endif; ?>
             <?php if(isset($currentUser)): ?>
-                <li><?= $this->Html->link('Buyer Messages',
+                <li><?= $this->Html->link('Messages',
                                         ['controller' => 'PrivateMessages',
                                          'action' => 'index']);?> </li>
                   
-                  <li><?= $this->Html->link('Selling',
+                  <li><?= $this->Html->link('My Items',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
                   <li><?= $this->Html->link('Watching',
