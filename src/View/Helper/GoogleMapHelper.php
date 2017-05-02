@@ -36,7 +36,7 @@ class GoogleMapHelper extends Helper {
   // Map canvas ID
   var $defaultId            = "map_canvas";
   // Width of the map
-  var $defaultWidth         = "800px";
+  var $defaultWidth         = "400px";
   // Height of the map
   var $defaultHeight        = "400px";
   // CSS style for the map canvas

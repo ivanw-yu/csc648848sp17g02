@@ -162,31 +162,37 @@ function f() {
               <?php endif; ?>
               <div class="col s12 m6 l4 card-container">
                 <div class="card medium hoverable">
-                  <div class="card-image">
-                    <?php if($listing->image !== null): ?>
-                      <?php $blobimg = stream_get_contents($listing->image); ?>
-                      <a class = "item-img" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                      <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
-                      </a>
-                    <?php endif; ?>
-                  </div>
-                  <div class="card-content">
+                  <div class="clickable" onclick="window.location.href = <?= '\'listings/view/'.$listing->listing_num. '\'' ?>">
+                    <div class="card-image">
+                      <?php if($listing->image !== null): ?>
+                        <?php $blobimg = stream_get_contents($listing->image); ?>
+                        <a class = "item-img" style = "text-decoration: none" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                        <?= '<img src = " ' . $blobimg . '" style = "width: 400px; height: 250px" />' ?>
+                        </a>
+                      <?php endif; ?>
+                    </div>
+                    <div class="card-content">
 
-                    <span class="card-title" style="font-size: 8px; font-size: 1vmax; font-weight: bold; text-transform: uppercase; text-align: center">
-                      <?= $this->Html->link(__($listing->title), ['action' => 'view', $listing->listing_num]) ?>
-                    </span>
-                    <a class="left">Category: <?= h($listing->category->category_name) ?></a>
-                    <br>
-                    <a class="left">Condition: <?= h($listing->condition_id) ?></a>
-                    <a class="right">$ <?= h($listing->price) ?></a>
+                      <span class="card-title" style="font-size: 8px; font-size: 1vmax; font-weight: bold; text-transform: uppercase; text-align: center">
+                        <?= $this->Html->link(__($listing->title), ['action' => 'view', $listing->listing_num]) ?>
+                      </span>
+                      <a class="left">Category: <?= h($listing->category->category_name) ?></a>
+                      <br>
+                      <a class="left">Condition: <?= h($listing->condition_id) ?></a>
+                      <a class="right">$ <?= h($listing->price) ?></a>
+                      
+                      
                     
-                    
-                  
+                    </div>
                   </div>
                   <div class="card-action">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $listing->listing_num]) ?>
-                    <?= '<a href="#quickview' . $listing->listing_num . '">Quick View</a>' ?>
-
+                    <?= '<a class="btn-flat left" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem;" href="#quickview' . $listing->listing_num . '">Quick View</a>' ?>
+                    <?php if($currentUser !== null): ?>
+                            <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
+                            <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
+                          <?php else: ?>
+                            <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#modal1">Contact Seller</a>
+                          <?php endif; ?>
                 
 
                     <?= '<div class="modal" id="quickview' . $listing->listing_num . '">' ?>
