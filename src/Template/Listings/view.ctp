@@ -116,7 +116,7 @@ $this->assign('title', $title);
                     <div class="col m1"></div>
 
                     <div class="map col m4 s12" style="height: auto; background-color: #fcfcfc; box-shadow: 5px 5px 10px #cecece;">
-                        <span class="row"><h5>PICKUP LOCATION</h5></span>
+                        <span class="row"><h6>PICKUP LOCATION</h6></span>
                         <a class="row" style="padding: 10px; display: flex; justify-content: center; align-items: center;">
                             <?= $this->Html->script('http://maps.google.com/maps/api/js?key=AIzaSyAaex_V9gcWMaRqb-e6yJcfbaj9z2COtVU', ['plugin' => false]); ?>
                             <?= $this->GoogleMap->map(); ?>
