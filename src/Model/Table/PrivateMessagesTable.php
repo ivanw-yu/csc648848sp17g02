@@ -90,7 +90,8 @@ class PrivateMessagesTable extends Table
         $rules->add($rules->existsIn(['registered_user_id'], 'RegisteredUsers'));
         $rules->add($rules->existsIn(['recipient_id'], 'RegisteredUsers'));
         $rules->add($rules->existsIn(['conversation_id'], 'Conversations'));
-
+        // added 5/1/17 to fix ViewMessages link in SellingList page
+        //$rules->add($rules->existsIn(['listing_id'], 'Listings'));
         return $rules;
     }
 }

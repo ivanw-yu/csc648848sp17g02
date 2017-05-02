@@ -26,22 +26,32 @@ class PrivateMessagesController extends AppController
             //'contain' => ['RegisteredUsers', 'Conversations']
         //];
         $user = $this->Auth->user()['username'];
+        $listings =  TableRegistry::get('Listings');
+             $this->set('items', $listings);
+
         if($id === null) {
             // 4/27 if $id is null, then just get all private messages associated with user.
             // 4/27/17: added 'listing_id' to reference the item being talked about in the message
             $this->paginate = [
+
                 'fields' => [
                              'subject',
+                             'listing_id',
                              'registered_user_id',
                              'recipient_id',
                              'conversation_id',
                              'is_read'
                             ],
+
                 'order' => ['conversation_id' => 'desc'], // newest first.
                 // Get only conversations that involve the current user.
                 'conditions' => ['OR' => ['registered_user_id' => $user,
                                           'recipient_id' => $user]]
             ];
+
+             $this->set('message_id', null);
+             $listings =  TableRegistry::get('Listings');
+             $this->set('items', $listings);
         } else {
         // 4/27 else if $id isn't null, then the user must be viewing all messages related to item, given by $id, and index will only show such items.
 
@@ -61,7 +71,11 @@ class PrivateMessagesController extends AppController
                                           'AND' => ['listing_id' => $id]]// 'AND' added 4/27/17
             ];
             //$privateMessages = $this->paginate($this->PrivateMessages);
-        }  
+            $this->set('message_id', $id);
+            $item = TableRegistry::get('Listings')->find()->where(['listing_num' => $id])->first();
+            $this->set('item', $item);
+        }
+        //$this->paginate('contain' => ['Listings']);  
         $privateMessages = $this->paginate($this->PrivateMessages);
 
 
@@ -114,9 +128,11 @@ class PrivateMessagesController extends AppController
             $privateMessage = $this->PrivateMessages->newEntity();
             $privateMessage = $this->PrivateMessages->patchEntity(
                 $privateMessage, $data);
+            //$privateMessage->subject = $data['listing_id'];
             $privateMessage->conversation_id = $convo_entity->conversation_num;
             $privateMessage->registered_user_id = $sender;
-            $privateMessage->listings_id = $data['listings_id']; // added 4/27/17 to allow listings_id foreign key to be placed in the new private messages row.
+
+            $privateMessage->listing_id = $data['listing_id'];/*!==null ? $data['listing_id'] : 1 */// added 4/27/17 to allow listings_id foreign key to be placed in the new private messages row.
             $privateMessage->is_read = 0;
             if ($this->PrivateMessages->save($privateMessage)) {
                 $this->Flash->success(__('The private message has been saved.'));

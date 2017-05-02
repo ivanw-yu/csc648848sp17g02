@@ -337,7 +337,7 @@
         </script>
         
         <div class="input-field grey lighten-1" style="width:150%;">
-          <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" > <!--required>-->
+          <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" maxlength='30' pattern='(\w|[ \t])+' title='Enter letters or numbers, no more than 30 characters'> <!--required>-->
           <label for="search"></label>
         </div>
         
@@ -400,7 +400,7 @@
     <div class="modal-content">
       <h5><center>REGISTRATION</center></h5>
       <?= $this->Form->create(null, ['url' => ['controller' => 'RegisteredUsers', 'action' => 'add']]); ?>
-        <div class="row" style="width: 100%; display: flex; justify-content: space-around;"">
+        <div class="row" style="width: 100%; display: flex; justify-content: space-around;">
           <div class="col s12 m7">
 
             <div class="row">
@@ -446,7 +446,7 @@
           action = "../RegisteredUsers/add">-->
       <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'name' => 'message_form', 'class'=>'modal-content animate']); ?>
         <div class = "modal-content">
-            <h5><center>CONTACT <?= $listing->registered_user_id ?></center></h5>
+            <h5><center>CONTACT <?= $listing->registered_user_id ?> for <?= $listing->listing_num ?></center></h5>
             <div class="row">
               <div class="input-field col s12">
                 <input id="subject" type="text" name="subject" required><br>

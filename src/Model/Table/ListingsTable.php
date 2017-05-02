@@ -87,7 +87,10 @@ class ListingsTable extends Table
 
         // added 4/26/17 to account for new foreign key referencing listings id
         $this->hasMany('PrivateMessages', [
-            'foreignKey' => 'listing_id'
+            'foreignKey' => 'listing_id',
+            // added dependent and cascadeCallbacks, 4/29 in attempt to get delete working.
+            'dependent' => true,
+            'cascadeCallbacks' => true
         ]);
     }
 

@@ -32,8 +32,15 @@ function f() {
       <div class="row">
         <div class="search-details" style="width: 100%; padding-right: 4rem; padding-left: 4rem; padding-top: 1rem; padding-bottom: 1rem;">
           <div class="left col m7 s12"> 
+
+	  <?php if($no_results_found): ?>
+		There were no exact matches for your result.
+                <br>
+                How about browsing through some similar items below?
+	  <?php else: ?>
             Showing <?= count($listings) ?> results 
             <?= strlen($this->request->query['tags']) ? 'of "' . $this->request->query['tags'] . '"' : 'from ' . (strlen($this->request->query['category_filter']) ? $this->request->query['category_filter'] : ' all categories')   ?>
+	    <?php endif; ?>
           </div>
           <div class="right col m4 s12 sorting"> 
             <div class="sorting right"> 
