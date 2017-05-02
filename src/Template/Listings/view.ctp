@@ -17,7 +17,7 @@ $this->assign('title', $title);
 </style>
 
 <div class="content">
-    <!-- <nav style="background-color: inherit; height: 50px; line-height: 50px;">
+    <nav style="background-color: inherit; height: 50px; line-height: 50px;">
         <div class="bread-wrapper">
             <div class="col s12 bread-content">
                 <a class="breadcrumb" href="#!" onclick="window.location.href = '../../'">Home</a>
@@ -25,7 +25,7 @@ $this->assign('title', $title);
                 <a class="breadcrumb" >Details</a>
             </div>
         </div>
-    </nav> -->
+    </nav>
 
     <div class="page-content">
         <div class="row" style="display: flex; justify-content: space-around; padding-top: 25px; padding-bottom: 25px;">
@@ -116,6 +116,7 @@ $this->assign('title', $title);
                     <div class="col m1"></div>
 
                     <div class="map col m4 s12" style="height: auto; background-color: #fcfcfc; box-shadow: 5px 5px 10px #cecece;">
+                        <span class="row"><h5>PICKUP LOCATION</h5></span>
                         <a class="row" style="padding: 10px; display: flex; justify-content: center; align-items: center;">
                             <?= $this->Html->script('http://maps.google.com/maps/api/js?key=AIzaSyAaex_V9gcWMaRqb-e6yJcfbaj9z2COtVU', ['plugin' => false]); ?>
                             <?= $this->GoogleMap->map(); ?>
