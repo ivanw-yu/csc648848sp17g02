@@ -129,6 +129,11 @@
           top: 40%;
         }
 
+        .carousel .indicators .indicator-item {
+          height: 10px;
+          width: 10px;
+        }
+
         .recent-container{
           display: flex;
           justify-content: center;
@@ -193,6 +198,7 @@
 
         .card .card-action {
           padding: 10px 16px;
+          max-height: 55px;
         }
 
         .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
@@ -315,7 +321,7 @@
                                    'action' => 'index'],
                                    'type' => 'get']) ?>
         
-        <div class="input-field col s6 grey darken-3 search-cat">
+        <div class="input-field col s6 grey darken-3 search-cat" style="max-width: 125px;">
           <select name="category_filter" class="browser-default grey search-select">
             <option value=""><?= $this->Html->link( 'All Categories', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                 <?php foreach ($validCategories as $row): ?>
