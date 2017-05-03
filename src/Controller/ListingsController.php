@@ -48,7 +48,7 @@ class ListingsController extends AppController
         $list_was_filtered = false; // True if user filtered by category.
 	$no_results_found = false; // True if no results were found.
         if (!empty($this->request->query) && $this->request->query['tags'] !== NULL) {
-            $tags = preg_split('/[\s,]+/', $this->request->query['tags']);
+            $tags = preg_split('/[\s,]+/', trim($this->request->query['tags']));
             //$table =  TableRegistry::get('Tags');
             //$opts = ['tags' => $tags];
             //$filtered_listings = $table->find('listings', $opts);
