@@ -13040,3 +13040,96 @@ Stack Trace:
 #16 {main}
 
 
+2017-05-08 12:14:22 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-05-08 12:14:35 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-05-08 12:14:36 Error: [Error] Call to undefined method Cake\Controller\Component\AuthComponent::login()
+Request URL: /~jerrya/registered-users/add
+Referer URL: http://www.sfsuse.com/~jerrya/registered-users/add
+Client IP: 108.218.106.82
+Stack Trace:
+#0 [internal function]: App\Controller\RegisteredUsersController->add()
+#1 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#2 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#3 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\RegisteredUsersController))
+#4 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /home/jerrya/public_html/webroot/index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-05-08 12:22:29 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-05-08 12:22:37 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-05-08 12:22:38 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "registered_users" with primary key [NULL]
+Request URL: /registered-users/add
+Referer URL: http://www.sfsuse.com/~jerrya/registered-users/add
+Stack Trace:
+#0 /home/jerrya/public_html/src/Controller/RegisteredUsersController.php(73): Cake\ORM\Table->get(Array)
+#1 [internal function]: App\Controller\RegisteredUsersController->add()
+#2 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#3 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#4 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\RegisteredUsersController))
+#5 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#7 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#8 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#9 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#10 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#11 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#13 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#14 /home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /home/jerrya/public_html/webroot/index.php(37): Cake\Http\Server->run()
+#16 {main}
+
+
+2017-05-08 12:22:38 Warning: Warning (512): Unable to emit headers. Headers sent in file=/home/jerrya/public_html/vendor/cakephp/cakephp/src/Error/Debugger.php line=754 in [/home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 48]
+Request URL: /~jerrya/registered-users/add
+Referer URL: http://www.sfsuse.com/~jerrya/registered-users/add
+Client IP: 108.218.106.82
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 48
+Cake\Http\Server::emit() - CORE/src/Http/Server.php, line 116
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-05-08 12:22:38 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/jerrya/public_html/vendor/cakephp/cakephp/src/Error/Debugger.php:754) in [/home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 145]
+Request URL: /~jerrya/registered-users/add
+Referer URL: http://www.sfsuse.com/~jerrya/registered-users/add
+Client IP: 108.218.106.82
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE/src/Http/ResponseEmitter.php, line 145
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 54
+Cake\Http\Server::emit() - CORE/src/Http/Server.php, line 116
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-05-08 12:22:38 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/jerrya/public_html/vendor/cakephp/cakephp/src/Error/Debugger.php:754) in [/home/jerrya/public_html/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 170]
+Request URL: /~jerrya/registered-users/add
+Referer URL: http://www.sfsuse.com/~jerrya/registered-users/add
+Client IP: 108.218.106.82
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE/src/Http/ResponseEmitter.php, line 170
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 55
+Cake\Http\Server::emit() - CORE/src/Http/Server.php, line 116
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-05-08 12:23:05 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-05-08 12:23:17 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2017-05-08 12:23:17 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
