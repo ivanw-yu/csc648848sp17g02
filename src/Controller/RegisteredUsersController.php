@@ -68,7 +68,8 @@ class RegisteredUsersController extends AppController
             {
                 $this->Flash->success(__('You are registered, welcome! Please login with your new credentials.'));
                 $this->RegisteredUsers->save($registeredUser);
-                $this->Auth->login($registeredUser); //line for logging in after registering
+                $authUser = $this->RegisteredUsers->get($result->id)->toArray();//
+                $this->Auth->setUser($authUser); //line for logging in after registering
                 return $this->redirect($this->referer());
             }
             else
