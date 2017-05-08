@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Controller\Component\AuthComponent;
 
 /**
  * RegisteredUsers Controller
