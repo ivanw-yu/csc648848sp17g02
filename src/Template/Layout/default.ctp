@@ -407,7 +407,8 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <input name = "email" id="email" type="email" class="validate" required>
+                <input name = "email" id="email" type="email" class="validate"
+		       pattern='\w+@sfsu.edu' title='Only SFSU students can register' required>
                 <label for="email" data-error="This email has already been registered">Email</label>
               </div>
             </div>
