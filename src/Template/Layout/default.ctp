@@ -414,7 +414,9 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="name" name = "username" type="text" class="validate" required>
+                <input id="name" name = "username" type="text" maxlength='30'
+                       pattern="(\w|_)+" class="validate"
+                       title="Only numbers, letters, and _ are allowed.  Max length is 30 characters"  required>
                 <label for="name" data-error="Username has already been taken">Username</label>
 
               </div>
