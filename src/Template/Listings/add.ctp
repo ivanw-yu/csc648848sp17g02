@@ -17,7 +17,12 @@ $this->assign('title', $title);
         <?php
             //echo $this->Form->input('date_created');
             //echo $this->Form->input('is_sold');
-            echo $this->Form->input('price');
+            //echo $this->Form->input('price', ['pattern' => '[1-9]']);
+	    // Use this instead of Form->input because 'pattern' does not seem
+	    // to work with that.
+            echo "<input name='price' type='text' maxlength='10'" .
+                 " pattern='(\d+)|(\d+.\d\d?)' ".
+                 " title='Enter only numbers, or a number with one decimal point'>";
             echo $this->Form->input('location',array('default'=>'SFSU'));
             echo $this->Form->input('item_desc');
             echo $this->Form->input('title');
