@@ -248,9 +248,11 @@
                   <li><?= $this->Html->link('My Items',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
+                  <!-- No watching lists.
                   <li><?= $this->Html->link('Watching',
                                         ['controller' => 'WatchingLists',
                                          'action' => 'index']); ?></li>
+		 -->
           <?php endif; ?>
           <!-- Modal Trigger -->
           <?php if(!isset($currentUser)): ?>
