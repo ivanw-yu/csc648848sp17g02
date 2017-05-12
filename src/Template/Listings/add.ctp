@@ -20,12 +20,24 @@ $this->assign('title', $title);
             //echo $this->Form->input('price', ['pattern' => '[1-9]']);
 	    // Use this instead of Form->input because 'pattern' does not seem
 	    // to work with that.
-            echo "<input name='price' type='text' maxlength='10'" .
+	    echo "<label for='price_input'>Price</label>";
+            echo "<input id='price_input' name='price' type='text' maxlength='10'" .
                  " pattern='(\d+)|(\d+.\d\d?)' ".
-                 " title='Enter only numbers, or a number with one decimal point'>";
+                 " title='Enter only numbers, or a number with one decimal point'>" .
+                 "</input> ";
             echo $this->Form->input('location',array('default'=>'SFSU'));
-            echo $this->Form->input('item_desc');
-            echo $this->Form->input('title');
+	    echo "<label for='desc_input'>Description</label>";
+            echo "<input id='desc_input' name='item_desc' type='text' ".
+                 " maxlength='128'" .
+                 " pattern='(\w|[. \t])+' ".
+                 " title='No more than 128 numbers, letters, and periods are allowed'>" .
+                 "</input> ";
+	    echo "<label for='title_input'>Title</label>";
+            echo "<input id='title_input' name='title' type='text' ".
+                 " maxlength='64'" .
+                 " pattern='(\w|[. \t])+' ".
+                 " title='No more than 64 numbers, letters, and periods are allowed'>" .
+                 "</input> ";
             echo $this->Form->input('category_id', ['options' => $categories]);
             echo $this->Form->input('image', [ 'id' => 'blobfield' , 'type' => 'hidden']);
             //echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
