@@ -284,9 +284,7 @@
                   <li><?= $this->Html->link('My Items',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
-                  <li><?= $this->Html->link('Watching',
-                                        ['controller' => 'WatchingLists',
-                                         'action' => 'index']); ?></li>
+                  
           <?php endif; ?>
           <!-- Modal Trigger -->
           <?php if(!isset($currentUser)): ?>
@@ -317,14 +315,13 @@
           <?= '</div>' ?>
       <?php endif; ?>
       
-
       <?= $this->Form->create(NULL, ['url' => [
                                    'controller' => 'Listings',
                                    'action' => 'index'],
-                                   'type' => 'get']) ?>
+                                   'type' => 'get', 'class' => 'row']) ?>
         
-        <div class="input-field col s6 grey darken-3 search-cat" style="max-width: 125px;">
-          <select name="category_filter" class="browser-default grey search-select">
+        <div class="input-field col s5 grey darken-3 search-cat" style="max-width: 125px; padding: 0;">
+          <select name="category_filter" class="browser-default grey search-select" style="width: 100%;">
             <option value=""><?= $this->Html->link( 'All Categories', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                 <?php foreach ($validCategories as $row): ?>
             <option id = "<?= $row->category_name . '_id' ?>" value="<?= $row->category_name?>"><?= $row->category_name; ?>
@@ -338,12 +335,12 @@
           document.getElementById("<?php echo $default_category . '_id' ?>").selected = true;
         </script>
         
-        <div class="input-field grey lighten-1" style="width:150%;">
+        <div class="input-field col s5 grey lighten-1" style="width:150%;">
           <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" maxlength='30' pattern='(\w|[ \t])+' title='Enter letters or numbers, no more than 30 characters'> <!--required>-->
           <label for="search"></label>
         </div>
         
-        <button class="btn grey searchbutton" type="submit" style="height: 50px; box-shadow: none;">
+        <button class="btn grey col s2 searchbutton" type="submit" style="height: 50px; box-shadow: none;">
           <i class="material-icons right" style="line-height: 50px;">search</i>
         </button>
           <input id="price_range" name="price" type="hidden">
@@ -430,7 +427,7 @@
               </div>
             </div>
 
-            <center style="font-size: 13px;">By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</center><p></p>
+            <center style="font-size: 13px;">By creating an account, you agree to  our <?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?>.</center><p></p>
             <center><button type = "submit" class="modal-action waves-effect waves-purple btn-flat">REGISTER</button></center>
             <?= $this->Form->end();?>
             <p></p>

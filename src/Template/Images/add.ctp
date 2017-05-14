@@ -2,12 +2,14 @@
 /**
   * @var \App\View\AppView $this
   */
+$title = 'GatorBay - Add Additional Images';
+$this->assign('title', $title);
 ?>
 
-<div class="images form large-9 medium-8 columns content">
+<div class="images form s12 m10 columns content">
     <?= $this->Form->create($image) ?>
-    <fieldset style = "width: 50%; margin: 5%; font-size: 1.2em">
-        <legend><?= __('Add Additional Images') ?></legend>
+    <fieldset style = "width: 40%; background-color:white; font-size: 1.2em; box-shadow: 5px 5px 10px #cecece; display: flex; justify-content: center; margin: 30px;">
+        <legend><?= __('Add Additional Images (optional)') ?></legend>
         <?php
             //echo $this->Form->input('listing_id', ['options' => $listings, 'empty' => true]);
             echo $this->Form->input('image 1', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'imageUpload(1);']);
@@ -17,7 +19,7 @@
             echo $this->Form->input('image 3', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'imageUpload(3);']);
             echo $this->Form->input('image', [ 'id' => 'blob3' , 'type' => 'hidden']);
         ?>
-        <?= $this->Form->button(__('Submit')) ?>
+        <?= $this->Form->button(__('Submit'), ['class' => 'btn right grey', 'style' => 'margin: 15px; ']) ?>
     </fieldset>
     
     <?= $this->Form->end() ?>

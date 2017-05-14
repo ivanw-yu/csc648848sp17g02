@@ -144,7 +144,7 @@ function f() {
               </div>
             </li>
             <div class="collapsible-header active" style="padding-left: 2rem;"> 
-                <button type="submit" style= "width: 100%;">
+                <button class="btn grey" type="submit" style= "width: 100%;">
                   Apply
                 </button>
               </div>
@@ -193,7 +193,7 @@ function f() {
                     </div>
                   </div>
                   <div class="card-action">
-                    <?= '<a class="btn-flat left" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem;" href="#quickview' . $listing->listing_num . '">Quick View</a>' ?>
+                    <?= '<a class="btn-flat left" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#quickview' . $listing->listing_num . '">Quick View</a>' ?>
                     <?php if($currentUser !== null): ?>
                             <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
                             <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
