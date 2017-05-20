@@ -133,6 +133,7 @@ class PrivateMessagesController extends AppController
             $privateMessage->registered_user_id = $sender;
 
             $privateMessage->listing_id = $data['listing_id'];/*!==null ? $data['listing_id'] : 1 */// added 4/27/17 to allow listings_id foreign key to be placed in the new private messages row.
+            echo "ivan " . $data['listing_id'];
             $privateMessage->is_read = 0;
             if ($this->PrivateMessages->save($privateMessage)) {
                 $this->Flash->success(__('The private message has been saved.'));

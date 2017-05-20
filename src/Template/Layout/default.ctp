@@ -448,7 +448,7 @@
           action = "../RegisteredUsers/add">-->
       <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'name' => 'message_form', 'class'=>'modal-content animate']); ?>
         <div class = "modal-content">
-            <h5><center>CONTACT <?= $listing->registered_user_id ?> for <?= $listing->listing_num ?></center></h5>
+            <h5><center>CONTACT <span id = "seller_name"></span> <br><br> for <span id = "seller_item"></span><!--<//?= $listing->registered_user_id ?> for <//?= $listing->listing_num ?>--></center></h5>
             <div class="row">
               <div class="input-field col s12">
                 <input id="subject" type="text" name="subject" required><br>
@@ -464,10 +464,10 @@
 
               </div>
             </div>
-            
-            <input type ="hidden" id = "receiver" name="recipient_id" value="<?= $listing->registered_user_id ?>">
+            <input type ="hidden" id = "sender" name="registered_user_id">
+            <input type ="hidden" id = "receiver" name="recipient_id"> <!--value="<//?= $listing->registered_user_id ?>"-->
             <!-- added 4/27/17 to pass in listing_id to private message to be created-->
-            <input type = "hidden" id = "items_listing_id" name = "listing_id" value = "<?= $listing->listing_num ?>"> 
+            <input type = "hidden" id = "items_listing_id" name = "listing_id"> <!-- value = "<//?= $listing->listing_num ?>"> -->
 
             <div class = "clearfix">
               <button type = "submit" class ="btn grey signupbtn"> Send </button>
