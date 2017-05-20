@@ -223,6 +223,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.2.0/nouislider.min.js"></script>
   <!-- Top navbar -->
+  <p style = "text-align: center; padding: 0; margin: 0; font-size: 75%"> <i>SFSU Software Engineering Project, Spring 2017. For Demonstration Only</i> </p>
   <nav>
     <div class="nav-wrapper grey darken-3">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
