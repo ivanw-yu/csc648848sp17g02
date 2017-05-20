@@ -16,6 +16,19 @@ $this->assign('title', $title);
     }
 </style>
 
+<script>
+  function setModalLabelAndFormInput(name, title, item){
+    // for displaying name and title on modal
+    document.getElementById('seller_name').innerHTML = name;
+    document.getElementById('seller_item').innerHTML = title;
+
+    // for form inputs
+    document.getElementById('receiver').value = name;
+    document.getElementById('items_listing_id').value = item;
+    //document.getElementById('sender').value = "<?= $currentUser ?>";
+  }
+</script>
+
 <div class="content">
     <nav style="background-color: inherit; height: 50px; line-height: 50px;">
         <div class="bread-wrapper">
@@ -105,7 +118,7 @@ $this->assign('title', $title);
                                 <!-- Show contact seller button.  Popup a message box if the user
                                  is signed in.  Otherwise, popup a registration form. -->
                                 <?php if($currentUser !== null): ?>
-                                  <button type="button" data-target="contact_box" class="btn grey right">Contact Seller</button>
+                                  <button type="button" data-target="contact_box" class="btn grey right" onclick = "setModalLabelAndFormInput('<?= $listing->registered_user_id ?>', '<?= $listing->title ?>', '<?= $listing->listing_num ?>');">Contact Seller</button>
 
                                 <?php else: ?>
                                   <button type="button" data-target="modal1" class="btn grey right">Contact Seller</button>
