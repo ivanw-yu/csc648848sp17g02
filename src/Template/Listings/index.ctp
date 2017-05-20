@@ -12,6 +12,16 @@ function f() {
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
     document.getElementById('sort_' + selectedValue).firstChild.click();
 }
+  function setModalLabelAndFormInput(name, title, item){
+    // for displaying name and title on modal
+    document.getElementById('seller_name').innerHTML = name;
+    document.getElementById('seller_item').innerHTML = title;
+
+    // for form inputs
+    document.getElementById('receiver').value = name;
+    document.getElementById('items_listing_id').value = item;
+    //document.getElementById('sender').value = "<?= $currentUser ?>";
+  }
 </script>
 
 
@@ -144,7 +154,7 @@ function f() {
               </div>
             </li>
             <div class="collapsible-header active" style="padding-left: 2rem;"> 
-                <button type="submit" style= "width: 100%;">
+                <button class="btn grey" type="submit" style= "width: 100%;">
                   Apply
                 </button>
               </div>
@@ -193,10 +203,10 @@ function f() {
                     </div>
                   </div>
                   <div class="card-action">
-                    <?= '<a class="btn-flat left" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem;" href="#quickview' . $listing->listing_num . '">Quick View</a>' ?>
+                    <?= '<a class="btn-flat left" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#quickview' . $listing->listing_num . '">Quick View</a>' ?>
                     <?php if($currentUser !== null): ?>
                             <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
-                            <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
+                            <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#contact_box" onclick = "setModalLabelAndFormInput('<?= $listing->registered_user_id ?>', '<?= $listing->title ?>', '<?= $listing->listing_num ?>');"> Contact Seller</a>
                           <?php else: ?>
                             <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#modal1">Contact Seller</a>
                           <?php endif; ?>
@@ -233,7 +243,8 @@ function f() {
                         <div class="modal-footer">
                           <?php if($currentUser !== null): ?>
                             <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
-                            <a class="btn modal-close" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
+                            <!-- <a class="btn modal-close" href="#contact_box" onclick = "document.getElementById('receiver').value = '<//?php echo $listing->registered_user_id; ?>';"> Contact Seller</a> -->
+                            <a class="btn modal-close" href="#contact_box" onclick = "setModalLabelAndFormInput('<?= $listing->registered_user_id ?>', '<?= $listing->title ?>')"> Contact Seller</a>
                           <?php else: ?>
                             <a class="btn modal-close" href="#modal1">Contact Seller</a>
                           <?php endif; ?>
@@ -269,6 +280,7 @@ function f() {
 </div>
 
 <script>
+
   function getParameterByName(name, url) {
       if (!url) {
         url = window.location.href;

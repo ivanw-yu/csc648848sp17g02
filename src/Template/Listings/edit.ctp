@@ -2,7 +2,7 @@
 /**
   * @var \App\View\AppView $this
   */
-$title = 'Edit item';
+$title = 'GatorBay - Edit item';
 $this->assign('title', $title);
 ?>
 <!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -37,8 +37,8 @@ $this->assign('title', $title);
 </nav> -->
 <div class="listings form large-9 medium-8 columns content" style="padding: 5%;">
     <?= $this->Form->create($listing) ?>
-    <fieldset>
-        <legend><?= __('Edit Listing') ?></legend>
+    <fieldset style = "width: 50%; background-color:white; font-size: 1.2em; box-shadow: 5px 5px 10px #cecece; display: flex; justify-content: center;">
+        <legend style = "font-size: 2em"><?= __('Edit Listing') ?></legend>
         <?php
             $checked = '';
             if ($listing->is_sold == 1) {
@@ -49,10 +49,10 @@ $this->assign('title', $title);
             echo "<input name='is_sold' {$checked} " .
                  "type='checkbox' id='is_sold_checkbox' /> ".
                  "<label for='is_sold_checkbox'>Sold</label>";
-            echo $this->Form->input('price');
-            echo $this->Form->input('location');
-            echo $this->Form->input('item_desc');
             echo $this->Form->input('title');
+            echo $this->Form->input('price');
+            echo $this->Form->input('item_desc');
+            echo $this->Form->input('location');
             echo $this->Form->input('image', [ 'id' => 'blobfield' , 'type' => 'hidden']);
             echo "<label> Edit Image </label>";
             echo $this->Form->input('file', ['type' => 'file', 'accept' => 'image/*', 'onchange' => 'imageUpload();']);
@@ -60,7 +60,8 @@ $this->assign('title', $title);
             //echo $this->Form->input('registered_user_id', ['options' => $registeredUsers]);
             //echo $this->Form->input('course_id', ['options' => $courses, 'empty' => true]);
         ?>
-        <?= $this->Form->button(__('Submit')) ?>
+        <?= $this->Form->button(__('Submit'), ['class' => 'btn right grey', 'style' => 'margin: 15px; ']) ?>
+
     </fieldset>
     <?= $this->Form->end() ?>
 </div>

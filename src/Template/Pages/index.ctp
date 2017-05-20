@@ -27,9 +27,10 @@ $this->assign('title', $title);
   <div class="carousel carousel-slider valign-wrapper center" data-indicators="true" style="">
     <div class="carousel-fixed-item center">
     </div>
-    <div class="carousel-item deep-purple darken-1 white-text" href="#one!">
-      <h2>Welcome to GatorBay</h2>
-      <p class="white-text">a place where Gators buy and sell!</p>
+    <div class="carousel-item deep-purple darken-1 white-text" href="#one!" style = "background-size: 100% 100%; background-image: url('webroot/img/sfsupic.jpg');"" >
+      <h3 style = "color: black; margin-top: -.15% ">Welcome to GatorBay</h3>
+      <!--<p class="white-text"--> 
+      <p style = "color: black; margin-top: -1%">A place where Gators buy and sell!</p>
     </div>
     <!--<//?php $href_items = array("0" => "#two!", "1" => "#three!", "2" => "#four!");
           $href_vals = array_values($href_items);

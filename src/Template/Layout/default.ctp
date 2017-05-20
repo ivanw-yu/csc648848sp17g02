@@ -248,9 +248,11 @@
                   <li><?= $this->Html->link('My Items',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
+                  <!-- No watching lists.
                   <li><?= $this->Html->link('Watching',
                                         ['controller' => 'WatchingLists',
                                          'action' => 'index']); ?></li>
+		 -->
           <?php endif; ?>
           <!-- Modal Trigger -->
           <?php if(!isset($currentUser)): ?>
@@ -282,9 +284,7 @@
                   <li><?= $this->Html->link('My Items',
                                         ['controller' => 'SellingLists',
                                          'action' => 'index']); ?> </li>
-                  <li><?= $this->Html->link('Watching',
-                                        ['controller' => 'WatchingLists',
-                                         'action' => 'index']); ?></li>
+                  
           <?php endif; ?>
           <!-- Modal Trigger -->
           <?php if(!isset($currentUser)): ?>
@@ -315,14 +315,13 @@
           <?= '</div>' ?>
       <?php endif; ?>
       
-
       <?= $this->Form->create(NULL, ['url' => [
                                    'controller' => 'Listings',
                                    'action' => 'index'],
-                                   'type' => 'get']) ?>
+                                   'type' => 'get', 'class' => 'row']) ?>
         
-        <div class="input-field col s6 grey darken-3 search-cat" style="max-width: 125px;">
-          <select name="category_filter" class="browser-default grey search-select">
+        <div class="input-field col s5 grey darken-3 search-cat" style="max-width: 125px; padding: 0;">
+          <select name="category_filter" class="browser-default grey search-select" style="width: 100%;">
             <option value=""><?= $this->Html->link( 'All Categories', ['controller' => 'Listings', 'action' => 'index'] );?></option>
                 <?php foreach ($validCategories as $row): ?>
             <option id = "<?= $row->category_name . '_id' ?>" value="<?= $row->category_name?>"><?= $row->category_name; ?>
@@ -336,12 +335,12 @@
           document.getElementById("<?php echo $default_category . '_id' ?>").selected = true;
         </script>
         
-        <div class="input-field grey lighten-1" style="width:150%;">
+        <div class="input-field col s5 grey lighten-1" style="width:150%;">
           <input id="txtkey" name="tags" type="search" placeholder="search items" aria-describedby="ddlsearch" style="padding-left: 1rem; background-color: #bdbdbd; width: 100%;" maxlength='30' pattern='(\w|[ \t])+' title='Enter letters or numbers, no more than 30 characters'> <!--required>-->
           <label for="search"></label>
         </div>
         
-        <button class="btn grey searchbutton" type="submit" style="height: 50px; box-shadow: none;">
+        <button class="btn grey col s2 searchbutton" type="submit" style="height: 50px; box-shadow: none;">
           <i class="material-icons right" style="line-height: 50px;">search</i>
         </button>
           <input id="price_range" name="price" type="hidden">
@@ -405,14 +404,17 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <input name = "email" id="email" type="email" class="validate" required>
+                <input name = "email" id="email" type="email" class="validate"
+		       pattern='\w+@sfsu.edu' title='Only SFSU students can register' required>
                 <label for="email" data-error="This email has already been registered">Email</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="name" name = "username" type="text" class="validate" required>
+                <input id="name" name = "username" type="text" maxlength='30'
+                       pattern="(\w|_)+" class="validate"
+                       title="Only numbers, letters, and _ are allowed.  Max length is 30 characters"  required>
                 <label for="name" data-error="Username has already been taken">Username</label>
 
               </div>
@@ -425,7 +427,7 @@
               </div>
             </div>
 
-            <center style="font-size: 13px;">By creating an account, you agree to  our <a href = "#" > Terms & Conditions</a>.</center><p></p>
+            <center style="font-size: 13px;">By creating an account, you agree to  our <?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?>.</center><p></p>
             <center><button type = "submit" class="modal-action waves-effect waves-purple btn-flat">REGISTER</button></center>
             <?= $this->Form->end();?>
             <p></p>
@@ -446,7 +448,7 @@
           action = "../RegisteredUsers/add">-->
       <?= $this->Form->create(null, ['url' => ['controller' => 'PrivateMessages', 'action' => 'add'], 'name' => 'message_form', 'class'=>'modal-content animate']); ?>
         <div class = "modal-content">
-            <h5><center>CONTACT <?= $listing->registered_user_id ?> for <?= $listing->listing_num ?></center></h5>
+            <h5><center>CONTACT <span id = "seller_name"></span> <br><br> for <span id = "seller_item"></span><!--<//?= $listing->registered_user_id ?> for <//?= $listing->listing_num ?>--></center></h5>
             <div class="row">
               <div class="input-field col s12">
                 <input id="subject" type="text" name="subject" required><br>
@@ -462,10 +464,10 @@
 
               </div>
             </div>
-            
-            <input type ="hidden" id = "receiver" name="recipient_id" value="<?= $listing->registered_user_id ?>">
+            <input type ="hidden" id = "sender" name="registered_user_id">
+            <input type ="hidden" id = "receiver" name="recipient_id"> <!--value="<//?= $listing->registered_user_id ?>"-->
             <!-- added 4/27/17 to pass in listing_id to private message to be created-->
-            <input type = "hidden" id = "items_listing_id" name = "listing_id" value = "<?= $listing->listing_num ?>"> 
+            <input type = "hidden" id = "items_listing_id" name = "listing_id"> <!-- value = "<//?= $listing->listing_num ?>"> -->
 
             <div class = "clearfix">
               <button type = "submit" class ="btn grey signupbtn"> Send </button>

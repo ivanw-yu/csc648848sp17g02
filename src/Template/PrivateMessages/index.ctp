@@ -2,6 +2,8 @@
 /**
   * @var \App\View\AppView $this
   */
+$title = 'GatorBay - Messages';
+$this->assign('title', $title);
 ?>
 
 <!--<nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -18,72 +20,90 @@
     </ul>
 </nav>-->
 
-<div class="privateMessages index large-9 medium-8 columns content">
-    <h2> Welcome <?= $currentUser ?>, here are your messages</h2>
-    <?php if($message_id === null): ?>
-        <h3><?= __('Buyer Messages')?></h3>
-    <?php else: ?>
-        <h3><?= __('Buyer Messages for ' . $item->title)?></h3>
-    <?php endif; ?>
-    <?php if($message_id !== null): ?>
-        <?php $blobimg = stream_get_contents($item->image); ?>
-            <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                <?= $item->has('image') ? '<img src = "' . $blobimg . '" style = "width: 100px; height: 100px; margin-right: 100px;" />' : '' ?>
-            </a>
-    <?php endif; ?>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                
-                <?php if($message_id === null): ?>
-                    <th scope="col">Title</th>
-                    <th scope="col"> Image </th>
-                <?php endif; ?>
-                <th scope="col"><?= $this->Paginator->sort('listing_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('subject') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('registered_user_id', 'Buyer') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('recipient_id', 'Seller') ?></th>
-                <!--<th scope="col"><//?= $this->Paginator->sort('conversation_id') ?></th>-->
-                <!--<th scope="col"><//?= $this->Paginator->sort('is_read') ?></th>-->
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($privateMessages as $privateMessage): ?>
-            <tr>
-               
-                <?php if($message_id === null): ?>
-                         <td><?= h($items->find()->where(['listing_num' => $privateMessage->listing_id])->first()->title) ?> </td>
-                        <?php $blobimg = stream_get_contents($items->find()->where(['listing_num' => $privateMessage->listing_id])->first()->image); ?>
-                        <td>
-                        <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
-                            <?= $blobimg!== null ? '<img src = "' . $blobimg . '" style = "width: 100px; height: 100px; margin-right: 100px;"  alt = "no image"/>' : 'Item has been removed'?>
-                        </a>
-                        </td>
+<div class="privateMessages index l9 m8 s12 columns content">
+    <!-- <h2> Welcome <//?= $currentUser ?>, here are your messages</h2> -->
+    
+    <div class="row" style="display: flex; justify-content: center; padding: 20px;">
+        <fieldset class="col s12 m8" style = "background-color:white; font-size: 1.05em; box-shadow: 5px 5px 10px #cecece; display: flex; justify-content: center;">
 
-                <?php endif; ?>
-                <td><?= h($privateMessage->listing_id) ?></td>
-                <td><?= h($privateMessage->subject) ?></td>
-                <td><?= h($privateMessage->registered_user_id) ?></td>
-                <td><?= h($privateMessage->recipient_id) ?></td>
-                <!--<td><//?= $privateMessage->has('registered_user') ? $this->Html->link($privateMessage->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $privateMessage->registered_user->username]) : '' ?></td>-->
-                <!--<td><//?= $privateMessage->has('conversation') ? $this->Html->link($privateMessage->conversation->conversation_num, ['controller' => 'Conversations', 'action' => 'view', $privateMessage->conversation->conversation_num]) : '' ?></td>
-                <td><//?= h($privateMessage->is_read) ?></td>-->
-                <td class="actions">
-                    <?= $this->Html->link(__('View Message'),
-                            [
-                             'controller' => 'Conversations',
-                             'action' => 'index', $privateMessage
-                                                      ->conversation_id
-                            ]) ?>
-                    <!--<//?= $this->Html->link(__('Edit'), ['action' => 'edit', $privateMessage->registered_user_id]) ?>-->
-                    <!--<//?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $privateMessage->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $privateMessage->registered_user_id)]) ?>-->
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
+            <?php if($message_id === null): ?>
+                 <legend style = "font-size: 2em"><?= __('Messages') ?></legend>
+            <?php else: ?>
+                 <legend style = "font-size: 2em"><?= __('Messages for ' . $item->title) ?></legend>
+            <?php endif; ?>
+           
+            <div cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <?php foreach ($privateMessages as $privateMessage): ?>
+                    <div class="row">
+                       
+                        <?php if($message_id === null): ?>
+                            <div class="col s4" style="padding-top: 20px; padding-bottom: 15px;">
+                                <div class="row">
+                                    <?= h($items->find()->where(['listing_num' => $privateMessage->listing_id])->first()->title) ?>
+                                    <?php $blobimg = stream_get_contents($items->find()->where(['listing_num' => $privateMessage->listing_id])->first()->image); ?>
+                                </div>
+                                <div class="row">
+
+                                    <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                                        <?= $blobimg!== null ? '<img src = "' . $blobimg . '" style = "width: 15vw; height: 15vw;"  alt = "no image"/>' : 'Item has been removed'?>
+                                    </a>
+                                </div>                            
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if($message_id !== null): ?>
+                            <div class="col s4" style="padding-top: 20px; padding-bottom: 15px;">
+                                <div class="row">
+                                    <?php $blobimg = stream_get_contents($item->image); ?>
+                                </div>
+                                <div class="row">
+                                    <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                                            <?= $item->has('image') ? '<img src = "' . $blobimg . '" style = "width: 15vw; height: 15vw;" />' : '' ?>
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+
+                        <div class=" col s8 actions">
+                            
+                                <table cellpadding="0" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><?= $this->Paginator->sort('subject') ?></th>
+                                            <th scope="col"><?= $this->Paginator->sort('registered_user_id', 'Buyer') ?></th>
+                                            <th scope="col"><?= $this->Paginator->sort('recipient_id', 'Seller') ?></th>
+                                            <!--<th scope="col"><//?= $this->Paginator->sort('conversation_id') ?></th>-->
+                                            <!--<th scope="col"><//?= $this->Paginator->sort('is_read') ?></th>-->
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="row">
+                                        <td><?= $this->Html->link(__($privateMessage->subject),
+                                                [
+                                                 'controller' => 'Conversations',
+                                                 'action' => 'index', $privateMessage
+                                                                          ->conversation_id
+                                                ]) ?>
+                                        </td>
+                                        <td><?= h($privateMessage->registered_user_id) ?></td>
+                                        <td><?= h($privateMessage->recipient_id) ?></td>
+                                    </tbody>
+                                </table>
+                        <!--<td><//?= $privateMessage->has('registered_user') ? $this->Html->link($privateMessage->registered_user->username, ['controller' => 'RegisteredUsers', 'action' => 'view', $privateMessage->registered_user->username]) : '' ?></td>-->
+                        <!--<td><//?= $privateMessage->has('conversation') ? $this->Html->link($privateMessage->conversation->conversation_num, ['controller' => 'Conversations', 'action' => 'view', $privateMessage->conversation->conversation_num]) : '' ?></td>
+                        <td><//?= h($privateMessage->is_read) ?></td>-->
+                        
+                            <!--<//?= $this->Html->link(__('Edit'), ['action' => 'edit', $privateMessage->registered_user_id]) ?>-->
+                            <!--<//?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $privateMessage->registered_user_id], ['confirm' => __('Are you sure you want to delete # {0}?', $privateMessage->registered_user_id)]) ?>-->
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <?php endforeach; ?>
+            </div>
+        </fieldset>
+    </div>
+    <div class="paginator row" style = "display: flex; justify-content: center;">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
