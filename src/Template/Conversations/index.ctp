@@ -15,7 +15,7 @@ $this->assign('title', $title);
                     <tr>
                         <th scope="col"><?= $this->Paginator->sort('message') ?></th>
                         <th scope="col"><?= $this->Paginator->sort('date_created', 'Date Sent') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('registered_user_id', 'Buyer') ?></th>
+                        <th scope="col"><?= $this->Paginator->sort('registered_user_id', 'Sender') ?></th>
                         <th scope="col"><?= $this->Paginator->sort('recipient_id') ?></th>
                     </tr>
                 </thead>
