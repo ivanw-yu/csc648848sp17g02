@@ -27,7 +27,7 @@ class PrivateMessagesController extends AppController
         //];
         $user = $this->Auth->user()['username'];
         $listings =  TableRegistry::get('Listings');
-             $this->set('items', $listings);
+        $this->set('items', $listings);
 
         if($id === null) {
             // 4/27 if $id is null, then just get all private messages associated with user.
@@ -78,7 +78,9 @@ class PrivateMessagesController extends AppController
         //$this->paginate('contain' => ['Listings']);  
         $privateMessages = $this->paginate($this->PrivateMessages);
 
-
+        // 5/20 for items corresponding to the private message only
+        //$items_for_message = $items->find()->where(['listing_num' => $privateMessage->listing_id]);
+        //$this->set('items_for_message', $items_for_message);
 
         $this->set(compact('privateMessages'));
         $this->set('_serialize', ['privateMessages']);
@@ -125,6 +127,7 @@ class PrivateMessagesController extends AppController
                                     $sender,
                                     $data['recipient_id']
                                   );
+            
             $privateMessage = $this->PrivateMessages->newEntity();
             $privateMessage = $this->PrivateMessages->patchEntity(
                 $privateMessage, $data);
@@ -133,7 +136,7 @@ class PrivateMessagesController extends AppController
             $privateMessage->registered_user_id = $sender;
 
             $privateMessage->listing_id = $data['listing_id'];/*!==null ? $data['listing_id'] : 1 */// added 4/27/17 to allow listings_id foreign key to be placed in the new private messages row.
-            echo "ivan " . $data['listing_id'];
+
             $privateMessage->is_read = 0;
             if ($this->PrivateMessages->save($privateMessage)) {
                 $this->Flash->success(__('The private message has been saved.'));

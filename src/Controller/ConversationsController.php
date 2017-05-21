@@ -28,7 +28,9 @@ class ConversationsController extends AppController
             'contain' => ['RegisteredUsers'],
         ];
         if (!empty($id)) {
-            $this->paginate['conditions'] = ['conversation_num' => $id];
+            $this->paginate['conditions'] = ['conversation_num' => $id, 
+                                             'or' => ['registered_user_id' => $this->Auth->user()['username'],
+                                                      'recipient_id' => $this->Auth->user()['username']]];
         }
         else {
             $this->Flash->error(__('Conversation not found.'));

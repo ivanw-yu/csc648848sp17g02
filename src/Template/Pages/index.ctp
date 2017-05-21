@@ -60,7 +60,17 @@ $this->assign('title', $title);
     <script>
       function convertToDataURL(blobString){
         return readAsDataURL(blobString);
-      }      
+      }
+      function setModalLabelAndFormInput(name, title, item){
+        // for displaying name and title on modal
+        document.getElementById('seller_name').innerHTML = name;
+        document.getElementById('seller_item').innerHTML = title;
+
+        // for form inputs
+        document.getElementById('receiver').value = name;
+        document.getElementById('items_listing_id').value = item;
+        //document.getElementById('sender').value = "<?= $currentUser ?>";
+      }    
     </script>
 
     <?php foreach($all_categories as $category): ?>
@@ -133,8 +143,7 @@ $this->assign('title', $title);
 
                     <?php if($currentUser !== null): ?>
                             <!-- this allows user to send a message to the seller through the modal. 4/16/17 -->
-                            <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#contact_box" onclick = "document.getElementById('receiver').value = '<?php echo $listing->registered_user_id; ?>';">Contact Seller</a>
-                          <?php else: ?>
+                             <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#contact_box" onclick = "setModalLabelAndFormInput('<?= $item->registered_user_id ?>', '<?= $item->title ?>', '<?= $item->listing_num ?>');"> Contact Seller</a>                          <?php else: ?>
                             <a class="btn-flat right modal-close" style="font-size: 12px; padding-right: .5rem; padding-left: .5rem; margin: 0 auto;" href="#modal1">Contact Seller</a>
                           <?php endif; ?>
 

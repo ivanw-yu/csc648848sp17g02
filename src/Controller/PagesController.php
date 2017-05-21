@@ -47,7 +47,7 @@ class PagesController extends AppController
     {
         // queries all listings and sort in order of most recent to least
         
-        $most_recent_items = TableRegistry::get('Listings')->find();
+        $most_recent_items = TableRegistry::get('Listings')->find()->where(['is_sold' => 0]);
         $most_recent_items->order(['date_created' => 'DESC']);
         $this->set(['recent_items' => $most_recent_items]);
 

@@ -54,7 +54,7 @@ $this->assign('title', $title);
                         <?php if($message_id !== null): ?>
                             <div class="col s4" style="padding-top: 20px; padding-bottom: 15px;">
                                 <div class="row">
-                                    <?php $blobimg = stream_get_contents($item->image); ?>
+                                    <?php $blobimg = stream_get_contents($items->find()->where(['listing_num' => $privateMessage->listing_id])->first()->image); ?>
                                 </div>
                                 <div class="row">
                                     <a class = "aclass" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
