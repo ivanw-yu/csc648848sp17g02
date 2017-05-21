@@ -64,6 +64,9 @@ class RegisteredUsersController extends AppController
             else {
                 $registeredUser->username = $this->request->data['Username'];
             }
+
+            $registeredUser->date_created = new \DateTime();
+            echo "ivan " . $registeredUser->date_created;
             if (!$this->RegisteredUsers->exists(['username' => $registeredUser->username])&& !$this->RegisteredUsers->exists(['email' => $registeredUser->email])) 
             {
                 $this->Flash->success(__('You are registered, welcome! Please login with your new credentials.'));

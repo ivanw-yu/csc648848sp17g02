@@ -217,6 +217,16 @@
         }
 
     </style>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99568913-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -407,7 +417,7 @@
               <div class="input-field col s12">
                 <input name = "email" id="email" type="email" class="validate"
 		       pattern='\w+@sfsu.edu' title='Only SFSU students can register' required>
-                <label for="email" data-error="This email has already been registered">Email</label>
+                <label for="email" data-error="Not a valid @mail.sfsu.edu or @sfsu.edu email">Email</label>
               </div>
             </div>
 
