@@ -34,7 +34,7 @@ $this->assign('title', $title);
         <div class="bread-wrapper">
             <div class="col s12 bread-content">
                 <a class="breadcrumb" href="#!" onclick="window.location.href = '../../'">Home</a>
-                <a class="breadcrumb" href="#!" onclick="window.location.href = '../'">Listings</a>
+                <a class="breadcrumb" href="#!" onclick="window.history.go(-1); return false;">Listings</a>
                 <a class="breadcrumb" >Details</a>
             </div>
         </div>
