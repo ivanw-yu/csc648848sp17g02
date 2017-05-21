@@ -92,7 +92,7 @@
 
         .breadcrumb {
           font-size: 14px;
-          color: #7c3ee0;
+          color: #6f38c9;
           overflow: hidden;
 
         }
@@ -111,12 +111,12 @@
           overflow: auto;
         }
 
+
         .carousel-title-container {
           height: 100%;
           width: 100%;
           opacity: 0.7;
           background-color: #333333;
-          cursor: pointer;
         }
 
         .carousel-title {
@@ -169,7 +169,21 @@
           box-shadow: 0 1px 0 0 #5e35b1;
         }
 
+        /*sort colors*/
+        .dropdown-content li>a, .dropdown-content li>span {
+          color: #5e35b1
+        }
 
+        /* filter colors*/
+        [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+          background-color: #6f38c9;
+          border: #6f38c9;
+        }
+
+        [type="checkbox"]:checked+label:before {
+          border-bottom: 2px solid #5e35b1;
+          border-right: 2px solid #5e35b1;
+        }
 
         .col {
           margin: 0 auto;
@@ -318,13 +332,14 @@
     <!-- The following if-statement allows the "Back To Search" button to show in pages that do not display the index.ctp
          It will link to the previous search, accessed through the $this->request->session()->read('User.lastsearch'),
           which is set in the AppController. The Back to search button will not show up in the homepage -->
-    <?php $complete_url  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
-      <?php if(((strrpos($complete_url,'listings')+8)!==strlen($complete_url)) && !strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && strpos($complete_url, '/listings/view/') && !strpos($complete_url, 'browse') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
-          <?php $last_search_url =  $this->request->session()->read('User.lastsearch'); ?> 
-          <?= '<div class="col s6" style = "margin-right: 2%; border-radius: 3%; margin-left: -5%; padding: 0">' ?>
-            <?= $this->Html->link( ' < Back to Search', ['controller' => 'Listings', 'action' => 'index', basename($last_search_url) ]) ?>
-          <?= '</div>' ?>
-      <?php endif; ?>
+    <!-- <//?php $complete_url  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+      <//?php if(((strrpos($complete_url,'listings')+8)!==strlen($complete_url)) && !strpos($complete_url, 'listings?') && !strpos($complete_url, 'listings/index') && strpos($complete_url, '/listings/view/') && !strpos($complete_url, 'browse') && dirname($_SERVER['REQUEST_URI']) !== '/'): ?>
+          <//?php $last_search_url =  $this->request->session()->read('User.lastsearch'); ?> 
+          <//?= '<div class="col s6" style = "margin-right: 2%; border-radius: 3%; margin-left: -5%; padding: 0">' ?>
+            <//?= $this->Html->link( ' < Back to Search', ['controller' => 'Listings', 'action' => 'index', basename($last_search_url) ]) ?>
+          <//?= '</div>' ?>
+      <//?php endif; ?> -->
+    
       
       <?= $this->Form->create(NULL, ['url' => [
                                    'controller' => 'Listings',
@@ -496,12 +511,12 @@
     <div class="container">
       <div class="row" style="width: initial;">
         <div class="col l6 s12">
-          <h5 style="color: #424242;">TheGatorBay</h5>
-          <p class="grey-text text-lighten-4">TheGatorBay is a unique website designed and developed by San Francisco State students to cater their needs for buying and selling items.</p>
+          <h5 style="color: #424242;">GatorBay</h5>
+          <p class="grey-text text-lighten-4">GatorBay is a unique website designed and developed by San Francisco State students to cater their needs for buying and selling items.</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 style="color: #424242;">Links</h5>
-          <ul>
+          <ul style="line-height: 225%;">
             <li><?= $this->Html->link( 'Company info', ['controller' => 'Pages', 'action' => 'display', 'about' ] );?></li>
             <li><?= $this->Html->link( 'Contact Us', ['controller' => 'Pages', 'action' => 'display', 'contact' ] );?></li>
             <li><?= $this->Html->link( 'Terms and Conditions', ['controller' => 'Pages', 'action' => 'display', 'termsofservice' ] );?></li>

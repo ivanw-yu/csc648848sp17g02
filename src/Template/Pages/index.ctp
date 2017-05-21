@@ -25,13 +25,17 @@ $this->assign('title', $title);
 
 <div class="content" style="padding: 0;">
   <div class="carousel carousel-slider valign-wrapper center" data-indicators="true" style="">
-    <div class="carousel-fixed-item center">
-    </div>
-    <div class="carousel-item deep-purple darken-1 white-text" href="#one!" style = "background-size: 100% 100%; background-image: url('webroot/img/sfsupic.jpg');"" >
-      <h3 style = "color: black; margin-top: -.15% ">Welcome to GatorBay</h3>
-      <!--<p class="white-text"--> 
-      <p style = "color: black; margin-top: -1%">A place where Gators buy and sell!</p>
-    </div>
+
+    <!-- <a href = "listings/index/' style = "text-decoration: none; width: 100%; height: 100%;"> -->
+      <div class="carousel-item deep-purple darken-1 white-text"  style = "width: 100%; height: 100%; background-image: url('webroot/img/sfsupic.jpeg'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;" >
+        <div class="carousel-title-container">
+          <a class="carousel-title">Welcome to GatorBay</a>
+          <p style = "color: white; margin-top: -1%">A place where Gators buy and sell!</p>
+        </div>
+      </div>
+
+    <!-- </a> -->
+
     <!--<//?php $href_items = array("0" => "#two!", "1" => "#three!", "2" => "#four!");
           $href_vals = array_values($href_items);
           $count = 0; 
@@ -67,8 +71,8 @@ $this->assign('title', $title);
             <?= "background-image:  url(data:image/png;base64,". $cat_image .");" ?>
           <?php endif; ?>
            background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
-            <div class="carousel-title-container" onclick="window.location.href = <?= '\'listings?category='.$category->category_name. '\'' ?>" >
-              <a class="carousel-title" href = <?php echo '\'listings/index/'. $category->category_name . '\''; ?> > <?= strtoupper($category->category_name) ?></a>
+            <div class="carousel-title-container" style="cursor: pointer;" onclick="window.location.href = <?= '\'listings?category='.$category->category_name. '\'' ?>" >
+              <a class="carousel-title"> <?= strtoupper($category->category_name) ?> </a>
             </div>
           </div>
       </a>

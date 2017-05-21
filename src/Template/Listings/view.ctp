@@ -21,7 +21,6 @@ $this->assign('title', $title);
     // for displaying name and title on modal
     document.getElementById('seller_name').innerHTML = name;
     document.getElementById('seller_item').innerHTML = title;
-
     // for form inputs
     document.getElementById('receiver').value = name;
     document.getElementById('items_listing_id').value = item;
@@ -33,9 +32,7 @@ $this->assign('title', $title);
     <nav style="background-color: inherit; height: 50px; line-height: 50px;">
         <div class="bread-wrapper">
             <div class="col s12 bread-content">
-                <a class="breadcrumb" href="#!" onclick="window.location.href = '../../'">Home</a>
-                <a class="breadcrumb" href="#!" onclick="window.history.go(-1); return false;">Listings</a>
-                <a class="breadcrumb" >Details</a>
+                <a class="breadcrumb" style="cursor: pointer;" onclick="window.history.go(-1); return false;"><strong><</strong> Back to previous page</a>                
             </div>
         </div>
     </nav>
@@ -55,14 +52,20 @@ $this->assign('title', $title);
                                 <a class = "carousel-item" style="overflow: hidden;" onclick = "displaythumbnail('<?php echo $blobimg; ?>');">
                                   <?= '<img src = "' . $blobimg . '"style = "width: 270px; height: 270px;" />' ?>
                                 </a>
+                                <?php foreach($images as $image): ?>
+                                    <?php $blobimg = stream_get_contents($image->image); ?>
+                                    <a class = "carousel-item" style="overflow: hidden;" onclick = "displaythumbnail('<?php echo $blobimg; ?>');" >
+                                        <?= '<img src = " ' . $blobimg . '" />' ?>
+                                    </a>
+                                <?php endforeach; ?>
 
                                 <!-- for testing, delete later -->
-                                <a class = "carousel-item" style="overflow: hidden;" onclick = "displaythumbnail('https://upload.wikimedia.org/wikipedia/commons/d/d2/Jeans_for_men.jpg');">
+                                <!--<a class = "carousel-item" style="overflow: hidden;" onclick = "displaythumbnail('https://upload.wikimedia.org/wikipedia/commons/d/d2/Jeans_for_men.jpg');">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Jeans_for_men.jpg">
                                 </a>
                                 <a class = "carousel-item" style="overflow: hidden;" onclick = "displaythumbnail('https://upload.wikimedia.org/wikipedia/commons/1/1f/FD_1.jpg');">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/FD_1.jpg">
-                                </a>
+                                </a>-->
                                 <!-- for testing, delete later -->
                                 
                                 
@@ -205,7 +208,6 @@ $this->assign('title', $title);
                                                     displayed = false;
                                                 }
                                             }
-
                         $(document).ready(function(){
                           $('.carousel').carousel({indicators:true});
                         });

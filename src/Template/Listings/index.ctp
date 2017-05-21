@@ -177,7 +177,7 @@ function f() {
               <?php if($counter === 0): ?>
                   <?= '<div class="row' . $rownum . '">' ?>
               <?php endif; ?>
-              <div class="col s12 m6 l4 card-container">
+              <div class="col s12 m6 l4 card-container" style="display: flex; justify-content: space-around;">
                 <div class="card medium hoverable">
                   <div class="clickable" onclick="window.location.href = <?= '\'listings/view/'.$listing->listing_num. '\'' ?>">
                     <div class="card-image">
@@ -190,7 +190,7 @@ function f() {
                     </div>
                     <div class="card-content">
 
-                      <span class="card-title" style="font-size: 8px; font-size: 1vmax; font-weight: bold; text-transform: uppercase; text-align: center">
+                      <span class="card-title" style="font-size: 14px; font-weight: bold; text-transform: uppercase; text-align: center">
                         <?= $this->Html->link(__($listing->title), ['action' => 'view', $listing->listing_num]) ?>
                       </span>
                       <a class="left">Category: <?= h($listing->category->category_name) ?></a>
