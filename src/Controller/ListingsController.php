@@ -252,11 +252,16 @@ class ListingsController extends AppController
     public function view($id = null)
     {
         $this->setDefaultData();
+
+        $images = TableRegistry::get('Images')->find()->where(['listing_id' => $id]);
+        $this->set('images', $images);
+
         $listing = $this->Listings->get($id, [
             'contain' => ['Categories', 'RegisteredUsers', 'Courses', 'Conditions', 'PurchasedLists', 'SellingLists', 'SoldLists', 'Tags', 'WatchingLists', 'WishLists']
         ]);
         $this->set('listing', $listing);
         $this->set('_serialize', ['listing']);
+
     }
 
     /**

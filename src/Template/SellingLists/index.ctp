@@ -65,7 +65,7 @@ $this->assign('title', $title);
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Listings', 'action' => 'edit', $sellingList->listing->listing_num]) ?>
                                 <br><br>
                                  <!-- No deleting allowed at the moment. Update 4/8: Let users remove their own items. -->
-                                <?= $this->Form->postLink(__('Remove'), ['action' => 'delete', $sellingList->listing_id], ['confirm' => __('Are you sure you want to delete # {0}?', $sellingList->title)]) ?>
+                                <?= $this->Form->postLink(__('Remove'), ['action' => 'delete', $sellingList->listing_id], ['confirm' => __('Are you sure you want to delete this listing?', $sellingList->title)]) ?>
                             </td>
                             </tbody>
                         </table>

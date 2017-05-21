@@ -55,22 +55,45 @@ class ImagesController extends AppController
     public function add($id)
     {
         $this->setDefaultData();
-        $image = $this->Images->newEntity();
+        //$image = $this->Images->newEntity();
         if ($this->request->is('post')) {
-            $save_successful = empty($id) ? false : true;
-            foreach($this->request->data as $path) {
-                if (!$this->Images->addImage($path, $id)) {
-                    $save_successful = false;
-                    break;
+            //$save_successful = empty($id) ? false : true;
+            $save_successful = false;
+            $flagOneOrMoreFailed = false;
+            $flagOneOrMoreSaved = false;
+            //foreach($this->request->data as $path) {
+                // if (!$this->Images->addImage($path, $id)) {
+                //     $save_successful = false;
+                //     break;
+                // }
+            $maxNumberOfImages = 3;
+            for($i = 1 ; $i <= $maxNumberOfImages ; $i++){
+                if($this->request->data['image'.$i]){
+                $image = $this->Images->newEntity();
+                $image->listing_id = $id;
+                $image->image = $this->request->data['image'.$i];
+                $save_successful = $this->Images->save($image);
+                if(!$save_successful){
+                    $flagOneOrMoreFailed = true;
+                }
+                if($save_successful){
+                    $flagOneOrMoreSaved = true;
                 }
             }
-            if ($save_successful) {
+            }
+            
+            if ($flagOneOrMoreSaved && $flagOneOrMoreFailed) {
+                $this->Flash->success(__('At-least one of the images was not saved'));
+                return $this->redirect(['controller' => 'Listings',
+                                        'action' => 'view', $id]);
+            }
+            if ($flagOneOrMoreSaved) {
                 $this->Flash->success(__('The image has been saved.'));
                 return $this->redirect(['controller' => 'Listings',
                                         'action' => 'view', $id]);
             }
-            $this->Flash->error(__('The image could not be saved. Please, try again.'));
-        }
+                $this->Flash->error(__('The image could not be saved. Please, try again.'));
+            }
         $listings = $this->Images->Listings->find('list', ['limit' => 200]);
         $this->set(compact('image', 'listings'));
         $this->set('_serialize', ['image']);
