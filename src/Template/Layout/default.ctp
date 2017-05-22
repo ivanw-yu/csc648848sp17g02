@@ -431,7 +431,7 @@
             <div class="row">
               <div class="input-field col s12">
                 <input name = "email" id="email" type="email" class="validate"
-		       pattern='\w+@sfsu.edu' title='Only SFSU students can register' required>
+		       pattern='\w+(@mail.sfsu.edu|@sfsu.edu)' title='Only SFSU students can register' required>
                 <label for="email" data-error="Not a valid @mail.sfsu.edu or @sfsu.edu email">Email</label>
               </div>
             </div>

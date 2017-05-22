@@ -97,6 +97,7 @@ class ImagesController extends AppController
         $listings = $this->Images->Listings->find('list', ['limit' => 200]);
         $this->set(compact('image', 'listings'));
         $this->set('_serialize', ['image']);
+        $this->set('item_id', $id);
     }
 
     /**
