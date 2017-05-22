@@ -431,25 +431,25 @@
             <div class="row">
               <div class="input-field col s12">
                 <input name = "email" id="email" type="email" class="validate"
-		       pattern='\w+(@mail.sfsu.edu|@sfsu.edu)' title='Only SFSU students can register' required>
+		       pattern='\w+(\.|_|-|\w)*(@mail.sfsu.edu|@sfsu.edu)' title='Only SFSU students can register' required>
                 <label for="email" data-error="Not a valid @mail.sfsu.edu or @sfsu.edu email">Email</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="name" name = "username" type="text" maxlength='30'
-                       pattern="(\w|_)+" class="validate"
+                <input id="name" name = "username" type="text" maxlength='15'
+                       pattern="\w(\w|_)*" class="validate"
                        title="Only numbers, letters, and _ are allowed.  Max length is 30 characters"  required>
-                <label for="name" data-error="Username has already been taken">Username</label>
+                <label for="name" data-error="Only letters (required), numbers and _ allowed. Max length is 15 characters.">Username</label>
 
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="password" name = "password" type="password" class="validate" required>
-                <label for="password" data-error="wrong">Password</label>
+                <input id="password" name = "password" type="password" class="validate" minlength="4" required>
+                <label for="password" data-error="Password must be atleast 4 characters">Password</label>
               </div>
             </div>
 

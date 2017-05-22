@@ -66,10 +66,9 @@ class RegisteredUsersController extends AppController
             }
 
             $registeredUser->date_created = new \DateTime();
-            echo "ivan " . $registeredUser->date_created;
             if (!$this->RegisteredUsers->exists(['username' => $registeredUser->username])&& !$this->RegisteredUsers->exists(['email' => $registeredUser->email])) 
             {
-                $this->Flash->success(__('You are registered, welcome! Please login with your new credentials.'));
+                $this->Flash->success(__('You are registered, welcome!'));
                 $this->RegisteredUsers->save($registeredUser);
                 $this->Auth->setUser($registeredUser); //line for logging in after registering
                 return $this->redirect($this->referer());
