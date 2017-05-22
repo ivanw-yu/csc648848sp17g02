@@ -49,7 +49,7 @@ function f() {
                 How about browsing through some similar items below?
 	  <?php else: ?>
             Showing <?= count($listings) ?> results 
-            <?= strlen($this->request->query['tags']) ? 'of "' . $this->request->query['tags'] . '"' : 'from ' . (strlen($this->request->query['category_filter']) ? $this->request->query['category_filter'] : ' all categories')   ?>
+            <?= strlen($this->request->query['tags']) ? 'of "' . $this->request->query['tags'] . '"' : 'from ' . (strlen($this->request->query['category_filter']) ? $this->request->query['category_filter'] : (strlen($this->request->query['category'])? $this->request->query['category'] :' all categories'))   ?>
 	    <?php endif; ?>
           </div>
           <div class="right col m4 s12 sorting"> 
